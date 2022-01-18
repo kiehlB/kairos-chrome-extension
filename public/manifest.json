@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+  "name": "Kairos_chrome-extension",
+  "short_name": "Kairos_chrome-extension",
+  "description": "Browser extension",
+  "version": "1.1.1",
+  "icons": {},
+  "background": {
+    "page": "index.html"
+  },
+  "browser_action": {
+    "default_icon": "logo192.png",
+    "default_title": "chrome-extension "
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval' http://localhost:3000; object-src 'self';",
+  "permissions": ["idle", "tabs"]
+}
