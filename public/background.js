@@ -1,5 +1,4 @@
-/*global chrome*/
-chrome.runtime.onInstalled.addListener(() => {
-  console.log('Chrome extension successfully installed!')
-  return
+chrome.action.onClicked.addListener(function (activeTab) {
+  var newURL = 'index.html'
+  chrome.tabs.create({url: newURL})
 })

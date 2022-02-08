@@ -1,18 +1,16 @@
 {
   "manifest_version": 3,
-  "name": "React Chrome Extension",
-  "version": "0.1",
-  "description": "Boilerplate manifest for React based Chrome Extension using Google's Manifest v3",
+  "name": "Kairos_chrome-extension",
+  "short_name": "Kairos_chrome-extension",
+  "description": "Browser extension",
+  "version": "1.1.1",
+  "icons": {},
   "background": {
-    "service_worker": "./background.js"
+    "service_worker": "background.js"
   },
-  "permissions": [],
-  "author": "Christian Sendler",
-  "homepage_url": "https://github.com/casendler/",
-
-  "short_name": "React Extension",
   "action": {
-    "default_popup": "popup.html",
-    "default_title": "React Chrome Extension"
-  }
+    "default_icon": "logo192.png",
+    "default_title": "chrome-extension "
+  },
+  "permissions": ["idle", "tabs", "activeTab"]
 }
