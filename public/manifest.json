@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "description": "A chrome extension",
+  "version": "0.0.8",
+  "name": "Create React App Sample",
+  "permissions": ["activeTab", "idle", "tabs"],
+
+  "background": {
+    "service_worker": "./static/js/background.js"
+  },
+  "action": {}
+}

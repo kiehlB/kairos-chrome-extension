@@ -1,63 +1,63 @@
-import Dexie from 'dexie';
+import Dexie from 'dexie'
 
-import { RawActivity } from '../models/activity';
-
+import {RawActivity} from '../models/activity'
+import ChromeIcon from '../../../assets/chrome-icon.png'
 import {
   DomainTableRecord,
   TitleTableRecord,
   ActivityTableRecord,
-} from '../types';
+} from '../types'
 
 export function exportTableRecords<T>(
-  table: Dexie.Table<T, number>
+  table: Dexie.Table<T, number>,
 ): Promise<T[]> {
-  return table.toCollection().toArray();
+  return table.toCollection().toArray()
 }
 
 export function getActivityData(
   url: URL,
-  iconUrl: string
+  iconUrl: string,
 ): {
-  domain: string;
-  path: string;
-  favIconUrl: string;
+  domain: string
+  path: string
+  favIconUrl: string
 } {
   if (url.origin !== 'null') {
-    new Error(`[db] ${url} is not a valid URL.`);
+    new Error(`[db] ${url} is not a valid URL.`)
   }
 
-  let domain = `${url.protocol}//${url.hostname}`;
-  let path = `${url.pathname}${url.hash}${url.search}`;
-  let favIconUrl = iconUrl;
+  let domain = `${url.protocol}//${url.hostname}`
+  let path = `${url.pathname}${url.hash}${url.search}`
+  let favIconUrl = iconUrl
   switch (url.protocol) {
     case 'about:':
     case 'brave:':
     case 'chrome:':
     case 'edge:':
     case 'opera:':
-      domain = `${url.protocol}//`;
-      path = `${url.hostname}${url.pathname}${url.hash}${url.search}`;
-      favIconUrl = '';
-      break;
+      domain = `${url.protocol}//`
+      path = `${url.hostname}${url.pathname}${url.hash}${url.search}`
+      favIconUrl = ChromeIcon
+      break
     case 'chrome-extension:':
     case 'extension:':
     case 'moz-extension:':
-      domain = url.origin;
-      break;
+      domain = url.origin
+      break
     case 'http:':
     case 'https:':
-      domain = `https://${url.hostname}`;
-      break;
+      domain = `https://${url.hostname}`
+      break
     default:
-      new Error(`[db] ${url} is not a valid URL. (unrecognized protocol)`);
-      break;
+      new Error(`[db] ${url} is not a valid URL. (unrecognized protocol)`)
+      break
   }
 
-  return { domain, path, favIconUrl };
+  return {domain, path, favIconUrl}
 }
 
 export function createUrl(activity: ActivityTableRecord): string {
-  return `${activity.domain}${activity.path}`;
+  return `${activity.domain}${activity.path}`
 }
 
 export function generateRecords({
@@ -67,18 +67,18 @@ export function generateRecords({
   startTime,
   endTime,
 }: RawActivity): {
-  activity: ActivityTableRecord;
-  domain: DomainTableRecord;
-  title: TitleTableRecord;
+  activity: ActivityTableRecord
+  domain: DomainTableRecord
+  title: TitleTableRecord
 } {
-  const urlObject = new URL(rawUrl);
-  const { domain, path, favIconUrl } = getActivityData(urlObject, iconUrl);
-  const activity = { domain, path, startTime, endTime };
-  const url = createUrl(activity);
+  const urlObject = new URL(rawUrl)
+  const {domain, path, favIconUrl} = getActivityData(urlObject, iconUrl)
+  const activity = {domain, path, startTime, endTime}
+  const url = createUrl(activity)
 
   return {
     activity,
-    domain: { id: domain, favIconUrl },
-    title: { id: url, title },
-  };
+    domain: {id: domain, favIconUrl},
+    title: {id: url, title},
+  }
 }
