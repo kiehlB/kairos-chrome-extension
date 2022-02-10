@@ -1,5 +1,5 @@
 import Navbar from './components/Navbar';
-import { BarChart2, Clock, Settings } from 'react-feather';
+import { BarChart2, Clock, Settings, HelpCircle } from 'react-feather';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import DarkModeToggle from 'react-dark-mode-toggle';
 import React, { useState } from 'react';
@@ -10,28 +10,35 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <DarkModeToggle
+        {/* <DarkModeToggle
           onChange={setIsDarkMode}
           checked={isDarkMode}
           size={80}
-        />
+        /> */}
         <Navbar
           primaryItems={[
             {
-              icon: <BarChart2 />,
+              icon: <BarChart2 size='20' />,
               text: 'Analytics',
               to: { pathname: '/analytics', search },
             },
             {
-              icon: <Clock />,
+              icon: <Clock size='20' />,
               text: 'History',
               to: { pathname: '/history', search },
             },
           ]}
           secondaryItems={[
             {
-              icon: <Settings />,
+              icon: <Settings size='20' />,
               text: 'Settings',
+              to: {
+                pathname: '/settings',
+              },
+            },
+            {
+              icon: <HelpCircle size='20' />,
+              text: 'Help',
               to: {
                 pathname: '/settings',
               },
@@ -39,9 +46,7 @@ function App() {
           ]}
         />
         <Routes>
-          <Route>
-            <Route index element={<Home />} />
-          </Route>
+          <Route>{/* <Route index element={<Home />} /> */}</Route>
         </Routes>
       </BrowserRouter>
       ,

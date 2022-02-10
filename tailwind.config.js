@@ -77,6 +77,14 @@ module.exports = {
         'banner-color': '#7e5bef',
         'regal-sky': '#1fb6ff',
         'small-text': '#3c4858',
+
+        'white-m': '#F5F7F9',
+        'grey-m': '#A0B5BB',
+        'greyTint-m': '#70768C',
+        'green-m': '#18A76C',
+        'grrenTint-m': '#6CD2B0',
+        'dark-m': '#323747',
+        'orange-m': '#D7593D',
       },
       maxWidth: {
         '9xl': '82.5rem',
@@ -98,7 +106,7 @@ module.exports = {
         '8vw': '8vw', // positions hero img inside the margin
         '10vw': '10vw', // page margin
         768: '768px',
-        side: '19.75rem',
+        side: '16.375rem',
         main: '92.25rem',
       },
       height: {
