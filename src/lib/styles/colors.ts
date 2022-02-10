@@ -3,7 +3,6 @@ export const colors = {
   lightest: '#F9F9FB',
   light: '#E4E7EB',
   base: '#425A70',
-  dark: '#234361',
 
   //Blue
   blueLightest: '#F7F9FD',
@@ -32,4 +31,13 @@ export const colors = {
   //Border
   default: '#E4E7EB',
   muted: '#EDF0F2',
+
+  //Main
+  white: '#F5F7F9',
+  grey: '$A0B5BB',
+  greyTint: '#70768C',
+  green: '#18A76C',
+  grrenTint: '#6CD2B0',
+  dark: '#323747',
+  orange: '#D7593D',
 };
