@@ -34,7 +34,7 @@ export const colors = {
 
   //Main
   white: '#F5F7F9',
-  grey: '$A0B5BB',
+  grey: '#A0B5BB',
   greyTint: '#70768C',
   green: '#18A76C',
   grrenTint: '#6CD2B0',

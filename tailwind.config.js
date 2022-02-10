@@ -81,6 +81,8 @@ module.exports = {
       maxWidth: {
         '9xl': '82.5rem',
         '8xl': '96rem',
+        side: '14.75rem',
+        main: '71.25rem',
       },
       fontSize: {
         xl: '1.375rem', // 22px
@@ -96,6 +98,8 @@ module.exports = {
         '8vw': '8vw', // positions hero img inside the margin
         '10vw': '10vw', // page margin
         768: '768px',
+        side: '19.75rem',
+        main: '92.25rem',
       },
       height: {
         hero: 'min(60rem, calc(100vh - 10rem))', // screen - navbar height (lg: only)
