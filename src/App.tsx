@@ -40,7 +40,7 @@ function App() {
               icon: <HelpCircle size='20' />,
               text: 'Help',
               to: {
-                pathname: '/settings',
+                pathname: '/help',
               },
             },
           ]}

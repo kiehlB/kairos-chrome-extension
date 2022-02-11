@@ -1,6 +1,9 @@
 import { NavbarItem, NavbarItemProps } from './NavbarItem';
 import logo from './logo.png';
-import { Bookmark } from 'react-feather';
+import { Bookmark, ExternalLink, ArrowRight } from 'react-feather';
+import ExtensionCard from '../Common/extensionCard';
+import Footer from '../Footer';
+
 interface NavbarProps {
   primaryItems: NavbarItemProps[];
   secondaryItems: NavbarItemProps[];
@@ -41,7 +44,18 @@ const Navbar = ({
         </li>
       ))}
     </ul>
-    <ul></ul>
+    <section className='bottom-10 absolute w-side'>
+      <div className='flex items-center px-4 w-full  '>
+        <ExtensionCard
+          icon={<ExternalLink size='20' />}
+          text='Download the extension from Chrome Web Store.'
+          to={{ pathname: 'Try now', icon: <ArrowRight size='20' /> }}
+        />
+      </div>
+      <div className='px-4 pt-4'>
+        <Footer />
+      </div>
+    </section>
   </nav>
 );
 
