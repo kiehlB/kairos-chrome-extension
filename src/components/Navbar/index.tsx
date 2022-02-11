@@ -17,7 +17,7 @@ const Navbar = ({
   className,
   isDisabled,
 }: NavbarProps) => (
-  <nav className='border-r border-grey-m w-side h-full '>
+  <nav className='border-r border-grey-m w-side h-full'>
     <ul>
       <li>
         <div className=' flex p-6 items-center  justify-between'>

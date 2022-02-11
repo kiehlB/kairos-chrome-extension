@@ -8,7 +8,7 @@ function Footer({ children }: FooterProps) {
   return (
     <div className='text-sm'>
       <div className='text-dark-m font-bold'>Kairos Admin Dashboard</div>
-      <div>© 2021 All rights reserved</div>
+      <div>© 2022 All rights reserved</div>
     </div>
   );
 }

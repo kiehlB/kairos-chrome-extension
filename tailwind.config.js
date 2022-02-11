@@ -89,7 +89,7 @@ module.exports = {
       maxWidth: {
         '9xl': '82.5rem',
         '8xl': '96rem',
-        side: '14.75rem',
+        side: '16.75rem',
         main: '71.25rem',
       },
       fontSize: {
@@ -107,6 +107,7 @@ module.exports = {
         '10vw': '10vw', // page margin
         768: '768px',
         side: '16.375rem',
+        'side-1': '14.75rem',
         main: '92.25rem',
       },
       height: {
