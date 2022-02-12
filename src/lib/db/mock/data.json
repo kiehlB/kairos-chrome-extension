@@ -1,0 +1,66 @@
+[
+  {
+    "domain": "https://github.com",
+    "favIconUrl": "https://github.githubassets.com/favicon.ico",
+    "pages": [
+      {
+        "title": "chronos/package.json at master · tohjustin/chronos",
+        "path": "/tohjustin/chronos/blob/master/package.json"
+      },
+      {
+        "title": "tohjustin/chronos: Browser extension for recording & visualizing web browsing activity",
+        "path": "/tohjustin/chronos"
+      },
+      {
+        "title": "toBeInTheDocument and toContainElement throws error if element is null · Issue #41 · testing-library/jest-dom",
+        "path": "/testing-library/jest-dom/issues/41"
+      },
+      {
+        "title": "testing-library/jest-dom: Custom jest matchers to test the state of the DOM",
+        "path": "/testing-library/jest-dom"
+      },
+      {
+        "title": "reduxjs/redux-thunk: Thunk middleware for Redux",
+        "path": "/reduxjs/redux-thunk"
+      },
+      {
+        "title": "timarney/react-app-rewired: Override create-react-app webpack configs without ejecting",
+        "path": "/timarney/react-app-rewired"
+      },
+      {
+        "title": "create-react-app/CHANGELOG.md at master · facebook/create-react-app",
+        "path": "/facebook/create-react-app/blob/master/CHANGELOG.md"
+      },
+      {
+        "title": "reduxjs/redux-toolkit: The official, opinionated, batteries-included toolset for efficient Redux development",
+        "path": "/reduxjs/redux-toolkit"
+      }
+    ]
+  },
+  {
+    "domain": "https://codesandbox.io",
+    "favIconUrl": "https://codesandbox.io/favicon.ico",
+    "pages": [
+      {
+        "title": "Ant Design - react date picker - CodeSandbox",
+        "path": "/s/3j14vv87p"
+      },
+      {
+        "title": "floating diamonds - CodeSandbox",
+        "path": "/s/prb9t"
+      },
+      {
+        "title": "new - CodeSandbox",
+        "path": "/s/github/gschier/wallpaper-framer"
+      },
+      {
+        "title": "react-photo-gallery basic (columns) - CodeSandbox",
+        "path": "/s/r09k1xj614"
+      },
+      {
+        "title": "tannerlinsley/react-table: virtualized-rows - CodeSandbox",
+        "path": "/s/github/tannerlinsley/react-table/tree/master/examples/virtualized-rows"
+      }
+    ]
+  }
+]

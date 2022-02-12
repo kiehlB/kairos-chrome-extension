@@ -1,4 +1,4 @@
 export type ValidationStatus = {
-  description: string
-  isValid: boolean
-}
+  description: string;
+  isValid: boolean;
+};

@@ -1,5 +1,5 @@
-import {DatabaseConnection} from './indexedDb'
+import { MockDatabaseConnection } from './mock';
 
-export function InitDatabaseService(): any {
-  return new DatabaseConnection()
+export function InitDatabaseService() {
+  return new MockDatabaseConnection();
 }
