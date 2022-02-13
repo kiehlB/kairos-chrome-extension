@@ -8,7 +8,6 @@ export class MockDatabaseConnection {
   public constructor() {
     const { activity, domain } = generateRecords();
 
-    console.log(activity);
     this.activityRecords = activity;
     this.domainRecords = domain;
   }

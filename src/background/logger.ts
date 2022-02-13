@@ -1,4 +1,4 @@
-import { InitDatabaseService } from '../lib/db';
+ 
 import { ActivityService } from '../lib/db/types';
 import { RawActivity } from '../lib/db/models/activity';
 import { InitIdleService } from './Idle';
@@ -18,6 +18,7 @@ import {
   WindowsService,
 } from './Windows/windows';
 import { IdleTypes, IdleState, IdleStateOnStateChangedFn } from './Idle/idle';
+import { InitDatabaseService } from '../lib/db';
 
 export enum EventType {
   IDLE_ON_STATE_CHANGED = 'IDLE_ON_STATE_CHANGED',
