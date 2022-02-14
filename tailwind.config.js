@@ -109,9 +109,11 @@ module.exports = {
         side: '16.375rem',
         'side-1': '14.75rem',
         main: '92.25rem',
+        card: '22.40625rem',
       },
       height: {
         hero: 'min(60rem, calc(100vh - 10rem))', // screen - navbar height (lg: only)
+        card: '',
       },
       maxHeight: {
         '50vh': '50vh', // max height for medium size hero images
@@ -333,4 +335,3 @@ module.exports = {
   },
   plugins: [],
 };
-

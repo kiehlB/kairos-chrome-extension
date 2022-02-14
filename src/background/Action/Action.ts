@@ -10,6 +10,7 @@ export interface ActionTypes {
 }
 
 export interface ChromeActionAPI {
+  // http://definitelytyped.org/docs/chrome--chrome/index.html check later
   onClicked: any;
 }
 

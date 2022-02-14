@@ -1,5 +1,5 @@
-import { MockDatabaseConnection } from './mock';
+import { MockDatabase } from './mock';
 
 export function InitDatabaseService() {
-  return new MockDatabaseConnection();
+  return new MockDatabase();
 }

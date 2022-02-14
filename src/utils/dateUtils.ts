@@ -1,7 +1,7 @@
 import { DateTime, Duration, DurationObject } from 'luxon';
-import * as d3 from 'd3';
+import { TimeRange } from '../lib/db/models/time';
 
-export function getStartOfDay(timestamp: number = Date.now()): number {
+export function setMidnight(timestamp: number = Date.now()): number {
   return new Date(timestamp).setHours(0, 0, 0, 0);
 }
 
@@ -9,18 +9,31 @@ export function minusDays(timestamp: number, days: number): number {
   return DateTime.fromMillis(timestamp).minus({ days }).valueOf();
 }
 
-export function formatDateString(timestamp: number) {
-  return d3.timeFormat('%Y-%m-%d')(new Date(timestamp));
-}
-
-export function getDayCount(startTime: number, endTime: number): number {
-  return d3.timeDay.count(new Date(startTime), new Date(endTime)) + 1;
-}
-
-export function getDayOfWeek(timestamp: number): number {
-  return new Date(timestamp).getDay();
-}
-
 export function getEndOfDay(timestamp: number = Date.now()): number {
   return new Date(timestamp).setHours(23, 59, 59, 999);
+}
+
+export function milliseconds(duration: DurationObject) {
+  return Duration.fromObject(duration).as('milliseconds');
+}
+
+export function extendTimeRange(
+  timeRange: TimeRange,
+  durationObject: DurationObject
+) {
+  const durationInMs = milliseconds(durationObject);
+  const end = timeRange.end || getEndOfDay();
+
+  if (
+    timeRange.start !== null &&
+    durationInMs !== 0 &&
+    end - timeRange.start < durationInMs
+  ) {
+    return {
+      start: timeRange.start === null ? null : setMidnight(end - durationInMs),
+      end: timeRange.end === null ? null : end,
+    };
+  }
+
+  return timeRange;
 }

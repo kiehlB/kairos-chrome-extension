@@ -39,7 +39,6 @@ const Enter: React.FC = () => {
             */
       const allRects = selection.selectAll('rects').data(data).enter();
       //selection of nodes that needs to be enetered
-      console.log(allRects);
 
       allRects
         .append('rect')

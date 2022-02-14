@@ -1,9 +1,11 @@
 import { combineReducers } from '@reduxjs/toolkit';
-import Activity_Reducer from './activity/activity';
+
+import { reducer } from './activity/activity';
+import { createHashHistory } from 'history';
 import store from './store';
 
 const rootReducer = combineReducers({
-  activity: Activity_Reducer,
+  activity: reducer,
 });
 
 export type RootState = ReturnType<typeof store.getState>;

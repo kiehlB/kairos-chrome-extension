@@ -1,9 +1,6 @@
 import classNames from 'classnames';
-import { IssueIcon, Tooltip } from 'evergreen-ui';
-import React from 'react';
-import { BASE_SIZE } from '../../lib/styles/constants';
 
-import './styles.scss';
+import React from 'react';
 
 interface CardProps {
   title: string;
@@ -15,21 +12,11 @@ interface CardProps {
 }
 
 const Card = (props: CardProps) => (
-  <div>
+  <div className='border-2 w-card h-40 mt-12'>
     <div>
       <div>
         <h2>{props.title}</h2>
-        {props.info && (
-          <Tooltip
-            content={props.info}
-            statelessProps={{ className: 'card__header--tooltip' }}
-          >
-            <IssueIcon
-              size={BASE_SIZE * 1.5}
-              style={{ transform: 'rotate(180deg)' }}
-            />
-          </Tooltip>
-        )}
+        {props.info && <></>}
       </div>
       {props.description && (
         <div>

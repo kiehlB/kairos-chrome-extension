@@ -1,4 +1,3 @@
- 
 import { ActivityService } from '../lib/db/types';
 import { RawActivity } from '../lib/db/models/activity';
 import { InitIdleService } from './Idle';

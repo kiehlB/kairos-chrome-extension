@@ -4,9 +4,9 @@ import {
   createSelector,
   ThunkAction,
 } from '@reduxjs/toolkit';
+import { MockDatabase } from '../../lib/db/mock';
 import { Activity, Domain } from '../../lib/db/models/activity';
 import { TimeRange } from '../../lib/db/models/time';
-import { AppThunk, AppDispatch } from '../store';
 
 export interface Activitytate {
   records: Activity[];
@@ -33,6 +33,29 @@ const ActivitySlice = createSlice({
   },
 });
 
-export const {} = ActivitySlice.actions;
+export const { setDomains, setRecordsTimeRange } = ActivitySlice.actions;
 
-export default ActivitySlice.reducer;
+export const actions = {
+  ...ActivitySlice.actions,
+};
+
+export const reducer = ActivitySlice.reducer;
+
+export const loadRecords =
+  (
+    onSuccess?: () => void,
+    onError?: (error: Error) => void,
+    options: { forceReload: boolean } = { forceReload: false }
+  ) =>
+  async (dispatch, getState) => {
+    const databaseService = new MockDatabase();
+
+    console.log('hello from store');
+
+    const state = getState();
+
+    const [allDomains, totalTimeRange] = await Promise.all([
+      databaseService.fetchAllActivityDomains(),
+      databaseService.fetchActivityTimeRange(),
+    ]);
+  };

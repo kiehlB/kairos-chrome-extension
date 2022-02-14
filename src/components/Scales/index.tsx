@@ -73,9 +73,6 @@ const Scales: React.FC = () => {
     if (!selection) {
       setSelection(select(svgRef.current));
     } else {
-      console.log(y(1350));
-      console.log(y(257));
-      console.log(x('bar'));
       selection
         .selectAll('rects')
         .data(data)

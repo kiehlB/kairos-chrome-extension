@@ -9,9 +9,17 @@ import {
 } from 'react-feather';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './page/home';
+import { useEffect } from 'react';
+import { loadRecords } from './store/activity/activity';
 
 function App() {
   const search = '';
+
+  useEffect(() => {
+    loadRecords(undefined, (error) => {
+      console.log('Fail to load records');
+    });
+  }, [loadRecords]);
 
   return (
     <>

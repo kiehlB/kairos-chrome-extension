@@ -5,9 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import store from './store/store';
-import { InitDatabaseService } from './lib/db';
 
-InitDatabaseService();
 ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>

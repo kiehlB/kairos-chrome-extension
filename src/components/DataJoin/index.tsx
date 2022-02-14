@@ -41,7 +41,6 @@ const DataJoin: React.FC = () => {
     } else {
       //append returns new d3 selection based on the appended element
       const oneRect = selectionOne.append('rect');
-      console.log(oneRect);
 
       // joining data to a single element
       oneRect
@@ -55,7 +54,6 @@ const DataJoin: React.FC = () => {
     } else {
       //joining data to multiple elements
       const allRects = selectionTwo.selectAll('rect');
-      console.log(allRects);
 
       //joins data to multiple elements
       allRects
