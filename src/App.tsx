@@ -24,8 +24,8 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <div className=' h-full flex'>
-          <div className='w-side'>
+        <div className='h-full flex'>
+          <div className='w-side m2xl:w-full'>
             <Navbar
               primaryItems={[
                 {
@@ -59,9 +59,7 @@ function App() {
           </div>
 
           <Routes>
-            <Route>
-              <Route index element={<Home />} />
-            </Route>
+            <Route>{/* <Route index element={<Home />} /> */}</Route>
           </Routes>
         </div>
       </BrowserRouter>

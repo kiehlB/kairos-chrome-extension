@@ -20,13 +20,21 @@ function Home() {
   const dispatch = useDispatch();
   dispatch(loadRecords());
 
-  const TotalUsage = () => {
+  const TotalUsage = ({ className, sort }) => {
     const title = 'Total Usage';
     const info = 'Total time spent on the website';
     const footer = 'blah blah';
 
     return (
-      <Card title={title} info={info} footer={footer} body={<div>hello</div>} />
+      <div className={className}>
+        <Card
+          sort={sort}
+          title={title}
+          info={info}
+          footer={footer}
+          body={<div>hello</div>}
+        />
+      </div>
     );
   };
 
@@ -38,11 +46,34 @@ function Home() {
       <AppLayout
         first={
           <AppLayout.First>
-            <div className='w-full border-2 flex px-16 justify-between '>
-              <TotalUsage />
-              <TotalUsage />
-              <TotalUsage />
-              <TotalUsage />
+            <div className='flex mt-4 px-8 h-single'>
+              <TotalUsage
+                className='border-2 w-card mr-4 shrink grow'
+                sort='single'
+              />
+              <TotalUsage
+                className='border-2 w-card mr-4 shrink grow'
+                sort='single'
+              />
+              <TotalUsage
+                className='border-2 w-card mr-4 shrink grow'
+                sort='single'
+              />
+              <TotalUsage
+                className='border-2 w-card mr-4 shrink grow'
+                sort='single'
+              />
+            </div>
+
+            <div className='flex border-2 h-card px-8 mt-4'>
+              <TotalUsage className='' sort=' ' />
+              <TotalUsage className='' sort=' ' />
+            </div>
+
+            <div className='flex border-2 h-card px-8 mt-4'>
+              <TotalUsage className='' sort=' ' />
+              <TotalUsage className='' sort=' ' />
+              <TotalUsage className='' sort=' ' />
             </div>
           </AppLayout.First>
         }

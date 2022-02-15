@@ -17,25 +17,22 @@ export type HeaderProps = {
 function Header({ children }: HeaderProps) {
   const [isDarkMode, setIsDarkMode] = useState(() => false);
   return (
-    <div className='flex flex-col w-full h-36 '>
-      <div className='w-full flex h-20 items-center border-b-2 px-16 justify-between'>
+    <div className='border-b-2'>
+      <div className='flex h-20 items-center  px-8 justify-between flex-wrap '>
         <div className='flex items-center'>
+          <div className='text-xl font-bold text-dark-m mr-4'>
+            Analytics Brower History
+          </div>
           <DarkModeToggle
             onChange={setIsDarkMode}
             checked={isDarkMode}
             size={80}
           />
-          <div className='text-greyTint-m ml-4 text-sm font-extralight'>
-            Light
-          </div>
         </div>
         <section className='flex  items-center'>
-          <div>
-            <Search color='#70768C' size='18' />
-          </div>
-          <div>
-            <Bell color='#70768C' size='18' />
-          </div>
+          <div>domain picker</div>
+          <div>date picker</div>
+
           <div className='border-r-2   h-10'></div>
           <div>
             <img
@@ -50,16 +47,6 @@ function Header({ children }: HeaderProps) {
           </section>
         </section>
       </div>
-      <section className='border-b-2 h-16 flex items-center px-16 justify-between'>
-        <div className='text-xl font-bold text-dark-m'>
-          Analytics Brower History
-        </div>
-
-        <div className='flex'>
-          <div>domain picker</div>
-          <div>date picker</div>
-        </div>
-      </section>
     </div>
   );
 }

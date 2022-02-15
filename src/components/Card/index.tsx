@@ -9,11 +9,12 @@ interface CardProps {
   description?: string;
   footer?: React.ReactNode;
   info?: string;
+  sort?: string;
 }
 
 const Card = (props: CardProps) => (
-  <div className='border-2 w-card h-40 mt-12'>
-    <div>
+  <div className={`${props.sort == 'single' ? ' ' : ' '}`}>
+    <div className={`${props.sort == 'single' ? '' : ''}`}>
       <div>
         <h2>{props.title}</h2>
         {props.info && <></>}
@@ -23,9 +24,12 @@ const Card = (props: CardProps) => (
           <p>{props.description}</p>
         </div>
       )}
+
+      <div className=''>
+        {props.body && <div>{props.body}</div>}
+        {props.footer && <div>{props.footer}</div>}
+      </div>
     </div>
-    {props.body && <div>{props.body}</div>}
-    {props.footer && <div>{props.footer}</div>}
   </div>
 );
 

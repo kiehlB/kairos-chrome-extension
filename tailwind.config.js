@@ -28,9 +28,9 @@ module.exports = {
       si: '768px',
       md: '900px',
       lg: '1025px',
-      xxl: '1200px',
+      xxl: '1340px',
       xl: '1500px', // this is the "design resolution",
-      m2xl: { max: '1440px' },
+      m2xl: { max: '1340px' },
       mxl: { max: '1200px' },
       mlg: { max: '1024px' },
       mmd: { max: '768px' },
@@ -91,6 +91,7 @@ module.exports = {
         '8xl': '96rem',
         side: '16.75rem',
         main: '71.25rem',
+        card: '22.40625rem',
       },
       fontSize: {
         xl: '1.375rem', // 22px
@@ -109,11 +110,13 @@ module.exports = {
         side: '16.375rem',
         'side-1': '14.75rem',
         main: '92.25rem',
-        card: '22.40625rem',
+        card: '24.15625rem',
+        mcard: 'calc(50% - 16px)',
       },
       height: {
         hero: 'min(60rem, calc(100vh - 10rem))', // screen - navbar height (lg: only)
-        card: '',
+        card: '20rem',
+        single: '7.4625rem',
       },
       maxHeight: {
         '50vh': '50vh', // max height for medium size hero images

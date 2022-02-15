@@ -8,11 +8,13 @@ export interface NavbarItemProps extends Pick<NavLinkProps, 'to'> {
 export const NavbarItem = (props: NavbarItemProps) => {
   return (
     <NavLink
-      className='flex px-4 pt-6 items-center text-greyTint-m font-medium'
+      className='flex px-4 pt-6 items-center text-greyTint-m font-medium m2xl:px-0 m2xl:pt-0 m2xl:flex m2xl:p-6'
       to={props.to}
     >
-      {props.icon}
-      <span className='ml-2'>{props.text}</span>
+      <div className='flex items-center m2xl:w-full m2xl:flex-col m2xl:justify-center m2xl:items-center'>
+        <div>{props.icon}</div>
+        <span className='ml-2 m2xl:ml-0'>{props.text}</span>
+      </div>
     </NavLink>
   );
 };
