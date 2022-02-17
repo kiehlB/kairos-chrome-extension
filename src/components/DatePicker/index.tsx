@@ -13,6 +13,8 @@ import {
   IconButtonProps,
 } from 'evergreen-ui';
 import DayPicker from '../DayPicker';
+import { useDispatch } from 'react-redux';
+import { setSelectedTimeRange } from '../../store/router/actions';
 
 export const BASE_SIZE = 8;
 
@@ -100,8 +102,6 @@ interface DateRangePickerProps
     | 'tabIndex'
     | 'toMonth'
   > {
-  onChange: (range: TimeRange | null) => void;
-
   className?: string;
   defaultEndTime?: number;
   defaultStartTime?: number;
@@ -111,12 +111,6 @@ interface DateRangePickerProps
   value?: TimeRange;
 }
 
-/**
- * Formats a timestamp to a date string that conforms to `MMM DD, YYYY` format
- *
- * @param timestamp - timestamp in milliseconds
- * @returns formatted date string
- */
 function formatDateString(date: Date) {
   return d3.timeFormat('%b %d, %Y')(date);
 }
@@ -126,12 +120,13 @@ const DateRangePicker = ({
   defaultEndTime,
   defaultStartTime,
   disabled,
-  onChange,
   position,
   ranges,
   value,
   ...otherProps
 }: DateRangePickerProps) => {
+  const dispatch = useDispatch();
+
   let initialFrom: Date | null = null;
   let initialTo: Date | null = null;
   if (value) {
@@ -140,8 +135,6 @@ const DateRangePicker = ({
     initialFrom = start ? new Date(start) : null;
     initialTo = end ? new Date(end) : null;
   }
-
-  console.log(value);
 
   const [from, setFrom] = useState<Date | null>(initialFrom);
   const [to, setTo] = useState<Date | null>(initialTo);
@@ -158,7 +151,12 @@ const DateRangePicker = ({
       const nextTo = from !== null && day > from ? day : from;
       if (nextFrom && nextTo) {
         options.closePopover();
-        onChange({ start: nextFrom.valueOf(), end: nextTo.valueOf() });
+        dispatch(
+          setSelectedTimeRange({
+            start: nextFrom.valueOf(),
+            end: nextTo.valueOf(),
+          })
+        );
       }
     }
   };
@@ -171,7 +169,8 @@ const DateRangePicker = ({
     if (range) {
       setIsSelectingFirstDay(true);
       options.closePopover();
-      onChange(range);
+
+      dispatch(setSelectedTimeRange(range));
     }
   };
 
@@ -184,9 +183,6 @@ const DateRangePicker = ({
     modifiers = start < end ? { start, end } : { start: end, end: start };
     selectedDays = [start, { from: start, to: end }];
   }
-
-  console.log(start);
-  console.log(end);
 
   return (
     <Popover

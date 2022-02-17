@@ -67,3 +67,15 @@ export function getTimestampFromDateString(dateString: string) {
 export function formatDateString(timestamp: number) {
   return d3.timeFormat('%Y-%m-%d')(new Date(timestamp));
 }
+
+
+export function isWithinTimeRange(a: TimeRange, b: TimeRange) {
+  if (a.start !== null && (b.start === null || a.start > b.start)) {
+    return false;
+  }
+  if (a.end !== null && (b.end === null || a.end < b.end)) {
+    return false;
+  }
+
+  return true;
+}

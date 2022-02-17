@@ -19,7 +19,7 @@ import {
   getSearchParamsSelectedTimeRange,
 } from './selectors';
 
-const setSelectedDomain =
+export const setSelectedDomain =
   (domain: string | null): ThunkAction<void, RootState, null, Action<string>> =>
   async (dispatch, getState) => {
     const state = getState();
@@ -35,7 +35,7 @@ const setSelectedDomain =
     dispatch(push(`?${newSearchParams.toString()}`));
   };
 
-const setSelectedTimeRange =
+export const setSelectedTimeRange =
   (
     timeRange: TimeRange | null
   ): ThunkAction<void, RootState, null, Action<string>> =>

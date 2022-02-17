@@ -11,22 +11,28 @@ import { Switch, Route, Redirect, Router } from 'react-router';
 import Home from './page/home';
 import { useEffect } from 'react';
 import { loadRecords } from './store/activity/activity';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { getAllDomains } from './store/activity/selectors';
 import { RootState } from './store/store';
+import {
+  getSearchParamsSelectedDomain,
+  getSearchParamsSelectedTimeRange,
+} from './store/router/selectors';
 
 function App() {
   const search = '';
+  const dispatch = useDispatch();
+  const selectedDomain = useSelector((state: RootState) =>
+    getSearchParamsSelectedDomain(state)
+  );
+  const selectedTimeRange = useSelector((state: RootState) =>
+    getSearchParamsSelectedTimeRange(state)
+  );
 
-  // useEffect(() => {
-  //   loadRecords(undefined, (error) => {
-  //     console.log('Fail to load records');
-  //   });
-  // }, []);
-  console.log('hfdas');
-
-  // console.log(getSavePost);
+  useEffect(() => {
+    dispatch(loadRecords());
+  }, [loadRecords, selectedDomain, selectedTimeRange]);
 
   return (
     <>

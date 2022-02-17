@@ -9,6 +9,7 @@ import Axis from '../../components/Chart';
 import { CountUp } from '../../components/Count';
 import DataJoin from '../../components/DataJoin';
 import DateRangePicker from '../../components/DatePicker';
+import { ActivityDateRangePicker } from '../../components/DateRange';
 import Enter from '../../components/Enter';
 import Selection from '../../components/Selection/indext';
 import Update from '../../components/Update';
@@ -17,9 +18,6 @@ import { TimeRange } from '../../lib/db/models/time';
 import { loadRecords } from '../../store/activity/activity';
 
 function Home() {
-  const dispatch = useDispatch();
-  dispatch(loadRecords());
-
   const TotalUsage = ({ className, sort }) => {
     const title = 'Total Usage';
     const info = 'Total time spent on the website';
