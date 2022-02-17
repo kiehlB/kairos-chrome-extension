@@ -21,7 +21,7 @@ const Navbar = ({
   <nav className='transition-all border-r border-grey-m w-side h-full m2xl:w-20'>
     <ul>
       <li>
-        <div className='flex w-20  p-6 justify-center xxl:hidden'>
+        <div className='flex w-20  p-6 mb-2 justify-center xxl:hidden'>
           <img alt='logo2' src={logo2} width={32} height={32} />
         </div>
         <div className=' flex p-6 items-center  justify-between m2xl:hidden'>

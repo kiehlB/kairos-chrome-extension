@@ -4,13 +4,18 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import store from './store/store';
-
+import store, { history } from './store/store';
+import { ConnectedRouter } from 'connected-react-router';
+import { HashRouter } from 'react-router-dom';
 ReactDOM.render(
   <Provider store={store}>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
+    <ConnectedRouter history={history}>
+      <HashRouter basename=''>
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      </HashRouter>
+    </ConnectedRouter>
   </Provider>,
   document.getElementById('root')
 );

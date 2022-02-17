@@ -1,5 +1,6 @@
 import { DateTime, Duration, DurationObject } from 'luxon';
 import { TimeRange } from '../lib/db/models/time';
+import * as d3 from 'd3';
 
 export function setMidnight(timestamp: number = Date.now()): number {
   return new Date(timestamp).setHours(0, 0, 0, 0);
@@ -36,4 +37,33 @@ export function extendTimeRange(
   }
 
   return timeRange;
+}
+
+export function isValidDateString(s: string) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(s)) {
+    return false;
+  }
+
+  const date = new Date(s);
+  if (Number.isNaN(date.valueOf())) {
+    return false;
+  }
+
+  const [, , day] = s.split('-');
+  if (date.getUTCDate() !== Number.parseInt(day)) {
+    return false;
+  }
+
+  return true;
+}
+
+export function getTimestampFromDateString(dateString: string) {
+  const date = new Date(dateString);
+  const offsetInMs = date.getTimezoneOffset() * 60 * 1000;
+
+  return date.getTime() + offsetInMs;
+}
+
+export function formatDateString(timestamp: number) {
+  return d3.timeFormat('%Y-%m-%d')(new Date(timestamp));
 }

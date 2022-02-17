@@ -46,7 +46,7 @@ function Home() {
       <AppLayout
         first={
           <AppLayout.First>
-            <div className='flex mt-4 px-8 h-single'>
+            {/* <div className='flex mt-4 px-8 h-single'>
               <TotalUsage
                 className='border-2 w-card mr-4 shrink grow'
                 sort='single'
@@ -74,7 +74,7 @@ function Home() {
               <TotalUsage className='' sort=' ' />
               <TotalUsage className='' sort=' ' />
               <TotalUsage className='' sort=' ' />
-            </div>
+            </div> */}
           </AppLayout.First>
         }
         second={<AppLayout.Second></AppLayout.Second>}

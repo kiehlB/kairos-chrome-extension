@@ -9,6 +9,7 @@ import {
   Search,
   Bell,
 } from 'react-feather';
+import DayPicker from '../DayPicker';
 
 export type HeaderProps = {
   children?: React.ReactNode;
@@ -31,7 +32,7 @@ function Header({ children }: HeaderProps) {
         </div>
         <section className='flex  items-center'>
           <div>domain picker</div>
-          <div>date picker</div>
+          <div>{/* <DayPicker /> */}</div>
 
           <div className='border-r-2   h-10'></div>
           <div>
