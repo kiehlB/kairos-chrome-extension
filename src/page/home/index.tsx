@@ -45,10 +45,19 @@ function Home() {
         first={
           <AppLayout.First>
             <div className='flex mt-4 px-8 h-single'>
-              <TotalUsage className='border-2 w-card mr-4   ' sort='single' />
-              <TotalUsage className='border-2 w-card mr-4  ' sort='single' />
-              <TotalUsage className='border-2 w-card mr-4  ' sort='single' />
-              <TotalUsage className='border-2 w-card' sort='single' />
+              <TotalUsage
+                className='border-2   mr-4  shrink grow'
+                sort='single'
+              />
+              <TotalUsage
+                className='border-2   mr-4 shrink grow'
+                sort='single'
+              />
+              <TotalUsage
+                className='border-2   mr-4 shrink grow'
+                sort='single'
+              />
+              <TotalUsage className='border-2   shrink grow' sort='single' />
             </div>
           </AppLayout.First>
         }
