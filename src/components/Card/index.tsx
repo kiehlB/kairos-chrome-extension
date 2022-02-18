@@ -13,11 +13,13 @@ interface CardProps {
 }
 
 const Card = (props: CardProps) => (
-  <div className={`${props.sort == 'single' ? ' ' : ' '}`}>
-    <div className={`${props.sort == 'single' ? '' : ''}`}>
+  <div className={`${props.sort == 'single' ? 'flex   h-full p-4' : ' '}`}>
+    <div
+      className={`${props.sort == 'single' ? '  w-full flex flex-col' : ''}`}
+    >
       <div>
         <h2>{props.title}</h2>
-        {props.info && <></>}
+        {/* {props.info && <>{props.info}</>} */}
       </div>
       {props.description && (
         <div>
@@ -25,10 +27,12 @@ const Card = (props: CardProps) => (
         </div>
       )}
 
-      <div className=''>
-        {props.body && <div>{props.body}</div>}
-        {props.footer && <div>{props.footer}</div>}
-      </div>
+      {props.body && (
+        <div className={`${props.sort == 'single' ? 'mt-6' : ''}`}>
+          {props.body}
+        </div>
+      )}
+      {props.footer && <div>{props.footer}</div>}
     </div>
   </div>
 );

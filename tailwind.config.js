@@ -112,6 +112,8 @@ module.exports = {
         main: '92.25rem',
         card: '24.15625rem',
         mcard: 'calc(50% - 16px)',
+        scard: '49.3125rem',
+        tcard: '32.56rem',
       },
       height: {
         hero: 'min(60rem, calc(100vh - 10rem))', // screen - navbar height (lg: only)

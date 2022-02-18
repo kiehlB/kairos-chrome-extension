@@ -44,39 +44,31 @@ function Home() {
       <AppLayout
         first={
           <AppLayout.First>
-            {/* <div className='flex mt-4 px-8 h-single'>
-              <TotalUsage
-                className='border-2 w-card mr-4 shrink grow'
-                sort='single'
-              />
-              <TotalUsage
-                className='border-2 w-card mr-4 shrink grow'
-                sort='single'
-              />
-              <TotalUsage
-                className='border-2 w-card mr-4 shrink grow'
-                sort='single'
-              />
-              <TotalUsage
-                className='border-2 w-card mr-4 shrink grow'
-                sort='single'
-              />
+            <div className='flex mt-4 px-8 h-single'>
+              <TotalUsage className='border-2 w-card mr-4   ' sort='single' />
+              <TotalUsage className='border-2 w-card mr-4  ' sort='single' />
+              <TotalUsage className='border-2 w-card mr-4  ' sort='single' />
+              <TotalUsage className='border-2 w-card' sort='single' />
             </div>
-
-            <div className='flex border-2 h-card px-8 mt-4'>
-              <TotalUsage className='' sort=' ' />
-              <TotalUsage className='' sort=' ' />
-            </div>
-
-            <div className='flex border-2 h-card px-8 mt-4'>
-              <TotalUsage className='' sort=' ' />
-              <TotalUsage className='' sort=' ' />
-              <TotalUsage className='' sort=' ' />
-            </div> */}
           </AppLayout.First>
         }
-        second={<AppLayout.Second></AppLayout.Second>}
-        third={<AppLayout.Third></AppLayout.Third>}
+        second={
+          <AppLayout.Second>
+            {/* <div className='flex h-card px-8 mt-4'>
+              <TotalUsage className='border-2 w-scard mr-4 ' sort='second' />
+              <TotalUsage className='border-2 w-scard' sort='second' />
+            </div> */}
+          </AppLayout.Second>
+        }
+        third={
+          <AppLayout.Third>
+            {/* <div className='flex h-card px-8 mt-4'>
+              <TotalUsage className='border-2 w-tcard mr-4' sort='thrid' />
+              <TotalUsage className='border-2 w-tcard mr-4' sort=' ' />
+              <TotalUsage className='border-2 w-tcard' sort=' ' />
+            </div> */}
+          </AppLayout.Third>
+        }
       />
     </div>
   );
