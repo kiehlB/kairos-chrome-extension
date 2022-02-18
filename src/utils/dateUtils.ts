@@ -68,7 +68,6 @@ export function formatDateString(timestamp: number) {
   return d3.timeFormat('%Y-%m-%d')(new Date(timestamp));
 }
 
-
 export function isWithinTimeRange(a: TimeRange, b: TimeRange) {
   if (a.start !== null && (b.start === null || a.start > b.start)) {
     return false;
@@ -78,4 +77,42 @@ export function isWithinTimeRange(a: TimeRange, b: TimeRange) {
   }
 
   return true;
+}
+
+export function getHourOfWeek(timestamp: number): {
+  hour: number;
+  day: number;
+} {
+  const time = new Date(timestamp);
+  return {
+    hour: time.getHours(),
+    day: time.getDay(),
+  };
+}
+
+export function getDayCount(startTime: number, endTime: number): number {
+  return d3.timeDay.count(new Date(startTime), new Date(endTime)) + 1;
+}
+
+export function getDayOfWeekCount(
+  dayOfWeek: number,
+  startTime: number,
+  endTime: number
+): number {
+  const startTimeDayOfWeek = new Date(startTime).getDay();
+  const dayOfWeekOffset = (dayOfWeek - startTimeDayOfWeek + 7) % 7;
+  const dayRange = getDayCount(startTime, endTime) - 1;
+
+  if (dayRange <= dayOfWeekOffset) {
+    return 0;
+  }
+  return Math.max(1, Math.ceil((dayRange - dayOfWeekOffset) / 7));
+}
+
+export function getDayOfWeek(timestamp: number): number {
+  return new Date(timestamp).getDay();
+}
+
+export function addDays(timestamp: number, days: number): number {
+  return DateTime.fromMillis(timestamp).plus({ days }).valueOf();
 }

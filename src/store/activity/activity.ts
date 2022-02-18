@@ -31,6 +31,7 @@ export interface ActivityState {
   loadingRecordsSuccess: boolean | null;
   isInitialized: boolean;
   loadingRecordsError: Error | null;
+  isDeletingRecords: boolean;
 }
 export const SET_FOURWEEK: TimeRange = {
   start: minusDays(setMidnight(), 27), // 4 weeks
@@ -46,24 +47,24 @@ export const initialState = {
   loadingRecordsSuccess: null,
   isInitialized: false,
   loadingRecordsError: null,
+  deletingRecordsError: null,
+  deletingRecordsSuccess: null,
+  isDeletingRecords: false,
 };
 
 const ActivitySlice = createSlice({
   name: 'activity',
   initialState,
   reducers: {
-    setDomains(state, action: PayloadAction<Record<string, Domain>>) {
-      state.domains = action.payload;
+    deleteRecordsSuccess(state, action: PayloadAction<number[]>) {
+      state.records = state.records.filter(
+        (record) => !action.payload.includes(record.id as number)
+      );
+      state.isDeletingRecords = false;
+      state.deletingRecordsError = null;
+      state.deletingRecordsSuccess = true;
     },
-    setRecordsTimeRange(state, action: PayloadAction<TimeRange | null>) {
-      state.recordsTimeRange = action.payload;
-    },
-    setTotalTimeRange(state, action: PayloadAction<DefiniteTimeRange | null>) {
-      state.totalTimeRange = action.payload;
-    },
-    setSelectedTimeRange(state, action: PayloadAction<TimeRange>) {
-      state.selectedTimeRange = action.payload;
-    },
+
     getRecordsStart(state: ActivityState) {
       state.isLoadingRecords = true;
       state.loadingRecordsSuccess = null;
@@ -80,6 +81,18 @@ const ActivitySlice = createSlice({
       state.isLoadingRecords = false;
       state.loadingRecordsError = action.payload;
       state.loadingRecordsSuccess = false;
+    },
+    setDomains(state, action: PayloadAction<Record<string, Domain>>) {
+      state.domains = action.payload;
+    },
+    setRecordsTimeRange(state, action: PayloadAction<TimeRange | null>) {
+      state.recordsTimeRange = action.payload;
+    },
+    setSelectedTimeRange(state, action: PayloadAction<TimeRange>) {
+      state.selectedTimeRange = action.payload;
+    },
+    setTotalTimeRange(state, action: PayloadAction<DefiniteTimeRange | null>) {
+      state.totalTimeRange = action.payload;
     },
   },
 });
