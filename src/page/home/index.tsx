@@ -45,37 +45,28 @@ function Home() {
         first={
           <AppLayout.First>
             <div className='flex mt-4 px-8 h-single'>
-              <TotalUsage
-                className='border-2   mr-4  shrink grow'
-                sort='single'
-              />
-              <TotalUsage
-                className='border-2   mr-4 shrink grow'
-                sort='single'
-              />
-              <TotalUsage
-                className='border-2   mr-4 shrink grow'
-                sort='single'
-              />
-              <TotalUsage className='border-2   shrink grow' sort='single' />
+              <TotalUsage className='border-2 mr-4 w-mcard ' sort='single' />
+              <TotalUsage className='border-2 w-mcard mr-4' sort='single' />
+              <TotalUsage className='border-2 w-mcard mr-4' sort='single' />
+              <TotalUsage className='border-2 w-mcard' sort='single' />
             </div>
           </AppLayout.First>
         }
         second={
           <AppLayout.Second>
-            {/* <div className='flex h-card px-8 mt-4'>
-              <TotalUsage className='border-2 w-scard mr-4 ' sort='second' />
+            <div className='flex h-card px-8 mt-4'>
+              <TotalUsage className='border-2  mr-4 w-scard' sort='second' />
               <TotalUsage className='border-2 w-scard' sort='second' />
-            </div> */}
+            </div>
           </AppLayout.Second>
         }
         third={
           <AppLayout.Third>
-            {/* <div className='flex h-card px-8 mt-4'>
-              <TotalUsage className='border-2 w-tcard mr-4' sort='thrid' />
-              <TotalUsage className='border-2 w-tcard mr-4' sort=' ' />
-              <TotalUsage className='border-2 w-tcard' sort=' ' />
-            </div> */}
+            <div className='flex h-card px-8 mt-4'>
+              <TotalUsage className='border-2  mr-4 w-tcard' sort='thrid' />
+              <TotalUsage className='border-2  mr-4 w-tcard' sort=' ' />
+              <TotalUsage className='border-2  w-tcard' sort=' ' />
+            </div>
           </AppLayout.Third>
         }
       />
