@@ -32,10 +32,12 @@ function App() {
   const selectedTimeRange = useSelector((state: RootState) =>
     getSearchParamsSelectedTimeRange(state)
   );
-
+  const totalTime = useSelector((state: RootState) =>
+    getTotalDurationByDate(state)
+  );
   useEffect(() => {
     dispatch(loadRecords());
-  }, [loadRecords, selectedDomain, selectedTimeRange]);
+  }, [loadRecords, selectedDomain, selectedTimeRange, totalTime]);
 
   return (
     <>

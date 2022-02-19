@@ -38,7 +38,7 @@ const Transition = (xy) => {
     y: d.totalDuration,
   }));
 
-  const dimensions = { width: 795, height: 316 };
+  const dimensions = { width: 795, height: 315 };
   const svgRef = useRef<SVGSVGElement | null>(null);
   const [data, setData] = useState(initialData);
 
