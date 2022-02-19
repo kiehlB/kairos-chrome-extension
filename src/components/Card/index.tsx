@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-
+import { ArrowUpRight } from 'react-feather';
 import React from 'react';
 
 interface CardProps {
@@ -18,7 +18,7 @@ const Card = (props: CardProps) => (
       className={`${props.sort == 'single' ? '  w-full flex flex-col' : ''}`}
     >
       <div>
-        <h2>{props.title}</h2>
+        <h2 className='text-greyTint-m font-medium'>{props.title}</h2>
         {/* {props.info && <>{props.info}</>} */}
       </div>
       {props.description && (
@@ -29,10 +29,18 @@ const Card = (props: CardProps) => (
 
       {props.body && (
         <div className={`${props.sort == 'single' ? 'mt-6' : ''}`}>
-          {props.body}
+          <div className='flex items-center'>
+            <div>{props.body}</div>
+            <div className='flex items-center ml-1.5 text-grrenTint-m font-bold mt-3'>
+              145% <ArrowUpRight size={18} className='ml-0.5' />
+            </div>
+          </div>
         </div>
       )}
-      {props.footer && <div>{props.footer}</div>}
+
+      {props.footer && (
+        <div className='text-white-s font-medium'>{props.footer}</div>
+      )}
     </div>
   </div>
 );

@@ -59,13 +59,13 @@ const formatMilliseconds = (value: number) => {
 
 export const CountUp = ({ formattingUnitFn, ...props }: CountUpProps) => {
   return (
-    <span className={classNames('count-up', props.className)}>
-      <ReactCountUp className='count-up__value' {...props} />
+    <span>
+      <ReactCountUp {...props} className='text-dark-m font-bold text-3xl' />
       {formattingUnitFn && (
         <ReactCountUp
-          className='count-up__unit'
           {...props}
           formattingFn={formattingUnitFn}
+          className='ml-1 text-dark-m text-lg font-bold'
         />
       )}
     </span>

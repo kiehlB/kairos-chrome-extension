@@ -79,6 +79,7 @@ module.exports = {
         'small-text': '#3c4858',
 
         'white-m': '#F5F7F9',
+        'white-s': '#bec8d1',
         'grey-m': '#A0B5BB',
         'greyTint-m': '#70768C',
         'green-m': '#18A76C',
@@ -118,7 +119,7 @@ module.exports = {
       height: {
         hero: 'min(60rem, calc(100vh - 10rem))', // screen - navbar height (lg: only)
         card: '20rem',
-        single: '7.4625rem',
+        single: '9.1rem',
       },
       maxHeight: {
         '50vh': '50vh', // max height for medium size hero images

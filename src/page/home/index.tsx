@@ -9,13 +9,7 @@ import Axis from '../../components/Chart';
 import { CountUp, DurationCountUp } from '../../components/Count';
 import DataJoin from '../../components/DataJoin';
 import DateRangePicker, { TRANSITION_DELAY } from '../../components/DatePicker';
-import { ActivityDateRangePicker } from '../../components/DateRange';
-import Enter from '../../components/Enter';
-import Selection from '../../components/Selection/indext';
-import Update from '../../components/Update';
-import { generateRecords } from '../../lib/db/mock/utils';
-import { TimeRange } from '../../lib/db/models/time';
-import { loadRecords } from '../../store/activity/activity';
+
 import {
   getRatioToTotalDuration,
   getSelectedDomainRatioToTotalDuration,
