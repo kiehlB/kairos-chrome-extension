@@ -13,7 +13,10 @@ import { useEffect } from 'react';
 import { loadRecords } from './store/activity/activity';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { getAllDomains } from './store/activity/selectors';
+import {
+  getAllDomains,
+  getTotalDurationByDate,
+} from './store/activity/selectors';
 import { RootState } from './store/store';
 import {
   getSearchParamsSelectedDomain,

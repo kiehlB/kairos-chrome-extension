@@ -5,7 +5,10 @@ import { getDayCount, getEndOfDay, setMidnight } from '../../utils/dateUtils';
 import { selectors as routerSelectors } from '../router';
 import _ from 'lodash';
 import { RootState } from '../store';
-import { computeTotalDuration } from '../../utils/activityUtils';
+import {
+  computeTotalDuration,
+  computeTotalDurationByDate,
+} from '../../utils/activityUtils';
 import { MS_PER_DAY } from '../../lib/constants/time';
 
 export const getAllDomains = (state: RootState): Record<string, Domain> => {
@@ -130,5 +133,21 @@ export const getRatioToTotalDuration = createSelector(
       computeTotalDuration(records, effectiveTimeRange) /
       Math.max(dayCount * MS_PER_DAY, 1)
     );
+  }
+);
+
+export const getSelectedDomainTotalDurationByDate = createSelector(
+  [getSelectedDomainRecords, getEffectiveSelectedTimeRange],
+  (selectedDomainRecords, effectiveTimeRange) => {
+    return computeTotalDurationByDate(
+      selectedDomainRecords,
+      effectiveTimeRange
+    );
+  }
+);
+export const getTotalDurationByDate = createSelector(
+  [getRecords, getEffectiveSelectedTimeRange],
+  (records, effectiveTimeRange) => {
+    return computeTotalDurationByDate(records, effectiveTimeRange);
   }
 );

@@ -32,20 +32,27 @@ let initialData = [
     units: 60,
   },
 ];
-const Transition: React.FC = () => {
-  const dimensions = { width: 800, height: 500 };
+const Transition = (xy) => {
+  const newData = xy.xy.map((d) => ({
+    x: d.timestamp,
+    y: d.totalDuration,
+  }));
+
+  const dimensions = { width: 795, height: 316 };
   const svgRef = useRef<SVGSVGElement | null>(null);
   const [data, setData] = useState(initialData);
+
   const [name, setName] = useState('');
   const [unit, setUnit] = useState('');
 
+  console.log(newData);
   let x = scaleBand()
-    .domain(data.map((d) => d.name))
+    .domain(newData.map((d) => d.x))
     .range([0, dimensions.width])
     .padding(0.05);
 
   let y = scaleLinear()
-    .domain([0, max(data, (d) => d.units)!])
+    .domain([0, max(newData, (d: any) => d.y / 1000000) as any])
     .range([dimensions.height, 0]);
 
   const [selection, setSelection] = useState<null | Selection<
@@ -61,10 +68,10 @@ const Transition: React.FC = () => {
     } else {
       selection
         .selectAll('rect')
-        .data(data)
+        .data(newData)
         .enter()
         .append('rect')
-        .attr('x', (d) => x(d.name)!)
+        .attr('x', (d: any) => x(d.x)!)
         .attr('y', dimensions.height)
         .attr('width', x.bandwidth)
         .attr('fill', 'orange')
@@ -79,22 +86,22 @@ const Transition: React.FC = () => {
         .duration(700)
         .delay((_, i) => i * 100)
         .ease(easeElastic)
-        .attr('height', (d) => dimensions.height - y(d.units))
-        .attr('y', (d) => y(d.units));
+        .attr('height', (d: any) => dimensions.height - y(d.y / 1000000))
+        .attr('y', (d: any) => y(d.y / 1000000));
     }
   }, [selection]);
 
   useEffect(() => {
     if (selection) {
       x = scaleBand()
-        .domain(data.map((d) => d.name))
+        .domain(newData.map((d) => d.x))
         .range([0, dimensions.width])
         .padding(0.05);
       y = scaleLinear()
-        .domain([0, max(data, (d) => d.units)!])
+        .domain([0, max(newData, (d: any) => d.y / 1000000) as any])
         .range([dimensions.height, 0]);
 
-      const rects = selection.selectAll('rect').data(data);
+      const rects = selection.selectAll('rect').data(newData);
 
       rects
         .exit()
@@ -114,16 +121,16 @@ const Transition: React.FC = () => {
       rects
         .transition()
         .delay(300)
-        .attr('x', (d) => x(d.name)!)
-        .attr('y', (d) => y(d.units))
+        .attr('x', (d: any) => x(d.x)!)
+        .attr('y', (d: any) => y(d.y / 1000000))
         .attr('width', x.bandwidth)
-        .attr('height', (d) => dimensions.height - y(d.units))
+        .attr('height', (d: any) => dimensions.height - y(d.y / 100000))
         .attr('fill', 'orange');
 
       rects
         .enter()
         .append('rect')
-        .attr('x', (d) => x(d.name)!)
+        .attr('x', (d: any) => x(d.x)!)
         .attr('width', x.bandwidth)
         .attr('height', 0)
         .attr('y', dimensions.height)
@@ -131,35 +138,19 @@ const Transition: React.FC = () => {
         .delay(400)
         .duration(500)
         .ease(easeElastic)
-        .attr('height', (d) => dimensions.height - y(d.units))
-        .attr('y', (d) => y(d.units))
+        .attr('height', (d: any) => dimensions.height - y(d.y / 1000000))
+        .attr('y', (d: any) => y(d.y))
         .attr('fill', 'orange');
     }
-  }, [data]);
+  }, [newData]);
 
   /**
    * functions to help add and remove elements to show transitions
    */
-  const addData = () => {
-    const dataToAdd = {
-      name: randomstring.generate(),
-      units: Math.round(Math.random() * 80 + 20),
-    };
-    setData([...data, dataToAdd]);
-  };
-
-  const removeData = () => {
-    if (data.length === 0) {
-      return;
-    }
-    setData([...data.slice(0, data.length - 1)]);
-  };
 
   return (
     <>
       <svg ref={svgRef} width={dimensions.width} height={dimensions.height} />
-      <button onClick={addData}>Add Data</button>
-      <button onClick={removeData}>Remove Data</button>
     </>
   );
 };

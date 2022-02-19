@@ -16,62 +16,12 @@ import {
   getSelectedDomainTotalDuration,
 } from '../../store/activity/selectors';
 import { RootState } from '../../store/store';
-const TotalUsage = ({
-  className,
-  sort,
-  title,
-  info,
-  footer,
-  data,
-  formattingFn,
-  formattingUnitFn,
-}) => {
-  return (
-    <div className={className}>
-      <Card
-        sort={sort}
-        title={title}
-        info={info}
-        footer={footer}
-        body={
-          <div>
-            <CountUp
-              start={0}
-              end={data}
-              decimals={2}
-              duration={TRANSITION_DELAY / 1000}
-              formattingFn={formattingFn}
-              formattingUnitFn={formattingUnitFn}
-              preserveValue={true}
-              redraw={true}
-            />
-          </div>
-        }
-      />
-    </div>
-  );
-};
+import SecondCard from './secondCard';
+
+import SingleCard from './singleCard';
+import ThridCard from './thirdCard';
 
 function Home() {
-  const test = useSelector((state: RootState) =>
-    getSelectedDomainRatioToTotalDuration(state)
-  );
-
-  console.log(test);
-  const totalTime = useSelector((state: RootState) =>
-    getRatioToTotalDuration(state)
-  );
-
-  const totalTimeRangeCardInfo = {
-    title: 'Total Usage',
-    info: 'Total time spent on the website',
-    footer: 'vs. previous month',
-    sort: 'single',
-    data: totalTime * 100,
-    formattingFn: (d: number) => `${d.toFixed(2)}`,
-    formattingUnitFn: () => '%',
-  };
-
   return (
     <div className='w-full'>
       <AppLayout.MainNav>
@@ -80,115 +30,17 @@ function Home() {
       <AppLayout
         first={
           <AppLayout.First>
-            <div className='flex mt-4 px-8 h-single'>
-              <TotalUsage
-                className='border-2 mr-4 w-mcard '
-                sort='single'
-                title={totalTimeRangeCardInfo.title}
-                info={totalTimeRangeCardInfo.info}
-                footer={totalTimeRangeCardInfo.footer}
-                data={totalTimeRangeCardInfo.data}
-                formattingFn={totalTimeRangeCardInfo.formattingFn}
-                formattingUnitFn={totalTimeRangeCardInfo.formattingUnitFn}
-              />
-              <TotalUsage
-                className='border-2 mr-4 w-mcard '
-                sort='single'
-                title={totalTimeRangeCardInfo.title}
-                info={totalTimeRangeCardInfo.info}
-                footer={totalTimeRangeCardInfo.footer}
-                data={totalTimeRangeCardInfo.data}
-                formattingFn={totalTimeRangeCardInfo.formattingFn}
-                formattingUnitFn={totalTimeRangeCardInfo.formattingUnitFn}
-              />
-              <TotalUsage
-                className='border-2 mr-4 w-mcard '
-                sort='single'
-                title={totalTimeRangeCardInfo.title}
-                info={totalTimeRangeCardInfo.info}
-                footer={totalTimeRangeCardInfo.footer}
-                data={totalTimeRangeCardInfo.data}
-                formattingFn={totalTimeRangeCardInfo.formattingFn}
-                formattingUnitFn={totalTimeRangeCardInfo.formattingUnitFn}
-              />
-              <TotalUsage
-                className='border-2 w-mcard '
-                sort='single'
-                title={totalTimeRangeCardInfo.title}
-                info={totalTimeRangeCardInfo.info}
-                footer={totalTimeRangeCardInfo.footer}
-                data={totalTimeRangeCardInfo.data}
-                formattingFn={totalTimeRangeCardInfo.formattingFn}
-                formattingUnitFn={totalTimeRangeCardInfo.formattingUnitFn}
-              />
-            </div>
+            <SingleCard />
           </AppLayout.First>
         }
         second={
           <AppLayout.Second>
-            <div className='flex h-card px-8 mt-4'>
-              {/* <TotalUsage className='border-2  mr-4 w-scard' sort='second' />
-              <TotalUsage className='border-2 w-scard' sort='second' /> */}
-              <TotalUsage
-                className='border-2 w-scard mr-4'
-                sort='single'
-                title={totalTimeRangeCardInfo.title}
-                info={totalTimeRangeCardInfo.info}
-                footer={totalTimeRangeCardInfo.footer}
-                data={totalTimeRangeCardInfo.data}
-                formattingFn={totalTimeRangeCardInfo.formattingFn}
-                formattingUnitFn={totalTimeRangeCardInfo.formattingUnitFn}
-              />
-              <TotalUsage
-                className='border-2 w-scard '
-                sort='single'
-                title={totalTimeRangeCardInfo.title}
-                info={totalTimeRangeCardInfo.info}
-                footer={totalTimeRangeCardInfo.footer}
-                data={totalTimeRangeCardInfo.data}
-                formattingFn={totalTimeRangeCardInfo.formattingFn}
-                formattingUnitFn={totalTimeRangeCardInfo.formattingUnitFn}
-              />
-            </div>
+            <SecondCard />
           </AppLayout.Second>
         }
         third={
           <AppLayout.Third>
-            <div className='flex h-card px-8 mt-4'>
-              {/* <TotalUsage className='border-2  mr-4 w-tcard' sort='thrid' />
-              <TotalUsage className='border-2  mr-4 w-tcard' sort=' ' />
-              <TotalUsage className='border-2  w-tcard' sort=' ' /> */}
-              <TotalUsage
-                className='border-2 w-tcard mr-4'
-                sort='single'
-                title={totalTimeRangeCardInfo.title}
-                info={totalTimeRangeCardInfo.info}
-                footer={totalTimeRangeCardInfo.footer}
-                data={totalTimeRangeCardInfo.data}
-                formattingFn={totalTimeRangeCardInfo.formattingFn}
-                formattingUnitFn={totalTimeRangeCardInfo.formattingUnitFn}
-              />
-              <TotalUsage
-                className='border-2 w-tcard mr-4'
-                sort='single'
-                title={totalTimeRangeCardInfo.title}
-                info={totalTimeRangeCardInfo.info}
-                footer={totalTimeRangeCardInfo.footer}
-                data={totalTimeRangeCardInfo.data}
-                formattingFn={totalTimeRangeCardInfo.formattingFn}
-                formattingUnitFn={totalTimeRangeCardInfo.formattingUnitFn}
-              />
-              <TotalUsage
-                className='border-2 w-tcard '
-                sort='single'
-                title={totalTimeRangeCardInfo.title}
-                info={totalTimeRangeCardInfo.info}
-                footer={totalTimeRangeCardInfo.footer}
-                data={totalTimeRangeCardInfo.data}
-                formattingFn={totalTimeRangeCardInfo.formattingFn}
-                formattingUnitFn={totalTimeRangeCardInfo.formattingUnitFn}
-              />
-            </div>
+            <ThridCard />
           </AppLayout.Third>
         }
       />
