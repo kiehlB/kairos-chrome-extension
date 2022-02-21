@@ -31,6 +31,7 @@ import {
 import { Bar } from 'react-chartjs-2';
 
 import faker from '@faker-js/faker';
+import { TableChart } from '../../components/TableChart';
 
 const MAX_TICK_COUNT = 5;
 const MIN_STEP = MS_PER_HOUR;
@@ -84,14 +85,10 @@ function SecondCard() {
     <>
       <div className='flex h-card px-8 mt-4 border-2'>
         <div className='border-2 w-scard mr-4'>
-          <div>
-            <Bar options={options} data={data} width={780} height={300} />
-          </div>
+          <Bar options={options} data={data} width={780} height={300} />
         </div>
-        <div className='border-2 w-scard '>
-          <div>
-            <Bar options={options} data={data} width={780} height={300} />
-          </div>
+        <div className='border-2 w-scard mr-4'>
+          <TableChart />
         </div>
       </div>
     </>

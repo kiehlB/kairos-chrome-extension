@@ -13,7 +13,7 @@ interface CardProps {
 }
 
 const Card = (props: CardProps) => (
-  <div className={`${props.sort == 'single' ? 'flex   h-full p-4' : ' '}`}>
+  <div className={`${props.sort == 'single' ? 'flex   h-full p-4 ' : ' '}`}>
     <div
       className={`${props.sort == 'single' ? '  w-full flex flex-col' : ''}`}
     >

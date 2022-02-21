@@ -84,7 +84,6 @@ export const ActivityDateRangePicker = ({}: ActivityDateRangePickerProps) => {
 
   return (
     <DateRangePicker
-      className='analytics-view__date-range-picker'
       defaultStartTime={defaultStart}
       defaultEndTime={defaultEnd}
       disabled={isLoadingRecords}

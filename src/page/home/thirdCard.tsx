@@ -2,9 +2,12 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import AppLayout from '../../components/AppLayout';
 import Header from '../../components/Base/Header';
+import { BubbleChart } from '../../components/BubbleChart';
 import Card from '../../components/Card';
 import Scales from '../../components/Chart';
 import Transition from '../../components/Chart';
+import { LineChart } from '../../components/LineChart';
+
 import Axis from '../../components/Chart';
 import { CountUp, DurationCountUp } from '../../components/Count';
 
@@ -19,6 +22,7 @@ import { RootState } from '../../store/store';
 import SecondCard from './secondCard';
 
 import SingleCard from './singleCard';
+import { HorizontalChart } from '../../components/HorizontalChart';
 
 const TotalUsage = ({
   className,
@@ -77,36 +81,15 @@ function ThridCard() {
   return (
     <>
       <div className='flex h-card px-8 mt-4'>
-        <TotalUsage
-          className='border-2 w-tcard mr-4'
-          sort='single'
-          title={totalTimeRangeCardInfo.title}
-          info={totalTimeRangeCardInfo.info}
-          footer={totalTimeRangeCardInfo.footer}
-          data={totalTimeRangeCardInfo.data}
-          formattingFn={totalTimeRangeCardInfo.formattingFn}
-          formattingUnitFn={totalTimeRangeCardInfo.formattingUnitFn}
-        />
-        <TotalUsage
-          className='border-2 w-tcard mr-4'
-          sort='single'
-          title={totalTimeRangeCardInfo.title}
-          info={totalTimeRangeCardInfo.info}
-          footer={totalTimeRangeCardInfo.footer}
-          data={totalTimeRangeCardInfo.data}
-          formattingFn={totalTimeRangeCardInfo.formattingFn}
-          formattingUnitFn={totalTimeRangeCardInfo.formattingUnitFn}
-        />
-        <TotalUsage
-          className='border-2 w-tcard '
-          sort='single'
-          title={totalTimeRangeCardInfo.title}
-          info={totalTimeRangeCardInfo.info}
-          footer={totalTimeRangeCardInfo.footer}
-          data={totalTimeRangeCardInfo.data}
-          formattingFn={totalTimeRangeCardInfo.formattingFn}
-          formattingUnitFn={totalTimeRangeCardInfo.formattingUnitFn}
-        />
+        <div className='border-2 w-tcard mr-4'>
+          <BubbleChart />
+        </div>
+        <div className='border-2 w-tcard mr-4'>
+          <LineChart />
+        </div>
+        <div className='border-2 w-tcard'>
+          <HorizontalChart />
+        </div>
       </div>
     </>
   );

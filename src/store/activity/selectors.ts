@@ -162,3 +162,36 @@ export const getSelectedDomainTotalDurationByDayOfWeek = createSelector(
     );
   }
 );
+
+export const getTotalDurationByDomain = createSelector(
+  [getRecords, getAllDomains],
+  (records, allDomains) => {
+    const totalDurationByDomain: { [domain: string]: number } = {};
+    records.forEach((record) => {
+      const { domain, startTime, endTime } = record;
+      const duration = endTime - startTime;
+      const prevTotalDuration = totalDurationByDomain[domain] || 0;
+      totalDurationByDomain[domain] = prevTotalDuration + duration;
+    });
+
+    // Sort results by domains with highest duration
+    return Object.entries(totalDurationByDomain)
+      .map(([domain, totalDuration]) => ({
+        domain,
+        totalDuration,
+        favIconUrl: allDomains[domain]
+          ? allDomains[domain].favIconUrl
+          : undefined,
+      }))
+      .sort((a, b) => {
+        return a.totalDuration > b.totalDuration ? -1 : 1;
+      });
+  }
+);
+
+export const getTotalDuration = createSelector(
+  [getRecords, getEffectiveSelectedTimeRange],
+  (records, effectiveTimeRange) => {
+    return computeTotalDuration(records, effectiveTimeRange);
+  }
+);

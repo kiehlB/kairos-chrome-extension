@@ -114,7 +114,7 @@ module.exports = {
         card: '24.15625rem',
         mcard: 'calc(25%)',
         scard: 'calc(50%)',
-        tcard: 'calc(33%)',
+        tcard: 'calc(32.7%)',
       },
       height: {
         hero: 'min(60rem, calc(100vh - 10rem))', // screen - navbar height (lg: only)

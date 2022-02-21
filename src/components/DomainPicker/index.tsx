@@ -35,7 +35,7 @@ export const DomainPicker = ({}: DomainPickerProps) => {
       : undefined;
 
   return (
-    <span className='domain-picker'>
+    <span className=''>
       {selectedDomain && (
         <span className='domain-picker__label'>
           {favIconUrl && (
@@ -73,17 +73,13 @@ export const DomainPicker = ({}: DomainPickerProps) => {
           </div>
         }
       >
-        {selectedDomain ? (
-          <IconButton disabled={isLoadingRecords} icon='caret-down' />
-        ) : (
-          <Button
-            disabled={isLoadingRecords}
-            iconAfter='caret-down'
-            marginRight={BUTTON_MARGIN}
-          >
-            Select Domain
-          </Button>
-        )}
+        <Button
+          disabled={isLoadingRecords}
+          iconAfter='caret-down'
+          marginRight={BUTTON_MARGIN}
+        >
+          Select Domain
+        </Button>
       </SelectMenu>
     </span>
   );

@@ -25,7 +25,7 @@ function Header({ children }: HeaderProps) {
         <div className='flex h-20 items-center  px-8 justify-between flex-wrap '>
           <div className='flex items-center'>
             <div className='text-xl font-bold text-dark-m mr-4'>
-              Analytics Brower History
+              Analytics Browser History
             </div>
             <DarkModeToggle
               onChange={setIsDarkMode}
@@ -34,11 +34,13 @@ function Header({ children }: HeaderProps) {
             />
           </div>
           <section className='flex  items-center'>
-            <div>
-              <DomainPicker />
-            </div>
-            <div>
-              <ActivityDateRangePicker />
+            <div className='flex'>
+              <div>
+                <DomainPicker />
+              </div>
+              <div>
+                <ActivityDateRangePicker />
+              </div>
             </div>
 
             <div className='border-r-2   h-10'></div>

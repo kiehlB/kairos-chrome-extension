@@ -193,9 +193,9 @@ const DateRangePicker = ({
           closePopover: close,
         };
         return (
-          <div className='date-range-picker__content'>
+          <div>
             {ranges && (
-              <div className='date-range-picker__ranges'>
+              <div>
                 {ranges.map((range) => (
                   <Button
                     key={range.label}
@@ -252,7 +252,7 @@ const DateRangePicker = ({
       }}
     >
       <Button
-        className={classNames('date-range-picker', className)}
+        className='border-2'
         disabled={disabled}
         height={BUTTON_SIZE}
         iconBefore='timeline-events'
@@ -260,7 +260,11 @@ const DateRangePicker = ({
         {value && initialFrom && initialTo ? (
           <>
             {formatDateString(initialFrom)}
-            <div>hello</div>
+            <Icon
+              icon='arrow-right'
+              size={BASE_SIZE}
+              style={{ marginLeft: BASE_SIZE, marginRight: BASE_SIZE }}
+            />
             {formatDateString(initialTo)}
           </>
         ) : (

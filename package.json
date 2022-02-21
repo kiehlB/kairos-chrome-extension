@@ -42,6 +42,7 @@
     "d3-transition": "^1.2.0",
     "dexie": "^3.2.0",
     "dexie-react-hooks": "^1.1.1",
+    "echarts": "^5.3.0",
     "eslint": "^8.6.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^16.1.0",
