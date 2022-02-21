@@ -1,12 +1,11 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import AppLayout from '../../components/AppLayout';
 import Header from '../../components/Base/Header';
 import Card from '../../components/Card';
-import Scales from '../../components/Chart';
-import Axis from '../../components/Chart';
+
 import { CountUp, DurationCountUp } from '../../components/Count';
-import DataJoin from '../../components/DataJoin';
+
 import DateRangePicker, { TRANSITION_DELAY } from '../../components/DatePicker';
 import { MS_PER_HOUR } from '../../lib/constants/time';
 import * as d3 from 'd3';
@@ -16,109 +15,83 @@ import {
   getSelectedDomainRatioToTotalDuration,
   getSelectedDomainTotalDuration,
   getSelectedDomainTotalDurationByDate,
+  getSelectedDomainTotalDurationByDayOfWeek,
   getTotalDurationByDate,
 } from '../../store/activity/selectors';
 import { RootState } from '../../store/store';
-import SingleCard from './singleCard';
-
 import {
-  formatTooltipDateLabel,
-  formatTooltipDurationLabel,
-} from '../../utils/stringUtils';
-import Tooltip from '../../components/Tooltip';
-import Chart from '../../components/Chart';
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js';
+import { Bar } from 'react-chartjs-2';
+
+import faker from '@faker-js/faker';
 
 const MAX_TICK_COUNT = 5;
 const MIN_STEP = MS_PER_HOUR;
 
-const formatTickX = (x: number) => {
-  const date = new Date(x);
-  switch (true) {
-    case date.getDate() === 1:
-      return d3.timeFormat('%B')(date);
-    default:
-      return d3.timeFormat('%a %d')(date);
-  }
-};
-const formatTickY = (y: number) => {
-  const hours = Number(y) / MS_PER_HOUR;
-  return `${hours}h`;
-};
-const computeTickValuesX = (data) => {
-  const startOfTheDayInMs = new Date().setHours(0, 0, 0, 0);
-  const startDate = new Date(d3.min(data.map((d) => d.x)) || startOfTheDayInMs);
-  const endDate = new Date(d3.max(data.map((d) => d.x)) || startOfTheDayInMs);
-  const dayRange = d3.timeDay.count(startDate, endDate);
-  const step = Math.ceil(dayRange / 5);
-  return [...d3.timeDay.range(startDate, endDate, step)].map((d) =>
-    d.valueOf()
-  );
-};
-const computeTickValuesY = (data) => {
-  const [, max = 0] = d3.extent(data.map((d) => d.y));
-  if (max <= MIN_STEP) {
-    return [MIN_STEP];
-  }
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
-  const multiplier = Math.max(1, Math.ceil(max / MAX_TICK_COUNT / MIN_STEP));
-  const step = multiplier * MIN_STEP;
-  const maxTickValue = Math.ceil(max / step) * step + 1;
-  return d3.range(step, maxTickValue, step);
+export const options = {
+  responsive: false,
+  plugins: {
+    legend: {
+      position: 'top' as const,
+    },
+    title: {
+      display: true,
+      text: 'Chart.js Bar Chart',
+    },
+  },
 };
 
-const TotalUsage = ({
-  className,
-  sort,
-  title,
-  info,
+const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 
-  data,
-}) => {
-  const xy = data.map((d) => ({ x: d.timestamp, y: d.totalDuration }));
-
-  console.log(xy);
-  const tickValuesX = computeTickValuesX(xy);
-  const tickValuesY = computeTickValuesY(xy);
-
-  return (
-    <div className={className}>
-      <Card sort={sort} title={title} info={info} body={<></>} />
-    </div>
-  );
+export const data = {
+  labels,
+  datasets: [
+    {
+      label: 'Dataset 1',
+      data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
+      backgroundColor: 'rgba(255, 99, 132, 0.5)',
+    },
+    {
+      label: 'Dataset 2',
+      data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
+      backgroundColor: 'rgba(53, 162, 235, 0.5)',
+    },
+  ],
 };
 
 function SecondCard() {
   const totalTime = useSelector((state: RootState) =>
-    getTotalDurationByDate(state)
+    getSelectedDomainTotalDurationByDayOfWeek(state)
   );
-
-  const totalTimeRangeCardInfo = {
-    title: 'Total Usage',
-    info: 'Total time spent on the website',
-
-    sort: 'single',
-    data: totalTime,
-  };
 
   return (
     <>
       <div className='flex h-card px-8 mt-4 border-2'>
-        {/* <TotalUsage
-          className='border-2 w-scard mr-4'
-          sort='second'
-          title={totalTimeRangeCardInfo.title}
-          info={totalTimeRangeCardInfo.info}
-          data={totalTimeRangeCardInfo.data}
-        />
-        <TotalUsage
-          className='border-2 w-scard '
-          sort='single'
-          title={totalTimeRangeCardInfo.title}
-          info={totalTimeRangeCardInfo.info}
-          data={totalTimeRangeCardInfo.data}
-        /> */}
         <div className='border-2 w-scard mr-4'>
-          <Chart xy={totalTime} />
+          <div>
+            <Bar options={options} data={data} width={780} height={300} />
+          </div>
+        </div>
+        <div className='border-2 w-scard '>
+          <div>
+            <Bar options={options} data={data} width={780} height={300} />
+          </div>
         </div>
       </div>
     </>

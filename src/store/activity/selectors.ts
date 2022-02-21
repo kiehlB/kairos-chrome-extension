@@ -8,6 +8,7 @@ import { RootState } from '../store';
 import {
   computeTotalDuration,
   computeTotalDurationByDate,
+  computeTotalDurationByDayOfWeek,
 } from '../../utils/activityUtils';
 import { MS_PER_DAY } from '../../lib/constants/time';
 
@@ -149,5 +150,15 @@ export const getTotalDurationByDate = createSelector(
   [getRecords, getEffectiveSelectedTimeRange],
   (records, effectiveTimeRange) => {
     return computeTotalDurationByDate(records, effectiveTimeRange);
+  }
+);
+
+export const getSelectedDomainTotalDurationByDayOfWeek = createSelector(
+  [getSelectedDomainRecords, getEffectiveSelectedTimeRange],
+  (selectedDomainRecords, effectiveTimeRange) => {
+    return computeTotalDurationByDayOfWeek(
+      selectedDomainRecords,
+      effectiveTimeRange
+    );
   }
 );

@@ -7,7 +7,7 @@ import Scales from '../../components/Chart';
 import Transition from '../../components/Chart';
 import Axis from '../../components/Chart';
 import { CountUp, DurationCountUp } from '../../components/Count';
-import DataJoin from '../../components/DataJoin';
+
 import DateRangePicker, { TRANSITION_DELAY } from '../../components/DatePicker';
 
 import {
