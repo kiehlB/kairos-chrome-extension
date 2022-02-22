@@ -30,7 +30,11 @@ const Card = (props: CardProps) => (
       {props.body && (
         <div className={`${props.sort == 'single' ? 'mt-6' : ''}`}>
           <div
-            className={`${props.sort == 'single' ? 'flex items-center' : ' '}`}
+            className={`${
+              props.sort == 'single'
+                ? 'flex items-center  m2xl:justify-center'
+                : ' '
+            }`}
           >
             <div>{props.body}</div>
             <div
@@ -53,7 +57,9 @@ const Card = (props: CardProps) => (
       )}
 
       {props.footer && (
-        <div className='text-white-s font-medium'>{props.footer}</div>
+        <div className='text-white-s font-medium m2xl:flex justify-end'>
+          {props.footer}
+        </div>
       )}
     </div>
   </div>

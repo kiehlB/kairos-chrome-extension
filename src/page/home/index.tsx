@@ -27,23 +27,15 @@ function Home() {
       <AppLayout.MainNav>
         <Header />
       </AppLayout.MainNav>
-      {/* <AppLayout
+      <AppLayout
         first={
           <AppLayout.First>
             <SingleCard />
           </AppLayout.First>
         }
-        second={
-          <AppLayout.Second>
-            <SecondCard />
-          </AppLayout.Second>
-        }
-        third={
-          <AppLayout.Third>
-            <ThridCard />
-          </AppLayout.Third>
-        }
-      /> */}
+        second={<AppLayout.Second>{/* <SecondCard /> */}</AppLayout.Second>}
+        third={<AppLayout.Third>{/* <ThridCard /> */}</AppLayout.Third>}
+      />
     </div>
   );
 }

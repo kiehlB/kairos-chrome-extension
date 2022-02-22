@@ -9,6 +9,7 @@ import Axis from '../../components/Chart';
 import { CountUp, DurationCountUp } from '../../components/Count';
 
 import DateRangePicker, { TRANSITION_DELAY } from '../../components/DatePicker';
+import { useWindowSize } from '../../hooks/useWindowSize';
 
 import {
   getRatioToTotalDuration,
@@ -53,6 +54,7 @@ const TotalUsage = ({
 };
 
 function SingleCard() {
+  const { width } = useWindowSize();
   const totalTime = useSelector((state: RootState) =>
     getRatioToTotalDuration(state)
   );
@@ -67,11 +69,11 @@ function SingleCard() {
     formattingUnitFn: () => '%',
   };
 
-  return (
-    <>
-      <div className='flex mt-4 px-8 h-single'>
+  const eachWithTotal = () => {
+    return (
+      <div className='w-full flex'>
         <TotalUsage
-          className='border-2 mr-4 w-mcard '
+          className='border-2 mr-4 w-scard '
           sort='single'
           title={totalTimeRangeCardInfo.title}
           info={totalTimeRangeCardInfo.info}
@@ -81,7 +83,19 @@ function SingleCard() {
           formattingUnitFn={totalTimeRangeCardInfo.formattingUnitFn}
         />
         <TotalUsage
-          className='border-2 mr-4 w-mcard '
+          className='border-2 mr-4
+           w-scard '
+          sort='single'
+          title={totalTimeRangeCardInfo.title}
+          info={totalTimeRangeCardInfo.info}
+          footer={totalTimeRangeCardInfo.footer}
+          data={totalTimeRangeCardInfo.data}
+          formattingFn={totalTimeRangeCardInfo.formattingFn}
+          formattingUnitFn={totalTimeRangeCardInfo.formattingUnitFn}
+        />
+
+        <TotalUsage
+          className='border-2 mr-4 w-scard '
           sort='single'
           title={totalTimeRangeCardInfo.title}
           info={totalTimeRangeCardInfo.info}
@@ -91,17 +105,7 @@ function SingleCard() {
           formattingUnitFn={totalTimeRangeCardInfo.formattingUnitFn}
         />
         <TotalUsage
-          className='border-2 mr-4 w-mcard '
-          sort='single'
-          title={totalTimeRangeCardInfo.title}
-          info={totalTimeRangeCardInfo.info}
-          footer={totalTimeRangeCardInfo.footer}
-          data={totalTimeRangeCardInfo.data}
-          formattingFn={totalTimeRangeCardInfo.formattingFn}
-          formattingUnitFn={totalTimeRangeCardInfo.formattingUnitFn}
-        />
-        <TotalUsage
-          className='border-2 w-mcard '
+          className='border-2  w-scard '
           sort='single'
           title={totalTimeRangeCardInfo.title}
           info={totalTimeRangeCardInfo.info}
@@ -111,6 +115,130 @@ function SingleCard() {
           formattingUnitFn={totalTimeRangeCardInfo.formattingUnitFn}
         />
       </div>
+    );
+  };
+
+  const halfWithTotal = () => {
+    return (
+      <div className='w-full'>
+        <div className='flex'>
+          <TotalUsage
+            className='border-2 mr-4 w-scard '
+            sort='single'
+            title={totalTimeRangeCardInfo.title}
+            info={totalTimeRangeCardInfo.info}
+            footer={totalTimeRangeCardInfo.footer}
+            data={totalTimeRangeCardInfo.data}
+            formattingFn={totalTimeRangeCardInfo.formattingFn}
+            formattingUnitFn={totalTimeRangeCardInfo.formattingUnitFn}
+          />
+          <TotalUsage
+            className='border-2  w-scard '
+            sort='single'
+            title={totalTimeRangeCardInfo.title}
+            info={totalTimeRangeCardInfo.info}
+            footer={totalTimeRangeCardInfo.footer}
+            data={totalTimeRangeCardInfo.data}
+            formattingFn={totalTimeRangeCardInfo.formattingFn}
+            formattingUnitFn={totalTimeRangeCardInfo.formattingUnitFn}
+          />
+        </div>
+        <div className='flex mt-4'>
+          <TotalUsage
+            className='border-2 mr-4 w-scard '
+            sort='single'
+            title={totalTimeRangeCardInfo.title}
+            info={totalTimeRangeCardInfo.info}
+            footer={totalTimeRangeCardInfo.footer}
+            data={totalTimeRangeCardInfo.data}
+            formattingFn={totalTimeRangeCardInfo.formattingFn}
+            formattingUnitFn={totalTimeRangeCardInfo.formattingUnitFn}
+          />
+          <TotalUsage
+            className='border-2  w-scard '
+            sort='single'
+            title={totalTimeRangeCardInfo.title}
+            info={totalTimeRangeCardInfo.info}
+            footer={totalTimeRangeCardInfo.footer}
+            data={totalTimeRangeCardInfo.data}
+            formattingFn={totalTimeRangeCardInfo.formattingFn}
+            formattingUnitFn={totalTimeRangeCardInfo.formattingUnitFn}
+          />
+        </div>
+      </div>
+    );
+  };
+
+  const fullWithTotal = () => {
+    return (
+      <div className='w-full'>
+        <div className='flex'>
+          <TotalUsage
+            className='border-2 w-fcard '
+            sort='single'
+            title={totalTimeRangeCardInfo.title}
+            info={totalTimeRangeCardInfo.info}
+            footer={totalTimeRangeCardInfo.footer}
+            data={totalTimeRangeCardInfo.data}
+            formattingFn={totalTimeRangeCardInfo.formattingFn}
+            formattingUnitFn={totalTimeRangeCardInfo.formattingUnitFn}
+          />
+        </div>
+        <div className='mt-2'>
+          <TotalUsage
+            className='border-2  w-fcard '
+            sort='single'
+            title={totalTimeRangeCardInfo.title}
+            info={totalTimeRangeCardInfo.info}
+            footer={totalTimeRangeCardInfo.footer}
+            data={totalTimeRangeCardInfo.data}
+            formattingFn={totalTimeRangeCardInfo.formattingFn}
+            formattingUnitFn={totalTimeRangeCardInfo.formattingUnitFn}
+          />
+        </div>
+        <div className='flex mt-2'>
+          <TotalUsage
+            className='border-2   w-fcard '
+            sort='single'
+            title={totalTimeRangeCardInfo.title}
+            info={totalTimeRangeCardInfo.info}
+            footer={totalTimeRangeCardInfo.footer}
+            data={totalTimeRangeCardInfo.data}
+            formattingFn={totalTimeRangeCardInfo.formattingFn}
+            formattingUnitFn={totalTimeRangeCardInfo.formattingUnitFn}
+          />
+        </div>
+        <div className='flex mt-2'>
+          <TotalUsage
+            className='border-2  w-fcard '
+            sort='single'
+            title={totalTimeRangeCardInfo.title}
+            info={totalTimeRangeCardInfo.info}
+            footer={totalTimeRangeCardInfo.footer}
+            data={totalTimeRangeCardInfo.data}
+            formattingFn={totalTimeRangeCardInfo.formattingFn}
+            formattingUnitFn={totalTimeRangeCardInfo.formattingUnitFn}
+          />
+        </div>
+      </div>
+    );
+  };
+
+  console.log(width);
+
+  const resultTotal = () => {
+    if (width > 1341) {
+      return eachWithTotal();
+    } else if (width < 1341 && width > 768) {
+      return halfWithTotal();
+    } else if (width < 769) {
+      return fullWithTotal();
+    }
+  };
+
+  return (
+    <>
+      <div className='mt-4 px-8'>{resultTotal()}</div>
     </>
   );
 }
