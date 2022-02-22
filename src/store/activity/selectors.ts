@@ -195,3 +195,10 @@ export const getTotalDuration = createSelector(
     return computeTotalDuration(records, effectiveTimeRange);
   }
 );
+
+export const getTotalDurationByDayOfWeek = createSelector(
+  [getRecords, getEffectiveSelectedTimeRange],
+  (records, effectiveTimeRange) => {
+    return computeTotalDurationByDayOfWeek(records, effectiveTimeRange);
+  }
+);

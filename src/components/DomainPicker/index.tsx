@@ -74,6 +74,7 @@ export const DomainPicker = ({}: DomainPickerProps) => {
         }
       >
         <Button
+          height={30}
           disabled={isLoadingRecords}
           iconAfter='caret-down'
           marginRight={BUTTON_MARGIN}

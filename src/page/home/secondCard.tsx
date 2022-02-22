@@ -17,6 +17,7 @@ import {
   getSelectedDomainTotalDurationByDate,
   getSelectedDomainTotalDurationByDayOfWeek,
   getTotalDurationByDate,
+  getTotalDurationByDayOfWeek,
 } from '../../store/activity/selectors';
 import { RootState } from '../../store/store';
 import {
@@ -78,14 +79,34 @@ export const data = {
 
 function SecondCard() {
   const totalTime = useSelector((state: RootState) =>
-    getSelectedDomainTotalDurationByDayOfWeek(state)
+    getTotalDurationByDayOfWeek(state)
   );
 
+  const d = totalTime.map((d) => d.duration / 1000000);
+
+  const d2 = {
+    labels,
+    datasets: [
+      {
+        label: 'Dataset 1',
+        data: d,
+        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+      },
+      {
+        label: 'Dataset 2',
+        data: d,
+        backgroundColor: 'rgba(53, 162, 235, 0.5)',
+      },
+    ],
+  };
+
+  console.log(labels.map(() => faker.datatype.number({ min: 0, max: 1000 })));
+  console.log(d);
   return (
     <>
       <div className='flex h-card px-8 mt-4 border-2'>
         <div className='border-2 w-scard mr-4'>
-          <Bar options={options} data={data} width={780} height={300} />
+          <Bar options={options} data={d2} width={780} height={300} />
         </div>
         <div className='border-2 w-scard mr-4'>
           <TableChart />

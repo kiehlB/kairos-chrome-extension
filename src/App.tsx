@@ -42,7 +42,7 @@ function App() {
   return (
     <>
       <div className='h-full flex'>
-        <div className='w-side m2xl:w-20'>
+        <div className='w-side m2xl:w-20 mmd:w-fit'>
           <Navbar
             primaryItems={[
               {

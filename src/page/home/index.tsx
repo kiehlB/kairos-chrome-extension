@@ -27,7 +27,7 @@ function Home() {
       <AppLayout.MainNav>
         <Header />
       </AppLayout.MainNav>
-      <AppLayout
+      {/* <AppLayout
         first={
           <AppLayout.First>
             <SingleCard />
@@ -43,7 +43,7 @@ function Home() {
             <ThridCard />
           </AppLayout.Third>
         }
-      />
+      /> */}
     </div>
   );
 }

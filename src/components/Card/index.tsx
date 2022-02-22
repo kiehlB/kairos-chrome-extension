@@ -40,7 +40,13 @@ const Card = (props: CardProps) => (
                   : ' '
               }`}
             >
-              145% <ArrowUpRight size={18} className='ml-0.5' />
+              {props.sort == 'single' ? (
+                <>
+                  145% <ArrowUpRight size={18} className='ml-0.5' />
+                </>
+              ) : (
+                ''
+              )}
             </div>
           </div>
         </div>

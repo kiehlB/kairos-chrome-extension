@@ -14,7 +14,7 @@ import {
 import { RootState } from '../../store/store';
 import { formatTableDurationLabel } from '../../utils/stringUtils';
 import { computeSearchParams } from '../../utils/urlUtils';
-import BarChartTable from './tableChart';
+import BarChartTable from './TableChart';
 
 const TABLE_ROW_COUNT = 10;
 

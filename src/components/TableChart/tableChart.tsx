@@ -1,7 +1,6 @@
 import classNames from 'classnames';
 import * as d3 from 'd3';
 import React from 'react';
-
 import LabelCell from './LabelCell';
 
 export type Datum = {
@@ -41,41 +40,31 @@ const BarChartTable = ({
   const max = maxValue ?? d3.max(rowData.map((d) => d.value)) ?? 1;
 
   return (
-    <div className='flex'>
+    <div className=''>
       <div className=''>
         {rowData.map((datum, index) => (
           <div
-            key={index}
-            className='bar-chart-table__cell'
+            className='flex items-center'
             style={{
               visibility: datum.label === NO_DATA_LABEL ? 'hidden' : undefined,
             }}
           >
             {`${index + 1}.`}
-          </div>
-        ))}
-      </div>
-      <div className='border-2'>
-        {rowData.map((datum, index) => (
-          <LabelCell
-            key={index}
-            {...datum}
-            hide={datum.label === NO_DATA_LABEL}
-            maxValue={max}
-            showIcons={showIcons}
-          />
-        ))}
-      </div>
-      <div className='bar-chart-table__col bar-chart-table__col-value'>
-        {rowData.map((datum, index) => (
-          <div
-            key={index}
-            className='bar-chart-table__cell'
-            style={{
-              visibility: datum.label === NO_DATA_LABEL ? 'hidden' : undefined,
-            }}
-          >
-            {formatValue ? formatValue(datum.value) : datum.value}
+            <LabelCell
+              {...datum}
+              hide={datum.label === NO_DATA_LABEL}
+              maxValue={max}
+              showIcons={showIcons}
+            />
+            <div
+              className='bar-chart-table__cell'
+              style={{
+                visibility:
+                  datum.label === NO_DATA_LABEL ? 'hidden' : undefined,
+              }}
+            >
+              {formatValue ? formatValue(datum.value) : datum.value}
+            </div>
           </div>
         ))}
       </div>
