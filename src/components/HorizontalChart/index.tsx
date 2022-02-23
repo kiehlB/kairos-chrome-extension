@@ -10,6 +10,7 @@ import {
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 import faker from '@faker-js/faker';
+import { useWindowSize } from '../../hooks/useWindowSize';
 
 ChartJS.register(
   CategoryScale,
@@ -19,27 +20,6 @@ ChartJS.register(
   Tooltip,
   Legend
 );
-
-export const options = {
-  responsive: true,
-  maintainAspectRatio: false,
-  indexAxis: 'y' as const,
-  elements: {
-    bar: {
-      borderWidth: 2,
-    },
-  },
-
-  plugins: {
-    legend: {
-      position: 'right' as const,
-    },
-    title: {
-      display: true,
-      text: 'Chart.js Horizontal Bar Chart',
-    },
-  },
-};
 
 const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 
@@ -62,5 +42,28 @@ export const data = {
 };
 
 export function HorizontalChart() {
+  const { width } = useWindowSize();
+
+  const options = {
+    responsive: width < 1341 ? true : false,
+    maintainAspectRatio: false,
+    indexAxis: 'y' as const,
+    elements: {
+      bar: {
+        borderWidth: 2,
+      },
+    },
+
+    plugins: {
+      legend: {
+        position: 'right' as const,
+      },
+      title: {
+        display: true,
+        text: 'Chart.js Horizontal Bar Chart',
+      },
+    },
+  };
+
   return <Bar options={options} data={data} width={520} height={300} />;
 }

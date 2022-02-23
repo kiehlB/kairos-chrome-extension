@@ -8,18 +8,9 @@ import {
 } from 'chart.js';
 import { Bubble } from 'react-chartjs-2';
 import faker from '@faker-js/faker';
+import { useWindowSize } from '../../hooks/useWindowSize';
 
 ChartJS.register(LinearScale, PointElement, Tooltip, Legend);
-
-export const options = {
-  responsive: true,
-  maintainAspectRatio: false,
-  scales: {
-    y: {
-      beginAtZero: true,
-    },
-  },
-};
 
 export const data = {
   datasets: [
@@ -45,5 +36,17 @@ export const data = {
 };
 
 export function BubbleChart() {
+  const { width } = useWindowSize();
+
+  const options = {
+    responsive: width < 1341 ? true : false,
+    maintainAspectRatio: false,
+    scales: {
+      y: {
+        beginAtZero: true,
+      },
+    },
+  };
+
   return <Bubble options={options} data={data} width={520} height={300} />;
 }

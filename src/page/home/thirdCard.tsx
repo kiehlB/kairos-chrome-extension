@@ -81,15 +81,17 @@ function ThridCard() {
     formattingFn: (d: number) => `${d.toFixed(2)}`,
     formattingUnitFn: () => '%',
   };
+
+  console.log(width);
   return (
     <>
       {width > 1341 ? (
         <>
           <div className='flex h-card px-8 mt-4'>
-            <div className='border-2 w-tcard mr-4'>
+            <div className='border-2 w-tcard mr-3'>
               <BubbleChart />
             </div>
-            <div className='border-2 w-tcard mr-4'>
+            <div className='border-2 w-tcard mr-3'>
               <LineChart />
             </div>
             <div className='border-2 w-tcard'>

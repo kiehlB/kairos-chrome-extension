@@ -11,6 +11,7 @@ import {
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import faker from '@faker-js/faker';
+import { useWindowSize } from '../../hooks/useWindowSize';
 
 ChartJS.register(
   CategoryScale,
@@ -21,20 +22,6 @@ ChartJS.register(
   Tooltip,
   Legend
 );
-
-export const options = {
-  responsive: true,
-  maintainAspectRatio: false,
-  plugins: {
-    legend: {
-      position: 'top' as const,
-    },
-    title: {
-      display: true,
-      text: 'Chart.js Line Chart',
-    },
-  },
-};
 
 const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 
@@ -57,5 +44,21 @@ export const data = {
 };
 
 export function LineChart() {
+  const { width } = useWindowSize();
+
+  const options = {
+    responsive: width < 1341 ? true : false,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        position: 'top' as const,
+      },
+      title: {
+        display: true,
+        text: 'Chart.js Line Chart',
+      },
+    },
+  };
+
   return <Line options={options} data={data} width={520} height={300} />;
 }
