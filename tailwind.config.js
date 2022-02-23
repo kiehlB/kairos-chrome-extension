@@ -30,6 +30,7 @@ module.exports = {
       lg: '1025px',
       xxl: '1340px',
       xl: '1500px', // this is the "design resolution",
+      maxw: { max: '1603px' },
       m2xl: { max: '1340px' },
       mxl: { max: '1200px' },
       mlg: { max: '1024px' },

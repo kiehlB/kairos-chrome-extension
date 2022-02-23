@@ -9,6 +9,7 @@ import Axis from '../../components/Chart';
 import { CountUp, DurationCountUp } from '../../components/Count';
 
 import DateRangePicker, { TRANSITION_DELAY } from '../../components/DatePicker';
+import useClientDimensions from '../../hooks/useClientDimensions';
 import { useWindowSize } from '../../hooks/useWindowSize';
 
 import {
@@ -54,7 +55,8 @@ const TotalUsage = ({
 };
 
 function SingleCard() {
-  const { width } = useWindowSize();
+  const [containerRef, { height: containerHeight, width }] =
+    useClientDimensions();
   const totalTime = useSelector((state: RootState) =>
     getRatioToTotalDuration(state)
   );
@@ -236,7 +238,9 @@ function SingleCard() {
 
   return (
     <>
-      <div className='mt-4 px-8 mmd:px-4'>{resultTotal()}</div>
+      <div className='mt-4 px-8 mmd:px-4' ref={containerRef}>
+        {resultTotal()}
+      </div>
     </>
   );
 }

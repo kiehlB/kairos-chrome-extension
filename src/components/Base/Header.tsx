@@ -13,7 +13,7 @@ import {
 import DayPicker from '../DayPicker';
 import { ActivityDateRangePicker } from '../DateRange';
 import { DomainPicker } from '../DomainPicker';
-import { useWindowSize } from '../../hooks/useWindowSize';
+import useClientDimensions from '../../hooks/useClientDimensions';
 
 export type HeaderProps = {
   children?: React.ReactNode;
@@ -22,7 +22,8 @@ export type HeaderProps = {
 function Header({ children }: HeaderProps) {
   const [isDarkMode, setIsDarkMode] = useState(() => false);
 
-  const { width } = useWindowSize();
+  const [containerRef, { height: containerHeight, width }] =
+    useClientDimensions();
 
   const widthSection = () => {
     return (
@@ -81,7 +82,7 @@ function Header({ children }: HeaderProps) {
 
   return (
     <>
-      <div className='border-b-2'>
+      <div className='border-b-2 ' ref={containerRef}>
         <div className='flex h-20 items-center  px-8 justify-between flex-wrap  mmd:px-4'>
           <div className='flex items-center'>
             <div className='text-xl font-bold text-dark-m mr-4'>

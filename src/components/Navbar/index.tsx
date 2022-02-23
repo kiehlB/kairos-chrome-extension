@@ -18,7 +18,7 @@ const Navbar = ({
   className,
   isDisabled,
 }: NavbarProps) => (
-  <nav className='transition-all border-r border-grey-m w-side h-full   m2xl:w-20 mmd:hidden'>
+  <nav className='transition-all border-r border-grey-m w-side h-full   m2xl:hidden mmd:hidden'>
     <ul>
       <li>
         <div className='flex w-20  p-6 mb-2 justify-center xxl:hidden'>

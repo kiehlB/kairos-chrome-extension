@@ -34,6 +34,7 @@ import { Bar } from 'react-chartjs-2';
 import faker from '@faker-js/faker';
 import { TableChart } from '../../components/TableChart';
 import { useWindowSize } from '../../hooks/useWindowSize';
+import useClientDimensions from '../../hooks/useClientDimensions';
 
 const MAX_TICK_COUNT = 5;
 const MIN_STEP = MS_PER_HOUR;
@@ -69,8 +70,8 @@ function SecondCard() {
   const totalTime = useSelector((state: RootState) =>
     getTotalDurationByDayOfWeek(state)
   );
-  const { width } = useWindowSize();
-
+  const [containerRef, { height: containerHeight, width }] =
+    useClientDimensions();
   const options = {
     responsive: true,
     maintainAspectRatio: false,
@@ -103,11 +104,8 @@ function SecondCard() {
     ],
   };
 
-  console.log(labels.map(() => faker.datatype.number({ min: 0, max: 1000 })));
-  console.log(d);
-
   return (
-    <>
+    <div ref={containerRef}>
       {width > 1341 ? (
         <>
           <div className='flex h-card px-8 mt-4 '>
@@ -133,7 +131,7 @@ function SecondCard() {
           </div>
         </>
       )}
-    </>
+    </div>
   );
 }
 
