@@ -47,7 +47,7 @@ export function LineChart() {
   const { width } = useWindowSize();
 
   const options = {
-    responsive: width < 1341 ? true : false,
+    responsive: true,
     maintainAspectRatio: false,
     plugins: {
       legend: {

@@ -62,8 +62,6 @@ const TotalUsage = ({
 };
 
 function ThridCard() {
-  const { width } = useWindowSize();
-
   const test = useSelector((state: RootState) =>
     getSelectedDomainRatioToTotalDuration(state)
   );
@@ -82,42 +80,39 @@ function ThridCard() {
     formattingUnitFn: () => '%',
   };
 
-  console.log(width);
   return (
     <>
-      {width > 1341 ? (
-        <>
-          <div className='flex h-card px-8 mt-4'>
-            <div className='border-2 w-tcard mr-3'>
-              <BubbleChart />
-            </div>
-            <div className='border-2 w-tcard mr-3'>
-              <LineChart />
-            </div>
-            <div className='border-2 w-tcard'>
-              <HorizontalChart />
-            </div>
+      <>
+        <div className='flex h-card px-8 mt-4 m2xl:hidden '>
+          <div className='border-2 w-tcard mr-3'>
+            <BubbleChart />
           </div>
-        </>
-      ) : (
-        <>
-          <div className='flex h-card px-8 mt-4 mmd:px-4'>
-            <div className='border-2 w-fcard  '>
-              <BubbleChart />
-            </div>
+          <div className='border-2 w-tcard mr-3'>
+            <LineChart />
           </div>
-          <div className='flex h-card px-8 mt-4 mmd:px-4'>
-            <div className='border-2 w-fcard  '>
-              <LineChart />
-            </div>
+          <div className='border-2 w-tcard'>
+            <HorizontalChart />
           </div>
-          <div className='flex h-card px-8 mt-4 mmd:px-4'>
-            <div className='border-2 w-fcard'>
-              <HorizontalChart />
-            </div>
+        </div>
+      </>
+
+      <>
+        <div className='flex h-card px-8 mt-4 mmd:px-4 xxl:hidden'>
+          <div className='border-2 w-fcard  '>
+            <BubbleChart />
           </div>
-        </>
-      )}
+        </div>
+        <div className='flex h-card px-8 mt-4 mmd:px-4 xxl:hidden'>
+          <div className='border-2 w-fcard  '>
+            <LineChart />
+          </div>
+        </div>
+        <div className='flex h-card px-8 mt-4 mmd:px-4 xxl:hidden'>
+          <div className='border-2 w-fcard'>
+            <HorizontalChart />
+          </div>
+        </div>
+      </>
     </>
   );
 }

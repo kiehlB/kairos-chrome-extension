@@ -45,7 +45,7 @@ export function HorizontalChart() {
   const { width } = useWindowSize();
 
   const options = {
-    responsive: width < 1341 ? true : false,
+    responsive: true,
     maintainAspectRatio: false,
     indexAxis: 'y' as const,
     elements: {

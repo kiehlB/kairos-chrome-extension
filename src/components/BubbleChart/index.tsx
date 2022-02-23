@@ -39,7 +39,7 @@ export function BubbleChart() {
   const { width } = useWindowSize();
 
   const options = {
-    responsive: width < 1341 ? true : false,
+    responsive: true,
     maintainAspectRatio: false,
     scales: {
       y: {

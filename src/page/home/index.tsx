@@ -30,7 +30,7 @@ function Home() {
       <AppLayout
         first={<AppLayout.First>{<SingleCard />}</AppLayout.First>}
         second={<AppLayout.Second>{<SecondCard />}</AppLayout.Second>}
-        // third={<AppLayout.Third>{<ThridCard />}</AppLayout.Third>}
+        third={<AppLayout.Third>{<ThridCard />}</AppLayout.Third>}
       />
     </div>
   );
