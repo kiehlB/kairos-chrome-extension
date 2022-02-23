@@ -22,6 +22,7 @@ ChartJS.register(
 
 export const options = {
   responsive: true,
+  maintainAspectRatio: false,
   indexAxis: 'y' as const,
   elements: {
     bar: {

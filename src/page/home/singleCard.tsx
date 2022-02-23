@@ -71,9 +71,9 @@ function SingleCard() {
 
   const eachWithTotal = () => {
     return (
-      <div className='w-full flex'>
+      <div className='flex'>
         <TotalUsage
-          className='border-2 mr-4 w-scard '
+          className='border-2 mr-4 w-mcard '
           sort='single'
           title={totalTimeRangeCardInfo.title}
           info={totalTimeRangeCardInfo.info}
@@ -84,7 +84,7 @@ function SingleCard() {
         />
         <TotalUsage
           className='border-2 mr-4
-           w-scard '
+           w-mcard '
           sort='single'
           title={totalTimeRangeCardInfo.title}
           info={totalTimeRangeCardInfo.info}
@@ -95,7 +95,7 @@ function SingleCard() {
         />
 
         <TotalUsage
-          className='border-2 mr-4 w-scard '
+          className='border-2 mr-4 w-mcard '
           sort='single'
           title={totalTimeRangeCardInfo.title}
           info={totalTimeRangeCardInfo.info}
@@ -105,7 +105,7 @@ function SingleCard() {
           formattingUnitFn={totalTimeRangeCardInfo.formattingUnitFn}
         />
         <TotalUsage
-          className='border-2  w-scard '
+          className='border-2  w-mcard '
           sort='single'
           title={totalTimeRangeCardInfo.title}
           info={totalTimeRangeCardInfo.info}
@@ -224,8 +224,6 @@ function SingleCard() {
     );
   };
 
-  console.log(width);
-
   const resultTotal = () => {
     if (width > 1341) {
       return eachWithTotal();
@@ -238,7 +236,7 @@ function SingleCard() {
 
   return (
     <>
-      <div className='mt-4 px-8'>{resultTotal()}</div>
+      <div className='mt-4 px-8 mmd:px-4'>{resultTotal()}</div>
     </>
   );
 }

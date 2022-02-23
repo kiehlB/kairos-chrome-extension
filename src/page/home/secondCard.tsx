@@ -33,6 +33,7 @@ import { Bar } from 'react-chartjs-2';
 
 import faker from '@faker-js/faker';
 import { TableChart } from '../../components/TableChart';
+import { useWindowSize } from '../../hooks/useWindowSize';
 
 const MAX_TICK_COUNT = 5;
 const MIN_STEP = MS_PER_HOUR;
@@ -47,7 +48,8 @@ ChartJS.register(
 );
 
 export const options = {
-  responsive: false,
+  responsive: true,
+  maintainAspectRatio: false,
   plugins: {
     legend: {
       position: 'top' as const,
@@ -81,7 +83,7 @@ function SecondCard() {
   const totalTime = useSelector((state: RootState) =>
     getTotalDurationByDayOfWeek(state)
   );
-
+  const { width } = useWindowSize();
   const d = totalTime.map((d) => d.duration / 1000000);
 
   const d2 = {
@@ -102,16 +104,34 @@ function SecondCard() {
 
   console.log(labels.map(() => faker.datatype.number({ min: 0, max: 1000 })));
   console.log(d);
+
   return (
     <>
-      <div className='flex h-card px-8 mt-4 border-2'>
-        <div className='border-2 w-scard mr-4'>
-          <Bar options={options} data={d2} width={780} height={300} />
-        </div>
-        <div className='border-2 w-scard mr-4'>
-          <TableChart />
-        </div>
-      </div>
+      {width > 1341 ? (
+        <>
+          <div className='flex h-card px-8 mt-4 '>
+            <div className='border-2 w-scard mr-4'>
+              <Bar options={options} data={d2} width={780} height={300} />
+            </div>
+            <div className='border-2 w-scard'>
+              <TableChart />
+            </div>
+          </div>
+        </>
+      ) : (
+        <>
+          <div className='flex h-card px-8 mt-4  mmd:px-4'>
+            <div className='border-2 w-fcard'>
+              <Bar options={options} data={d2} width={780} height={300} />
+            </div>
+          </div>
+          <div className='flex h-card px-8 mt-4 mmd:px-4 '>
+            <div className='border-2 w-fcard '>
+              <TableChart />
+            </div>
+          </div>
+        </>
+      )}
     </>
   );
 }

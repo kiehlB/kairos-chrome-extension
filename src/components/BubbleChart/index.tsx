@@ -12,7 +12,8 @@ import faker from '@faker-js/faker';
 ChartJS.register(LinearScale, PointElement, Tooltip, Legend);
 
 export const options = {
-  responsive: false,
+  responsive: true,
+  maintainAspectRatio: false,
   scales: {
     y: {
       beginAtZero: true,

@@ -23,6 +23,7 @@ import SecondCard from './secondCard';
 
 import SingleCard from './singleCard';
 import { HorizontalChart } from '../../components/HorizontalChart';
+import { useWindowSize } from '../../hooks/useWindowSize';
 
 const TotalUsage = ({
   className,
@@ -61,6 +62,8 @@ const TotalUsage = ({
 };
 
 function ThridCard() {
+  const { width } = useWindowSize();
+
   const test = useSelector((state: RootState) =>
     getSelectedDomainRatioToTotalDuration(state)
   );
@@ -80,17 +83,39 @@ function ThridCard() {
   };
   return (
     <>
-      <div className='flex h-card px-8 mt-4'>
-        <div className='border-2 w-tcard mr-4'>
-          <BubbleChart />
-        </div>
-        <div className='border-2 w-tcard mr-4'>
-          <LineChart />
-        </div>
-        <div className='border-2 w-tcard'>
-          <HorizontalChart />
-        </div>
-      </div>
+      {width > 1341 ? (
+        <>
+          <div className='flex h-card px-8 mt-4'>
+            <div className='border-2 w-tcard mr-4'>
+              <BubbleChart />
+            </div>
+            <div className='border-2 w-tcard mr-4'>
+              <LineChart />
+            </div>
+            <div className='border-2 w-tcard'>
+              <HorizontalChart />
+            </div>
+          </div>
+        </>
+      ) : (
+        <>
+          <div className='flex h-card px-8 mt-4 mmd:px-4'>
+            <div className='border-2 w-fcard  '>
+              <BubbleChart />
+            </div>
+          </div>
+          <div className='flex h-card px-8 mt-4 mmd:px-4'>
+            <div className='border-2 w-fcard  '>
+              <LineChart />
+            </div>
+          </div>
+          <div className='flex h-card px-8 mt-4 mmd:px-4'>
+            <div className='border-2 w-fcard'>
+              <HorizontalChart />
+            </div>
+          </div>
+        </>
+      )}
     </>
   );
 }
