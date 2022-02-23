@@ -105,32 +105,26 @@ function SecondCard() {
   };
 
   return (
-    <div ref={containerRef}>
-      {width > 1341 ? (
-        <>
-          <div className='flex h-card px-8 mt-4 '>
-            <div className='border-2 w-scard mr-4'>
-              <Bar options={options} data={d2} width={780} height={300} />
-            </div>
-            <div className='border-2 w-scard'>
-              <TableChart />
-            </div>
-          </div>
-        </>
-      ) : (
-        <>
-          <div className='flex h-card px-8 mt-4  mmd:px-4'>
-            <div className='border-2 w-fcard'>
-              <Bar options={options} data={d2} width={780} height={300} />
-            </div>
-          </div>
-          <div className='flex h-card px-8 mt-4 mmd:px-4 '>
-            <div className='border-2 w-fcard '>
-              <TableChart />
-            </div>
-          </div>
-        </>
-      )}
+    <div>
+      <div className='flex h-card px-8 mt-4 m2xl:hidden'>
+        <div className='border-2 w-scard mr-4'>
+          <Bar options={options} data={d2} width={780} height={300} />
+        </div>
+        <div className='border-2 w-scard'>
+          <TableChart />
+        </div>
+      </div>
+
+      <div className='flex h-card px-8 mt-4  mmd:px-4 xxl:hidden'>
+        <div className='border-2 w-fcard'>
+          <Bar options={options} data={d2} width={780} height={300} />
+        </div>
+      </div>
+      <div className='flex h-card px-8 mt-4 mmd:px-4  xxl:hidden'>
+        <div className='border-2 w-fcard '>
+          <TableChart />
+        </div>
+      </div>
     </div>
   );
 }

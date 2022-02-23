@@ -28,7 +28,7 @@ module.exports = {
       si: '768px',
       md: '900px',
       lg: '1025px',
-      xxl: '1340px',
+      xxl: '1341px',
       xl: '1500px', // this is the "design resolution",
       maxw: { max: '1603px' },
       m2xl: { max: '1340px' },
