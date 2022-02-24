@@ -70,8 +70,7 @@ function SecondCard() {
   const totalTime = useSelector((state: RootState) =>
     getTotalDurationByDayOfWeek(state)
   );
-  const [containerRef, { height: containerHeight, width }] =
-    useClientDimensions();
+
   const options = {
     responsive: true,
     maintainAspectRatio: false,

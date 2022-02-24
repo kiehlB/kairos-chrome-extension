@@ -27,8 +27,8 @@ function Header({ children }: HeaderProps) {
 
   const widthSection = () => {
     return (
-      <section className='flex  items-center justify-end '>
-        <div className='flex'>
+      <section className='flex  items-center justify-end  '>
+        <div className='flex  '>
           <div>
             <DomainPicker />
           </div>
@@ -55,7 +55,7 @@ function Header({ children }: HeaderProps) {
   const divSection = () => {
     return (
       <div className='flex items-center justify-end  '>
-        <div className='flex mmd:flex-col'>
+        <div className='flex mmd:flex-col  items-end'>
           <div className='mmd:mb-1'>
             <DomainPicker />
           </div>

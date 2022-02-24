@@ -1,10 +1,12 @@
 import classNames from 'classnames';
 import React from 'react';
 import ReactCountUp from 'react-countup';
+import {
+  MS_PER_HOUR,
+  MS_PER_MINUTE,
+  MS_PER_SECOND,
+} from '../../lib/constants/time';
 
-const MS_PER_HOUR = 1;
-const MS_PER_MINUTE = 60;
-const MS_PER_SECOND = 100;
 interface DurationCountUpProps {
   end: number;
   start: number;
@@ -58,14 +60,15 @@ const formatMilliseconds = (value: number) => {
 };
 
 export const CountUp = ({ formattingUnitFn, ...props }: CountUpProps) => {
+  console.log(props);
   return (
-    <span>
-      <ReactCountUp {...props} className='text-dark-m font-bold text-3xl' />
+    <span className='text-dark-m font-bold text-3xl'>
+      <ReactCountUp className='count-up__value' {...props} />
       {formattingUnitFn && (
         <ReactCountUp
+          className='ml-1 text-dark-m text-lg font-bold'
           {...props}
           formattingFn={formattingUnitFn}
-          className='ml-1 text-dark-m text-lg font-bold'
         />
       )}
     </span>
@@ -73,6 +76,7 @@ export const CountUp = ({ formattingUnitFn, ...props }: CountUpProps) => {
 };
 
 export const DurationCountUp = (props: DurationCountUpProps) => {
+  console.log(formatHour(props.end));
   return (
     <span className={classNames('duration-count-up', props.className)}>
       <CountUp

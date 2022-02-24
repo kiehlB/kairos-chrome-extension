@@ -202,3 +202,14 @@ export const getTotalDurationByDayOfWeek = createSelector(
     return computeTotalDurationByDayOfWeek(records, effectiveTimeRange);
   }
 );
+
+export const getTotalPageVisitCount = createSelector(getRecords, (records) => {
+  return _.uniqBy(records, (record) => record.url).length;
+});
+
+export const getTotalDomainVisitCount = createSelector(
+  getRecords,
+  (records) => {
+    return _.uniqBy(records, (record) => record.domain).length;
+  }
+);

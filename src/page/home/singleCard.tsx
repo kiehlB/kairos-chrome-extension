@@ -16,34 +16,42 @@ import {
   getRatioToTotalDuration,
   getSelectedDomainRatioToTotalDuration,
   getSelectedDomainTotalDuration,
+  getTotalDomainVisitCount,
+  getTotalDuration,
+  getTotalPageVisitCount,
 } from '../../store/activity/selectors';
 import { RootState } from '../../store/store';
-const TotalUsage = ({
-  className,
-  sort,
-  title,
-  info,
-  footer,
-  data,
-  formattingFn,
-  formattingUnitFn,
-}) => {
+
+export type TotalUsageProps = {
+  className?;
+  sort?;
+  title?;
+  info?;
+  footer?;
+  data?;
+  formattingFn?;
+  formattingUnitFn?;
+  isDuration?;
+};
+
+const TotalUsage = (props) => {
+  const Component = props.isDuration ? DurationCountUp : CountUp;
   return (
-    <div className={className}>
+    <div className={props.className}>
       <Card
-        sort={sort}
-        title={title}
-        info={info}
-        footer={footer}
+        sort={props.sort}
+        title={props.title}
+        info={props.info}
+        footer={props.footer}
         body={
           <div>
-            <CountUp
+            <Component
               start={0}
-              end={data}
-              decimals={2}
+              end={props.data}
+              decimals={props.decimals}
               duration={TRANSITION_DELAY / 1000}
-              formattingFn={formattingFn}
-              formattingUnitFn={formattingUnitFn}
+              formattingFn={props.formattingFn}
+              formattingUnitFn={props.formattingUnitFn}
               preserveValue={true}
               redraw={true}
             />
@@ -57,18 +65,83 @@ const TotalUsage = ({
 function SingleCard() {
   const [containerRef, { height: containerHeight, width }] =
     useClientDimensions();
-  const totalTime = useSelector((state: RootState) =>
+  const totalTime = useSelector((state: RootState) => getTotalDuration(state));
+  const toTotalDuration = useSelector((state: RootState) =>
     getRatioToTotalDuration(state)
   );
+  const pageVisit = useSelector((state: RootState) =>
+    getTotalPageVisitCount(state)
+  );
+
+  const domainVisit = useSelector((state: RootState) =>
+    getTotalDomainVisitCount(state)
+  );
+
+  function formatTableDurationLabel(duration: number): any {
+    if (duration < 1000) {
+      return `${duration} ms`;
+    }
+
+    if (duration < 60000) {
+      return `${(duration / 1000).toFixed(1)} s`;
+    }
+
+    if (duration < 3600000) {
+      const minutes = Math.floor(duration / 60000);
+      const seconds = Math.round((duration / 1000) % 60);
+      return `${minutes} min ${seconds.toString().padStart(2, '0')} s`;
+    }
+
+    const hours = Math.floor(duration / 3600000);
+    const minutes = Math.round((duration / 60000) % 60);
+    return `${hours} h ${minutes.toString().padStart(2, '0')} min`;
+  }
+  const formatDurationTime = formatTableDurationLabel(totalTime);
+
+  console.log(formatDurationTime);
 
   const totalTimeRangeCardInfo = {
     title: 'Total Usage',
     info: 'Total time spent on the website',
     footer: 'vs. previous month',
     sort: 'single',
-    data: totalTime * 100,
+    data: totalTime,
+    isDuration: true,
+  };
+
+  const toTotalDurationCard = {
+    title: 'Total Usage',
+    info: 'Total time spent on the website',
+    footer: 'vs. previous month',
+    sort: 'single',
+    data: toTotalDuration,
+    isDuration: false,
+    decimals: 3,
     formattingFn: (d: number) => `${d.toFixed(2)}`,
     formattingUnitFn: () => '%',
+  };
+
+  console.log(toTotalDuration);
+  const pageVisitCard = {
+    title: 'Total Usage',
+    info: 'Total time spent on the website',
+    footer: 'vs. previous month',
+    sort: 'single',
+    data: pageVisit,
+    isDuration: false,
+    formattingFn: (d: number) => d.toLocaleString('en-US'),
+    formattingUnitFn: (d: number) => (d > 1 ? 'pages' : 'page'),
+  };
+
+  const TotalDomainCard = {
+    title: 'Total Usage',
+    info: 'Total time spent on the website',
+    footer: 'vs. previous month',
+    sort: 'single',
+    data: domainVisit,
+    isDuration: false,
+    formattingFn: (d: number) => d.toLocaleString('en-US'),
+    formattingUnitFn: (d: number) => (d > 1 ? 'domains' : 'domain'),
   };
 
   const eachWithTotal = () => {
@@ -81,40 +154,43 @@ function SingleCard() {
           info={totalTimeRangeCardInfo.info}
           footer={totalTimeRangeCardInfo.footer}
           data={totalTimeRangeCardInfo.data}
-          formattingFn={totalTimeRangeCardInfo.formattingFn}
-          formattingUnitFn={totalTimeRangeCardInfo.formattingUnitFn}
+          isDuration={totalTimeRangeCardInfo.isDuration}
         />
         <TotalUsage
           className='border-2 mr-4
            w-mcard '
           sort='single'
-          title={totalTimeRangeCardInfo.title}
-          info={totalTimeRangeCardInfo.info}
-          footer={totalTimeRangeCardInfo.footer}
-          data={totalTimeRangeCardInfo.data}
-          formattingFn={totalTimeRangeCardInfo.formattingFn}
-          formattingUnitFn={totalTimeRangeCardInfo.formattingUnitFn}
+          title={toTotalDurationCard.title}
+          info={toTotalDurationCard.info}
+          footer={toTotalDurationCard.footer}
+          data={toTotalDurationCard.data}
+          formattingFn={toTotalDurationCard.formattingFn}
+          formattingUnitFn={toTotalDurationCard.formattingUnitFn}
+          decimals={toTotalDurationCard.decimals}
+          isDuration={toTotalDurationCard.isDuration}
         />
 
         <TotalUsage
           className='border-2 mr-4 w-mcard '
           sort='single'
-          title={totalTimeRangeCardInfo.title}
-          info={totalTimeRangeCardInfo.info}
-          footer={totalTimeRangeCardInfo.footer}
-          data={totalTimeRangeCardInfo.data}
-          formattingFn={totalTimeRangeCardInfo.formattingFn}
-          formattingUnitFn={totalTimeRangeCardInfo.formattingUnitFn}
+          title={pageVisitCard.title}
+          info={pageVisitCard.info}
+          footer={pageVisitCard.footer}
+          data={pageVisitCard.data}
+          formattingFn={pageVisitCard.formattingFn}
+          formattingUnitFn={pageVisitCard.formattingUnitFn}
+          isDuration={pageVisitCard.isDuration}
         />
         <TotalUsage
           className='border-2  w-mcard '
           sort='single'
-          title={totalTimeRangeCardInfo.title}
-          info={totalTimeRangeCardInfo.info}
-          footer={totalTimeRangeCardInfo.footer}
-          data={totalTimeRangeCardInfo.data}
-          formattingFn={totalTimeRangeCardInfo.formattingFn}
-          formattingUnitFn={totalTimeRangeCardInfo.formattingUnitFn}
+          title={TotalDomainCard.title}
+          info={TotalDomainCard.info}
+          footer={TotalDomainCard.footer}
+          data={TotalDomainCard.data}
+          formattingFn={TotalDomainCard.formattingFn}
+          formattingUnitFn={TotalDomainCard.formattingUnitFn}
+          isDuration={TotalDomainCard.isDuration}
         />
       </div>
     );
@@ -125,46 +201,45 @@ function SingleCard() {
       <div className='w-full'>
         <div className='flex'>
           <TotalUsage
-            className='border-2 mr-4 w-scard '
+            className='border-2 mr-4 w-mcard '
             sort='single'
             title={totalTimeRangeCardInfo.title}
             info={totalTimeRangeCardInfo.info}
             footer={totalTimeRangeCardInfo.footer}
             data={totalTimeRangeCardInfo.data}
-            formattingFn={totalTimeRangeCardInfo.formattingFn}
-            formattingUnitFn={totalTimeRangeCardInfo.formattingUnitFn}
           />
           <TotalUsage
-            className='border-2  w-scard '
+            className='border-2 mr-4
+           w-mcard '
             sort='single'
-            title={totalTimeRangeCardInfo.title}
-            info={totalTimeRangeCardInfo.info}
-            footer={totalTimeRangeCardInfo.footer}
-            data={totalTimeRangeCardInfo.data}
-            formattingFn={totalTimeRangeCardInfo.formattingFn}
-            formattingUnitFn={totalTimeRangeCardInfo.formattingUnitFn}
+            title={toTotalDurationCard.title}
+            info={toTotalDurationCard.info}
+            footer={toTotalDurationCard.footer}
+            data={toTotalDurationCard.data}
+            formattingFn={toTotalDurationCard.formattingFn}
+            formattingUnitFn={toTotalDurationCard.formattingUnitFn}
           />
         </div>
         <div className='flex mt-4'>
           <TotalUsage
-            className='border-2 mr-4 w-scard '
+            className='border-2 mr-4 w-mcard '
             sort='single'
-            title={totalTimeRangeCardInfo.title}
-            info={totalTimeRangeCardInfo.info}
-            footer={totalTimeRangeCardInfo.footer}
-            data={totalTimeRangeCardInfo.data}
-            formattingFn={totalTimeRangeCardInfo.formattingFn}
-            formattingUnitFn={totalTimeRangeCardInfo.formattingUnitFn}
+            title={pageVisitCard.title}
+            info={pageVisitCard.info}
+            footer={pageVisitCard.footer}
+            data={pageVisitCard.data}
+            formattingFn={pageVisitCard.formattingFn}
+            formattingUnitFn={pageVisitCard.formattingUnitFn}
           />
           <TotalUsage
-            className='border-2  w-scard '
+            className='border-2  w-mcard '
             sort='single'
-            title={totalTimeRangeCardInfo.title}
-            info={totalTimeRangeCardInfo.info}
-            footer={totalTimeRangeCardInfo.footer}
-            data={totalTimeRangeCardInfo.data}
-            formattingFn={totalTimeRangeCardInfo.formattingFn}
-            formattingUnitFn={totalTimeRangeCardInfo.formattingUnitFn}
+            title={TotalDomainCard.title}
+            info={TotalDomainCard.info}
+            footer={TotalDomainCard.footer}
+            data={TotalDomainCard.data}
+            formattingFn={TotalDomainCard.formattingFn}
+            formattingUnitFn={TotalDomainCard.formattingUnitFn}
           />
         </div>
       </div>
@@ -176,50 +251,49 @@ function SingleCard() {
       <div className='w-full'>
         <div className='flex'>
           <TotalUsage
-            className='border-2 w-fcard '
+            className='border-2 mr-4 w-mcard '
             sort='single'
             title={totalTimeRangeCardInfo.title}
             info={totalTimeRangeCardInfo.info}
             footer={totalTimeRangeCardInfo.footer}
             data={totalTimeRangeCardInfo.data}
-            formattingFn={totalTimeRangeCardInfo.formattingFn}
-            formattingUnitFn={totalTimeRangeCardInfo.formattingUnitFn}
           />
         </div>
         <div className='mt-2'>
           <TotalUsage
-            className='border-2  w-fcard '
+            className='border-2 mr-4
+           w-mcard '
             sort='single'
-            title={totalTimeRangeCardInfo.title}
-            info={totalTimeRangeCardInfo.info}
-            footer={totalTimeRangeCardInfo.footer}
-            data={totalTimeRangeCardInfo.data}
-            formattingFn={totalTimeRangeCardInfo.formattingFn}
-            formattingUnitFn={totalTimeRangeCardInfo.formattingUnitFn}
+            title={toTotalDurationCard.title}
+            info={toTotalDurationCard.info}
+            footer={toTotalDurationCard.footer}
+            data={toTotalDurationCard.data}
+            formattingFn={toTotalDurationCard.formattingFn}
+            formattingUnitFn={toTotalDurationCard.formattingUnitFn}
           />
         </div>
         <div className='flex mt-2'>
           <TotalUsage
-            className='border-2   w-fcard '
+            className='border-2 mr-4 w-mcard '
             sort='single'
-            title={totalTimeRangeCardInfo.title}
-            info={totalTimeRangeCardInfo.info}
-            footer={totalTimeRangeCardInfo.footer}
-            data={totalTimeRangeCardInfo.data}
-            formattingFn={totalTimeRangeCardInfo.formattingFn}
-            formattingUnitFn={totalTimeRangeCardInfo.formattingUnitFn}
+            title={pageVisitCard.title}
+            info={pageVisitCard.info}
+            footer={pageVisitCard.footer}
+            data={pageVisitCard.data}
+            formattingFn={pageVisitCard.formattingFn}
+            formattingUnitFn={pageVisitCard.formattingUnitFn}
           />
         </div>
         <div className='flex mt-2'>
           <TotalUsage
-            className='border-2  w-fcard '
+            className='border-2  w-mcard '
             sort='single'
-            title={totalTimeRangeCardInfo.title}
-            info={totalTimeRangeCardInfo.info}
-            footer={totalTimeRangeCardInfo.footer}
-            data={totalTimeRangeCardInfo.data}
-            formattingFn={totalTimeRangeCardInfo.formattingFn}
-            formattingUnitFn={totalTimeRangeCardInfo.formattingUnitFn}
+            title={TotalDomainCard.title}
+            info={TotalDomainCard.info}
+            footer={TotalDomainCard.footer}
+            data={TotalDomainCard.data}
+            formattingFn={TotalDomainCard.formattingFn}
+            formattingUnitFn={TotalDomainCard.formattingUnitFn}
           />
         </div>
       </div>
