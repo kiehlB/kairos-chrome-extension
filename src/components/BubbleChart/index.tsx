@@ -21,7 +21,7 @@ export const data = {
         y: faker.datatype.number({ min: -100, max: 100 }),
         r: faker.datatype.number({ min: 5, max: 20 }),
       })),
-      backgroundColor: 'rgba(255, 99, 132, 0.5)',
+      backgroundColor: 'rgba(108, 210, 176, 1)',
     },
     {
       label: 'Blue dataset',

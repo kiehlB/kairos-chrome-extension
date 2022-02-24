@@ -33,8 +33,6 @@ import { Bar } from 'react-chartjs-2';
 
 import faker from '@faker-js/faker';
 import { TableChart } from '../../components/TableChart';
-import { useWindowSize } from '../../hooks/useWindowSize';
-import useClientDimensions from '../../hooks/useClientDimensions';
 
 const MAX_TICK_COUNT = 5;
 const MIN_STEP = MS_PER_HOUR;
@@ -56,7 +54,17 @@ export const data = {
     {
       label: 'Dataset 1',
       data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-      backgroundColor: 'rgba(255, 99, 132, 0.5)',
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+      ],
+      borderColor: [
+        'rgba(255, 99, 132, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+      ],
+      borderWidth: 1,
     },
     {
       label: 'Dataset 2',
@@ -93,12 +101,8 @@ function SecondCard() {
       {
         label: 'Dataset 1',
         data: d,
-        backgroundColor: 'rgba(255, 99, 132, 0.5)',
-      },
-      {
-        label: 'Dataset 2',
-        data: d,
-        backgroundColor: 'rgba(53, 162, 235, 0.5)',
+        backgroundColor: 'rgba(108, 210, 176, 1)',
+        borderWidth: 1,
       },
     ],
   };

@@ -45,7 +45,6 @@ const Transition = (xy) => {
   const [name, setName] = useState('');
   const [unit, setUnit] = useState('');
 
-  console.log(newData);
   let x = scaleBand()
     .domain(newData.map((d) => d.x))
     .range([0, dimensions.width])

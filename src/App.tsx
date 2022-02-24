@@ -15,6 +15,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import {
   getAllDomains,
+  getIsLoadingRecords,
   getTotalDurationByDate,
 } from './store/activity/selectors';
 import { RootState } from './store/store';
@@ -29,15 +30,54 @@ function App() {
   const selectedDomain = useSelector((state: RootState) =>
     getSearchParamsSelectedDomain(state)
   );
+
   const selectedTimeRange = useSelector((state: RootState) =>
     getSearchParamsSelectedTimeRange(state)
   );
+
   const totalTime = useSelector((state: RootState) =>
     getTotalDurationByDate(state)
   );
+
+  const allDomains = useSelector((state: RootState) => getAllDomains(state));
+
+  const isLoadingRecords = useSelector((state: RootState) =>
+    getIsLoadingRecords(state)
+  );
+
+  function formatTableDurationLabel(duration: number): any {
+    if (duration < 1000) {
+      return `${duration} ms`;
+    }
+
+    if (duration < 60000) {
+      return `${(duration / 1000).toFixed(1)} s`;
+    }
+
+    if (duration < 3600000) {
+      const minutes = Math.floor(duration / 60000);
+      const seconds = Math.round((duration / 1000) % 60);
+      return `${minutes} min ${seconds.toString().padStart(2, '0')} s`;
+    }
+
+    const hours = Math.floor(duration / 3600000);
+    const minutes = Math.round((duration / 60000) % 60);
+    return `${hours} h ${minutes.toString().padStart(2, '0')} min`;
+  }
+
+  console.log(totalTime);
+  console.log(formatTableDurationLabel(2));
+
   useEffect(() => {
     dispatch(loadRecords());
-  }, [loadRecords, selectedDomain, selectedTimeRange, totalTime]);
+  }, [
+    loadRecords,
+    selectedDomain,
+    selectedTimeRange,
+    totalTime,
+    allDomains,
+    isLoadingRecords,
+  ]);
 
   return (
     <>

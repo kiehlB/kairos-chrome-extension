@@ -45,7 +45,7 @@ export const getSelectedDomainRecords = createSelector(
   [getAllSelectedDomainRecords, getSelectedTimeRange],
   (allSelectedDomainRecords, selectedTimeRange) => {
     const { start: startTime, end: endTime } = selectedTimeRange;
-    console.log(selectedTimeRange);
+
     return allSelectedDomainRecords.filter(
       (record) =>
         (startTime === null || record.endTime >= startTime) &&
@@ -113,8 +113,6 @@ export const getRecords = createSelector(
 export const getSelectedDomainRatioToTotalDuration = createSelector(
   [getRecords, getSelectedDomainRecords, getEffectiveSelectedTimeRange],
   (records, selectedDomainRecords, effectiveTimeRange) => {
-    console.log(selectedDomainRecords);
-
     return (
       computeTotalDuration(selectedDomainRecords, effectiveTimeRange) /
       Math.max(computeTotalDuration(records, effectiveTimeRange), 1)

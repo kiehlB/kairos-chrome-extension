@@ -23,15 +23,18 @@ export const setSelectedDomain =
   (domain: string | null): ThunkAction<void, RootState, null, Action<string>> =>
   async (dispatch, getState) => {
     const state = getState();
-    const selectedDomain = getSearchParamsSelectedDomain(state);
+    const selectedDomain = await getSearchParamsSelectedDomain(state);
+
     if (selectedDomain === domain) {
       return;
     }
 
     const searchParams = getSearchParams(state);
+
     const newSearchParams = computeSearchParams(searchParams, {
       [SEARCH_PARAM_DOMAIN]: domain,
     });
+
     dispatch(push(`?${newSearchParams.toString()}`));
   };
 
@@ -42,6 +45,7 @@ export const setSelectedTimeRange =
   async (dispatch, getState) => {
     const state = getState();
     const selectedTimeRange = getSearchParamsSelectedTimeRange(state);
+
     if (
       _.isEqual(timeRange, selectedTimeRange) ||
       (timeRange === null && _.isEqual(selectedTimeRange, DEFAULT_TIME_RANGE))

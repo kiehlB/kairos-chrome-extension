@@ -18,6 +18,8 @@ interface DurationCountUpProps {
   preserveValue?: boolean;
   redraw?: boolean;
   separator?: string;
+  formattingFn?(value: number): string;
+  formattingUnitFn?(value: number): string;
 }
 
 interface CountUpProps {
@@ -60,7 +62,6 @@ const formatMilliseconds = (value: number) => {
 };
 
 export const CountUp = ({ formattingUnitFn, ...props }: CountUpProps) => {
-  console.log(props);
   return (
     <span className='text-dark-m font-bold text-3xl'>
       <ReactCountUp className='count-up__value' {...props} />
@@ -76,7 +77,6 @@ export const CountUp = ({ formattingUnitFn, ...props }: CountUpProps) => {
 };
 
 export const DurationCountUp = (props: DurationCountUpProps) => {
-  console.log(formatHour(props.end));
   return (
     <span className={classNames('duration-count-up', props.className)}>
       <CountUp
