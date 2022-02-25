@@ -49,7 +49,7 @@ export function formatTableDurationLabel(duration: number): string {
   return `${hours} h ${minutes.toString().padStart(2, '0')} min`;
 }
 
-export function formatTooltipDateLabel(date: Date): string {
+export function formatTooltipDateLabel(date: Date) {
   return date.toLocaleDateString('en-US', {
     weekday: 'short',
     month: 'long',

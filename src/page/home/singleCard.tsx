@@ -11,11 +11,14 @@ import { CountUp, DurationCountUp } from '../../components/Count';
 import DateRangePicker, { TRANSITION_DELAY } from '../../components/DatePicker';
 import useClientDimensions from '../../hooks/useClientDimensions';
 import { useWindowSize } from '../../hooks/useWindowSize';
+import { useParams, useLocation } from 'react-router-dom';
 
 import {
   getRatioToTotalDuration,
+  getSelectedDomainAveragePageVisitDuration,
   getSelectedDomainRatioToTotalDuration,
   getSelectedDomainTotalDuration,
+  getSelectedDomainTotalPageVisitCount,
   getTotalDomainVisitCount,
   getTotalDuration,
   getTotalPageVisitCount,
@@ -66,49 +69,45 @@ function SingleCard() {
   const [containerRef, { height: containerHeight, width }] =
     useClientDimensions();
 
-  // getTotalDuration
+  let location = useLocation();
 
-  const totalTime = useSelector((state: RootState) =>
+  const byDomain = location.search.slice(0, 7);
+
+  const totalTime = useSelector((state: RootState) => getTotalDuration(state));
+
+  const totalTimeByDamin = useSelector((state: RootState) =>
     getSelectedDomainTotalDuration(state)
   );
-  const toTotalDuration = useSelector((state: RootState) =>
-    getRatioToTotalDuration(state)
+  const toTotalDuration = useSelector(
+    (state: RootState) => getRatioToTotalDuration(state) * 100
   );
+
+  const toTotalDurationByDomain = useSelector(
+    (state: RootState) => getSelectedDomainRatioToTotalDuration(state) * 100
+  );
+
   const pageVisit = useSelector((state: RootState) =>
     getTotalPageVisitCount(state)
+  );
+
+  const pageVisitByDomain = useSelector((state: RootState) =>
+    getSelectedDomainTotalPageVisitCount(state)
   );
 
   const domainVisit = useSelector((state: RootState) =>
     getTotalDomainVisitCount(state)
   );
 
-  function formatTableDurationLabel(duration: number): any {
-    if (duration < 1000) {
-      return `${duration} ms`;
-    }
-
-    if (duration < 60000) {
-      return `${(duration / 1000).toFixed(1)} s`;
-    }
-
-    if (duration < 3600000) {
-      const minutes = Math.floor(duration / 60000);
-      const seconds = Math.round((duration / 1000) % 60);
-      return `${minutes} min ${seconds.toString().padStart(2, '0')} s`;
-    }
-
-    const hours = Math.floor(duration / 3600000);
-    const minutes = Math.round((duration / 60000) % 60);
-    return `${hours} h ${minutes.toString().padStart(2, '0')} min`;
-  }
-  const formatDurationTime = formatTableDurationLabel(totalTime);
+  const domainVisitByDomain = useSelector((state: RootState) =>
+    getSelectedDomainAveragePageVisitDuration(state)
+  );
 
   const totalTimeRangeCardInfo = {
     title: 'Total Usage',
     info: 'Total time spent on the website',
     footer: 'vs. previous month',
     sort: 'single',
-    data: totalTime,
+    data: byDomain ? totalTimeByDamin : totalTime,
     isDuration: true,
   };
 
@@ -117,7 +116,8 @@ function SingleCard() {
     info: 'Total time spent on the website',
     footer: 'vs. previous month',
     sort: 'single',
-    data: toTotalDuration,
+
+    data: byDomain ? toTotalDurationByDomain : toTotalDuration,
     isDuration: false,
     decimals: 3,
     formattingFn: (d: number) => `${d.toFixed(2)}`,
@@ -129,7 +129,8 @@ function SingleCard() {
     info: 'Total time spent on the website',
     footer: 'vs. previous month',
     sort: 'single',
-    data: pageVisit,
+
+    data: byDomain ? pageVisitByDomain : pageVisit,
     isDuration: false,
     formattingFn: (d: number) => d.toLocaleString('en-US'),
     formattingUnitFn: (d: number) => (d > 1 ? 'pages' : 'page'),
@@ -140,10 +141,12 @@ function SingleCard() {
     info: 'Total time spent on the website',
     footer: 'vs. previous month',
     sort: 'single',
-    data: domainVisit,
-    isDuration: false,
-    formattingFn: (d: number) => d.toLocaleString('en-US'),
-    formattingUnitFn: (d: number) => (d > 1 ? 'domains' : 'domain'),
+    data: byDomain ? domainVisitByDomain : domainVisit,
+    isDuration: byDomain ? true : false,
+    formattingFn: byDomain ? '' : (d: number) => d.toLocaleString('en-US'),
+    formattingUnitFn: byDomain
+      ? ''
+      : (d: number) => (d > 1 ? 'domains' : 'domain'),
   };
 
   const eachWithTotal = () => {

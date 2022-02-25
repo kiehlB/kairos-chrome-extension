@@ -211,3 +211,20 @@ export const getTotalDomainVisitCount = createSelector(
     return _.uniqBy(records, (record) => record.domain).length;
   }
 );
+
+export const getSelectedDomainTotalPageVisitCount = createSelector(
+  getSelectedDomainRecords,
+  (selectedDomainRecords) => {
+    return _.uniqBy(selectedDomainRecords, (record) => record.path).length;
+  }
+);
+
+export const getSelectedDomainAveragePageVisitDuration = createSelector(
+  [getSelectedDomainRecords, getEffectiveSelectedTimeRange],
+  (selectedDomainRecords, effectiveTimeRange) => {
+    return (
+      computeTotalDuration(selectedDomainRecords, effectiveTimeRange) /
+      Math.max(selectedDomainRecords.length, 1)
+    );
+  }
+);

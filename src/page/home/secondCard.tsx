@@ -33,6 +33,11 @@ import { Bar } from 'react-chartjs-2';
 
 import faker from '@faker-js/faker';
 import { TableChart } from '../../components/TableChart';
+import {
+  formatTableDurationLabel,
+  formatTooltipDateLabel,
+} from '../../utils/stringUtils';
+import moment from 'moment';
 
 const MAX_TICK_COUNT = 5;
 const MIN_STEP = MS_PER_HOUR;
@@ -48,40 +53,55 @@ ChartJS.register(
 
 const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 
-export const data = {
-  labels,
-  datasets: [
-    {
-      label: 'Dataset 1',
-      data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-      backgroundColor: [
-        'rgba(255, 99, 132, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-        'rgba(255, 206, 86, 0.2)',
-      ],
-      borderColor: [
-        'rgba(255, 99, 132, 1)',
-        'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)',
-      ],
-      borderWidth: 1,
-    },
-    {
-      label: 'Dataset 2',
-      data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-      backgroundColor: 'rgba(53, 162, 235, 0.5)',
-    },
-  ],
-};
-
 function SecondCard() {
   const totalTime = useSelector((state: RootState) =>
-    getTotalDurationByDayOfWeek(state)
+    getTotalDurationByDate(state)
+  ) as any;
+
+  const axisData = totalTime.map((d) => ({
+    x: d.timestamp,
+    y: d.totalDuration,
+  }));
+
+  const newDate = axisData.map((ele) =>
+    new Date(ele.x).toLocaleDateString('en-US', {
+      weekday: 'short',
+
+      day: 'numeric',
+    })
   );
+
+  console.log(newDate);
+
+  console.log(newDate);
 
   const options = {
     responsive: true,
     maintainAspectRatio: false,
+    scales: {
+      x: {
+        grid: {
+          display: false,
+        },
+        ticks: {
+          maxRotation: 0,
+          minRotation: 0,
+          autoSkip: true,
+          maxTicksLimit: 5,
+          font: {
+            size: 12,
+          },
+        },
+      },
+      y: {
+        position: 'left',
+        ticks: {
+          callback: (value) => formatTableDurationLabel(value),
+        },
+        stepSize: 1,
+      },
+    },
+
     plugins: {
       legend: {
         position: 'top' as const,
@@ -91,18 +111,22 @@ function SecondCard() {
         text: 'Chart.js Bar Chart',
       },
     },
-  };
+  } as any;
 
-  const d = totalTime.map((d) => d.duration / 1000000);
+  const data = totalTime.map((d) => d.totalDuration);
+
+  const a = data.map((ele) => formatTableDurationLabel(ele));
 
   const d2 = {
-    labels,
+    labels: newDate,
+
     datasets: [
       {
         label: 'Dataset 1',
-        data: d,
+        data: data,
         backgroundColor: 'rgba(108, 210, 176, 1)',
         borderWidth: 1,
+        stack: 'Stack 1',
       },
     ],
   };
