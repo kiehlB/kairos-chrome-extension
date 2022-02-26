@@ -123,6 +123,7 @@ function SecondCard() {
         label: 'Dataset 1',
         data: data,
         backgroundColor: 'rgba(108, 210, 176, 1)',
+        borderColor: 'rgba(108, 210, 176, 1)',
 
         borderWidth: 1,
         stack: 'Stack 1',
@@ -132,6 +133,7 @@ function SecondCard() {
         label: '',
         data: randomData,
         backgroundColor: 'rgba(0, 0, 0, 0.1)',
+        borderColor: 'rgba(0, 0, 0, 0.1)',
         borderWidth: 1,
         stack: 'Stack 1',
         borderRadius: Number.MAX_VALUE,

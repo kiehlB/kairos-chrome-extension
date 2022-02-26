@@ -57,7 +57,6 @@ const LabelCell = ({
 
   const barWidth = (value / maxValue) * 500;
 
-  console.log(barWidth);
   return (
     <div>
       <Transition in={inProp} timeout={0}>

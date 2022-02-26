@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import AppLayout from '../../components/AppLayout';
 import Header from '../../components/Base/Header';
-import { BubbleChart } from '../../components/BubbleChart';
+import { DoughnutChart } from '../../components/DoughnutChart';
 import Card from '../../components/Card';
 import Scales from '../../components/Chart';
 import Transition from '../../components/Chart';
@@ -79,13 +79,14 @@ function ThridCard() {
     formattingFn: (d: number) => `${d.toFixed(2)}`,
     formattingUnitFn: () => '%',
   };
+  
 
   return (
     <>
       <>
         <div className='flex h-card px-8 mt-4 m2xl:hidden '>
           <div className='border-2 w-tcard mr-3'>
-            <BubbleChart />
+            <DoughnutChart />
           </div>
           <div className='border-2 w-tcard mr-3'>
             <LineChart />
@@ -99,7 +100,7 @@ function ThridCard() {
       <>
         <div className='flex h-card px-8 mt-4 mmd:px-4 xxl:hidden'>
           <div className='border-2 w-fcard  '>
-            <BubbleChart />
+            <DoughnutChart />
           </div>
         </div>
         <div className='flex h-card px-8 mt-4 mmd:px-4 xxl:hidden'>
