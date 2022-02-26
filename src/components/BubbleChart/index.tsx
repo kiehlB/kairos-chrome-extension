@@ -6,7 +6,7 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
-import { Bubble } from 'react-chartjs-2';
+import { Scatter } from 'react-chartjs-2';
 import faker from '@faker-js/faker';
 import { useWindowSize } from '../../hooks/useWindowSize';
 
@@ -48,5 +48,5 @@ export function BubbleChart() {
     },
   };
 
-  return <Bubble options={options} data={data} width={520} height={300} />;
+  return <Scatter options={options} data={data} width={520} height={300} />;
 }

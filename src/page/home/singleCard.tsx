@@ -102,12 +102,14 @@ function SingleCard() {
     getSelectedDomainAveragePageVisitDuration(state)
   );
 
+  const isDomain = byDomain == '?domain' ? true : false;
+
   const totalTimeRangeCardInfo = {
     title: 'Total Usage',
     info: 'Total time spent on the website',
     footer: 'vs. previous month',
     sort: 'single',
-    data: byDomain ? totalTimeByDamin : totalTime,
+    data: isDomain ? totalTimeByDamin : totalTime,
     isDuration: true,
   };
 
@@ -117,7 +119,7 @@ function SingleCard() {
     footer: 'vs. previous month',
     sort: 'single',
 
-    data: byDomain ? toTotalDurationByDomain : toTotalDuration,
+    data: isDomain ? toTotalDurationByDomain : toTotalDuration,
     isDuration: false,
     decimals: 3,
     formattingFn: (d: number) => `${d.toFixed(2)}`,
@@ -130,7 +132,7 @@ function SingleCard() {
     footer: 'vs. previous month',
     sort: 'single',
 
-    data: byDomain ? pageVisitByDomain : pageVisit,
+    data: isDomain ? pageVisitByDomain : pageVisit,
     isDuration: false,
     formattingFn: (d: number) => d.toLocaleString('en-US'),
     formattingUnitFn: (d: number) => (d > 1 ? 'pages' : 'page'),
@@ -141,10 +143,10 @@ function SingleCard() {
     info: 'Total time spent on the website',
     footer: 'vs. previous month',
     sort: 'single',
-    data: byDomain ? domainVisitByDomain : domainVisit,
-    isDuration: byDomain ? true : false,
-    formattingFn: byDomain ? '' : (d: number) => d.toLocaleString('en-US'),
-    formattingUnitFn: byDomain
+    data: isDomain ? domainVisitByDomain : domainVisit,
+    isDuration: isDomain ? true : false,
+    formattingFn: isDomain ? '' : (d: number) => d.toLocaleString('en-US'),
+    formattingUnitFn: isDomain
       ? ''
       : (d: number) => (d > 1 ? 'domains' : 'domain'),
   };

@@ -55,39 +55,56 @@ const LabelCell = ({
   const handleMouseEnter = useCallback(() => setIsHovered(true), []);
   const handleMouseLeave = useCallback(() => setIsHovered(false), []);
 
+  const barWidth = (value / maxValue) * 500;
+
+  console.log(barWidth);
   return (
-    <Transition in={inProp} timeout={0}>
-      <div
-        className='flex items-center'
-        style={{ visibility: hide ? 'hidden' : undefined }}
-      >
-        {showIcons && (
-          <Avatar
-            className='bar-chart-table__label-icon'
-            src={iconSrc}
-            hashValue={label}
-            name={label}
-            size={ICON_SIZE_SM}
-          />
-        )}
+    <div>
+      <Transition in={inProp} timeout={0}>
         <div
-          className='flex items-center'
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
+          className='flex items-center ml-4'
+          style={{ visibility: hide ? 'hidden' : undefined }}
         >
-          {labelComponent ? labelComponent : <div title={label}>{label}</div>}
-          {labelSrc && labelSrc.startsWith('http') && (
-            <ExternalLink
-              className='bar-chart-table__label-external-link'
-              style={{ visibility: isHovered ? 'unset' : 'hidden' }}
-              url={labelSrc}
-            >
-              <ExternalLinkIcon size={BASE_SIZE * 1.5} />
-            </ExternalLink>
+          {showIcons && (
+            <Avatar
+              className='mr-2'
+              src={iconSrc}
+              hashValue={label}
+              name={label}
+              size={ICON_SIZE_SM}
+            />
           )}
+          <div
+            className='flex items-center truncate whitespace-nowrap overflow-hidden'
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            <div className=' '>
+              {labelComponent ? (
+                labelComponent
+              ) : (
+                <div title={label} className=''>
+                  {label}
+                </div>
+              )}
+            </div>
+            {labelSrc && labelSrc.startsWith('http') && (
+              <ExternalLink
+                style={{ visibility: isHovered ? 'unset' : 'hidden' }}
+                url={labelSrc}
+              >
+                <ExternalLinkIcon size={BASE_SIZE * 1.5} />
+              </ExternalLink>
+            )}
+          </div>
         </div>
+      </Transition>
+      <div className='ml-10'>
+        <div
+          style={{ border: '1px solid #6CD2B0', width: `${barWidth}%` }}
+        ></div>
       </div>
-    </Transition>
+    </div>
   );
 };
 

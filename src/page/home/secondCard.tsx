@@ -51,8 +51,6 @@ ChartJS.register(
   Legend
 );
 
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-
 function SecondCard() {
   const totalTime = useSelector((state: RootState) =>
     getTotalDurationByDate(state)
@@ -66,14 +64,9 @@ function SecondCard() {
   const newDate = axisData.map((ele) =>
     new Date(ele.x).toLocaleDateString('en-US', {
       weekday: 'short',
-
       day: 'numeric',
     })
   );
-
-  console.log(newDate);
-
-  console.log(newDate);
 
   const options = {
     responsive: true,
@@ -106,6 +99,9 @@ function SecondCard() {
       legend: {
         position: 'top' as const,
       },
+      background: {
+        color: 'cyan',
+      },
       title: {
         display: true,
         text: 'Chart.js Bar Chart',
@@ -115,7 +111,9 @@ function SecondCard() {
 
   const data = totalTime.map((d) => d.totalDuration);
 
-  const a = data.map((ele) => formatTableDurationLabel(ele));
+  const randomData = totalTime.map(
+    (d) => d.totalDuration * Math.random() * (2 - 1) + 1
+  );
 
   const d2 = {
     labels: newDate,
@@ -125,8 +123,18 @@ function SecondCard() {
         label: 'Dataset 1',
         data: data,
         backgroundColor: 'rgba(108, 210, 176, 1)',
+
         borderWidth: 1,
         stack: 'Stack 1',
+        borderRadius: Number.MAX_VALUE,
+      },
+      {
+        label: '',
+        data: randomData,
+        backgroundColor: 'rgba(0, 0, 0, 0.1)',
+        borderWidth: 1,
+        stack: 'Stack 1',
+        borderRadius: Number.MAX_VALUE,
       },
     ],
   };
@@ -148,7 +156,7 @@ function SecondCard() {
         </div>
       </div>
       <div className='flex h-card px-8 mt-4 mmd:px-4  xxl:hidden'>
-        <div className='border-2 w-fcard '>
+        <div className='border-2 w-fcard'>
           <TableChart />
         </div>
       </div>

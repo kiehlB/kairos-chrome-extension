@@ -80,46 +80,44 @@ function App() {
   ]);
 
   return (
-    <>
-      <div className='h-full flex'>
-        <div className='flex  flex-1 '>
-          <Navbar
-            primaryItems={[
-              {
-                icon: <BarChart2 size='20' />,
-                text: 'Analytics',
-                to: { pathname: '/analytics', search },
+    <div className='h-full flex'>
+      <div className='flex  flex-1 h-full'>
+        <Navbar
+          primaryItems={[
+            {
+              icon: <BarChart2 size='20' />,
+              text: 'Analytics',
+              to: { pathname: '/analytics', search },
+            },
+            {
+              icon: <Clock size='20' />,
+              text: 'History',
+              to: { pathname: '/history', search },
+            },
+          ]}
+          secondaryItems={[
+            {
+              icon: <Settings size='20' />,
+              text: 'Settings',
+              to: {
+                pathname: '/settings',
               },
-              {
-                icon: <Clock size='20' />,
-                text: 'History',
-                to: { pathname: '/history', search },
+            },
+            {
+              icon: <HelpCircle size='20' />,
+              text: 'Help',
+              to: {
+                pathname: '/help',
               },
-            ]}
-            secondaryItems={[
-              {
-                icon: <Settings size='20' />,
-                text: 'Settings',
-                to: {
-                  pathname: '/settings',
-                },
-              },
-              {
-                icon: <HelpCircle size='20' />,
-                text: 'Help',
-                to: {
-                  pathname: '/help',
-                },
-              },
-            ]}
-          />
-        </div>
-
-        <Switch>
-          <Route path='/' component={Home} />
-        </Switch>
+            },
+          ]}
+        />
       </div>
-    </>
+
+      <Switch>
+        <Route path='/' component={Home} />
+      </Switch>
+    </div>
   );
 }
 

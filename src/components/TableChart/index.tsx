@@ -64,7 +64,7 @@ export function TableChart(props) {
       info={totalTimeRangeCardInfo.info}
       body={
         totalTimeRangeCardInfo.data.length === 0 ? (
-          <div className='analytics-view__placeholder'>No activity</div>
+          <div>No activity</div>
         ) : (
           <BarChartTable
             data={totalTimeRangeCardInfo.data}

@@ -30,6 +30,7 @@ const BarChartTable = ({
   className,
   data,
   formatValue,
+
   maxValue,
   rowCount = defaultProps.rowCount,
   showIcons = defaultProps.showIcons,
@@ -41,29 +42,32 @@ const BarChartTable = ({
 
   return (
     <div className=''>
-      <div className=''>
+      <div className='text-sm mt-4'>
         {rowData.map((datum, index) => (
           <div
-            className='flex items-center'
+            className='flex items-center px-4 py-0.5 flex-1 '
             style={{
               visibility: datum.label === NO_DATA_LABEL ? 'hidden' : undefined,
             }}
           >
             {`${index + 1}.`}
-            <LabelCell
-              {...datum}
-              hide={datum.label === NO_DATA_LABEL}
-              maxValue={max}
-              showIcons={showIcons}
-            />
-            <div
-              className='bar-chart-table__cell'
-              style={{
-                visibility:
-                  datum.label === NO_DATA_LABEL ? 'hidden' : undefined,
-              }}
-            >
-              {formatValue ? formatValue(datum.value) : datum.value}
+            <div className='w-full   flex justify-between flex-1'>
+              <LabelCell
+                {...datum}
+                hide={datum.label === NO_DATA_LABEL}
+                maxValue={max}
+                showIcons={showIcons}
+              />
+
+              <div
+                className='truncate whitespace-nowrap overflow-hidden'
+                style={{
+                  visibility:
+                    datum.label === NO_DATA_LABEL ? 'hidden' : undefined,
+                }}
+              >
+                {formatValue ? formatValue(datum.value) : datum.value}
+              </div>
             </div>
           </div>
         ))}

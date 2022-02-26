@@ -36,7 +36,9 @@ const Card = (props: CardProps) => (
                 : ' '
             }`}
           >
-            <div>{props.body}</div>
+            <div className='truncate whitespace-nowrap overflow-hidden'>
+              {props.body}
+            </div>
             <div
               className={`${
                 props.sort == 'single'
