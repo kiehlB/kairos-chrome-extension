@@ -6,6 +6,7 @@ import { selectors as routerSelectors } from '../router';
 import _ from 'lodash';
 import { RootState } from '../store';
 import {
+  computeAverageDurationByHourOfWeek,
   computeTotalDuration,
   computeTotalDurationByDate,
   computeTotalDurationByDayOfWeek,
@@ -184,6 +185,13 @@ export const getTotalDurationByDomain = createSelector(
       .sort((a, b) => {
         return a.totalDuration > b.totalDuration ? -1 : 1;
       });
+  }
+);
+
+export const getAverageDurationByHourOfWeek = createSelector(
+  [getRecords, getEffectiveSelectedTimeRange],
+  (records, effectiveTimeRange) => {
+    return computeAverageDurationByHourOfWeek(records, effectiveTimeRange);
   }
 );
 

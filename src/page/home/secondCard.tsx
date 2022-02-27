@@ -134,6 +134,7 @@ function SecondCard() {
         data: randomData,
         backgroundColor: 'rgba(0, 0, 0, 0.1)',
         borderColor: 'rgba(0, 0, 0, 0.1)',
+
         borderWidth: 1,
         stack: 'Stack 1',
         borderRadius: Number.MAX_VALUE,

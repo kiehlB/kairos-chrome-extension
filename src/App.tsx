@@ -65,9 +65,6 @@ function App() {
     return `${hours} h ${minutes.toString().padStart(2, '0')} min`;
   }
 
-  console.log(totalTime);
-  console.log(formatTableDurationLabel(2));
-
   useEffect(() => {
     dispatch(loadRecords());
   }, [

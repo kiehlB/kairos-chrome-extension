@@ -81,7 +81,6 @@ export function HorizontalChart() {
     (d) => d.duration * Math.random() * (2 - 1) + 1
   );
 
-  console.log(data);
   const d2 = {
     labels: labels,
 

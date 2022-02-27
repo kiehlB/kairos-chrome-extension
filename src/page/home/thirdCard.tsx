@@ -2,13 +2,8 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import AppLayout from '../../components/AppLayout';
 import Header from '../../components/Base/Header';
-import { DoughnutChart } from '../../components/DoughnutChart';
-import Card from '../../components/Card';
-import Scales from '../../components/Chart';
-import Transition from '../../components/Chart';
-import { LineChart } from '../../components/LineChart';
 
-import Axis from '../../components/Chart';
+import Card from '../../components/Card';
 import { CountUp, DurationCountUp } from '../../components/Count';
 
 import DateRangePicker, { TRANSITION_DELAY } from '../../components/DatePicker';
@@ -19,11 +14,9 @@ import {
   getSelectedDomainTotalDuration,
 } from '../../store/activity/selectors';
 import { RootState } from '../../store/store';
-import SecondCard from './secondCard';
-
-import SingleCard from './singleCard';
 import { HorizontalChart } from '../../components/HorizontalChart';
-import { useWindowSize } from '../../hooks/useWindowSize';
+import { LineChart } from '../../components/LineChart';
+import { BubbleChart } from '../../components/BubbleChart';
 
 const TotalUsage = ({
   className,
@@ -79,14 +72,13 @@ function ThridCard() {
     formattingFn: (d: number) => `${d.toFixed(2)}`,
     formattingUnitFn: () => '%',
   };
-  
 
   return (
     <>
       <>
         <div className='flex h-card px-8 mt-4 m2xl:hidden '>
           <div className='border-2 w-tcard mr-3'>
-            <DoughnutChart />
+            <BubbleChart />
           </div>
           <div className='border-2 w-tcard mr-3'>
             <LineChart />
@@ -100,7 +92,7 @@ function ThridCard() {
       <>
         <div className='flex h-card px-8 mt-4 mmd:px-4 xxl:hidden'>
           <div className='border-2 w-fcard  '>
-            <DoughnutChart />
+            <BubbleChart />
           </div>
         </div>
         <div className='flex h-card px-8 mt-4 mmd:px-4 xxl:hidden'>

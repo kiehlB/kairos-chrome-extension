@@ -12,6 +12,12 @@ import {
 import { Line } from 'react-chartjs-2';
 import faker from '@faker-js/faker';
 import { useWindowSize } from '../../hooks/useWindowSize';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store/store';
+import {
+  getAverageDurationByHourOfWeek,
+  getTotalDurationByDayOfWeek,
+} from '../../store/activity/selectors';
 
 ChartJS.register(
   CategoryScale,
@@ -23,29 +29,35 @@ ChartJS.register(
   Legend
 );
 
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-
-export const data = {
-  labels,
-  datasets: [
-    {
-      label: 'Dataset 1',
-      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
-      borderColor: 'rgba(108, 210, 176, 1)',
-
-      backgroundColor: 'rgba(108, 210, 176, 1)',
-    },
-    {
-      label: 'Dataset 2',
-      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
-      borderColor: 'rgb(53, 162, 235)',
-      backgroundColor: 'rgba(53, 162, 235, 0.5)',
-    },
-  ],
-};
-
 export function LineChart() {
-  const { width } = useWindowSize();
+  const totalTime = useSelector((state: RootState) =>
+    getTotalDurationByDayOfWeek(state)
+  ) as any;
+
+  const allTime = totalTime.map((d) => d.duration);
+
+  console.log(allTime);
+
+  const labels = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+
+  const data = {
+    labels,
+    datasets: [
+      {
+        label: 'Dataset 1',
+        data: allTime,
+        borderColor: 'rgba(108, 210, 176, 1)',
+
+        backgroundColor: 'rgba(108, 210, 176, 1)',
+      },
+      {
+        label: 'Dataset 2',
+        data: allTime,
+        borderColor: 'rgb(53, 162, 235)',
+        backgroundColor: 'rgba(53, 162, 235, 0.5)',
+      },
+    ],
+  };
 
   const options = {
     responsive: true,
