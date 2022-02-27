@@ -214,9 +214,10 @@ function SingleCard() {
             info={totalTimeRangeCardInfo.info}
             footer={totalTimeRangeCardInfo.footer}
             data={totalTimeRangeCardInfo.data}
+            isDuration={totalTimeRangeCardInfo.isDuration}
           />
           <TotalUsage
-            className='border-2 mr-4
+            className='border-2 
            w-scard '
             sort='single'
             title={toTotalDurationCard.title}
@@ -225,6 +226,8 @@ function SingleCard() {
             data={toTotalDurationCard.data}
             formattingFn={toTotalDurationCard.formattingFn}
             formattingUnitFn={toTotalDurationCard.formattingUnitFn}
+            decimals={toTotalDurationCard.decimals}
+            isDuration={toTotalDurationCard.isDuration}
           />
         </div>
         <div className='flex mt-4'>
@@ -237,6 +240,7 @@ function SingleCard() {
             data={pageVisitCard.data}
             formattingFn={pageVisitCard.formattingFn}
             formattingUnitFn={pageVisitCard.formattingUnitFn}
+            isDuration={pageVisitCard.isDuration}
           />
           <TotalUsage
             className='border-2  w-scard '
@@ -247,6 +251,7 @@ function SingleCard() {
             data={TotalDomainCard.data}
             formattingFn={TotalDomainCard.formattingFn}
             formattingUnitFn={TotalDomainCard.formattingUnitFn}
+            isDuration={TotalDomainCard.isDuration}
           />
         </div>
       </div>
@@ -264,6 +269,7 @@ function SingleCard() {
             info={totalTimeRangeCardInfo.info}
             footer={totalTimeRangeCardInfo.footer}
             data={totalTimeRangeCardInfo.data}
+            isDuration={totalTimeRangeCardInfo.isDuration}
           />
         </div>
         <div className='mt-2'>
@@ -277,6 +283,8 @@ function SingleCard() {
             data={toTotalDurationCard.data}
             formattingFn={toTotalDurationCard.formattingFn}
             formattingUnitFn={toTotalDurationCard.formattingUnitFn}
+            decimals={toTotalDurationCard.decimals}
+            isDuration={toTotalDurationCard.isDuration}
           />
         </div>
         <div className='flex mt-2'>
@@ -289,6 +297,7 @@ function SingleCard() {
             data={pageVisitCard.data}
             formattingFn={pageVisitCard.formattingFn}
             formattingUnitFn={pageVisitCard.formattingUnitFn}
+            isDuration={pageVisitCard.isDuration}
           />
         </div>
         <div className='flex mt-2'>
@@ -301,6 +310,7 @@ function SingleCard() {
             data={TotalDomainCard.data}
             formattingFn={TotalDomainCard.formattingFn}
             formattingUnitFn={TotalDomainCard.formattingUnitFn}
+            isDuration={TotalDomainCard.isDuration}
           />
         </div>
       </div>

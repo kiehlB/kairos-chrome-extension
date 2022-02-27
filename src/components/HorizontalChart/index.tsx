@@ -13,8 +13,12 @@ import faker from '@faker-js/faker';
 import { useWindowSize } from '../../hooks/useWindowSize';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
-import { getTotalDurationByDayOfWeek } from '../../store/activity/selectors';
+import {
+  getSelectedDomainTotalDurationByDayOfWeek,
+  getTotalDurationByDayOfWeek,
+} from '../../store/activity/selectors';
 import { formatTableDurationLabel } from '../../utils/stringUtils';
+import { useParams, useLocation } from 'react-router-dom';
 
 ChartJS.register(
   CategoryScale,
@@ -30,7 +34,42 @@ export function HorizontalChart() {
     getTotalDurationByDayOfWeek(state)
   ) as any;
 
-  const labels = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+  const totalTimeByDomain = useSelector((state: RootState) =>
+    getSelectedDomainTotalDurationByDayOfWeek(state)
+  ) as any;
+
+  const allTimeByDomain = totalTimeByDomain.map((d) => d.duration);
+  const allTime = totalTime.map((d) => d.duration);
+
+  let location = useLocation();
+
+  const byDomain = location.search.slice(0, 7);
+
+  const isDomain = byDomain == '?domain' ? true : false;
+
+  const axisData = totalTime.map((d) => ({
+    x: d.day,
+    y: d.duration,
+  }));
+
+  const axisDataByDomain = totalTime.map((d) => ({
+    x: d.day,
+    y: d.duration,
+  }));
+
+  const newDate = axisData.map((ele) =>
+    new Date(ele.x).toLocaleDateString('en-US', {
+      weekday: 'short',
+      day: 'numeric',
+    })
+  );
+
+  const newDateByDomain = axisDataByDomain.map((ele) =>
+    new Date(ele.x).toLocaleDateString('en-US', {
+      weekday: 'short',
+      day: 'numeric',
+    })
+  );
 
   const options = {
     responsive: true,
@@ -38,13 +77,12 @@ export function HorizontalChart() {
     indexAxis: 'y' as const,
     scales: {
       x: {
-        grid: {
-          display: false,
-        },
         ticks: {
+          callback: function (val, index) {
+            return `${val}h`;
+          },
           maxRotation: 0,
           minRotation: 0,
-          autoSkip: true,
 
           font: {
             size: 12,
@@ -52,9 +90,8 @@ export function HorizontalChart() {
         },
       },
       y: {
-        position: 'left',
-        ticks: {
-          callback: (value) => formatTableDurationLabel(value),
+        grid: {
+          display: false,
         },
         stepSize: 1,
       },
@@ -70,24 +107,25 @@ export function HorizontalChart() {
       },
       title: {
         display: true,
-        text: 'Chart.js Bar Chart',
       },
     },
   } as any;
 
-  const data = totalTime.map((d) => d.duration);
+  const data = totalTime.map((d) => d.duration / 3600000);
 
   const randomData = totalTime.map(
     (d) => d.duration * Math.random() * (2 - 1) + 1
   );
 
+  const labels = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+
   const d2 = {
-    labels: labels,
+    labels,
 
     datasets: [
       {
         label: 'Dataset 1',
-        data: data,
+        data: isDomain ? totalTimeByDomain : data,
         backgroundColor: 'rgba(108, 210, 176, 1)',
         borderColor: 'rgba(108, 210, 176, 1)',
         borderWidth: 1,
@@ -96,7 +134,7 @@ export function HorizontalChart() {
       },
       {
         label: '',
-        data: randomData,
+        data: isDomain ? randomData : allTimeByDomain,
         backgroundColor: 'rgba(0, 0, 0, 0.1)',
         borderColor: 'rgba(0, 0, 0, 0.1)',
         borderWidth: 1,

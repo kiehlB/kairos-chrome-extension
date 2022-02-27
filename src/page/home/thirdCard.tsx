@@ -14,9 +14,9 @@ import {
   getSelectedDomainTotalDuration,
 } from '../../store/activity/selectors';
 import { RootState } from '../../store/store';
-import { HorizontalChart } from '../../components/HorizontalChart';
 import { LineChart } from '../../components/LineChart';
 import { BubbleChart } from '../../components/BubbleChart';
+import { HorizontalChart } from '../../components/HorizontalChart';
 
 const TotalUsage = ({
   className,

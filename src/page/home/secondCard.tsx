@@ -38,6 +38,7 @@ import {
   formatTooltipDateLabel,
 } from '../../utils/stringUtils';
 import moment from 'moment';
+import { useParams, useLocation } from 'react-router-dom';
 
 const MAX_TICK_COUNT = 5;
 const MIN_STEP = MS_PER_HOUR;
@@ -54,7 +55,17 @@ ChartJS.register(
 function SecondCard() {
   const totalTime = useSelector((state: RootState) =>
     getTotalDurationByDate(state)
-  ) as any;
+  );
+
+  const totalTimeByDomain = useSelector((state: RootState) =>
+    getSelectedDomainTotalDurationByDate(state)
+  );
+
+  let location = useLocation();
+
+  const byDomain = location.search.slice(0, 7);
+
+  const isDomain = byDomain == '?domain' ? true : false;
 
   const axisData = totalTime.map((d) => ({
     x: d.timestamp,
@@ -71,6 +82,7 @@ function SecondCard() {
   const options = {
     responsive: true,
     maintainAspectRatio: false,
+
     scales: {
       x: {
         grid: {
@@ -82,7 +94,7 @@ function SecondCard() {
           autoSkip: true,
           maxTicksLimit: 5,
           font: {
-            size: 12,
+            size: 14,
           },
         },
       },
@@ -97,20 +109,21 @@ function SecondCard() {
 
     plugins: {
       legend: {
+        display: false,
         position: 'top' as const,
       },
       background: {
         color: 'cyan',
       },
       title: {
-        display: true,
-        text: 'Chart.js Bar Chart',
+        display: false,
       },
     },
   } as any;
 
   const data = totalTime.map((d) => d.totalDuration);
 
+  const dataByDomain = totalTimeByDomain.map((d) => d.totalDuration);
   const randomData = totalTime.map(
     (d) => d.totalDuration * Math.random() * (2 - 1) + 1
   );
@@ -121,7 +134,7 @@ function SecondCard() {
     datasets: [
       {
         label: 'Dataset 1',
-        data: data,
+        data: isDomain ? dataByDomain : data,
         backgroundColor: 'rgba(108, 210, 176, 1)',
         borderColor: 'rgba(108, 210, 176, 1)',
 
@@ -130,11 +143,10 @@ function SecondCard() {
         borderRadius: Number.MAX_VALUE,
       },
       {
-        label: '',
+        label: '2',
         data: randomData,
         backgroundColor: 'rgba(0, 0, 0, 0.1)',
         borderColor: 'rgba(0, 0, 0, 0.1)',
-
         borderWidth: 1,
         stack: 'Stack 1',
         borderRadius: Number.MAX_VALUE,

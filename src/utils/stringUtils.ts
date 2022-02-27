@@ -6,7 +6,7 @@ export function formatDayOfWeek(day: number): string {
   return ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][day];
 }
 
-export function formatHourOfDay(hour: number): string {
+export function formatHourOfDay(hour) {
   if (hour < 0 || hour > 24) {
     return '';
   }

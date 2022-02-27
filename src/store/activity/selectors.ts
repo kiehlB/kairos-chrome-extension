@@ -236,3 +236,13 @@ export const getSelectedDomainAveragePageVisitDuration = createSelector(
     );
   }
 );
+
+export const getSelectedDomainAverageDurationByHourOfWeek = createSelector(
+  [getSelectedDomainRecords, getEffectiveSelectedTimeRange],
+  (selectedDomainRecords, effectiveTimeRange) => {
+    return computeAverageDurationByHourOfWeek(
+      selectedDomainRecords,
+      effectiveTimeRange
+    );
+  }
+);
