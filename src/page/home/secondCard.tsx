@@ -61,6 +61,8 @@ function SecondCard() {
     getSelectedDomainTotalDurationByDate(state)
   );
 
+  const isDarkToggle = useSelector((state: RootState) => state.activity.isDark);
+
   let location = useLocation();
 
   const byDomain = location.search.slice(0, 7);
@@ -78,6 +80,8 @@ function SecondCard() {
       day: 'numeric',
     })
   );
+
+  const a = false;
 
   const options = {
     responsive: true,
@@ -99,8 +103,12 @@ function SecondCard() {
         },
       },
       y: {
+        grid: {
+          color: isDarkToggle ? '#70768C' : 'rgba(0, 0, 0, 0.1)',
+        },
         position: 'left',
         ticks: {
+          color: '#70768C',
           callback: (value) => formatTableDurationLabel(value),
         },
         stepSize: 1,
@@ -116,7 +124,7 @@ function SecondCard() {
         color: 'cyan',
       },
       title: {
-        display: false,
+        display: true,
       },
     },
   } as any;

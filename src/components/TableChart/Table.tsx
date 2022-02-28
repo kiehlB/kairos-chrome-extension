@@ -42,10 +42,10 @@ const BarChartTable = ({
 
   return (
     <div className=''>
-      <div className='text-sm mt-4'>
+      <div className='text-sm mt-4 dark:text-neutral-400'>
         {rowData.map((datum, index) => (
           <div
-            className='flex items-center px-4 py-0.5 flex-1 '
+            className='flex items-center px-4 py-0.5 flex-1  file:'
             style={{
               visibility: datum.label === NO_DATA_LABEL ? 'hidden' : undefined,
             }}
@@ -60,7 +60,7 @@ const BarChartTable = ({
               />
 
               <div
-                className='truncate whitespace-nowrap overflow-hidden'
+                className='truncate whitespace-nowrap overflow-hidden dark:text-neutral-400'
                 style={{
                   visibility:
                     datum.label === NO_DATA_LABEL ? 'hidden' : undefined,

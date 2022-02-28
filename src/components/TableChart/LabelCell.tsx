@@ -78,7 +78,7 @@ const LabelCell = ({
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
-            <div className=' '>
+            <div className=' dark:text-neutral-400'>
               {labelComponent ? (
                 labelComponent
               ) : (

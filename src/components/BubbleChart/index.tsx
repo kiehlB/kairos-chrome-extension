@@ -8,7 +8,7 @@ import {
 } from 'chart.js';
 import { Bubble } from 'react-chartjs-2';
 import faker from '@faker-js/faker';
-import { useWindowSize } from '../../hooks/useWindowSize';
+
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
 import {
@@ -32,6 +32,8 @@ export function BubbleChart() {
   const totalDataByDomain = useSelector((state: RootState) =>
     getSelectedDomainAverageDurationByHourOfWeek(state)
   );
+
+  const isDarkToggle = useSelector((state: RootState) => state.activity.isDark);
 
   const totalDataByDomainData = totalDataByDomain.map((ele) => ({
     x: ele.day,
@@ -70,6 +72,9 @@ export function BubbleChart() {
 
     scales: {
       x: {
+        grid: {
+          color: isDarkToggle ? '#70768C' : 'rgba(0, 0, 0, 0.1)',
+        },
         ticks: {
           callback: function (value, index, values) {
             if (value == 0) {
@@ -93,6 +98,9 @@ export function BubbleChart() {
         },
       },
       y: {
+        grid: {
+          color: isDarkToggle ? '#70768C' : 'rgba(0, 0, 0, 0.1)',
+        },
         position: 'left',
         ticks: {
           callback: (value) => formatHourOfDay(value),

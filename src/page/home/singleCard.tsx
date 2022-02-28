@@ -10,7 +10,7 @@ import { CountUp, DurationCountUp } from '../../components/Count';
 
 import DateRangePicker, { TRANSITION_DELAY } from '../../components/DatePicker';
 import useClientDimensions from '../../hooks/useClientDimensions';
-import { useWindowSize } from '../../hooks/useWindowSize';
+
 import { useParams, useLocation } from 'react-router-dom';
 
 import {
@@ -52,7 +52,7 @@ const TotalUsage = (props) => {
               start={0}
               end={props.data}
               decimals={props.decimals}
-              duration={TRANSITION_DELAY / 1000}
+              duration={TRANSITION_DELAY / 1500}
               formattingFn={props.formattingFn}
               formattingUnitFn={props.formattingUnitFn}
               preserveValue={true}

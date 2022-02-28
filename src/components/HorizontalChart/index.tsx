@@ -10,7 +10,7 @@ import {
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 import faker from '@faker-js/faker';
-import { useWindowSize } from '../../hooks/useWindowSize';
+
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
 import {
@@ -37,6 +37,8 @@ export function HorizontalChart() {
   const totalTimeByDomain = useSelector((state: RootState) =>
     getSelectedDomainTotalDurationByDayOfWeek(state)
   ) as any;
+
+  const isDarkToggle = useSelector((state: RootState) => state.activity.isDark);
 
   const allTimeByDomain = totalTimeByDomain.map((d) => d.duration);
   const allTime = totalTime.map((d) => d.duration);
@@ -77,6 +79,9 @@ export function HorizontalChart() {
     indexAxis: 'y' as const,
     scales: {
       x: {
+        grid: {
+          color: isDarkToggle ? '#70768C' : 'rgba(0, 0, 0, 0.1)',
+        },
         ticks: {
           callback: function (val, index) {
             return `${val}h`;

@@ -14,14 +14,21 @@ import DayPicker from '../DayPicker';
 import { ActivityDateRangePicker } from '../DateRange';
 import { DomainPicker } from '../DomainPicker';
 import useClientDimensions from '../../hooks/useClientDimensions';
+import useDarkMode from '../../hooks/useDarkMode';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../../store/store';
+import { isDarkTrigger } from '../../store/activity/activity';
 
 export type HeaderProps = {
   children?: React.ReactNode;
 };
 
 function Header({ children }: HeaderProps) {
-  const [isDarkMode, setIsDarkMode] = useState(() => false);
+  const [colorTheme, setTheme, isDarkMode, setIsDarkMode] = useDarkMode();
+  const dispatch = useDispatch();
+  const isDarkToggle = useSelector((state: RootState) => state.activity.isDark);
 
+  console.log(isDarkToggle);
   const [containerRef, { height: containerHeight, width }] =
     useClientDimensions();
 
@@ -85,7 +92,7 @@ function Header({ children }: HeaderProps) {
       <div className='border-b-2 ' ref={containerRef}>
         <div className='flex h-20 items-center  px-8 justify-between flex-wrap  mmd:px-4'>
           <div className='flex items-center'>
-            <div className='text-xl font-bold text-dark-m mr-4'>
+            <div className='text-xl font-bold text-dark-m mr-4 dark:text-white'>
               {width > 1340 ? (
                 `Analytics Browser History`
               ) : width > 768 ? (
@@ -94,12 +101,20 @@ function Header({ children }: HeaderProps) {
                 <Menu />
               )}
             </div>
-            <DarkModeToggle
-              onChange={setIsDarkMode}
-              checked={isDarkMode}
-              size={80}
-              className='mmd:hidden'
-            />
+            <div
+              className='flex items-center'
+              onClick={() => {
+                setTheme(colorTheme);
+                dispatch(isDarkTrigger(true));
+              }}
+            >
+              <DarkModeToggle
+                onChange={setIsDarkMode}
+                checked={isDarkMode}
+                size={80}
+                className='mmd:hidden'
+              />
+            </div>
           </div>
           {width > 1340 ? widthSection() : divSection()}
         </div>

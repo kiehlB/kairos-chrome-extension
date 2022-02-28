@@ -20,6 +20,7 @@ import {
   getRecordsTimeRange,
 } from './selectors';
 import { batch } from 'react-redux';
+import { AppDispatch, AppThunk } from '../store';
 
 export interface ActivityState {
   records: Activity[];
@@ -32,6 +33,7 @@ export interface ActivityState {
   isInitialized: boolean;
   loadingRecordsError: Error | null;
   isDeletingRecords: boolean;
+  isDark: boolean;
 }
 export const SET_FOURWEEK: TimeRange = {
   start: minusDays(setMidnight(), 27), // 4 weeks
@@ -50,6 +52,7 @@ export const initialState = {
   deletingRecordsError: null,
   deletingRecordsSuccess: null,
   isDeletingRecords: false,
+  isDark: false,
 };
 
 const ActivitySlice = createSlice({
@@ -94,6 +97,10 @@ const ActivitySlice = createSlice({
     setTotalTimeRange(state, action: PayloadAction<DefiniteTimeRange | null>) {
       state.totalTimeRange = action.payload;
     },
+    isDarkSuccess(state, action: PayloadAction<DefiniteTimeRange | null>) {
+      console.log(!action.payload);
+      state.isDark = !state.isDark;
+    },
   },
 });
 
@@ -105,6 +112,7 @@ export const {
   getRecordsStart,
   getRecordsSuccess,
   getRecordsFailure,
+  isDarkSuccess,
 } = ActivitySlice.actions;
 
 export const actions = {
@@ -185,4 +193,10 @@ export const loadRecords =
       }
       dispatch(getRecordsFailure(error));
     }
+  };
+
+export const isDarkTrigger =
+  (payload): AppThunk =>
+  async (dispatch: AppDispatch) => {
+    dispatch(isDarkSuccess(payload));
   };

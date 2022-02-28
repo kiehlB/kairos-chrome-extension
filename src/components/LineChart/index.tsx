@@ -11,7 +11,7 @@ import {
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import faker from '@faker-js/faker';
-import { useWindowSize } from '../../hooks/useWindowSize';
+
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
 import {
@@ -40,6 +40,8 @@ export function LineChart() {
   const totalTimeByDomain = useSelector((state: RootState) =>
     getSelectedDomainTotalDurationByDayOfWeek(state)
   ) as any;
+
+  const isDarkToggle = useSelector((state: RootState) => state.activity.isDark);
 
   const allTimeByDomain = totalTimeByDomain.map((d) => d.duration);
   const allTime = totalTime.map((d) => d.duration);
@@ -79,6 +81,9 @@ export function LineChart() {
     maintainAspectRatio: false,
     scales: {
       x: {
+        grid: {
+          color: isDarkToggle ? '#70768C' : 'rgba(0, 0, 0, 0.1)',
+        },
         ticks: {
           callback: function (value, index, values) {
             if (value == 0) {
@@ -102,6 +107,9 @@ export function LineChart() {
         },
       },
       y: {
+        grid: {
+          color: isDarkToggle ? '#70768C' : 'rgba(0, 0, 0, 0.1)',
+        },
         position: 'left',
         ticks: {
           callback: (value) =>

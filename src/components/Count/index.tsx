@@ -46,8 +46,7 @@ const formatMinutes = (value: number) => {
   if (value < MS_PER_MINUTE) {
     return '';
   }
-  // Round up to nearest minutes (to be consistent with
-  // `formatTooltipDurationLabel`)
+
   const hours = Math.floor(value / MS_PER_HOUR);
   const minutes = Math.round((value % MS_PER_HOUR) / MS_PER_MINUTE);
   return hours === 0 ? `${minutes}` : `${minutes}`.padStart(2, '0');
@@ -63,11 +62,11 @@ const formatMilliseconds = (value: number) => {
 
 export const CountUp = ({ formattingUnitFn, ...props }: CountUpProps) => {
   return (
-    <span className='text-dark-m font-bold text-3xl'>
-      <ReactCountUp className='count-up__value' {...props} />
+    <span className='text-dark-m font-bold text-3xl dark:text-white'>
+      <ReactCountUp className='dark:text-white' {...props} />
       {formattingUnitFn && (
         <ReactCountUp
-          className='ml-1 text-dark-m text-lg font-bold'
+          className='ml-1 text-dark-m text-lg font-bold dark:text-white'
           {...props}
           formattingFn={formattingUnitFn}
         />
@@ -78,7 +77,7 @@ export const CountUp = ({ formattingUnitFn, ...props }: CountUpProps) => {
 
 export const DurationCountUp = (props: DurationCountUpProps) => {
   return (
-    <span className={classNames('duration-count-up', props.className)}>
+    <span className='dark:text-white'>
       <CountUp
         {...props}
         formattingFn={formatHour}
