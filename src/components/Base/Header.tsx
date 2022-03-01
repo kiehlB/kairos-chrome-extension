@@ -28,7 +28,6 @@ function Header({ children }: HeaderProps) {
   const dispatch = useDispatch();
   const isDarkToggle = useSelector((state: RootState) => state.activity.isDark);
 
-  console.log(isDarkToggle);
   const [containerRef, { height: containerHeight, width }] =
     useClientDimensions();
 

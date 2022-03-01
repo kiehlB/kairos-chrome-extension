@@ -1085,6 +1085,13 @@
     classnames "^2.2"
     tslib "~1.13.0"
 
+"@bumaga/tabs@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@bumaga/tabs/-/tabs-0.2.0.tgz#da4933a668173a223bec34a00e71f4d0840c04f8"
+  integrity sha512-Oh8SWX2p8G2egp1TZX27kM77tYYeoOLxsS3qIigAMxrzXrQsqaby4A5idPClje9+eEYjBE7yxXxo5+BOys9e+Q==
+  dependencies:
+    use-constant "^1.0.0"
+
 "@craco/craco@^7.0.0-alpha.0":
   version "7.0.0-alpha.0"
   resolved "https://registry.yarnpkg.com/@craco/craco/-/craco-7.0.0-alpha.0.tgz#13ff34a8461b610031f111aa4b85e92a114e727c"
@@ -1603,6 +1610,11 @@
   dependencies:
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
+
+"@olivieralexander/usetabs@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@olivieralexander/usetabs/-/usetabs-0.0.5.tgz#dcc76a1dbfeac0e4a631cb520bea8c806b031ec9"
+  integrity sha512-4r5qQuyxeyeS9nd2ET07YKeUkA/TQt0nTuYpGRRGHbJ5w/QMT/Y4wahPFJcJ8ciZ44AJVAPxy4si2ly/b4Zwew==
 
 "@pmmmwh/react-refresh-webpack-plugin@^0.5.3":
   version "0.5.4"
@@ -10999,6 +11011,11 @@ uri-js@^4.2.2:
   integrity sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==
   dependencies:
     punycode "^2.1.0"
+
+use-constant@^1.0.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/use-constant/-/use-constant-1.1.0.tgz#76d36a0edf16d4cc8565361f522b55da5f8f3f22"
+  integrity sha512-yrflEfv7Xv/W8WlYV6nwRH01K+2BpR4cWxuzY03yPRjYZuHixhGlvnJN5O2bRYrXGpJ4zy8QjFABGIQ2QXeBOA==
 
 util-deprecate@^1.0.1, util-deprecate@^1.0.2, util-deprecate@~1.0.1:
   version "1.0.2"

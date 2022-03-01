@@ -98,7 +98,6 @@ const ActivitySlice = createSlice({
       state.totalTimeRange = action.payload;
     },
     isDarkSuccess(state, action: PayloadAction<DefiniteTimeRange | null>) {
-      console.log(!action.payload);
       state.isDark = !state.isDark;
     },
   },

@@ -9,10 +9,10 @@ import {
 } from 'react-feather';
 import { Switch, Route, Redirect, Router } from 'react-router';
 import Home from './page/home';
-import { useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { loadRecords } from './store/activity/activity';
 import { useDispatch, useSelector } from 'react-redux';
-
+import { useParams, useLocation } from 'react-router-dom';
 import {
   getAllDomains,
   getIsLoadingRecords,
@@ -27,6 +27,15 @@ import {
 function App() {
   const search = '';
   const dispatch = useDispatch();
+
+  let location = useLocation();
+  const [isSelect, setIsSelect] = useState({
+    one: false,
+    two: false,
+    three: false,
+    four: false,
+  });
+
   const selectedDomain = useSelector((state: RootState) =>
     getSearchParamsSelectedDomain(state)
   );
@@ -45,28 +54,39 @@ function App() {
     getIsLoadingRecords(state)
   );
 
-  function formatTableDurationLabel(duration: number): any {
-    if (duration < 1000) {
-      return `${duration} ms`;
-    }
-
-    if (duration < 60000) {
-      return `${(duration / 1000).toFixed(1)} s`;
-    }
-
-    if (duration < 3600000) {
-      const minutes = Math.floor(duration / 60000);
-      const seconds = Math.round((duration / 1000) % 60);
-      return `${minutes} min ${seconds.toString().padStart(2, '0')} s`;
-    }
-
-    const hours = Math.floor(duration / 3600000);
-    const minutes = Math.round((duration / 60000) % 60);
-    return `${hours} h ${minutes.toString().padStart(2, '0')} min`;
-  }
-
+  console.log(location.pathname);
   useEffect(() => {
     dispatch(loadRecords());
+
+    if (location.pathname == '/analytics' || location.pathname == '/') {
+      setIsSelect({
+        one: true,
+        two: false,
+        three: false,
+        four: false,
+      });
+    } else if (location.pathname == '/history') {
+      setIsSelect({
+        one: false,
+        two: true,
+        three: false,
+        four: false,
+      });
+    } else if (location.pathname == '/settings') {
+      setIsSelect({
+        one: false,
+        two: false,
+        three: true,
+        four: false,
+      });
+    } else if (location.pathname == '/help') {
+      setIsSelect({
+        one: false,
+        two: false,
+        three: false,
+        four: true,
+      });
+    }
   }, [
     loadRecords,
     selectedDomain,
@@ -74,6 +94,7 @@ function App() {
     totalTime,
     allDomains,
     isLoadingRecords,
+    location.pathname,
   ]);
 
   return (
@@ -85,11 +106,13 @@ function App() {
               icon: <BarChart2 size='20' />,
               text: 'Analytics',
               to: { pathname: '/analytics', search },
+              isSelect: isSelect.one,
             },
             {
               icon: <Clock size='20' />,
               text: 'History',
               to: { pathname: '/history', search },
+              isSelect: isSelect.two,
             },
           ]}
           secondaryItems={[
@@ -99,6 +122,7 @@ function App() {
               to: {
                 pathname: '/settings',
               },
+              isSelect: isSelect.three,
             },
             {
               icon: <HelpCircle size='20' />,
@@ -106,6 +130,7 @@ function App() {
               to: {
                 pathname: '/help',
               },
+              isSelect: isSelect.four,
             },
           ]}
         />

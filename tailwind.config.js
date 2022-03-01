@@ -87,6 +87,8 @@ module.exports = {
         'grrenTint-m': '#6CD2B0',
         'dark-m': '#323747',
         'orange-m': '#D7593D',
+
+        'dark-bg': '#3a3d4a',
       },
       maxWidth: {
         '9xl': '82.5rem',

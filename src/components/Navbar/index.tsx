@@ -8,6 +8,11 @@ import Footer from '../Footer';
 import useDarkMode from '../../hooks/useDarkMode';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
+import { useEffect, useRef, useState } from 'react';
+
+import { NavLink, NavLinkProps } from 'react-router-dom';
+import { Tabs, useTabState, Panel } from '@bumaga/tabs';
+import { useParams, useLocation } from 'react-router-dom';
 
 interface NavbarProps {
   primaryItems: NavbarItemProps[];

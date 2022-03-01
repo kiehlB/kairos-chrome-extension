@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@bumaga/tabs": "^0.2.0",
     "@craco/craco": "^7.0.0-alpha.0",
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
@@ -10,6 +11,7 @@
     "@fontsource/roboto": "^4.5.1",
     "@mui/icons-material": "^5.2.5",
     "@mui/material": "^5.2.7",
+    "@olivieralexander/usetabs": "^0.0.5",
     "@reduxjs/toolkit": "^1.7.2",
     "@testing-library/dom": "^8.11.3",
     "@testing-library/jest-dom": "^5.14.1",
