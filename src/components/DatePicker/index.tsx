@@ -1,4 +1,3 @@
-import classNames from 'classnames';
 import * as d3 from 'd3';
 import { Icon, Popover, PositionTypes } from 'evergreen-ui';
 import _ from 'lodash';
@@ -12,9 +11,11 @@ import {
   IconButton as EvergreenIconButton,
   IconButtonProps,
 } from 'evergreen-ui';
-import DayPicker from '../DayPicker';
+import DayPicker from 'react-day-picker';
+import 'react-day-picker/lib/style.css';
 import { useDispatch } from 'react-redux';
 import { setSelectedTimeRange } from '../../store/router/actions';
+import Helmet from 'react-helmet';
 
 export const BASE_SIZE = 8;
 
@@ -56,32 +57,14 @@ export const IconButton = (props: IconButtonProps) => {
   const appearance = props.appearance;
   const intent = props.intent;
 
-  return (
-    <EvergreenIconButton
-      {...props}
-      className={classNames('button', props.className, {
-        [`button--appearance-${appearance}`]: appearance !== undefined,
-        [`button--intent-${intent}`]: intent !== undefined,
-      })}
-      fontWeight='600'
-    />
-  );
+  return <EvergreenIconButton {...props} fontWeight='600' />;
 };
 
 export const Button = (props) => {
   const appearance = props.appearance;
   const intent = props.intent;
 
-  return (
-    <EvergreenButton
-      {...props}
-      className={classNames('button', props.className, {
-        [`button--appearance-${appearance}`]: appearance !== undefined,
-        [`button--intent-${intent}`]: intent !== undefined,
-      })}
-      fontWeight='600'
-    />
-  );
+  return <EvergreenButton {...props} fontWeight='600' />;
 };
 
 interface HandleClickOptions {
@@ -183,6 +166,16 @@ const DateRangePicker = ({
     modifiers = start < end ? { start, end } : { start: end, end: start };
     selectedDays = [start, { from: start, to: end }];
   }
+  const modifiersStyles = {
+    birthday: {
+      color: 'white',
+      backgroundColor: '#ffc107',
+    },
+    thursdays: {
+      color: '#fff',
+      backgroundColor: '#fff',
+    },
+  };
 
   return (
     <Popover
@@ -193,12 +186,13 @@ const DateRangePicker = ({
           closePopover: close,
         };
         return (
-          <div>
+          <div className=''>
             {ranges && (
-              <div>
+              <div className=' flex flex-col'>
                 {ranges.map((range) => (
                   <Button
                     key={range.label}
+                    color='rgb(71 85 105)'
                     appearance='minimal'
                     isActive={_.isEqual(range.value, value)}
                     onClick={() =>
@@ -210,10 +204,31 @@ const DateRangePicker = ({
                 ))}
               </div>
             )}
+
+            <Helmet>
+              <style>{`
+  .Selectable .DayPicker-Day--selected:not(.DayPicker-Day--start):not(.DayPicker-Day--end):not(.DayPicker-Day--outside) {
+    background-color: #f0f8ff !important;
+    color: #4a90e2;
+  }
+  .Selectable .DayPicker-Day {
+    border-radius: 0 !important;
+  }
+  .Selectable .DayPicker-Day--start {
+    border-top-left-radius: 50% !important;
+    border-bottom-left-radius: 50% !important;
+  }
+  .Selectable .DayPicker-Day--end {
+    border-top-right-radius: 50% !important;
+    border-bottom-right-radius: 50% !important;
+  }
+`}</style>
+            </Helmet>
             <DayPicker
+              className='Selectable'
               {...otherProps}
               modifiers={modifiers}
-              numberOfMonths={2}
+              numberOfMonths={1}
               onDayClick={(day: Date) =>
                 handleDayClick(day, handleClickOptions)
               }
@@ -227,8 +242,8 @@ const DateRangePicker = ({
                 showNextButton,
               }) => {
                 return (
-                  <div className='date-range-picker__nav-bar'>
-                    {/* <IconButton
+                  <div className='flex justify-end'>
+                    <IconButton
                       appearance='minimal'
                       disabled={!showPreviousButton}
                       icon='chevron-left'
@@ -242,7 +257,7 @@ const DateRangePicker = ({
                       icon='chevron-right'
                       height={ICON_BUTTON_SIZE}
                       onClick={() => onNextClick()}
-                    /> */}
+                    />
                   </div>
                 );
               }}
@@ -252,7 +267,7 @@ const DateRangePicker = ({
       }}
     >
       <Button
-        className='border-2'
+        className=''
         disabled={disabled}
         height={BUTTON_SIZE}
         iconBefore='timeline-events'

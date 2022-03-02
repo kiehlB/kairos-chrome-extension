@@ -98,8 +98,8 @@ function App() {
   ]);
 
   return (
-    <div className='h-full flex  bg-white  dark:bg-gray-900 transition-all '>
-      <div className='flex  flex-1 h-full'>
+    <div className='flex   transition-all bg-white w-full '>
+      <div className='flex  flex-1'>
         <Navbar
           primaryItems={[
             {

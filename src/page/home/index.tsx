@@ -9,7 +9,7 @@ import ThridCard from './thirdCard';
 
 function Home() {
   return (
-    <div className='w-full'>
+    <div className='w-full dark:bg-gray-900'>
       <AppLayout.MainNav>
         <Header />
       </AppLayout.MainNav>

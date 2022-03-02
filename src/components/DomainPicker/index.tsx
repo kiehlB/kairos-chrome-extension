@@ -35,12 +35,12 @@ export const DomainPicker = ({}: DomainPickerProps) => {
       : undefined;
 
   return (
-    <span className=''>
+    <span className=' '>
       {selectedDomain && (
-        <span className='domain-picker__label'>
+        <span className=''>
           {favIconUrl && (
             <Avatar
-              className='domain-picker__icon'
+              className=''
               key={selectedDomain}
               hashValue={selectedDomain}
               name={selectedDomain}
@@ -48,7 +48,7 @@ export const DomainPicker = ({}: DomainPickerProps) => {
               size={ICON_SIZE_MD}
             />
           )}
-          <span className='domain-picker__text'>{selectedDomain}</span>
+          <span className=''>{selectedDomain}</span>
         </span>
       )}
       <SelectMenu
@@ -65,7 +65,7 @@ export const DomainPicker = ({}: DomainPickerProps) => {
         position={Position.BOTTOM_RIGHT}
         selected={selectedDomain === null ? undefined : [selectedDomain]}
         statelessProps={{
-          className: 'domain-picker__popover',
+          className: '',
         }}
         emptyView={
           <div className='domain-picker__placeholder'>

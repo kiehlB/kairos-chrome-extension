@@ -11,7 +11,7 @@ import { HashRouter } from 'react-router-dom';
 ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
-      <HashRouter basename='/'>
+      <HashRouter basename=''>
         <React.StrictMode>
           <App />
         </React.StrictMode>

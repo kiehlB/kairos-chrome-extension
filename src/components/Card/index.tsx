@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import { ArrowUpRight, ArrowDownRight } from 'react-feather';
 import React from 'react';
+import { DurationCountUp, CountUp } from '../Count';
 
 interface CardProps {
   title: string;
@@ -10,6 +11,7 @@ interface CardProps {
   footer?: React.ReactNode;
   info?: string;
   sort?: string;
+  extra?: number;
 }
 
 const Card = (props: CardProps) => (
@@ -39,20 +41,29 @@ const Card = (props: CardProps) => (
             <div className='truncate whitespace-nowrap overflow-hidden'>
               {props.body}
             </div>
-            <div
-              className={`${
-                props.sort == 'single'
-                  ? 'flex items-center ml-1.5 text-grrenTint-m font-bold mt-3'
-                  : ' '
-              }`}
-            >
-              {props.sort == 'single' ? (
-                <>
-                  145% <ArrowUpRight size={18} className='ml-0.5' />
-                </>
-              ) : (
-                ''
-              )}
+
+            <div className='flex mt-3 ml-1'>
+              <CountUp
+                sort='single'
+                start={0}
+                end={props.extra}
+                decimals={0}
+                duration={1000 / 1500}
+                preserveValue={true}
+                redraw={true}
+              />
+              <div
+                className={`flex  ${
+                  props.extra > 0 ? 'text-grrenTint-m' : 'text-red-700'
+                }`}
+              >
+                %
+                {props.extra > 0 ? (
+                  <ArrowUpRight size={18} className='ml-0.5' />
+                ) : (
+                  <ArrowDownRight size={18} className='ml-0.5   mt-2' />
+                )}
+              </div>
             </div>
           </div>
         </div>

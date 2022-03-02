@@ -10,7 +10,7 @@ import {
 interface DurationCountUpProps {
   end: number;
   start: number;
-
+  sort?: string;
   className?: string;
   delay?: number;
   decimals?: number;
@@ -25,7 +25,7 @@ interface DurationCountUpProps {
 interface CountUpProps {
   end: number;
   start: number;
-
+  sort?: string;
   className?: string;
   delay?: number;
   decimals?: number;
@@ -62,8 +62,17 @@ const formatMilliseconds = (value: number) => {
 
 export const CountUp = ({ formattingUnitFn, ...props }: CountUpProps) => {
   return (
-    <span className='text-dark-m font-bold text-3xl dark:text-white'>
+    <span
+      className={`${
+        props.sort == 'single'
+          ? `ml-1.5 font-bold ${
+              props.end > 0 ? 'text-grrenTint-m ' : ' text-red-700'
+            }`
+          : ' text-dark-m font-bold text-3xl dark:text-white'
+      } `}
+    >
       <ReactCountUp className='dark:text-white' {...props} />
+
       {formattingUnitFn && (
         <ReactCountUp
           className='ml-1 text-dark-m text-lg font-bold dark:text-white'

@@ -24,6 +24,7 @@ import {
   getTotalPageVisitCount,
 } from '../../store/activity/selectors';
 import { RootState } from '../../store/store';
+import { ArrowUpRight, ArrowDownRight } from 'react-feather';
 
 export type TotalUsageProps = {
   className?;
@@ -37,7 +38,17 @@ export type TotalUsageProps = {
   isDuration?;
 };
 
+function getRandomArbitrary(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
 const TotalUsage = (props) => {
+  const extraCard = {
+    isDuration: false,
+    decimals: 3,
+    formattingFn: (d: number) => `${d.toFixed(0)}`,
+  };
+
   const Component = props.isDuration ? DurationCountUp : CountUp;
   return (
     <div className={props.className}>
@@ -60,6 +71,7 @@ const TotalUsage = (props) => {
             />
           </div>
         }
+        extra={getRandomArbitrary(-100, 100)}
       />
     </div>
   );
