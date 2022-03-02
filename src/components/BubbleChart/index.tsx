@@ -69,7 +69,9 @@ export function BubbleChart() {
   const options = {
     responsive: true,
     maintainAspectRatio: false,
-
+    layout: {
+      padding: 8,
+    },
     scales: {
       x: {
         grid: {

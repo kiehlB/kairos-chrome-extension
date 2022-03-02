@@ -166,9 +166,9 @@ function SingleCard() {
 
   const eachWithTotal = () => {
     return (
-      <div className='flex'>
+      <div className='flex '>
         <TotalUsage
-          className='border-2 mr-4 w-mcard '
+          className='shadow-md  rounded-md mr-4 w-mcard bg-white dark:bg-slate-900 dark:shadowmd dark:border-2  '
           sort='single'
           title={totalTimeRangeCardInfo.title}
           info={totalTimeRangeCardInfo.info}
@@ -178,8 +178,8 @@ function SingleCard() {
           getRandomArbitrary={getRandomArbitrary(-100, 100)}
         />
         <TotalUsage
-          className='border-2 mr-4
-           w-mcard '
+          className='shadow-md  rounded-md mr-4 
+           w-mcard  bg-white  dark:bg-slate-900 dark:shadowmd   dark:border-2'
           sort='single'
           title={toTotalDurationCard.title}
           info={toTotalDurationCard.info}
@@ -193,7 +193,7 @@ function SingleCard() {
         />
 
         <TotalUsage
-          className='border-2 mr-4 w-mcard '
+          className='shadow-md  rounded-md mr-4 w-mcard bg-white  dark:bg-slate-900 dark:shadowmd  dark:border-2 '
           sort='single'
           title={pageVisitCard.title}
           info={pageVisitCard.info}
@@ -205,7 +205,7 @@ function SingleCard() {
           getRandomArbitrary={getRandomArbitrary(-100, 100)}
         />
         <TotalUsage
-          className='border-2  w-mcard '
+          className='shadow-md  rounded-md  w-mcard  bg-white dark:bg-slate-900 dark:shadowmd  dark:border-2 '
           sort='single'
           title={TotalDomainCard.title}
           info={TotalDomainCard.info}
@@ -225,7 +225,7 @@ function SingleCard() {
       <div className='w-full'>
         <div className='flex'>
           <TotalUsage
-            className='border-2 mr-4 w-scard '
+            className='shadow-md  rounded-md mr-4 w-scard  bg-white  dark:bg-slate-900 dark:shadowmd  dark:border-2'
             sort='single'
             title={totalTimeRangeCardInfo.title}
             info={totalTimeRangeCardInfo.info}
@@ -235,7 +235,7 @@ function SingleCard() {
             getRandomArbitrary={getRandomArbitrary(-100, 100)}
           />
           <TotalUsage
-            className='border-2 
+            className='shadow-md  rounded-md bg-white dark:bg-slate-900 dark:shadowmd  dark:border-2
            w-scard '
             sort='single'
             title={toTotalDurationCard.title}
@@ -251,7 +251,7 @@ function SingleCard() {
         </div>
         <div className='flex mt-4'>
           <TotalUsage
-            className='border-2 mr-4 w-scard '
+            className='shadow-md  rounded-md mr-4 w-scard bg-white dark:bg-slate-900 dark:shadowmd  dark:border-2 '
             sort='single'
             title={pageVisitCard.title}
             info={pageVisitCard.info}
@@ -263,7 +263,7 @@ function SingleCard() {
             getRandomArbitrary={getRandomArbitrary(-100, 100)}
           />
           <TotalUsage
-            className='border-2  w-scard '
+            className='shadow-md  rounded-md  w-scard bg-white dark:bg-slate-900 dark:shadowmd  dark:border-2'
             sort='single'
             title={TotalDomainCard.title}
             info={TotalDomainCard.info}
@@ -284,7 +284,7 @@ function SingleCard() {
       <div className='w-full'>
         <div className='flex'>
           <TotalUsage
-            className='border-2   w-fcard '
+            className='shadow-md  rounded-md   w-fcard bg-white    dark:bg-slate-900 dark:shadowmd  dark:border-2'
             sort='single'
             title={totalTimeRangeCardInfo.title}
             info={totalTimeRangeCardInfo.info}
@@ -296,7 +296,7 @@ function SingleCard() {
         </div>
         <div className='mt-2'>
           <TotalUsage
-            className='border-2  
+            className='shadow-md  rounded-md  bg-white   dark:bg-slate-900 dark:shadowmd  dark:border-2
            w-fcard '
             sort='single'
             title={toTotalDurationCard.title}
@@ -312,7 +312,7 @@ function SingleCard() {
         </div>
         <div className='flex mt-2'>
           <TotalUsage
-            className='border-2   w-fcard '
+            className='shadow-md  rounded-md   w-fcard bg-white  dark:bg-slate-900 dark:shadowmd  dark:border-2'
             sort='single'
             title={pageVisitCard.title}
             info={pageVisitCard.info}
@@ -326,7 +326,7 @@ function SingleCard() {
         </div>
         <div className='flex mt-2'>
           <TotalUsage
-            className='border-2  w-fcard '
+            className='shadow-md  rounded-md  w-fcard bg-white dark:bg-slate-900 dark:shadowmd  dark:border-2'
             sort='single'
             title={TotalDomainCard.title}
             info={TotalDomainCard.info}
@@ -354,7 +354,7 @@ function SingleCard() {
 
   return (
     <>
-      <div className='mt-4 px-8 mmd:px-4' ref={containerRef}>
+      <div className='mt-4 px-8 mmd:px-4 ' ref={containerRef}>
         {resultTotal()}
       </div>
     </>

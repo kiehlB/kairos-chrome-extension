@@ -43,7 +43,7 @@ function Header({ children }: HeaderProps) {
           </div>
         </div>
 
-        <div className='border-r-2   h-10 maxw:hidden'></div>
+        <div className=' h-10 maxw:hidden'></div>
         <div className='maxw:hidden'>
           <img
             className='inline object-cover w-12 h-12 rounded-full'
@@ -70,7 +70,7 @@ function Header({ children }: HeaderProps) {
           </div>
         </div>
 
-        <div className='border-r-2   h-10 maxw:hidden'></div>
+        <div className='h-10 maxw:hidden'></div>
         <div className='maxw:hidden'>
           <img
             className='inline object-cover w-12 h-12 rounded-full'
@@ -88,10 +88,10 @@ function Header({ children }: HeaderProps) {
 
   return (
     <>
-      <div className='border-b-2 ' ref={containerRef}>
+      <div className='border-b bg-white dark:bg-gray-900' ref={containerRef}>
         <div className='flex h-20 items-center  px-8 justify-between flex-wrap  mmd:px-4'>
           <div className='flex items-center'>
-            <div className='text-xl font-bold text-dark-m mr-4 dark:text-white'>
+            <div className='text-xl font-bold text-dark-m mr-4 dark:text-white '>
               {width > 1340 ? (
                 `Analytics Browser History`
               ) : width > 768 ? (

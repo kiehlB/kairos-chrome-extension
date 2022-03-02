@@ -77,6 +77,9 @@ export function HorizontalChart() {
     responsive: true,
     maintainAspectRatio: false,
     indexAxis: 'y' as const,
+    layout: {
+      padding: 8,
+    },
     scales: {
       x: {
         grid: {

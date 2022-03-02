@@ -78,6 +78,9 @@ export function LineChart() {
 
   const options = {
     responsive: true,
+    layout: {
+      padding: 8,
+    },
     maintainAspectRatio: false,
     scales: {
       x: {

@@ -77,13 +77,13 @@ function ThridCard() {
     <>
       <>
         <div className='flex h-card px-8 mt-4 m2xl:hidden '>
-          <div className='border-2 w-tcard mr-3'>
+          <div className='shadow-md  rounded-md w-tcard mr-3 bg-white dark:bg-slate-900 dark:shadowmd  dark:border-2'>
             <BubbleChart />
           </div>
-          <div className='border-2 w-tcard mr-3'>
+          <div className='shadow-md  rounded-md w-tcard mr-3 bg-white  dark:bg-slate-900 dark:shadowmd  dark:border-2'>
             <LineChart />
           </div>
-          <div className='border-2 w-tcard'>
+          <div className='shadow-md  rounded-md w-tcard bg-white  dark:bg-slate-900 dark:shadowmd  dark:border-2'>
             <HorizontalChart />
           </div>
         </div>
@@ -91,17 +91,17 @@ function ThridCard() {
 
       <>
         <div className='flex h-card px-8 mt-4 mmd:px-4 xxl:hidden'>
-          <div className='border-2 w-fcard  '>
+          <div className='shadow-md  rounded-md w-fcard   bg-white  dark:bg-slate-900 dark:shadowmd  dark:border-2'>
             <BubbleChart />
           </div>
         </div>
         <div className='flex h-card px-8 mt-4 mmd:px-4 xxl:hidden'>
-          <div className='border-2 w-fcard  '>
+          <div className='shadow-md  rounded-md w-fcard  bg-white dark:bg-slate-900 dark:shadowmd  dark:border-2'>
             <LineChart />
           </div>
         </div>
         <div className='flex h-card px-8 mt-4 mmd:px-4 xxl:hidden'>
-          <div className='border-2 w-fcard'>
+          <div className='shadow-md  rounded-md w-fcard bg-white dark:bg-slate-900 dark:shadowmd  dark:border-2'>
             <HorizontalChart />
           </div>
         </div>
