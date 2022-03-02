@@ -242,7 +242,7 @@ const DateRangePicker = ({
                 showNextButton,
               }) => {
                 return (
-                  <div className='flex justify-end'>
+                  <div className='flex justify-center'>
                     <IconButton
                       appearance='minimal'
                       disabled={!showPreviousButton}

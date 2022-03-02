@@ -17,7 +17,7 @@ export const NavbarItem = (props: NavbarItemProps) => {
       to={props.to}
     >
       <div
-        className={`w-8/12 rounded-lg   px-2 py-2 ${
+        className={`w-10/12 rounded-lg   px-2 py-2 ${
           props.isSelect ? 'bg-slate-50 dark:bg-gray-700 dark:text-white' : ''
         }  hover:text-slate-900    dark:hover:text-white  flex items-center m2xl:w-full m2xl:flex-col m2xl:justify-center m2xl:items-center`}
       >

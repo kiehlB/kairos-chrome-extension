@@ -118,7 +118,12 @@ export function BubbleChart() {
         color: 'cyan',
       },
       title: {
-        display: false,
+        display: true,
+        text: 'Usage by Time of Day',
+        padding: {
+          top: 10,
+          bottom: 20,
+        },
       },
     },
   } as any;

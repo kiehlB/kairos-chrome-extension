@@ -36,21 +36,6 @@ export const DomainPicker = ({}: DomainPickerProps) => {
 
   return (
     <span className=' '>
-      {selectedDomain && (
-        <span className=''>
-          {favIconUrl && (
-            <Avatar
-              className=''
-              key={selectedDomain}
-              hashValue={selectedDomain}
-              name={selectedDomain}
-              src={favIconUrl}
-              size={ICON_SIZE_MD}
-            />
-          )}
-          <span className=''>{selectedDomain}</span>
-        </span>
-      )}
       <SelectMenu
         height={MENU_HEIGHT}
         width={MENU_WIDTH}
@@ -79,7 +64,7 @@ export const DomainPicker = ({}: DomainPickerProps) => {
           iconAfter='caret-down'
           marginRight={BUTTON_MARGIN}
         >
-          Select Domain
+          {selectedDomain ? selectedDomain : 'Select Domain'}
         </Button>
       </SelectMenu>
     </span>

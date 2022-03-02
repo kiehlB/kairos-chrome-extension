@@ -43,15 +43,15 @@ function Header({ children }: HeaderProps) {
           </div>
         </div>
 
-        <div className='border-r-2   h-10 m2xl:hidden'></div>
-        <div className='m2xl:hidden'>
+        <div className='border-r-2   h-10 maxw:hidden'></div>
+        <div className='maxw:hidden'>
           <img
             className='inline object-cover w-12 h-12 rounded-full'
             src='./bart.png'
             alt='Profile image'
           />
         </div>
-        <section className='flex flex-col m2xl:hidden'>
+        <section className='flex flex-col maxw:hidden'>
           <div className='text-greyTint-m font-medium text-sm'>Provider</div>
           <div className='font-bold text-dark-m m2xl:hidden'>Woong</div>
         </section>
@@ -70,15 +70,15 @@ function Header({ children }: HeaderProps) {
           </div>
         </div>
 
-        <div className='border-r-2   h-10 m2xl:hidden'></div>
-        <div className='m2xl:hidden'>
+        <div className='border-r-2   h-10 maxw:hidden'></div>
+        <div className='maxw:hidden'>
           <img
             className='inline object-cover w-12 h-12 rounded-full'
             src='./bart.png'
             alt='Profile image'
           />
         </div>
-        <section className='flex flex-col m2xl:hidden'>
+        <section className='flex flex-col  maxw:hidden'>
           <div className='text-greyTint-m font-medium text-sm'>Provider</div>
           <div className='font-bold text-dark-m m2xl:hidden'>Woong</div>
         </section>

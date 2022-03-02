@@ -112,6 +112,11 @@ export function HorizontalChart() {
       },
       title: {
         display: true,
+        text: 'Usage by Day of Week',
+        padding: {
+          top: 10,
+          bottom: 20,
+        },
       },
     },
   } as any;

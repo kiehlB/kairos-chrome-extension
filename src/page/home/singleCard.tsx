@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import AppLayout from '../../components/AppLayout';
 import Header from '../../components/Base/Header';
@@ -36,11 +36,8 @@ export type TotalUsageProps = {
   formattingFn?;
   formattingUnitFn?;
   isDuration?;
+  getRandomArbitrary?;
 };
-
-function getRandomArbitrary(min, max) {
-  return Math.floor(Math.random() * (max - min) + min);
-}
 
 const TotalUsage = (props) => {
   const extraCard = {
@@ -71,7 +68,7 @@ const TotalUsage = (props) => {
             />
           </div>
         }
-        extra={getRandomArbitrary(-100, 100)}
+        extra={props.getRandomArbitrary}
       />
     </div>
   );
@@ -80,6 +77,10 @@ const TotalUsage = (props) => {
 function SingleCard() {
   const [containerRef, { height: containerHeight, width }] =
     useClientDimensions();
+
+  const getRandomArbitrary = useCallback((min, max) => {
+    return Math.floor(Math.random() * (max - min) + min);
+  }, []);
 
   let location = useLocation();
 
@@ -118,7 +119,7 @@ function SingleCard() {
 
   const totalTimeRangeCardInfo = {
     title: 'Total Usage',
-    info: 'Total time spent on the website',
+    info: '웹사이트 전체 사용 시간',
     footer: 'vs. previous month',
     sort: 'single',
     data: isDomain ? totalTimeByDamin : totalTime,
@@ -126,8 +127,8 @@ function SingleCard() {
   };
 
   const toTotalDurationCard = {
-    title: 'Total Usage',
-    info: 'Total time spent on the website',
+    title: 'Usage Percentage',
+    info: '전체 브라우저 사용량',
     footer: 'vs. previous month',
     sort: 'single',
 
@@ -139,8 +140,8 @@ function SingleCard() {
   };
 
   const pageVisitCard = {
-    title: 'Total Usage',
-    info: 'Total time spent on the website',
+    title: 'Page Visits',
+    info: '전체 방문한 사이트 수',
     footer: 'vs. previous month',
     sort: 'single',
 
@@ -151,8 +152,8 @@ function SingleCard() {
   };
 
   const TotalDomainCard = {
-    title: 'Total Usage',
-    info: 'Total time spent on the website',
+    title: 'Visit Duration',
+    info: '전체 방문한 도메인 수',
     footer: 'vs. previous month',
     sort: 'single',
     data: isDomain ? domainVisitByDomain : domainVisit,
@@ -174,6 +175,7 @@ function SingleCard() {
           footer={totalTimeRangeCardInfo.footer}
           data={totalTimeRangeCardInfo.data}
           isDuration={totalTimeRangeCardInfo.isDuration}
+          getRandomArbitrary={getRandomArbitrary(-100, 100)}
         />
         <TotalUsage
           className='border-2 mr-4
@@ -187,6 +189,7 @@ function SingleCard() {
           formattingUnitFn={toTotalDurationCard.formattingUnitFn}
           decimals={toTotalDurationCard.decimals}
           isDuration={toTotalDurationCard.isDuration}
+          getRandomArbitrary={getRandomArbitrary(-100, 100)}
         />
 
         <TotalUsage
@@ -199,6 +202,7 @@ function SingleCard() {
           formattingFn={pageVisitCard.formattingFn}
           formattingUnitFn={pageVisitCard.formattingUnitFn}
           isDuration={pageVisitCard.isDuration}
+          getRandomArbitrary={getRandomArbitrary(-100, 100)}
         />
         <TotalUsage
           className='border-2  w-mcard '
@@ -210,6 +214,7 @@ function SingleCard() {
           formattingFn={TotalDomainCard.formattingFn}
           formattingUnitFn={TotalDomainCard.formattingUnitFn}
           isDuration={TotalDomainCard.isDuration}
+          getRandomArbitrary={getRandomArbitrary(-100, 100)}
         />
       </div>
     );
@@ -227,6 +232,7 @@ function SingleCard() {
             footer={totalTimeRangeCardInfo.footer}
             data={totalTimeRangeCardInfo.data}
             isDuration={totalTimeRangeCardInfo.isDuration}
+            getRandomArbitrary={getRandomArbitrary(-100, 100)}
           />
           <TotalUsage
             className='border-2 
@@ -240,6 +246,7 @@ function SingleCard() {
             formattingUnitFn={toTotalDurationCard.formattingUnitFn}
             decimals={toTotalDurationCard.decimals}
             isDuration={toTotalDurationCard.isDuration}
+            getRandomArbitrary={getRandomArbitrary(-100, 100)}
           />
         </div>
         <div className='flex mt-4'>
@@ -253,6 +260,7 @@ function SingleCard() {
             formattingFn={pageVisitCard.formattingFn}
             formattingUnitFn={pageVisitCard.formattingUnitFn}
             isDuration={pageVisitCard.isDuration}
+            getRandomArbitrary={getRandomArbitrary(-100, 100)}
           />
           <TotalUsage
             className='border-2  w-scard '
@@ -264,6 +272,7 @@ function SingleCard() {
             formattingFn={TotalDomainCard.formattingFn}
             formattingUnitFn={TotalDomainCard.formattingUnitFn}
             isDuration={TotalDomainCard.isDuration}
+            getRandomArbitrary={getRandomArbitrary(-100, 100)}
           />
         </div>
       </div>
@@ -282,6 +291,7 @@ function SingleCard() {
             footer={totalTimeRangeCardInfo.footer}
             data={totalTimeRangeCardInfo.data}
             isDuration={totalTimeRangeCardInfo.isDuration}
+            getRandomArbitrary={getRandomArbitrary(-100, 100)}
           />
         </div>
         <div className='mt-2'>
@@ -297,6 +307,7 @@ function SingleCard() {
             formattingUnitFn={toTotalDurationCard.formattingUnitFn}
             decimals={toTotalDurationCard.decimals}
             isDuration={toTotalDurationCard.isDuration}
+            getRandomArbitrary={getRandomArbitrary(-100, 100)}
           />
         </div>
         <div className='flex mt-2'>
@@ -310,6 +321,7 @@ function SingleCard() {
             formattingFn={pageVisitCard.formattingFn}
             formattingUnitFn={pageVisitCard.formattingUnitFn}
             isDuration={pageVisitCard.isDuration}
+            getRandomArbitrary={getRandomArbitrary(-100, 100)}
           />
         </div>
         <div className='flex mt-2'>
@@ -323,6 +335,7 @@ function SingleCard() {
             formattingFn={TotalDomainCard.formattingFn}
             formattingUnitFn={TotalDomainCard.formattingUnitFn}
             isDuration={TotalDomainCard.isDuration}
+            getRandomArbitrary={getRandomArbitrary(-100, 100)}
           />
         </div>
       </div>

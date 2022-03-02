@@ -28,7 +28,7 @@ export function TableChart(props) {
     getTotalDurationByDomain(state)
   );
 
-  const data = totalData.slice(0, rowCount).map((datum) => ({
+  const data = totalData.slice(0, 9).map((datum) => ({
     label: datum.domain,
     labelComponent: (
       <Link

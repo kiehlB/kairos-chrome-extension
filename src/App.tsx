@@ -54,7 +54,6 @@ function App() {
     getIsLoadingRecords(state)
   );
 
-  console.log(location.pathname);
   useEffect(() => {
     dispatch(loadRecords());
 

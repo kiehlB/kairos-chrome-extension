@@ -125,6 +125,11 @@ function SecondCard() {
       },
       title: {
         display: true,
+        text: 'Usage Trend',
+        padding: {
+          top: 10,
+          bottom: 30,
+        },
       },
     },
   } as any;
