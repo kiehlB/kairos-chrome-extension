@@ -25,6 +25,25 @@ import { useParams, useLocation } from 'react-router-dom';
 
 ChartJS.register(LinearScale, PointElement, Tooltip, Legend);
 
+export function formatTableDurationLabelToMin(duration: number): string {
+  if (duration < 1000) {
+    return `${duration} ms`;
+  }
+
+  if (duration < 60000) {
+    return `${(duration / 1000).toFixed(1)} s`;
+  }
+
+  if (duration < 3600000) {
+    const minutes = Math.floor(duration / 60000);
+    const seconds = Math.round((duration / 1000) % 60);
+    return `${minutes} min ${seconds.toString().padStart(2, '0')} s`;
+  }
+
+  const hours = Math.floor(duration / 3600000);
+  const minutes = Math.round((duration / 60000) % 60);
+  return ` ${minutes.toString().padStart(2, '0')} min`;
+}
 export function BubbleChart() {
   const totalData = useSelector((state: RootState) =>
     getAverageDurationByHourOfWeek(state)
@@ -112,6 +131,30 @@ export function BubbleChart() {
     },
 
     plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (context) {
+            let value = context.raw.x;
+            let data = context.raw.r || '';
+            if (value == 0) {
+              return `Sun, ${data}min`;
+            } else if (value == 1) {
+              return `Mon, ${data}min`;
+            } else if (value == 2) {
+              return `Tue, ${data}min`;
+            } else if (value == 3) {
+              return `Wed, ${data}min`;
+            } else if (value == 4) {
+              return `Thu, ${data}min`;
+            } else if (value == 5) {
+              return `Fir, ${data}min`;
+            } else if (value == 6) {
+              return `Sat, ${data}min`;
+            }
+          },
+        },
+      },
+
       legend: {
         display: false,
         position: 'top' as const,

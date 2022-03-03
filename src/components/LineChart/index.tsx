@@ -125,6 +125,15 @@ export function LineChart() {
     } as any,
 
     plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (context) {
+            let label = formatTableDurationLabel(context.parsed.y) || '';
+
+            return label;
+          },
+        },
+      },
       legend: {
         display: false,
         position: 'top' as const,
@@ -149,12 +158,6 @@ export function LineChart() {
         borderColor: 'rgba(108, 210, 176, 1)',
 
         backgroundColor: 'rgba(108, 210, 176, 1)',
-      },
-      {
-        label: 'Dataset 2',
-        data: isDomain ? allTimeByDomain : allTime,
-        borderColor: 'rgb(53, 162, 235)',
-        backgroundColor: 'rgba(53, 162, 235, 0.5)',
       },
     ],
   };

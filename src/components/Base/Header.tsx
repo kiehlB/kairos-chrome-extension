@@ -18,6 +18,7 @@ import useDarkMode from '../../hooks/useDarkMode';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
 import { isDarkTrigger } from '../../store/activity/activity';
+import { Position, SideSheet, Paragraph, Button } from 'evergreen-ui';
 
 export type HeaderProps = {
   children?: React.ReactNode;
@@ -26,6 +27,8 @@ export type HeaderProps = {
 function Header({ children }: HeaderProps) {
   const [colorTheme, setTheme, isDarkMode, setIsDarkMode] = useDarkMode();
   const dispatch = useDispatch();
+  const [isShown, setIsShown] = useState(false);
+
   const isDarkToggle = useSelector((state: RootState) => state.activity.isDark);
 
   const [containerRef, { height: containerHeight, width }] =
@@ -97,7 +100,38 @@ function Header({ children }: HeaderProps) {
               ) : width > 768 ? (
                 'History'
               ) : (
-                <Menu />
+                <>
+                  <SideSheet
+                    // @ts-ignore
+                    position={Position.LEFT}
+                    isShown={isShown}
+                    width='15rem'
+                    onCloseComplete={() => setIsShown(false)}
+                  >
+                    <Paragraph margin={20}>Analytics</Paragraph>
+                    <Paragraph margin={20}>History</Paragraph>
+                    <Paragraph margin={20}>Settings</Paragraph>
+                    <Paragraph margin={20}>help</Paragraph>
+                    <Paragraph margin={20}>
+                      <div
+                        className='flex items-center'
+                        onClick={() => {
+                          setTheme(colorTheme);
+                          dispatch(isDarkTrigger(true));
+                        }}
+                      >
+                        <DarkModeToggle
+                          onChange={setIsDarkMode}
+                          checked={isDarkMode}
+                          size={40}
+                        />
+                      </div>
+                    </Paragraph>
+                  </SideSheet>
+                  <div onClick={() => setIsShown(true)}>
+                    <Menu />
+                  </div>
+                </>
               )}
             </div>
             <div

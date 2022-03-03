@@ -118,6 +118,15 @@ function SecondCard() {
     },
 
     plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (context) {
+            let label = formatTableDurationLabel(context.parsed.y) || '';
+
+            return label;
+          },
+        },
+      },
       legend: {
         display: false,
         position: 'top' as const,

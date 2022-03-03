@@ -41,7 +41,6 @@ export function HorizontalChart() {
   const isDarkToggle = useSelector((state: RootState) => state.activity.isDark);
 
   const allTimeByDomain = totalTimeByDomain.map((d) => d.duration);
-  const allTime = totalTime.map((d) => d.duration);
 
   let location = useLocation();
 
@@ -49,32 +48,9 @@ export function HorizontalChart() {
 
   const isDomain = byDomain == '?domain' ? true : false;
 
-  const axisData = totalTime.map((d) => ({
-    x: d.day,
-    y: d.duration,
-  }));
-
-  const axisDataByDomain = totalTime.map((d) => ({
-    x: d.day,
-    y: d.duration,
-  }));
-
-  const newDate = axisData.map((ele) =>
-    new Date(ele.x).toLocaleDateString('en-US', {
-      weekday: 'short',
-      day: 'numeric',
-    })
-  );
-
-  const newDateByDomain = axisDataByDomain.map((ele) =>
-    new Date(ele.x).toLocaleDateString('en-US', {
-      weekday: 'short',
-      day: 'numeric',
-    })
-  );
-
   const options = {
     responsive: true,
+
     maintainAspectRatio: false,
     indexAxis: 'y' as const,
     layout: {
@@ -106,6 +82,15 @@ export function HorizontalChart() {
     },
 
     plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (context) {
+            let label = Math.floor(context.parsed.x) || '';
+
+            return ` ${label}h`;
+          },
+        },
+      },
       legend: {
         position: 'top' as const,
         display: false,
@@ -126,9 +111,7 @@ export function HorizontalChart() {
 
   const data = totalTime.map((d) => d.duration / 3600000);
 
-  const randomData = totalTime.map(
-    (d) => d.duration * Math.random() * (2 - 1) + 1
-  );
+  const randomData = totalTime.map((d) => d.duration);
 
   const labels = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 
@@ -143,16 +126,6 @@ export function HorizontalChart() {
         borderColor: 'rgba(108, 210, 176, 1)',
         borderWidth: 1,
         stack: 'Stack 1',
-        borderRadius: Number.MAX_VALUE,
-      },
-      {
-        label: '',
-        data: isDomain ? randomData : allTimeByDomain,
-        backgroundColor: 'rgba(0, 0, 0, 0.1)',
-        borderColor: 'rgba(0, 0, 0, 0.1)',
-        borderWidth: 1,
-        stack: 'Stack 2',
-        borderRadius: Number.MAX_VALUE,
       },
     ],
   };

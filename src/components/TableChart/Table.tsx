@@ -60,7 +60,7 @@ const BarChartTable = ({
               />
 
               <div
-                className='truncate whitespace-nowrap overflow-hidden dark:text-neutral-400'
+                className='truncate whitespace-nowrap overflow-hidden dark:text-neutral-400 font-semibold text-slate-400 text-sm'
                 style={{
                   visibility:
                     datum.label === NO_DATA_LABEL ? 'hidden' : undefined,
