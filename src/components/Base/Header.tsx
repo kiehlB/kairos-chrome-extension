@@ -13,7 +13,7 @@ import {
 import DayPicker from '../DayPicker';
 import { ActivityDateRangePicker } from '../DateRange';
 import { DomainPicker } from '../DomainPicker';
-import useClientDimensions from '../../hooks/useClientDimensions';
+
 import useDarkMode from '../../hooks/useDarkMode';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
@@ -29,11 +29,6 @@ function Header({ children }: HeaderProps) {
   const dispatch = useDispatch();
   const [isShown, setIsShown] = useState(false);
 
-  const isDarkToggle = useSelector((state: RootState) => state.activity.isDark);
-
-  const [containerRef, { height: containerHeight, width }] =
-    useClientDimensions();
-
   const widthSection = () => {
     return (
       <section className='flex  items-center justify-end  '>
@@ -46,7 +41,7 @@ function Header({ children }: HeaderProps) {
           </div>
         </div>
 
-        <div className=' h-10 maxw:hidden'></div>
+        <div className='border h-10 maxw:hidden'></div>
         <div className='maxw:hidden'>
           <img
             className='inline object-cover w-12 h-12 rounded-full'
@@ -73,7 +68,7 @@ function Header({ children }: HeaderProps) {
           </div>
         </div>
 
-        <div className='h-10 maxw:hidden'></div>
+        <div className='bordr h-10 maxw:hidden'></div>
         <div className='maxw:hidden'>
           <img
             className='inline object-cover w-12 h-12 rounded-full'
@@ -91,48 +86,44 @@ function Header({ children }: HeaderProps) {
 
   return (
     <>
-      <div className='border-b bg-white dark:bg-gray-900' ref={containerRef}>
+      <div className='border-b bg-white dark:bg-gray-900'>
         <div className='flex h-20 items-center  px-8 justify-between flex-wrap  mmd:px-4'>
           <div className='flex items-center'>
             <div className='text-xl font-bold text-dark-m mr-4 dark:text-white '>
-              {width > 1340 ? (
-                `Analytics Browser History`
-              ) : width > 768 ? (
-                'History'
-              ) : (
-                <>
-                  <SideSheet
-                    // @ts-ignore
-                    position={Position.LEFT}
-                    isShown={isShown}
-                    width='15rem'
-                    onCloseComplete={() => setIsShown(false)}
-                  >
-                    <Paragraph margin={20}>Analytics</Paragraph>
-                    <Paragraph margin={20}>History</Paragraph>
-                    <Paragraph margin={20}>Settings</Paragraph>
-                    <Paragraph margin={20}>help</Paragraph>
-                    <Paragraph margin={20}>
-                      <div
-                        className='flex items-center'
-                        onClick={() => {
-                          setTheme(colorTheme);
-                          dispatch(isDarkTrigger(true));
-                        }}
-                      >
-                        <DarkModeToggle
-                          onChange={setIsDarkMode}
-                          checked={isDarkMode}
-                          size={40}
-                        />
-                      </div>
-                    </Paragraph>
-                  </SideSheet>
-                  <div onClick={() => setIsShown(true)}>
-                    <Menu />
-                  </div>
-                </>
-              )}
+              <div className='m2xl:hidden'> Analytics Browser History</div>
+              <div className='mmd:hidden xxl:hidden'>History</div>
+
+              <div className='si:hidden'>
+                <SideSheet
+                  // @ts-ignore
+                  position={Position.LEFT}
+                  isShown={isShown}
+                  width='15rem'
+                  onCloseComplete={() => setIsShown(false)}
+                >
+                  <Paragraph margin={20}>Analytics</Paragraph>
+                  <Paragraph margin={20}>History</Paragraph>
+                  <Paragraph margin={20}>Settings</Paragraph>
+                  <Paragraph margin={20}>help</Paragraph>
+                  <Paragraph margin={20}>
+                    <div
+                      onClick={() => {
+                        setTheme(colorTheme);
+                        dispatch(isDarkTrigger(true));
+                      }}
+                    >
+                      <DarkModeToggle
+                        onChange={setIsDarkMode}
+                        checked={isDarkMode}
+                        size={40}
+                      />
+                    </div>
+                  </Paragraph>
+                </SideSheet>
+                <div onClick={() => setIsShown(true)}>
+                  <Menu />
+                </div>
+              </div>
             </div>
             <div
               className='flex items-center'
@@ -149,7 +140,8 @@ function Header({ children }: HeaderProps) {
               />
             </div>
           </div>
-          {width > 1340 ? widthSection() : divSection()}
+          <div className='m2xl:hidden '>{widthSection()}</div>
+          <div className='xxl:hidden'>{divSection()}</div>
         </div>
       </div>
     </>

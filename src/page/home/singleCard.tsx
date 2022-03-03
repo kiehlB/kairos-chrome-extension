@@ -9,7 +9,6 @@ import Axis from '../../components/Chart';
 import { CountUp, DurationCountUp } from '../../components/Count';
 
 import DateRangePicker, { TRANSITION_DELAY } from '../../components/DatePicker';
-import useClientDimensions from '../../hooks/useClientDimensions';
 
 import { useParams, useLocation } from 'react-router-dom';
 
@@ -75,9 +74,6 @@ const TotalUsage = (props) => {
 };
 
 function SingleCard() {
-  const [containerRef, { height: containerHeight, width }] =
-    useClientDimensions();
-
   const getRandomArbitrary = useCallback((min, max) => {
     return Math.floor(Math.random() * (max - min) + min);
   }, []);
@@ -343,20 +339,18 @@ function SingleCard() {
   };
 
   const resultTotal = () => {
-    if (width > 1341) {
-      return eachWithTotal();
-    } else if (width < 1341 && width > 768) {
-      return halfWithTotal();
-    } else if (width < 769) {
-      return fullWithTotal();
-    }
+    return (
+      <>
+        <div className='m2xl:hidden'>{eachWithTotal()}</div>
+        <div className='mmd:hidden xxl:hidden'>{halfWithTotal()}</div>
+        <div className='si:hidden'> {fullWithTotal()}</div>
+      </>
+    );
   };
 
   return (
     <>
-      <div className='mt-4 px-8 mmd:px-4 ' ref={containerRef}>
-        {resultTotal()}
-      </div>
+      <div className='mt-4 px-8 mmd:px-4 '>{resultTotal()}</div>
     </>
   );
 }

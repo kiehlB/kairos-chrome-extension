@@ -81,8 +81,6 @@ function SecondCard() {
     })
   );
 
-  const a = false;
-
   const options = {
     responsive: true,
     maintainAspectRatio: false,
