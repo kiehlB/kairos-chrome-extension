@@ -49,53 +49,54 @@ function App() {
     getTotalDurationByDate(state)
   );
 
-  const allDomains = useSelector((state: RootState) => getAllDomains(state));
+  // const allDomains = useSelector((state: RootState) => getAllDomains(state));
 
-  const isLoadingRecords = useSelector((state: RootState) =>
-    getIsLoadingRecords(state)
-  );
+  // const isLoadingRecords = useSelector((state: RootState) =>
+  //   getIsLoadingRecords(state)
+  // );
 
   useEffect(() => {
     dispatch(loadRecords());
-
-    if (location.pathname == '/analytics' || location.pathname == '/') {
-      setIsSelect({
-        one: true,
-        two: false,
-        three: false,
-        four: false,
-      });
-    } else if (location.pathname == '/history') {
-      setIsSelect({
-        one: false,
-        two: true,
-        three: false,
-        four: false,
-      });
-    } else if (location.pathname == '/settings') {
-      setIsSelect({
-        one: false,
-        two: false,
-        three: true,
-        four: false,
-      });
-    } else if (location.pathname == '/help') {
-      setIsSelect({
-        one: false,
-        two: false,
-        three: false,
-        four: true,
-      });
-    }
+    // if (location.pathname == '/analytics' || location.pathname == '/') {
+    //   setIsSelect({
+    //     one: true,
+    //     two: false,
+    //     three: false,
+    //     four: false,
+    //   });
+    // } else if (location.pathname == '/history') {
+    //   setIsSelect({
+    //     one: false,
+    //     two: true,
+    //     three: false,
+    //     four: false,
+    //   });
+    // } else if (location.pathname == '/settings') {
+    //   setIsSelect({
+    //     one: false,
+    //     two: false,
+    //     three: true,
+    //     four: false,
+    //   });
+    // } else if (location.pathname == '/help') {
+    //   setIsSelect({
+    //     one: false,
+    //     two: false,
+    //     three: false,
+    //     four: true,
+    //   });
+    // }
   }, [
     loadRecords,
-    selectedDomain,
-    selectedTimeRange,
-    totalTime,
-    allDomains,
-    isLoadingRecords,
-    location.pathname,
+    // selectedDomain,
+    // selectedTimeRange,
+    // totalTime,
+    // allDomains,
+    // isLoadingRecords,
+    // location.pathname,
   ]);
+
+  console.log('das');
 
   return (
     <div className='flex   transition-all bg-white w-full '>
@@ -140,10 +141,10 @@ function App() {
         <Route path='/analytics'>
           <Home />
         </Route>
-        <Route path='/history'>
+        {/* <Route path='/history'>
           <History />
-        </Route>
-        <Redirect exact to='/analytics' />
+        </Route> */}
+        {/* <Redirect exact to='/analytics' /> */}
       </Switch>
     </div>
   );

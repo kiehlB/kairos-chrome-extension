@@ -59,7 +59,7 @@ const TotalUsage = (props) => {
               start={0}
               end={props.data}
               decimals={props.decimals}
-              duration={TRANSITION_DELAY / 1500}
+              duration={TRANSITION_DELAY / 1000}
               formattingFn={props.formattingFn}
               formattingUnitFn={props.formattingUnitFn}
               preserveValue={true}

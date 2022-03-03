@@ -45,6 +45,7 @@ const BarChartTable = ({
       <div className='text-sm mt-4 dark:text-neutral-400'>
         {rowData.map((datum, index) => (
           <div
+            key={index}
             className='flex items-center px-4 py-0.5 flex-1  file:'
             style={{
               visibility: datum.label === NO_DATA_LABEL ? 'hidden' : undefined,

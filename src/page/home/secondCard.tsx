@@ -164,15 +164,6 @@ function SecondCard() {
         stack: 'Stack 1',
         borderRadius: Number.MAX_VALUE,
       },
-      {
-        label: '2',
-        data: randomData,
-        backgroundColor: 'rgba(0, 0, 0, 0.1)',
-        borderColor: 'rgba(0, 0, 0, 0.1)',
-        borderWidth: 1,
-        stack: 'Stack 1',
-        borderRadius: Number.MAX_VALUE,
-      },
     ],
   };
 
