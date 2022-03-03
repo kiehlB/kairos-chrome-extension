@@ -18,6 +18,7 @@ import {
 } from './constants';
 
 export const getSearchParams = (state: RootState) => {
+  // @ts-ignore
   return state.router.location.search;
 };
 
@@ -33,6 +34,7 @@ export const getSearchParamsSelectedDomain = createSelector(
 export const getSearchParamsSelectedDomainValidationStatus = (
   state: RootState
 ): ValidationStatus => {
+  // @ts-ignore
   const params = new URLSearchParams(state.router.location.search);
   const domainParam = params.get(SEARCH_PARAM_DOMAIN) || '';
 
@@ -82,6 +84,7 @@ export const getSearchParamsSelectedTimeRange = createSelector(
 export const getSearchParamsSelectedTimeRangeValidationStatus = (
   state: RootState
 ): ValidationStatus => {
+  // @ts-ignore
   const params = new URLSearchParams(state.router.location.search);
   const startDateParam = params.get(SEARCH_PARAM_START_DATE);
   const endDateParam = params.get(SEARCH_PARAM_END_DATE);

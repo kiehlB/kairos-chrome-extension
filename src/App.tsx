@@ -24,6 +24,7 @@ import {
   getSearchParamsSelectedTimeRange,
 } from './store/router/selectors';
 import History from './page/history';
+import { selectors } from './store/router';
 
 function App() {
   const search = '';
@@ -37,17 +38,17 @@ function App() {
     four: false,
   });
 
-  const selectedDomain = useSelector((state: RootState) =>
-    getSearchParamsSelectedDomain(state)
-  );
+  // const selectedDomain = useSelector((state: RootState) =>
+  //   getSearchParamsSelectedDomain(state)
+  // );
 
   const selectedTimeRange = useSelector((state: RootState) =>
-    getSearchParamsSelectedTimeRange(state)
+    selectors.getSearchParamsSelectedTimeRange(state)
   );
 
-  const totalTime = useSelector((state: RootState) =>
-    getTotalDurationByDate(state)
-  );
+  // const totalTime = useSelector((state: RootState) =>
+  //   getTotalDurationByDate(state)
+  // );
 
   // const allDomains = useSelector((state: RootState) => getAllDomains(state));
 
@@ -57,43 +58,13 @@ function App() {
 
   useEffect(() => {
     dispatch(loadRecords());
-    // if (location.pathname == '/analytics' || location.pathname == '/') {
-    //   setIsSelect({
-    //     one: true,
-    //     two: false,
-    //     three: false,
-    //     four: false,
-    //   });
-    // } else if (location.pathname == '/history') {
-    //   setIsSelect({
-    //     one: false,
-    //     two: true,
-    //     three: false,
-    //     four: false,
-    //   });
-    // } else if (location.pathname == '/settings') {
-    //   setIsSelect({
-    //     one: false,
-    //     two: false,
-    //     three: true,
-    //     four: false,
-    //   });
-    // } else if (location.pathname == '/help') {
-    //   setIsSelect({
-    //     one: false,
-    //     two: false,
-    //     three: false,
-    //     four: true,
-    //   });
-    // }
   }, [
     loadRecords,
     // selectedDomain,
-    // selectedTimeRange,
+    selectedTimeRange,
     // totalTime,
     // allDomains,
     // isLoadingRecords,
-    // location.pathname,
   ]);
 
   console.log('das');
@@ -138,13 +109,11 @@ function App() {
       </div>
 
       <Switch>
-        <Route path='/analytics'>
-          <Home />
-        </Route>
-        {/* <Route path='/history'>
+        <Route exact path='/analytics' render={() => <Home />} />
+        <Route path='/history'>
           <History />
-        </Route> */}
-        {/* <Redirect exact to='/analytics' /> */}
+        </Route>
+        <Redirect to='/analytics' />
       </Switch>
     </div>
   );

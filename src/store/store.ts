@@ -1,4 +1,4 @@
-import { configureStore, Action, MiddlewareArray } from '@reduxjs/toolkit';
+import { Action, MiddlewareArray } from '@reduxjs/toolkit';
 import { ThunkAction } from 'redux-thunk';
 
 import { reducer } from './activity/activity';
