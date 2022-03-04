@@ -25,6 +25,9 @@ export const getRecordsTimeRange = (state: RootState) => {
 export const getActivityTimeRange = (state: RootState) =>
   state.activity.totalTimeRange;
 
+export const getIsDeletingRecords = (state: RootState) =>
+  state.activity.isDeletingRecords;
+
 export const getSelectedTimeRange = (state: RootState) =>
   state.activity.selectedTimeRange;
 

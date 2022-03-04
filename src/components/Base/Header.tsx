@@ -22,9 +22,11 @@ import { Position, SideSheet, Paragraph, Button } from 'evergreen-ui';
 
 export type HeaderProps = {
   children?: React.ReactNode;
+  title: string;
+  subTitle?: string;
 };
 
-function Header({ children }: HeaderProps) {
+function Header({ children, title, subTitle }: HeaderProps) {
   const [colorTheme, setTheme, isDarkMode, setIsDarkMode] = useDarkMode();
   const dispatch = useDispatch();
   const [isShown, setIsShown] = useState(false);
@@ -90,8 +92,8 @@ function Header({ children }: HeaderProps) {
         <div className='flex h-20 items-center  px-8 justify-between flex-wrap  mmd:px-4'>
           <div className='flex items-center'>
             <div className='text-xl font-bold text-dark-m mr-4 dark:text-white '>
-              <div className='m2xl:hidden'> Analytics Browser History</div>
-              <div className='mmd:hidden xxl:hidden'>History</div>
+              <div className='m2xl:hidden'>{title}</div>
+              <div className='mmd:hidden xxl:hidden'>{subTitle}</div>
 
               <div className='si:hidden'>
                 <SideSheet
@@ -105,20 +107,20 @@ function Header({ children }: HeaderProps) {
                   <Paragraph margin={20}>History</Paragraph>
                   <Paragraph margin={20}>Settings</Paragraph>
                   <Paragraph margin={20}>help</Paragraph>
-                  <Paragraph margin={20}>
-                    <div
-                      onClick={() => {
-                        setTheme(colorTheme);
-                        dispatch(isDarkTrigger(true));
-                      }}
-                    >
-                      <DarkModeToggle
-                        onChange={setIsDarkMode}
-                        checked={isDarkMode}
-                        size={40}
-                      />
-                    </div>
-                  </Paragraph>
+
+                  <div
+                    className='w-12 ml-5 h-6'
+                    onClick={() => {
+                      setTheme(colorTheme);
+                      dispatch(isDarkTrigger(true));
+                    }}
+                  >
+                    <DarkModeToggle
+                      onChange={setIsDarkMode}
+                      checked={isDarkMode}
+                      size={40}
+                    />
+                  </div>
                 </SideSheet>
                 <div onClick={() => setIsShown(true)}>
                   <Menu />

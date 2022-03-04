@@ -121,7 +121,7 @@ export function HorizontalChart() {
     datasets: [
       {
         label: 'Dataset 1',
-        data: isDomain ? totalTimeByDomain : data,
+        data: isDomain ? allTimeByDomain : data,
         backgroundColor: 'rgba(108, 210, 176, 1)',
         borderColor: 'rgba(108, 210, 176, 1)',
         borderWidth: 1,

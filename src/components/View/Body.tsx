@@ -5,11 +5,12 @@ import { SPINNER_SIZE } from '../../lib/styles/constants';
 export type BodyProps = {
   children: React.ReactNode;
   isLoading?: boolean;
+  className?: string;
 };
 
 function Body(props: BodyProps) {
   return (
-    <div>
+    <div className={props.className}>
       {props.children}
       {props.isLoading && (
         <div className='view__body'>

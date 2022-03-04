@@ -23,8 +23,8 @@ import {
   getSearchParamsSelectedDomain,
   getSearchParamsSelectedTimeRange,
 } from './store/router/selectors';
-import History from './page/history';
 import { selectors } from './store/router';
+import { HistoryView } from './page/history';
 
 function App() {
   const search = '';
@@ -111,7 +111,7 @@ function App() {
       <Switch>
         <Route exact path='/analytics' render={() => <Home />} />
         <Route path='/history'>
-          <History />
+          <HistoryView />
         </Route>
         <Redirect to='/analytics' />
       </Switch>
