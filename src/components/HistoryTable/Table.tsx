@@ -140,7 +140,10 @@ export function Table({
   }
 
   return (
-    <div ref={containerRef} className='h-full border shadow-md  rounded-md'>
+    <div
+      ref={containerRef}
+      className='h-full border shadow-md  rounded-md bg-white'
+    >
       <EvergreenTable>
         <EvergreenTable.Head height={HEADER_HEIGHT}>
           {filterFn && (
@@ -226,7 +229,7 @@ function TableSortButton<U, V>({ disabled, onSelect, sortOptions, sortOrder }) {
         isActive={true}
         className='table__sort-button'
       >
-        {buttonText}
+        <div className='mmd:hidden'>{buttonText}</div>
       </Button>
     </Popover>
   );

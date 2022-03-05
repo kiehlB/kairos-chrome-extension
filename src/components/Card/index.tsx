@@ -25,7 +25,7 @@ const Card = (props: CardProps) => (
         className={`${
           props.sort == 'single'
             ? 'flex items-center text-greyTint-m   justify-between'
-            : ' flex items-center text-greyTint-m   justify-between px-4 mt-4'
+            : 'flex items-center text-greyTint-m   justify-between px-4 mt-4'
         }`}
       >
         <h2 className='text-greyTint-m font-medium'>{props.title}</h2>
@@ -71,7 +71,7 @@ const Card = (props: CardProps) => (
                 redraw={true}
               />
 
-              {props.sort == 'single' ? (
+              {props.sort == 'single' && props.extra ? (
                 <div
                   className={`flex  ${
                     props.extra > 0 ? 'text-grrenTint-m' : 'text-red-700'

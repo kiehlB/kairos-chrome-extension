@@ -116,3 +116,46 @@ export function getDayOfWeek(timestamp: number): number {
 export function addDays(timestamp: number, days: number): number {
   return DateTime.fromMillis(timestamp).plus({ days }).valueOf();
 }
+
+export function formatDateDistance(startDate: number, endDate: number): string {
+  let result = '';
+  const distanceInNearestMins = Math.floor((endDate - startDate) / 1000 / 60);
+  if (distanceInNearestMins > 0 && distanceInNearestMins < 60) {
+    return 'Less than a minute';
+  }
+
+  const days = Math.floor(distanceInNearestMins / 60 / 24);
+  const hours = Math.floor(distanceInNearestMins / 60) % 24;
+  const minutes = distanceInNearestMins % 60;
+
+  if (days > 0) {
+    result += `${days} ${days > 1 ? 'days' : 'day'}`;
+    if (hours > 0 || minutes > 0) {
+      result += ', ';
+    }
+  }
+  if (hours > 0) {
+    result += `${hours} ${hours > 1 ? 'hours' : 'hour'}`;
+    if (minutes > 0) {
+      result += ' ';
+    }
+  }
+  if (minutes > 0) {
+    result += `${minutes} ${minutes > 1 ? 'minutes' : 'minute'}`;
+  }
+
+  return result;
+}
+
+export function formatBytes(bytes: number, fractionDigits = 2) {
+  switch (true) {
+    case bytes < 1024:
+      return bytes + ' Bytes';
+    case bytes < 1048576:
+      return (bytes / 1024).toFixed(fractionDigits) + ' KB';
+    case bytes < 1073741824:
+      return (bytes / 1048576).toFixed(fractionDigits) + ' MB';
+    default:
+      return (bytes / 1073741824).toFixed(fractionDigits) + ' GB';
+  }
+}

@@ -30,6 +30,9 @@ function Header({ children, title, subTitle }: HeaderProps) {
   const [colorTheme, setTheme, isDarkMode, setIsDarkMode] = useDarkMode();
   const dispatch = useDispatch();
   const [isShown, setIsShown] = useState(false);
+  const isDarkToggle = useSelector((state: RootState) => state.activity.isDark);
+
+  console.log(isDarkToggle);
 
   const widthSection = () => {
     return (
@@ -117,7 +120,7 @@ function Header({ children, title, subTitle }: HeaderProps) {
                   >
                     <DarkModeToggle
                       onChange={setIsDarkMode}
-                      checked={isDarkMode}
+                      checked={isDarkToggle}
                       size={40}
                     />
                   </div>
@@ -136,7 +139,7 @@ function Header({ children, title, subTitle }: HeaderProps) {
             >
               <DarkModeToggle
                 onChange={setIsDarkMode}
-                checked={isDarkMode}
+                checked={isDarkToggle}
                 size={80}
                 className='mmd:hidden'
               />

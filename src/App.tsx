@@ -25,6 +25,7 @@ import {
 } from './store/router/selectors';
 import { selectors } from './store/router';
 import { HistoryView } from './page/history';
+import { SettingsView } from './page/settings';
 
 function App() {
   const search = '';
@@ -67,8 +68,6 @@ function App() {
     // isLoadingRecords,
   ]);
 
-  console.log('das');
-
   return (
     <div className='flex   transition-all bg-white w-full '>
       <div className='flex  flex-1'>
@@ -96,14 +95,6 @@ function App() {
               },
               isSelect: isSelect.three,
             },
-            {
-              icon: <HelpCircle size='20' />,
-              text: 'Help',
-              to: {
-                pathname: '/help',
-              },
-              isSelect: isSelect.four,
-            },
           ]}
         />
       </div>
@@ -113,6 +104,10 @@ function App() {
         <Route path='/history'>
           <HistoryView />
         </Route>
+        <Route path='/settings'>
+          <SettingsView />
+        </Route>
+
         <Redirect to='/analytics' />
       </Switch>
     </div>

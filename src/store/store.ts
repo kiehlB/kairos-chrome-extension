@@ -11,12 +11,23 @@ import {
 } from 'redux';
 import { createHashHistory } from 'history';
 import thunk from 'redux-thunk';
-
+import { persistReducer } from 'redux-persist';
 import { connectRouter, routerMiddleware } from 'connected-react-router';
 import { InitDatabaseService } from '../lib/db';
+import storage from 'redux-persist/lib/storage';
+import {
+  actions as dataMigrationActions,
+  reducer as dataMigrationReducer,
+  selectors as dataMigrationSelectors,
+} from './dataMigration';
 
 export const history = createHashHistory();
 const databaseService = InitDatabaseService();
+
+const persistConfig = {
+  key: 'activity',
+  storage,
+};
 
 const middleware = [
   thunk.withExtraArgument({ databaseService }),
@@ -26,14 +37,15 @@ const storeEnhancers = [applyMiddleware(...middleware)];
 
 export const composedEnhancer = compose(...storeEnhancers) as StoreEnhancer;
 
-export const store = createStore(
-  combineReducers({
-    activity: reducer,
-    router: connectRouter(history),
-  }),
-  {},
-  composedEnhancer
-);
+export const rootReducer = combineReducers({
+  activity: reducer,
+  dataMigration: dataMigrationReducer,
+  router: connectRouter(history),
+});
+
+export const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+export const store = createStore(persistedReducer, {}, composedEnhancer);
 
 export type AppDispatch = typeof store.dispatch;
 

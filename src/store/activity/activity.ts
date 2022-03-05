@@ -34,6 +34,7 @@ export interface ActivityState {
   loadingRecordsError: Error | null;
   isDeletingRecords: boolean;
   isDark: boolean;
+  theme: string;
 }
 export const SET_FOURWEEK: TimeRange = {
   start: minusDays(setMidnight(), 27), // 4 weeks
@@ -52,7 +53,8 @@ export const initialState = {
   deletingRecordsError: null,
   deletingRecordsSuccess: null,
   isDeletingRecords: false,
-  isDark: false,
+  isDark: true,
+  theme: 'light',
 };
 
 const ActivitySlice = createSlice({
@@ -100,6 +102,17 @@ const ActivitySlice = createSlice({
     isDarkSuccess(state, action: PayloadAction<DefiniteTimeRange | null>) {
       state.isDark = !state.isDark;
     },
+    isThemeSuccess(state, payload: any) {
+      const root = window.document.documentElement;
+      root.classList.remove(payload);
+      if (payload == 'light') {
+        state.theme = 'dark';
+      } else if (payload == 'dark') {
+        state.theme = 'light';
+      }
+
+      root.classList.add(state.theme);
+    },
   },
 });
 
@@ -111,6 +124,7 @@ export const {
   getRecordsStart,
   getRecordsSuccess,
   getRecordsFailure,
+  isThemeSuccess,
   isDarkSuccess,
 } = ActivitySlice.actions;
 
@@ -198,4 +212,10 @@ export const isDarkTrigger =
   (payload): AppThunk =>
   async (dispatch: AppDispatch) => {
     dispatch(isDarkSuccess(payload));
+  };
+
+export const isThemeTrigger =
+  (payload): AppThunk =>
+  async (dispatch: AppDispatch) => {
+    dispatch(isThemeSuccess(payload));
   };

@@ -16,7 +16,7 @@ import { useParams, useLocation } from 'react-router-dom';
 
 interface NavbarProps {
   primaryItems: NavbarItemProps[];
-  secondaryItems: NavbarItemProps[];
+  secondaryItems?: NavbarItemProps[];
   className?: string;
   isDisabled?: boolean;
 }
