@@ -113,7 +113,7 @@ export const HistoryTableRow = ({
           src={datum.favIconUrl}
           size={ICON_SIZE_MD}
         />
-        <div className='ml-3 flex flex-col text-xs truncate whitespace-nowrap overflow-hidden'>
+        <div className='ml-3 flex flex-col text-xs truncate whitespace-nowrap overflow-hidden dark:text-neutral-400'>
           <strong className=' '>{datum.title || TITLE_PLACEHOLDER}</strong>
           <ExternalLink url={datum.url} />
         </div>
@@ -124,7 +124,7 @@ export const HistoryTableRow = ({
         flexGrow={20}
         className='flex justify-end text-xs'
       >
-        <div className='flex flex-col truncate whitespace-nowrap overflow-hidden'>
+        <div className='flex flex-col truncate whitespace-nowrap overflow-hidden dark:text-neutral-400'>
           <strong>{activityDateTime}</strong>
           <span className='flex justify-end mt-1'>{activityDuration}</span>
         </div>

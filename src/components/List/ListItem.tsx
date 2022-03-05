@@ -2,7 +2,7 @@ import React from 'react';
 
 export type ListItemProps = {
   label: string;
-  value: React.ReactNode;
+  value?: React.ReactNode;
   isLoading?: boolean;
   className?: string;
 };
@@ -12,14 +12,16 @@ const ListItem = (props: ListItemProps) => {
   if (props.isLoading) {
     content = <LoadingPlaceholder text={props.label} />;
   } else if (props.value !== undefined && props.value !== null) {
-    content = <span>{props.value}</span>;
+    content = <span className='dark:text-slate-400'>{props.value}</span>;
   } else {
-    content = <span className='list-item__value--unknown'>unknown</span>;
+    content = <span> </span>;
   }
 
   return (
-    <div>
-      <div className='list-item__label'>{props.label}</div>
+    <div className={props.className}>
+      <div className='text-base text-slate-900 dark:text-slate-300'>
+        {props.label}
+      </div>
       <div className='list-item__value'>{content}</div>
     </div>
   );

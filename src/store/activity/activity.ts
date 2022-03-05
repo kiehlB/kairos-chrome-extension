@@ -53,7 +53,7 @@ export const initialState = {
   deletingRecordsError: null,
   deletingRecordsSuccess: null,
   isDeletingRecords: false,
-  isDark: true,
+  isDark: false,
   theme: 'light',
 };
 
@@ -103,15 +103,11 @@ const ActivitySlice = createSlice({
       state.isDark = !state.isDark;
     },
     isThemeSuccess(state, payload: any) {
-      const root = window.document.documentElement;
-      root.classList.remove(payload);
       if (payload == 'light') {
         state.theme = 'dark';
       } else if (payload == 'dark') {
         state.theme = 'light';
       }
-
-      root.classList.add(state.theme);
     },
   },
 });
@@ -208,11 +204,9 @@ export const loadRecords =
     }
   };
 
-export const isDarkTrigger =
-  (payload): AppThunk =>
-  async (dispatch: AppDispatch) => {
-    dispatch(isDarkSuccess(payload));
-  };
+export const isDarkTrigger = (): AppThunk => async (dispatch: AppDispatch) => {
+  dispatch(isDarkSuccess());
+};
 
 export const isThemeTrigger =
   (payload): AppThunk =>

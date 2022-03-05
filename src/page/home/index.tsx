@@ -11,7 +11,6 @@ import ThridCard from './thirdCard';
 function Home() {
   const isDarkToggle = useSelector((state: RootState) => state.activity.isDark);
 
-  console.log(isDarkToggle);
   return (
     <div className='w-full dark:bg-gray-900 bg-white-m'>
       <AppLayout.MainNav>

@@ -1,10 +1,13 @@
-import { Button, Dialog, toaster } from 'evergreen-ui';
+import { Button, Dialog, Icon, toaster, Tooltip } from 'evergreen-ui';
 import React, { useEffect, useState } from 'react';
 import { connect, useDispatch, useSelector } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import AppLayout from '../../components/AppLayout';
+import Header from '../../components/Base/Header';
 import Card from '../../components/Card';
 import { List, ListItem } from '../../components/List';
 import useStorageEstimate from '../../hooks/useStorageEstimate';
+import { BASE_SIZE } from '../../lib/styles/constants';
 import {
   getActivityTimeRange,
   getIsLoadingRecords,
@@ -74,47 +77,116 @@ export const SettingsView = ({}) => {
   }, [hasShownExportToaster, exportDataError, exportDataSuccess]);
 
   return (
-    <Card
-      className='settings-view__card settings-view__card--md'
-      title='Extension Data'
-      description='Manage data collected & stored by the extension'
-      body={
-        <>
-          <List>
-            <ListItem
-              label='Estimated storage data used'
-              isLoading={isLoadingRecords}
-              value={`${formatBytes(storageUsage)}`}
-            />
-            <ListItem
-              label='Total data collected'
-              isLoading={isLoadingRecords}
-              value={
-                activityTimeRange
-                  ? formatDateDistance(
-                      activityTimeRange.start,
-                      activityTimeRange.end
-                    )
-                  : '-'
-              }
-            />
-          </List>
-        </>
-      }
-      footer={
-        <div className='settings-view__button-panel'>
-          <Button
-            appearance='primary'
-            iconBefore='export'
-            onClick={() => {
-              setHasShownExportToaster(false);
-              dispatch(exportDatabaseRecords());
-            }}
-          >
-            Export Data
-          </Button>
-        </div>
-      }
-    />
+    <div className='w-full dark:bg-gray-900 bg-white-m  '>
+      <AppLayout.MainNav>
+        <Header title='Settings' subTitle='Settings' />
+      </AppLayout.MainNav>
+      <AppLayout
+        first={
+          <AppLayout.First>
+            <div className='flex w-full'>
+              <div className='p-4 w-full'>
+                <div className=' border-2 w-full bg-white shadow-md  rounded-md dark:bg-gray-900 '>
+                  <List>
+                    <ListItem
+                      className='flex justify-between p-4 border-b text-gray-900 dark:text-slate-300 font-medium text-sm items-center'
+                      label='Extension Data'
+                      isLoading={isLoadingRecords}
+                      value={
+                        <Tooltip
+                          content={
+                            '데이터의 총 사용량과 사용한 데이터를 다운받을 수 있습니다'
+                          }
+                        >
+                          <Icon
+                            icon='issue'
+                            size={BASE_SIZE * 1.5}
+                            style={{ transform: 'rotate(180deg)' }}
+                          />
+                        </Tooltip>
+                      }
+                    />
+                    <ListItem
+                      className='flex justify-between p-4 border-b text-gray-900 font-medium text-sm items-center '
+                      label='Estimated storage data used'
+                      isLoading={isLoadingRecords}
+                      value={`${formatBytes(storageUsage)}`}
+                    />
+                    <ListItem
+                      className='flex justify-between p-4 border-b text-gray-900 font-medium text-sm items-center'
+                      label='Total data collected'
+                      isLoading={isLoadingRecords}
+                      value={
+                        activityTimeRange
+                          ? formatDateDistance(
+                              activityTimeRange.start,
+                              activityTimeRange.end
+                            )
+                          : '-'
+                      }
+                    />
+                    {
+                      <div className='flex justify-end p-4'>
+                        <Button
+                          appearance='primary'
+                          iconBefore='export'
+                          onClick={() => {
+                            setHasShownExportToaster(false);
+                            dispatch(exportDatabaseRecords());
+                          }}
+                        >
+                          Export Data
+                        </Button>
+                      </div>
+                    }
+                  </List>
+                </div>
+              </div>
+
+              <div className='p-4 w-full'>
+                <div className=' border-2 w-full bg-white shadow-md  rounded-md  dark:bg-gray-900'>
+                  <List>
+                    <ListItem
+                      className='flex justify-between p-4 border-b text-gray-900 font-medium text-sm items-center'
+                      label='About'
+                      isLoading={isLoadingRecords}
+                      value={
+                        <Tooltip content={'For info'}>
+                          <Icon
+                            icon='issue'
+                            size={BASE_SIZE * 1.5}
+                            style={{ transform: 'rotate(180deg)' }}
+                          />
+                        </Tooltip>
+                      }
+                    />
+                    <ListItem
+                      className='flex justify-between p-4 border-b text-gray-900 font-medium text-sm items-center'
+                      label='github Link'
+                      isLoading={isLoadingRecords}
+                      value={`https://github.com/kiehlB/Kairos_chrome-extension`}
+                    />
+                    <ListItem
+                      className='flex justify-between p-4 border-b text-gray-900 font-medium text-sm items-center'
+                      label='MyBlog'
+                      isLoading={isLoadingRecords}
+                      value={'https://www.woongblog.xyz/'}
+                    />
+                    <ListItem
+                      className='flex justify-between p-4 border-b text-gray-900 font-medium text-sm items-center'
+                      label='Download the extension from Chrome Web Store.'
+                      isLoading={isLoadingRecords}
+                      value={'not yet'}
+                    />
+                  </List>
+                </div>
+              </div>
+            </div>
+          </AppLayout.First>
+        }
+        second={<AppLayout.Second></AppLayout.Second>}
+        third={<AppLayout.Third>{}</AppLayout.Third>}
+      />
+    </div>
   );
 };

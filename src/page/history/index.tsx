@@ -92,7 +92,7 @@ export const HistoryView = ({}) => {
   }
 
   return (
-    <View.Container className='w-full  h-full   bg-white-m'>
+    <View.Container className='w-full  h-full   bg-white-m dark:bg-gray-900'>
       <View.Header>
         <Header title='Browser History' subTitle=' History' />
       </View.Header>

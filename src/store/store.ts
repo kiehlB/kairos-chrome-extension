@@ -25,7 +25,8 @@ export const history = createHashHistory();
 const databaseService = InitDatabaseService();
 
 const persistConfig = {
-  key: 'activity',
+  key: 'root',
+  version: 1,
   storage,
 };
 

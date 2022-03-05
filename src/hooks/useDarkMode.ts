@@ -2,13 +2,14 @@ import { useEffect, useState } from 'react';
 
 export default function useDarkMode() {
   const [theme, setTheme]: any = useState(localStorage.getItem('theme'));
-  const [isDarkMode, setIsDarkMode]: any = useState(false);
+  const [isDarkMode, setIsDarkMode]: any = useState(
+    localStorage.getItem('isDarkMode')
+  );
 
-  localStorage.setItem('isdark', isDarkMode);
+  localStorage.setItem('isDarkMode', isDarkMode);
 
-  const isButtonDark =
-    isDarkMode === 'false' ? 'true' : 'ture' ? 'false' : 'false';
-  const colorTheme = theme === 'dark' ? 'light' : 'light' ? 'dark' : 'dark';
+  const isButtonDark = isDarkMode === 'false' ? 'true' : 'false';
+  const colorTheme = theme === 'light' ? 'dark' : 'light';
   useEffect(() => {
     const root = window.document.documentElement;
 

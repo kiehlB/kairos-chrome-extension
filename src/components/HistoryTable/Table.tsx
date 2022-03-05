@@ -142,7 +142,7 @@ export function Table({
   return (
     <div
       ref={containerRef}
-      className='h-full border shadow-md  rounded-md bg-white'
+      className='h-full border shadow-md  rounded-md bg-white dark:bg-slate-900'
     >
       <EvergreenTable>
         <EvergreenTable.Head height={HEADER_HEIGHT}>
@@ -166,7 +166,7 @@ export function Table({
         <div>{tableContent}</div>
         <EvergreenTable.Cell
           height={FOOTER_HEIGHT}
-          className='flex justify-end font-semibold text-xs'
+          className='flex justify-end font-semibold text-xs dark:text-neutral-400'
         >
           <div>{footerText}</div>
         </EvergreenTable.Cell>

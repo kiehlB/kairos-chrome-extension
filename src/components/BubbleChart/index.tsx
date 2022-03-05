@@ -54,6 +54,8 @@ export function BubbleChart() {
 
   const isDarkToggle = useSelector((state: RootState) => state.activity.isDark);
 
+  console.log(isDarkToggle);
+
   const totalDataByDomainData = totalDataByDomain.map((ele) => ({
     x: ele.day,
     y: ele.hour,

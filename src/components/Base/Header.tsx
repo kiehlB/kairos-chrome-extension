@@ -31,8 +31,15 @@ function Header({ children, title, subTitle }: HeaderProps) {
   const dispatch = useDispatch();
   const [isShown, setIsShown] = useState(false);
   const isDarkToggle = useSelector((state: RootState) => state.activity.isDark);
+  const isThemeToggle = useSelector((state: RootState) => state.activity.theme);
 
-  console.log(isDarkToggle);
+  useEffect(() => {
+    const root = window.document.documentElement;
+
+    // const a = isThemeToggle == 'dark' ? 'light' : 'dark';
+    // root.classList.remove(a);
+    // root.classList.add(isThemeToggle);
+  }, [isThemeToggle]);
 
   const widthSection = () => {
     return (
@@ -115,7 +122,7 @@ function Header({ children, title, subTitle }: HeaderProps) {
                     className='w-12 ml-5 h-6'
                     onClick={() => {
                       setTheme(colorTheme);
-                      dispatch(isDarkTrigger(true));
+                      dispatch(isDarkTrigger());
                     }}
                   >
                     <DarkModeToggle
@@ -134,7 +141,7 @@ function Header({ children, title, subTitle }: HeaderProps) {
               className='flex items-center'
               onClick={() => {
                 setTheme(colorTheme);
-                dispatch(isDarkTrigger(true));
+                dispatch(isDarkTrigger());
               }}
             >
               <DarkModeToggle
