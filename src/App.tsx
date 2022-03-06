@@ -100,7 +100,7 @@ function App() {
       </div>
 
       <Switch>
-        {/* <Route exact path='/analytics' render={() => <Home />} /> */}
+        <Route exact path='/analytics' render={() => <Home />} />
         <Route path='/history'>
           <HistoryView />
         </Route>
