@@ -12,7 +12,7 @@ function Home() {
   const isDarkToggle = useSelector((state: RootState) => state.activity.isDark);
 
   return (
-    <div className='w-full dark:bg-gray-900 bg-white-m'>
+    <div className='w-full  dark:bg-gray-900 bg-white-m '>
       <AppLayout.MainNav>
         <Header title='Analytics Browser History' subTitle='Analytics' />
       </AppLayout.MainNav>
