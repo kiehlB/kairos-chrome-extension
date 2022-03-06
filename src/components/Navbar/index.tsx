@@ -31,7 +31,7 @@ const Navbar = ({
 
   return (
     <>
-      <nav className='transition-all border-r border-grey-m w-side     m2xl:hidden mmd:hidden    flex flex-col justify-between dark:bg-gray-900'>
+      <nav className='transition-all border-r border-grey-m w-side     m2xl:hidden mmd:hidden    flex flex-col justify-between dark:bg-gray-900 h-full'>
         <div>
           <div>
             <div className='flex w-20  p-6 mb-2 justify-center xxl:hidden'>

@@ -69,8 +69,8 @@ function App() {
   ]);
 
   return (
-    <div className='flex   transition-all bg-white w-full '>
-      <div className='flex  flex-1'>
+    <div className='flex transition-all bg-white w-full h-full'>
+      <div className='h-full'>
         <Navbar
           primaryItems={[
             {
@@ -100,7 +100,7 @@ function App() {
       </div>
 
       <Switch>
-        <Route exact path='/analytics' render={() => <Home />} />
+        {/* <Route exact path='/analytics' render={() => <Home />} /> */}
         <Route path='/history'>
           <HistoryView />
         </Route>
