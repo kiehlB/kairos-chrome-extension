@@ -27,13 +27,13 @@ function ThridCard() {
     <>
       <>
         <div className='flex h-card px-8 mt-4 m2xl:hidden bg-white-m   dark:bg-slate-900 '>
-          <div className='shadow-md  rounded-md w-tcard mr-3 bg-white dark:bg-slate-900 dark:shadowmd  dark:border-2'>
+          <div className='shadow-md  rounded-md w-tcardX mr-3 bg-white dark:bg-slate-900 dark:shadowmd  dark:border-2'>
             <BubbleChart />
           </div>
-          <div className='shadow-md  rounded-md w-tcard mr-3 bg-white  dark:bg-slate-900 dark:shadowmd  dark:border-2'>
+          <div className='shadow-md  rounded-md w-tcardX mr-3 bg-white  dark:bg-slate-900 dark:shadowmd  dark:border-2'>
             <LineChart />
           </div>
-          <div className='shadow-md  rounded-md w-tcard bg-white  dark:bg-slate-900 dark:shadowmd  dark:border-2'>
+          <div className='shadow-md  rounded-md w-tcardX bg-white  dark:bg-slate-900 dark:shadowmd  dark:border-2'>
             <HorizontalChart />
           </div>
         </div>
