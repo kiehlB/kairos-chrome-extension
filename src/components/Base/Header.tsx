@@ -27,19 +27,11 @@ export type HeaderProps = {
 };
 
 function Header({ children, title, subTitle }: HeaderProps) {
-  const [colorTheme, setTheme, isDarkMode, setIsDarkMode] = useDarkMode();
+  const [colorTheme, setTheme] = useDarkMode();
   const dispatch = useDispatch();
   const [isShown, setIsShown] = useState(false);
   const isDarkToggle = useSelector((state: RootState) => state.activity.isDark);
   const isThemeToggle = useSelector((state: RootState) => state.activity.theme);
-
-  useEffect(() => {
-    const root = window.document.documentElement;
-
-    const a = isThemeToggle == 'dark' ? 'light' : 'dark';
-    root.classList.remove(a);
-    root.classList.add(isThemeToggle);
-  }, [isThemeToggle]);
 
   const widthSection = () => {
     return (
@@ -125,11 +117,7 @@ function Header({ children, title, subTitle }: HeaderProps) {
                       dispatch(isDarkTrigger());
                     }}
                   >
-                    <DarkModeToggle
-                      onChange={setIsDarkMode}
-                      checked={isDarkToggle}
-                      size={40}
-                    />
+                    <DarkModeToggle checked={isDarkToggle} size={40} />
                   </div>
                 </SideSheet>
                 <div onClick={() => setIsShown(true)}>
@@ -140,12 +128,11 @@ function Header({ children, title, subTitle }: HeaderProps) {
             <div
               className='flex items-center'
               onClick={() => {
-                setTheme(colorTheme);
                 dispatch(isDarkTrigger());
+                setTheme(colorTheme);
               }}
             >
               <DarkModeToggle
-                onChange={setIsDarkMode}
                 checked={isDarkToggle}
                 size={80}
                 className='mmd:hidden'
