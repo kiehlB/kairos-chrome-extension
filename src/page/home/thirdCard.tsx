@@ -26,7 +26,7 @@ function ThridCard() {
   return (
     <>
       <>
-        <div className='flex h-card px-8 mt-4 m2xl:hidden  '>
+        <div className='flex h-card px-8 mt-4 m2xl:hidden bg-white-m  '>
           <div className='shadow-md  rounded-md w-tcard mr-3 bg-white dark:bg-slate-900 dark:shadowmd  dark:border-2'>
             <BubbleChart />
           </div>

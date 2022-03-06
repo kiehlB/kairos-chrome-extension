@@ -119,6 +119,7 @@ module.exports = {
         card: '24.15625rem',
         mcard: 'calc(25%)',
         scard: 'calc(50%)',
+        scardX: '49.3125rem',
         tcard: 'calc(32.6%)',
         fcard: 'calc(100%)',
       },

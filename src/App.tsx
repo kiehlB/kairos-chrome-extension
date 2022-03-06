@@ -70,7 +70,7 @@ function App() {
 
   return (
     <div className='flex transition-all bg-white w-full h-full'>
-      <div className='h-full'>
+      <div className='h-full fixed'>
         <Navbar
           primaryItems={[
             {
