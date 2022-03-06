@@ -36,9 +36,9 @@ function Header({ children, title, subTitle }: HeaderProps) {
   useEffect(() => {
     const root = window.document.documentElement;
 
-    // const a = isThemeToggle == 'dark' ? 'light' : 'dark';
-    // root.classList.remove(a);
-    // root.classList.add(isThemeToggle);
+    const a = isThemeToggle == 'dark' ? 'light' : 'dark';
+    root.classList.remove(a);
+    root.classList.add(isThemeToggle);
   }, [isThemeToggle]);
 
   const widthSection = () => {
