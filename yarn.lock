@@ -9261,6 +9261,13 @@ react-countup@4.3.3:
     prop-types "^15.7.2"
     warning "^4.0.3"
 
+react-dark-mode-toggle-2@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/react-dark-mode-toggle-2/-/react-dark-mode-toggle-2-2.0.2.tgz#28a11771c86e3c0bb9a267222a757675ac2c9465"
+  integrity sha512-y4gNXzwHF1SDvKMuhD8Oh498JWNz3Njt69uln1Rk77M7dtaO9WB55RdrhBd60AFlswyfqvTrd5XVkLbMLpc4Dw==
+  dependencies:
+    react-lottie-player "^1.4.1"
+
 react-dark-mode-toggle@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/react-dark-mode-toggle/-/react-dark-mode-toggle-0.2.0.tgz#73172805b0ea6a5f2db89c1e05a4365ac93735d1"
@@ -9368,7 +9375,7 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
-react-lottie-player@^1.1.1:
+react-lottie-player@^1.1.1, react-lottie-player@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/react-lottie-player/-/react-lottie-player-1.4.1.tgz#ddd448486b8e8a42f4ae149751c38a8539f80b77"
   integrity sha512-8dw3Dt8h6iTIrA+Iz7N/rOZjY1ShEwoxsgFywW2hZPFf58mZL75NFFNXY6v95NNj/25kZQpMV/bDkNoxj4Sang==

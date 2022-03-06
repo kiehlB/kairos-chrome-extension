@@ -1,4 +1,5 @@
-import DarkModeToggle from 'react-dark-mode-toggle';
+import { DarkModeToggle } from 'react-dark-mode-toggle-2';
+
 import React, { useEffect, useState } from 'react';
 import { Avatar } from 'evergreen-ui';
 import {
@@ -9,6 +10,8 @@ import {
   Search,
   Bell,
   Menu,
+  Sun,
+  Moon,
 } from 'react-feather';
 import DayPicker from '../DayPicker';
 import { ActivityDateRangePicker } from '../DateRange';
@@ -33,6 +36,7 @@ function Header({ children, title, subTitle }: HeaderProps) {
   const isDarkToggle = useSelector((state: RootState) => state.activity.isDark);
   const isThemeToggle = useSelector((state: RootState) => state.activity.theme);
 
+  console.log(isDarkToggle);
   const widthSection = () => {
     return (
       <section className='flex  items-center justify-end  '>
@@ -140,7 +144,11 @@ function Header({ children, title, subTitle }: HeaderProps) {
                       dispatch(isDarkTrigger());
                     }}
                   >
-                    <DarkModeToggle checked={isDarkToggle} size={40} />
+                    <DarkModeToggle
+                      onChange={() => {}}
+                      isDarkMode={isDarkToggle}
+                      size={40}
+                    />
                   </div>
                 </SideSheet>
                 <div onClick={() => setIsShown(true)}>
@@ -156,7 +164,8 @@ function Header({ children, title, subTitle }: HeaderProps) {
               }}
             >
               <DarkModeToggle
-                checked={isDarkToggle}
+                onChange={() => {}}
+                isDarkMode={isDarkToggle}
                 size={80}
                 className='mmd:hidden'
               />
