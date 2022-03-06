@@ -37,15 +37,38 @@ function Header({ children, title, subTitle }: HeaderProps) {
     return (
       <section className='flex  items-center justify-end  '>
         <div className='flex  '>
-          <div>
-            <DomainPicker />
-          </div>
-          <div>
-            <ActivityDateRangePicker />
-          </div>
+          {subTitle == 'Analytics' ? (
+            <>
+              <div>
+                <DomainPicker />
+              </div>
+              <div>
+                <ActivityDateRangePicker />
+              </div>
+            </>
+          ) : (
+            ''
+          )}
+          {subTitle == 'History' ? (
+            <>
+              <div>
+                <ActivityDateRangePicker />
+              </div>
+            </>
+          ) : (
+            ''
+          )}
+          {subTitle == 'Settings' ? <></> : ''}
         </div>
 
-        <div className='border h-10 maxw:hidden'></div>
+        {subTitle == 'Analytics' ? (
+          <>
+            <div className='border h-10 maxw:hidden'></div>
+          </>
+        ) : (
+          ''
+        )}
+
         <div className='maxw:hidden'>
           <img
             className='inline object-cover w-12 h-12 rounded-full'

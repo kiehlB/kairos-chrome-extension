@@ -13,9 +13,17 @@ import { useEffect, useRef, useState } from 'react';
 import { NavLink, NavLinkProps } from 'react-router-dom';
 import { Tabs, useTabState, Panel } from '@bumaga/tabs';
 import { useParams, useLocation } from 'react-router-dom';
+import {
+  BarChart2,
+  Clock,
+  Settings,
+  HelpCircle,
+  Search,
+  Bell,
+} from 'react-feather';
 
 interface NavbarProps {
-  primaryItems: NavbarItemProps[];
+  primaryItems: any;
   secondaryItems?: NavbarItemProps[];
   className?: string;
   isDisabled?: boolean;
@@ -28,6 +36,9 @@ const Navbar = ({
   isDisabled,
 }: NavbarProps) => {
   const isDarkToggle = useSelector((state: RootState) => state.activity.isDark);
+  let location = useLocation();
+
+  const is = location.pathname;
 
   return (
     <>
@@ -47,11 +58,51 @@ const Navbar = ({
             <div className='px-4 pt-6 text-gray-400 font-medium text-sm m2xl:hidden'>
               REPORTS
             </div>
-            {primaryItems?.map((itemProps) => (
+            {/* {primaryItems?.map((itemProps) => (
               <div key={itemProps.text}>
                 <NavbarItem {...itemProps} />
               </div>
             ))}
+             */}
+
+            <NavLink
+              to='/analytics'
+              className={`w-full flex px-4 pt-6 items-center ${
+                is == '/analytics' ? ' text-slate-900' : '  text-greyTint-m'
+              }   font-medium m2xl:px-0 m2xl:pt-0 m2xl:flex m2xl:p-8`}
+            >
+              <div
+                className={`w-10/12 rounded-lg   px-2 py-2 ${
+                  is == '/analytics'
+                    ? 'bg-slate-50 dark:bg-gray-700 dark:text-white'
+                    : ''
+                }  hover:text-slate-900    dark:hover:text-white  flex items-center m2xl:w-full m2xl:flex-col m2xl:justify-center m2xl:items-center`}
+              >
+                <div>
+                  <BarChart2 size='20' />
+                </div>
+                <span className='ml-2 m2xl:ml-0 '>Analytics</span>
+              </div>
+            </NavLink>
+            <NavLink
+              to='/history'
+              className={`w-full flex px-4 pt-6 items-center ${
+                is == '/history' ? ' text-slate-900' : '  text-greyTint-m'
+              }   font-medium m2xl:px-0 m2xl:pt-0 m2xl:flex m2xl:p-8`}
+            >
+              <div
+                className={`w-10/12 rounded-lg   px-2 py-2 ${
+                  is == '/history'
+                    ? 'bg-slate-50 dark:bg-gray-700 dark:text-white'
+                    : ''
+                }  hover:text-slate-900    dark:hover:text-white  flex items-center m2xl:w-full m2xl:flex-col m2xl:justify-center m2xl:items-center`}
+              >
+                <div>
+                  <Clock size='20' />
+                </div>
+                <span className='ml-2 m2xl:ml-0 '>History</span>
+              </div>
+            </NavLink>
           </div>
           <div className='pt-6 m2xl:hidden'>
             <div className='border mx-4 flex '></div>
@@ -60,11 +111,25 @@ const Navbar = ({
             <div className='px-4 pt-6 text-gray-400 font-medium text-sm m2xl:hidden'>
               OPTION
             </div>
-            {secondaryItems.map((itemProps) => (
-              <div key={itemProps.text}>
-                <NavbarItem {...itemProps} />
+            <NavLink
+              to='/settings'
+              className={`w-full flex px-4 pt-6 items-center ${
+                is == '/settings' ? ' text-slate-900' : '  text-greyTint-m'
+              }   font-medium m2xl:px-0 m2xl:pt-0 m2xl:flex m2xl:p-8`}
+            >
+              <div
+                className={`w-10/12 rounded-lg   px-2 py-2 ${
+                  is == '/settings'
+                    ? 'bg-slate-50 dark:bg-gray-700 dark:text-white'
+                    : ''
+                }  hover:text-slate-900    dark:hover:text-white  flex items-center m2xl:w-full m2xl:flex-col m2xl:justify-center m2xl:items-center`}
+              >
+                <div>
+                  <Settings size='20' />
+                </div>
+                <span className='ml-2 m2xl:ml-0 '>Settings</span>
               </div>
-            ))}
+            </NavLink>
           </div>
         </div>
         <section className='bottom-10   w-side m2xl:hidden '>
