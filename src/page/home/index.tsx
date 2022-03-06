@@ -18,7 +18,7 @@ function Home() {
       </AppLayout.MainNav>
       <AppLayout
         first={<AppLayout.First>{<SingleCard />}</AppLayout.First>}
-        // second={<AppLayout.Second>{<SecondCard />}</AppLayout.Second>}
+        second={<AppLayout.Second>{<SecondCard />}</AppLayout.Second>}
         // third={<AppLayout.Third>{<ThridCard />}</AppLayout.Third>}
       />
     </div>
