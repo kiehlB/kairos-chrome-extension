@@ -22,6 +22,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
 import { isDarkTrigger } from '../../store/activity/activity';
 import { Position, SideSheet, Paragraph, Button } from 'evergreen-ui';
+import { Link, RouteComponentProps } from 'react-router-dom';
 
 export type HeaderProps = {
   children?: React.ReactNode;
@@ -36,7 +37,6 @@ function Header({ children, title, subTitle }: HeaderProps) {
   const isDarkToggle = useSelector((state: RootState) => state.activity.isDark);
   const isThemeToggle = useSelector((state: RootState) => state.activity.theme);
 
-  console.log(isDarkToggle);
   const widthSection = () => {
     return (
       <section className='flex  items-center justify-end  '>
@@ -132,10 +132,15 @@ function Header({ children, title, subTitle }: HeaderProps) {
                   width='15rem'
                   onCloseComplete={() => setIsShown(false)}
                 >
-                  <Paragraph margin={20}>Analytics</Paragraph>
-                  <Paragraph margin={20}>History</Paragraph>
-                  <Paragraph margin={20}>Settings</Paragraph>
-                  <Paragraph margin={20}>help</Paragraph>
+                  <Link to='/Analytics'>
+                    <Paragraph margin={20}>Analytics</Paragraph>
+                  </Link>
+                  <Link to='/History'>
+                    <Paragraph margin={20}>History</Paragraph>
+                  </Link>
+                  <Link to='/Settings'>
+                    <Paragraph margin={20}>Settings</Paragraph>
+                  </Link>
 
                   <div
                     className='w-12 ml-5 h-6'

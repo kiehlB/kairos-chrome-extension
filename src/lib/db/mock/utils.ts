@@ -1,34 +1,12 @@
-import { minusDays, setMidnight } from '../../../utils/dateUtils';
-import { Activity } from '../models/activity';
-import { DomainTableRecord } from '../types';
-import DATA from './data.json';
+import Dexie from 'dexie';
+import ChromeIcon from '../../../assets/chrome-icon.png';
+import { RawActivity } from '../models/activity';
 
-type Range = [number, number];
-type Page = { title: string; path: string };
-type Website = {
-  domain: string;
-  favIconUrl: string;
-  pages: Page[];
-};
-
-const RANGE_SHORT: Range = [100, 120000]; // 100ms ~ 2min
-const RANGE_MEDIUM: Range = [120000, 300000]; // 2 ~ 5min
-const RANGE_LONG: Range = [300000, 900000]; // 5 ~ 15min
-const DURATION_RANGE: Range = [60000, 1800000]; // 1 ~ 30min
-const PER_DAY_RANGE: Range = [1800000, 36000000]; // 0.5 ~ 10h
-const TIME_RANGE: Range = [32400000, 75600000]; // 9am ~ 9pm
-
-function randomRangeValue([min, max]: Range): number {
-  return Math.floor(Math.random() * (max - min) + min);
-}
-
-function randomArrayElement<T>(arr: T[]): T {
-  const len = arr.length;
-  if (len === 0) {
-    throw new Error('Array is empty');
-  }
-  return arr[Math.floor(Math.random() * len) % len];
-}
+import {
+  DomainTableRecord,
+  TitleTableRecord,
+  ActivityTableRecord,
+} from '../types';
 
 const generateId: () => number = (function () {
   const idGenerator = (function* getActivityIdGenerator() {
@@ -41,68 +19,90 @@ const generateId: () => number = (function () {
   };
 })();
 
-function generateActivityRecord(startTime: number, endTime: number): Activity {
-  const website = randomArrayElement(DATA as Website[]);
-  const page = randomArrayElement<Page>(website.pages);
-  return {
-    id: generateId(),
-    url: `${website.domain}${page.path}`,
-    domain: website.domain,
-    path: page.path,
-    endTime,
-    startTime,
-    title: page.title,
-    favIconUrl: website.favIconUrl,
-  };
+function randomRangeValue([min, max]): number {
+  return Math.floor(Math.random() * (max - min) + min);
 }
 
-export function generateRecords(): {
-  activity: Activity[];
-  domain: Record<string, DomainTableRecord>;
-} {
-  const domain = DATA.reduce<Record<string, DomainTableRecord>>(
-    (acc, datum) => {
-      acc[datum.domain] = {
-        id: datum.domain,
-        favIconUrl: datum.favIconUrl,
-      };
-      return acc;
-    },
-    {}
-  );
+function randomArrayElement<T>(arr: T[]): T {
+  const len = arr.length;
+  if (len === 0) {
+    throw new Error('Array is empty');
+  }
+  return arr[Math.floor(Math.random() * len) % len];
+}
 
-  const activity: Activity[] = [];
-  const startOfToday = setMidnight();
+export function exportTableRecords<T>(
+  table: Dexie.Table<T, number>
+): Promise<T[]> {
+  return table.toCollection().toArray();
+}
 
-  for (let day = 0; day < 60; day++) {
-    const startOfDay = minusDays(startOfToday, day);
-
-    const browsingStartTime = startOfDay + TIME_RANGE[0]; // today + few hour
-    const browsingEndTime = startOfDay + randomRangeValue(TIME_RANGE);
-
-    let maxDuration = randomRangeValue(PER_DAY_RANGE);
-    let endTime = browsingEndTime;
-    while (maxDuration > 0 && endTime > browsingStartTime) {
-      const durationRange = randomArrayElement([
-        RANGE_LONG,
-        RANGE_MEDIUM,
-        RANGE_SHORT,
-      ]);
-      const duration = randomRangeValue(durationRange);
-      const startTime = endTime - duration;
-      const activityRecord = generateActivityRecord(startTime, endTime);
-
-      activity.push(activityRecord);
-      endTime = startTime - 1;
-      maxDuration = maxDuration - duration;
-
-      if (Math.random() > 0.5) {
-        const idleDuration = randomRangeValue(DURATION_RANGE);
-        endTime = endTime - idleDuration - 1;
-        maxDuration = maxDuration - idleDuration;
-      }
-    }
+export function getActivityData(
+  url: URL,
+  iconUrl: string
+): { domain: string; path: string; favIconUrl: string } {
+  if (url.origin !== 'null') {
+    new Error(`[db] ${url} is not a valid URL.`);
   }
 
-  return { activity, domain };
+  let domain = `${url.protocol}//${url.hostname}`;
+  let path = `${url.pathname}${url.hash}${url.search}`;
+  let favIconUrl = iconUrl;
+  switch (url.protocol) {
+    case 'about:':
+    case 'brave:':
+    case 'chrome:':
+    case 'edge:':
+    case 'opera:':
+      domain = `${url.protocol}//`;
+      path = `${url.hostname}${url.pathname}${url.hash}${url.search}`;
+      favIconUrl = ChromeIcon;
+      break;
+    case 'chrome-extension:':
+    case 'extension:':
+    case 'moz-extension:':
+      domain = url.origin;
+      break;
+    case 'http:':
+    case 'https:':
+      domain = `https://${url.hostname}`;
+      break;
+    default:
+      new Error(`[db] ${url} is not a valid URL. (unrecognized protocol)`);
+      break;
+  }
+
+  return { domain, path, favIconUrl };
+}
+
+export function createUrl(activity: ActivityTableRecord): string {
+  return `${activity.domain}${activity.path}`;
+}
+
+export function generateRecords({
+  url: rawUrl,
+  favIconUrl: iconUrl,
+  title,
+  startTime,
+  endTime,
+}: RawActivity): {
+  activity: ActivityTableRecord;
+  domain: DomainTableRecord;
+  title: TitleTableRecord;
+} {
+  const urlObject = new URL(rawUrl);
+  const { domain, path, favIconUrl } = getActivityData(urlObject, iconUrl);
+
+  const activity = { domain, path, startTime, endTime };
+
+  const a = randomArrayElement(activity as any);
+
+  console.log(a);
+  const url = createUrl(activity);
+
+  return {
+    activity,
+    domain: { id: domain, favIconUrl },
+    title: { id: url, title },
+  };
 }

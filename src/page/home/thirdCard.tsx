@@ -19,10 +19,6 @@ import { BubbleChart } from '../../components/BubbleChart';
 import { HorizontalChart } from '../../components/HorizontalChart';
 
 function ThridCard() {
-  const totalTime = useSelector((state: RootState) =>
-    getRatioToTotalDuration(state)
-  );
-
   return (
     <>
       <>

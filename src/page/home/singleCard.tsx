@@ -46,6 +46,7 @@ const TotalUsage = (props) => {
   };
 
   const Component = props.isDuration ? DurationCountUp : CountUp;
+
   return (
     <div className={props.className}>
       <Card

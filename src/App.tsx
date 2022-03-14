@@ -39,23 +39,9 @@ function App() {
     four: false,
   });
 
-  // const selectedDomain = useSelector((state: RootState) =>
-  //   getSearchParamsSelectedDomain(state)
-  // );
-
   const selectedTimeRange = useSelector((state: RootState) =>
     selectors.getSearchParamsSelectedTimeRange(state)
   );
-
-  // const totalTime = useSelector((state: RootState) =>
-  //   getTotalDurationByDate(state)
-  // );
-
-  // const allDomains = useSelector((state: RootState) => getAllDomains(state));
-
-  // const isLoadingRecords = useSelector((state: RootState) =>
-  //   getIsLoadingRecords(state)
-  // );
 
   useEffect(() => {
     dispatch(loadRecords());
@@ -63,9 +49,6 @@ function App() {
     loadRecords,
     // selectedDomain,
     selectedTimeRange,
-    // totalTime,
-    // allDomains,
-    // isLoadingRecords,
   ]);
 
   return (

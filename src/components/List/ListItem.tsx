@@ -19,7 +19,7 @@ const ListItem = (props: ListItemProps) => {
 
   return (
     <div className={props.className}>
-      <div className='text-base text-slate-900 dark:text-slate-300'>
+      <div className='text-base text-dark-m dark:text-slate-300'>
         {props.label}
       </div>
       <div className='list-item__value'>{content}</div>

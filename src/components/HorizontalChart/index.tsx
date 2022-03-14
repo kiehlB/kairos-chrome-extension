@@ -32,11 +32,11 @@ ChartJS.register(
 export function HorizontalChart() {
   const totalTime = useSelector((state: RootState) =>
     getTotalDurationByDayOfWeek(state)
-  ) as any;
+  );
 
   const totalTimeByDomain = useSelector((state: RootState) =>
     getSelectedDomainTotalDurationByDayOfWeek(state)
-  ) as any;
+  );
 
   const isDarkToggle = useSelector((state: RootState) => state.activity.isDark);
 
