@@ -1,0 +1,3492 @@
+{
+  "activity": [
+    {
+      "domain": "chrome://",
+      "path": "newtab/",
+      "startTime": 1647209408621,
+      "endTime": 1647209408749
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/",
+      "startTime": 1647209413060,
+      "endTime": 1647209414955
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=_3WXa9ZjbIA&ab_channel=tvNDENT",
+      "startTime": 1647209414956,
+      "endTime": 1647209416792
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=_3WXa9ZjbIA",
+      "startTime": 1647209416793,
+      "endTime": 1647209417054
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=_3WXa9ZjbIA&ab_channel=tvNDENT",
+      "startTime": 1647209417055,
+      "endTime": 1647209418654
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=_3WXa9ZjbIA&ab_channel=tvNDENT",
+      "startTime": 1647209423604,
+      "endTime": 1647209425479
+    },
+    {
+      "domain": "chrome://",
+      "path": "newtab/",
+      "startTime": 1647209434750,
+      "endTime": 1647209436546
+    },
+    {
+      "domain": "https://www.google.com",
+      "path": "/search?q=github&oq=github&aqs=chrome..69i57j46i199i433i465i512j0i433i512j0i512l6.1051j0j15&sourceid=chrome&ie=UTF-8",
+      "startTime": 1647209438739,
+      "endTime": 1647209440524
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/",
+      "startTime": 1647209440525,
+      "endTime": 1647209441575
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/login",
+      "startTime": 1647209441576,
+      "endTime": 1647209446525
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/",
+      "startTime": 1647209446526,
+      "endTime": 1647209447699
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/",
+      "startTime": 1647209447926,
+      "endTime": 1647209450362
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/kiehlB",
+      "startTime": 1647209450363,
+      "endTime": 1647209454380
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/kiehlB/Kairos_chrome-extension",
+      "startTime": 1647209454381,
+      "endTime": 1647209456630
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/kiehlB",
+      "startTime": 1647209456631,
+      "endTime": 1647209462926
+    },
+    {
+      "domain": "chrome://",
+      "path": "newtab/",
+      "startTime": 1647209462927,
+      "endTime": 1647209463451
+    },
+    {
+      "domain": "chrome://",
+      "path": "newtab/",
+      "startTime": 1647209477477,
+      "endTime": 1647209477875
+    },
+    {
+      "domain": "chrome://",
+      "path": "newtab/",
+      "startTime": 1647209477879,
+      "endTime": 1647209482474
+    },
+    {
+      "domain": "https://www.google.com",
+      "path": "/search?gs_ssp=eJwBIQDe_woIL20vMGhiM3IwAUoT7YyM7Jq466GcIOy9lOyXmOujjNOuEAg&q=%ED%8C%8C%EC%9A%B8%EB%A1%9C+%EC%BD%94%EC%97%98%EB%A3%8C&oq=%ED%8C%8C%EC%9A%B8%EB%A1%9C+%EC%BD%94&aqs=chrome.1.69i57j46i433i512j46i512l2j0i512l2j46i512l2j0i512.2467j0j15&sourceid=chrome&ie=UTF-8",
+      "startTime": 1647209482475,
+      "endTime": 1647209488489
+    },
+    {
+      "domain": "https://www.google.com",
+      "path": "/search?q=%ED%8C%8C%EC%9A%B8%EB%A1%9C+%EC%BD%94%EC%97%98%EB%A3%8C+%EC%B1%85+%EB%AA%A9%EB%A1%9D&ei=CWwuYpWoD4b0-Qa7351I&ved=0ahUKEwjV0IDAjcT2AhUGet4KHbtvBwkQ4dUDCA4&uact=5&oq=%ED%8C%8C%EC%9A%B8%EB%A1%9C+%EC%BD%94%EC%97%98%EB%A3%8C+%EC%B1%85+%EB%AA%A9%EB%A1%9D&gs_lcp=Cgdnd3Mtd2l6EAMyBQghEKABOgcIABBHELADOggILhCABBDUAjoFCAAQgAQ6BQguEIAEOgQIABAeOgUIABCiBEoECEEYAEoECEYYAFDcAliRGmC5GmgKcAF4AIABiQGIAYYPkgEEMS4xNpgBAKABAcgBCsABAQ&sclient=gws-wiz",
+      "startTime": 1647209488490,
+      "endTime": 1647209505981
+    },
+    {
+      "domain": "https://www.google.com",
+      "path": "/search?q=%EC%88%9C%EB%A1%80%EC%9E%90+%ED%8C%8C%EC%9A%B8%EB%A1%9C+%EC%BD%94%EC%97%98%EB%A3%8C&stick=H4sIAAAAAAAAAONgFuLQz9U3yEgyLlLiBLHMC7NS0rSkspOt9JPy87P1E0tLMvKLrEDsYoX8vJzKR4x3GLkFXv64Jyx1iXHSmpPXGE8zcuFRL6TDxeaaV5JZUinEI8XFBbfOSISLVz9d39Awq6AwvszIJFlg8a9pjErVRhm7Lk07x5YkOKHs__9-5TAHKSPBv8oXF6z4-d5eS4iL3bPYJz85MUcwW0q6_cWuU_ZawlwcIYkV-Xn5uZWCYly3j12RumOvpMj59sCf_YZ67-0FQ5b_my-62s5Bgk2BQYPB8PI19gds8VwHtBgOMDI17VtxiI2Dg1GAwYiJg6GKiYOJZxGr7JuOOa8XNryZN0HhbU_Pm1k7Xi-co_Bm75Q302e8XtwzgY0RAFoV5YA2AQAA&sa=X",
+      "startTime": 1647209509564,
+      "endTime": 1647209509563
+    },
+    {
+      "domain": "https://www.google.com",
+      "path": "/search?q=%EC%98%A4+%EC%9E%90%ED%9E%88%EB%A5%B4&stick=H4sIAAAAAAAAAONgFuLQz9U3yEgyLlLiBLHMisoMs7WkspOt9JPy87P1E0tLMvKLrEDsYoX8vJzKR4x3GLkFXv64Jyx1iXHSmpPXGE8zcuFRL6TDxeaaV5JZUinEI8XFBbfOSISLVz9d39Awq6AwvszIJFlg8a9pjErVRhm7Lk07x5YkOKHs__9-5TAHKSPBv8oXF6z4-d5eS4iL3bPYJz85MUcwW0q6_cWuU_ZawlwcIYkV-Xn5uZWCYly3j12RumOvpMj59sCf_YZ67-0FQ5b_my-62s5Bgk2BQYPB8PI19gds8VwHtBgOMDI17VtxiI2Dg1GAwYiJg6GKiYOJZxEr75sZSxTezJvwdl7H66VbJrAxAgDwTqtTJgEAAA&sa=X&lei=IWwuYs38N4ec-Abo8Zj4Cg",
+      "startTime": 1647209509564,
+      "endTime": 1647209514177
+    },
+    {
+      "domain": "chrome://",
+      "path": "newtab/",
+      "startTime": 1647209602535,
+      "endTime": 1647209606429
+    },
+    {
+      "domain": "https://www.google.com",
+      "path": "/search?q=react+native&oq=react+native&aqs=chrome..69i57j0i512l9.1487j0j15&sourceid=chrome&ie=UTF-8",
+      "startTime": 1647209611321,
+      "endTime": 1647209613932
+    },
+    {
+      "domain": "https://reactnative.dev",
+      "path": "/",
+      "startTime": 1647209613933,
+      "endTime": 1647209628599
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=_3WXa9ZjbIA&ab_channel=tvNDENT",
+      "startTime": 1647209633293,
+      "endTime": 1647209633292
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/results?search_query=%EC%9D%B4%ED%83%80%EC%B9%B4+%EB%A7%88%EC%95%BC",
+      "startTime": 1647209633293,
+      "endTime": 1647209634580
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=dB9gNJfdVUY",
+      "startTime": 1647209634581,
+      "endTime": 1647209635125
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=dB9gNJfdVUY&ab_channel=tvN",
+      "startTime": 1647209635126,
+      "endTime": 1647209638585
+    },
+    {
+      "domain": "chrome://",
+      "path": "newtab/",
+      "startTime": 1647209638586,
+      "endTime": 1647209641120
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html",
+      "startTime": 1647209641121,
+      "endTime": 1647209641598
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/",
+      "startTime": 1647209641599,
+      "endTime": 1647209641599
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/analytics",
+      "startTime": 1647209641600,
+      "endTime": 1647209647104
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=dB9gNJfdVUY&ab_channel=tvN",
+      "startTime": 1647209657239,
+      "endTime": 1647209657668
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/search?q=user%3AkiehlB+react+native",
+      "startTime": 1647209675843,
+      "endTime": 1647209688131
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/search?q=react+native",
+      "startTime": 1647209688132,
+      "endTime": 1647209689331
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/search?l=TypeScript&q=react+native&type=Repositories",
+      "startTime": 1647209689332,
+      "endTime": 1647209691642
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/martinezguillaume/portfolio",
+      "startTime": 1647209706319,
+      "endTime": 1647209713242
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/martinezguillaume/portfolio",
+      "startTime": 1647209713717,
+      "endTime": 1647209715863
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/martinezguillaume/portfolio",
+      "startTime": 1647209715916,
+      "endTime": 1647209715916
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/martinezguillaume/portfolio/tree/main/components",
+      "startTime": 1647209715917,
+      "endTime": 1647209717380
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/martinezguillaume/portfolio/blob/main/components/Header.tsx",
+      "startTime": 1647209717381,
+      "endTime": 1647209718762
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/martinezguillaume/portfolio/tree/main/components",
+      "startTime": 1647209718763,
+      "endTime": 1647209719182
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/martinezguillaume/portfolio",
+      "startTime": 1647209719183,
+      "endTime": 1647209721439
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/martinezguillaume/portfolio/tree/main/screens",
+      "startTime": 1647209721440,
+      "endTime": 1647209722256
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/martinezguillaume/portfolio",
+      "startTime": 1647209725848,
+      "endTime": 1647209727772
+    },
+    {
+      "domain": "https://reactnative.dev",
+      "path": "/blog",
+      "startTime": 1647209732725,
+      "endTime": 1647209734379
+    },
+    {
+      "domain": "https://reactnative.dev",
+      "path": "/docs/getting-started",
+      "startTime": 1647209734380,
+      "endTime": 1647209734786
+    },
+    {
+      "domain": "https://reactnative.dev",
+      "path": "/",
+      "startTime": 1647209734787,
+      "endTime": 1647209744686
+    },
+    {
+      "domain": "https://www.google.com",
+      "path": "/search?q=react+native+vs+flutter&oq=react+native+vs+&aqs=chrome.1.69i57j0i512l9.3303j0j15&sourceid=chrome&ie=UTF-8",
+      "startTime": 1647209744687,
+      "endTime": 1647209747321
+    },
+    {
+      "domain": "https://www.google.com",
+      "path": "/webhp?hl=ko&sa=X&sqi=2&pjf=1&ved=0ahUKEwjjyuO8jsT2AhUJ4WEKHdeVDMkQPAgI",
+      "startTime": 1647209747322,
+      "endTime": 1647209748866
+    },
+    {
+      "domain": "https://www.google.com",
+      "path": "/preferences?hl=ko&fg=1",
+      "startTime": 1647209748867,
+      "endTime": 1647209751055
+    },
+    {
+      "domain": "https://www.google.com",
+      "path": "/",
+      "startTime": 1647209752078,
+      "endTime": 1647209752779
+    },
+    {
+      "domain": "https://www.google.com",
+      "path": "/search?q=react+native+vs+flutter&source=hp&ei=F20uYumMHu2B1e8Pv-KoOA&iflsig=AHkkrS4AAAAAYi57J2yWfZ43qF-fBPsf0MDjbzfEPtzF&ved=0ahUKEwip9O7AjsT2AhXtQPUHHT8xCgcQ4dUDCAc&uact=5&oq=react+native+vs+flutter&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEUABYAGCiAWgAcAB4AIABdIgBdJIBAzAuMZgBAKABAqABAQ&sclient=gws-wiz",
+      "startTime": 1647209752780,
+      "endTime": 1647209755132
+    },
+    {
+      "domain": "https://doit.software",
+      "path": "/blog/flutter-vs-react-native#screen6",
+      "startTime": 1647209964984,
+      "endTime": 1647209965525
+    },
+    {
+      "domain": "https://doit.software",
+      "path": "/blog/flutter-vs-react-native#screen7",
+      "startTime": 1647209965526,
+      "endTime": 1647209965646
+    },
+    {
+      "domain": "https://doit.software",
+      "path": "/blog/flutter-vs-react-native#screen8",
+      "startTime": 1647209965647,
+      "endTime": 1647209965746
+    },
+    {
+      "domain": "https://doit.software",
+      "path": "/blog/flutter-vs-react-native#screen11",
+      "startTime": 1647209965747,
+      "endTime": 1647209966137
+    },
+    {
+      "domain": "https://doit.software",
+      "path": "/blog/flutter-vs-react-native#screen12",
+      "startTime": 1647209966138,
+      "endTime": 1647209966435
+    },
+    {
+      "domain": "https://doit.software",
+      "path": "/blog/flutter-vs-react-native#screen14",
+      "startTime": 1647209966436,
+      "endTime": 1647209966715
+    },
+    {
+      "domain": "https://doit.software",
+      "path": "/blog/flutter-vs-react-native#screen16",
+      "startTime": 1647209966716,
+      "endTime": 1647209966991
+    },
+    {
+      "domain": "https://doit.software",
+      "path": "/blog/flutter-vs-react-native#screen17",
+      "startTime": 1647209966992,
+      "endTime": 1647209967303
+    },
+    {
+      "domain": "https://doit.software",
+      "path": "/blog/flutter-vs-react-native#screen19",
+      "startTime": 1647209967304,
+      "endTime": 1647209967473
+    },
+    {
+      "domain": "https://doit.software",
+      "path": "/blog/flutter-vs-react-native#screen20",
+      "startTime": 1647209967474,
+      "endTime": 1647209967767
+    },
+    {
+      "domain": "https://doit.software",
+      "path": "/blog/flutter-vs-react-native#screen18",
+      "startTime": 1647209967768,
+      "endTime": 1647209967958
+    },
+    {
+      "domain": "https://doit.software",
+      "path": "/blog/flutter-vs-react-native#screen17",
+      "startTime": 1647209967959,
+      "endTime": 1647209968212
+    },
+    {
+      "domain": "https://doit.software",
+      "path": "/blog/flutter-vs-react-native#screen20",
+      "startTime": 1647209968213,
+      "endTime": 1647209968400
+    },
+    {
+      "domain": "https://doit.software",
+      "path": "/blog/flutter-vs-react-native#screen21",
+      "startTime": 1647209968401,
+      "endTime": 1647209968554
+    },
+    {
+      "domain": "https://doit.software",
+      "path": "/blog/flutter-vs-react-native#screen22",
+      "startTime": 1647209968555,
+      "endTime": 1647209968710
+    },
+    {
+      "domain": "https://doit.software",
+      "path": "/blog/flutter-vs-react-native#screen23",
+      "startTime": 1647209968711,
+      "endTime": 1647209969062
+    },
+    {
+      "domain": "https://doit.software",
+      "path": "/blog/flutter-vs-react-native#screen22",
+      "startTime": 1647209969063,
+      "endTime": 1647209971922
+    },
+    {
+      "domain": "https://doit.software",
+      "path": "/blog/flutter-vs-react-native#screen21",
+      "startTime": 1647209971923,
+      "endTime": 1647209971928
+    },
+    {
+      "domain": "https://doit.software",
+      "path": "/blog/flutter-vs-react-native#screen22",
+      "startTime": 1647209971929,
+      "endTime": 1647209972862
+    },
+    {
+      "domain": "https://doit.software",
+      "path": "/blog/flutter-vs-react-native#screen21",
+      "startTime": 1647209972863,
+      "endTime": 1647209973323
+    },
+    {
+      "domain": "https://doit.software",
+      "path": "/blog/flutter-vs-react-native#screen20",
+      "startTime": 1647209973324,
+      "endTime": 1647209973324
+    },
+    {
+      "domain": "https://doit.software",
+      "path": "/blog/flutter-vs-react-native#screen21",
+      "startTime": 1647209973325,
+      "endTime": 1647209973458
+    },
+    {
+      "domain": "https://doit.software",
+      "path": "/blog/flutter-vs-react-native#screen20",
+      "startTime": 1647209973459,
+      "endTime": 1647209974010
+    },
+    {
+      "domain": "https://doit.software",
+      "path": "/blog/flutter-vs-react-native#screen17",
+      "startTime": 1647209974011,
+      "endTime": 1647209974011
+    },
+    {
+      "domain": "https://doit.software",
+      "path": "/blog/flutter-vs-react-native#screen20",
+      "startTime": 1647209974012,
+      "endTime": 1647209974143
+    },
+    {
+      "domain": "https://doit.software",
+      "path": "/blog/flutter-vs-react-native#screen17",
+      "startTime": 1647209974144,
+      "endTime": 1647209974564
+    },
+    {
+      "domain": "https://doit.software",
+      "path": "/blog/flutter-vs-react-native#screen18",
+      "startTime": 1647209974565,
+      "endTime": 1647209974566
+    },
+    {
+      "domain": "https://doit.software",
+      "path": "/blog/flutter-vs-react-native#screen17",
+      "startTime": 1647209974567,
+      "endTime": 1647209974692
+    },
+    {
+      "domain": "https://doit.software",
+      "path": "/blog/flutter-vs-react-native#screen18",
+      "startTime": 1647209974693,
+      "endTime": 1647209975977
+    },
+    {
+      "domain": "https://www.google.com",
+      "path": "/search?q=google+trends&oq=google+trends+&aqs=chrome..69i57j0i512l9.5335j0j15&sourceid=chrome&ie=UTF-8",
+      "startTime": 1647209984382,
+      "endTime": 1647209985211
+    },
+    {
+      "domain": "https://trends.google.com",
+      "path": "/trends/explore?q=react%20native&geo=KR",
+      "startTime": 1647210214925,
+      "endTime": 1647210215405
+    },
+    {
+      "domain": "https://trends.google.com",
+      "path": "/trends/explore?q=react%20native&geo=KR",
+      "startTime": 1647210221832,
+      "endTime": 1647210222225
+    },
+    {
+      "domain": "https://trends.google.com",
+      "path": "/trends/explore?q=react%20native&geo=KR",
+      "startTime": 1647210227158,
+      "endTime": 1647210227556
+    },
+    {
+      "domain": "https://trends.google.com",
+      "path": "/trends/explore?q=react%20native&geo=KR",
+      "startTime": 1647210241082,
+      "endTime": 1647210241098
+    },
+    {
+      "domain": "https://trends.google.com",
+      "path": "/trends/explore?geo=KR&q=react%20native,flutter",
+      "startTime": 1647210241099,
+      "endTime": 1647210250244
+    },
+    {
+      "domain": "https://trends.google.com",
+      "path": "/trends/explore?cat=302&q=react%20native,flutter",
+      "startTime": 1647210316080,
+      "endTime": 1647210344690
+    },
+    {
+      "domain": "https://trends.google.com",
+      "path": "/trends/explore?cat=302&q=react%20native,flutter,android",
+      "startTime": 1647210365646,
+      "endTime": 1647210365666
+    },
+    {
+      "domain": "https://trends.google.com",
+      "path": "/trends/explore?cat=302&q=react%20native,flutter,android,ios",
+      "startTime": 1647210365667,
+      "endTime": 1647210375185
+    },
+    {
+      "domain": "https://trends.google.com",
+      "path": "/trends/explore?cat=302&q=react%20native,flutter,ios",
+      "startTime": 1647210375186,
+      "endTime": 1647210381883
+    },
+    {
+      "domain": "https://trends.google.com",
+      "path": "/trends/explore?cat=302&q=react%20native,flutter",
+      "startTime": 1647210500480,
+      "endTime": 1647210501896
+    },
+    {
+      "domain": "https://www.google.com",
+      "path": "/search?q=react+native+vs+flutter+20022&oq=react+native+vs+flutter+20022&aqs=chrome..69i57j69i64.268190j0j15&sourceid=chrome&ie=UTF-8",
+      "startTime": 1647210505932,
+      "endTime": 1647210512006
+    },
+    {
+      "domain": "https://backendless.com",
+      "path": "/flutter-vs-react-native-which-is-better-in-2022/",
+      "startTime": 1647210980234,
+      "endTime": 1647210985503
+    },
+    {
+      "domain": "https://www.google.com",
+      "path": "/search?q=react+native+vs+flutter+20022&oq=react+native+vs+flutter+20022&aqs=chrome..69i57j69i64.268190j0j15&sourceid=chrome&ie=UTF-8",
+      "startTime": 1647210985504,
+      "endTime": 1647210990459
+    },
+    {
+      "domain": "https://dev.to",
+      "path": "/duomly/flutter-vs-react-native-comparison-which-use-for-your-project-in-2022-1knp",
+      "startTime": 1647211188210,
+      "endTime": 1647211192224
+    },
+    {
+      "domain": "https://www.google.com",
+      "path": "/search?q=react+native+vs+flutter+20022&oq=react+native+vs+flutter+20022&aqs=chrome..69i57j69i64.268190j0j15&sourceid=chrome&ie=UTF-8",
+      "startTime": 1647211192225,
+      "endTime": 1647211197985
+    },
+    {
+      "domain": "https://www.google.com",
+      "path": "/search?q=react+native+vs+flutter+performance+&ei=CHAuYoveMdGkoAT98rqoCw&ved=0ahUKEwiLgoqokcT2AhVREogKHX25DrUQ4dUDCA4&uact=5&oq=react+native+vs+flutter+performance+&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgQIABAeMgQIABAeMgQIABAeMgYIABAIEB4yBggAEAUQHjIGCAAQCBAeMgYIABAIEB4yBggAEAgQHjIGCAAQCBAeOgcIABBHELADOgQIABATOggIABANEB4QEzoKCAAQCBANEB4QEzoGCAAQHhATOggIABAIEB4QE0oECEEYAEoECEYYAFCaA1iUGmD5G2gEcAF4AIABgAGIAcULkgEEMC4xM5gBAKABAcgBCsABAQ&sclient=gws-wiz",
+      "startTime": 1647211197986,
+      "endTime": 1647211200292
+    },
+    {
+      "domain": "https://www.google.com",
+      "path": "/search?q=react+native+vs+flutter+performance+2022&ei=vXIuYu3pB87J-QauirzwBw&ved=0ahUKEwitvJnyk8T2AhXOZN4KHS4FD34Q4dUDCA4&uact=5&oq=react+native+vs+flutter+performance+2022&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgQIABAeOgcIABBHELADOgYIABAIEB46BggAEAUQHkoECEEYAEoECEYYAFCKAVilBWDUBWgBcAF4AIABfogBrQOSAQMyLjKYAQCgAQHIAQrAAQE&sclient=gws-wiz",
+      "startTime": 1647211200293,
+      "endTime": 1647211205302
+    },
+    {
+      "domain": "https://www.weboccult.com",
+      "path": "/blog/flutter-vs-react-native-which-one-to-choose-in-2022/",
+      "startTime": 1647211239461,
+      "endTime": 1647211243376
+    },
+    {
+      "domain": "https://www.weboccult.com",
+      "path": "/blog/flutter-vs-react-native-which-one-to-choose-in-2022/",
+      "startTime": 1647211424219,
+      "endTime": 1647211437381
+    },
+    {
+      "domain": "https://www.google.com",
+      "path": "/search?q=react+native+vs+flutter+performance+2022&ei=vXIuYu3pB87J-QauirzwBw&ved=0ahUKEwitvJnyk8T2AhXOZN4KHS4FD34Q4dUDCA4&uact=5&oq=react+native+vs+flutter+performance+2022&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgQIABAeOgcIABBHELADOgYIABAIEB46BggAEAUQHkoECEEYAEoECEYYAFCKAVilBWDUBWgBcAF4AIABfogBrQOSAQMyLjKYAQCgAQHIAQrAAQE&sclient=gws-wiz",
+      "startTime": 1647211437382,
+      "endTime": 1647211450925
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=3XX7ItWhYm4&ab_channel=Jelvix",
+      "startTime": 1647211453749,
+      "endTime": 1647211453936
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=3XX7ItWhYm4&ab_channel=Jelvix",
+      "startTime": 1647211454471,
+      "endTime": 1647211462227
+    },
+    {
+      "domain": "https://www.google.com",
+      "path": "/search?q=react+native+vs+flutter+performance+2022&ei=vXIuYu3pB87J-QauirzwBw&ved=0ahUKEwitvJnyk8T2AhXOZN4KHS4FD34Q4dUDCA4&uact=5&oq=react+native+vs+flutter+performance+2022&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgQIABAeOgcIABBHELADOgYIABAIEB46BggAEAUQHkoECEEYAEoECEYYAFCKAVilBWDUBWgBcAF4AIABfogBrQOSAQMyLjKYAQCgAQHIAQrAAQE&sclient=gws-wiz",
+      "startTime": 1647211462228,
+      "endTime": 1647211463204
+    },
+    {
+      "domain": "https://www.google.com",
+      "path": "/search?q=react+native+vs+flutter+performance+2022&ei=vXIuYu3pB87J-QauirzwBw&ved=0ahUKEwitvJnyk8T2AhXOZN4KHS4FD34Q4dUDCA4&uact=5&oq=react+native+vs+flutter+performance+2022&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgQIABAeOgcIABBHELADOgYIABAIEB46BggAEAUQHkoECEEYAEoECEYYAFCKAVilBWDUBWgBcAF4AIABfogBrQOSAQMyLjKYAQCgAQHIAQrAAQE&sclient=gws-wiz",
+      "startTime": 1647211486233,
+      "endTime": 1647211490719
+    },
+    {
+      "domain": "https://www.google.com",
+      "path": "/search?q=react+native+vs+flutter+performance+2022&ei=vXIuYu3pB87J-QauirzwBw&ved=0ahUKEwitvJnyk8T2AhXOZN4KHS4FD34Q4dUDCA4&uact=5&oq=react+native+vs+flutter+performance+2022&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgQIABAeOgcIABBHELADOgYIABAIEB46BggAEAUQHkoECEEYAEoECEYYAFCKAVilBWDUBWgBcAF4AIABfogBrQOSAQMyLjKYAQCgAQHIAQrAAQE&sclient=gws-wiz",
+      "startTime": 1647211491419,
+      "endTime": 1647211496746
+    },
+    {
+      "domain": "https://www.google.com",
+      "path": "/search?q=stackoverflow+survey+2021&ei=v3IuYo30AcqD1e8Pgf2e4Ak&ved=0ahUKEwjNz43zk8T2AhXKQfUHHYG-B5wQ4dUDCA4&uact=5&oq=stackoverflow+survey+2021&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDoHCAAQgAQQCjoLCC4QgAQQxwEQ0QM6BAgAEEM6BQguEIAESgQIQRgASgQIRhgAUABYnx5giR9oAHABeACAAY8BiAHQCZIBBDAuMTCYAQCgAQHAAQE&sclient=gws-wiz",
+      "startTime": 1647211496747,
+      "endTime": 1647211499185
+    },
+    {
+      "domain": "https://www.google.com",
+      "path": "/search?q=stackoverflow+survey+2022&ei=53MuYqqhJNaJhwPe0qiICA&ved=0ahUKEwjqsMKAlcT2AhXWxGEKHV4pCoEQ4dUDCA4&uact=5&oq=stackoverflow+survey+2022&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgQIABBDOgcIABBHELADSgQIQRgASgQIRhgAUN0CWLkDYJMEaAFwAXgAgAFliAFlkgEDMC4xmAEAoAEByAEGwAEB&sclient=gws-wiz",
+      "startTime": 1647211499186,
+      "endTime": 1647211499448
+    },
+    {
+      "domain": "https://www.google.com",
+      "path": "/search?q=stackoverflow+survey+2021&ei=v3IuYo30AcqD1e8Pgf2e4Ak&ved=0ahUKEwjNz43zk8T2AhXKQfUHHYG-B5wQ4dUDCA4&uact=5&oq=stackoverflow+survey+2021&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDoHCAAQgAQQCjoLCC4QgAQQxwEQ0QM6BAgAEEM6BQguEIAESgQIQRgASgQIRhgAUABYnx5giR9oAHABeACAAY8BiAHQCZIBBDAuMTCYAQCgAQHAAQE&sclient=gws-wiz",
+      "startTime": 1647211499449,
+      "endTime": 1647211501399
+    },
+    {
+      "domain": "https://insights.stackoverflow.com",
+      "path": "/survey/2021",
+      "startTime": 1647211527171,
+      "endTime": 1647211529143
+    },
+    {
+      "domain": "https://insights.stackoverflow.com",
+      "path": "/survey/2021",
+      "startTime": 1647211529151,
+      "endTime": 1647211529204
+    },
+    {
+      "domain": "https://insights.stackoverflow.com",
+      "path": "/survey/2021#overview",
+      "startTime": 1647211529205,
+      "endTime": 1647211532445
+    },
+    {
+      "domain": "https://insights.stackoverflow.com",
+      "path": "/survey/2021#developer-profile-experience",
+      "startTime": 1647211532446,
+      "endTime": 1647211533130
+    },
+    {
+      "domain": "https://insights.stackoverflow.com",
+      "path": "/survey/2021#developer-profile-key-territories",
+      "startTime": 1647211533131,
+      "endTime": 1647211533466
+    },
+    {
+      "domain": "https://insights.stackoverflow.com",
+      "path": "/survey/2021#developer-profile-experience",
+      "startTime": 1647211533467,
+      "endTime": 1647211533808
+    },
+    {
+      "domain": "https://insights.stackoverflow.com",
+      "path": "/survey/2021#developer-profile-key-territories",
+      "startTime": 1647211687827,
+      "endTime": 1647211688295
+    },
+    {
+      "domain": "https://insights.stackoverflow.com",
+      "path": "/survey/2021#developer-profile-key-territories",
+      "startTime": 1647211693636,
+      "endTime": 1647211701987
+    },
+    {
+      "domain": "https://insights.stackoverflow.com",
+      "path": "/survey/2021#most-popular-technologies-language-prof",
+      "startTime": 1647211702050,
+      "endTime": 1647211703560
+    },
+    {
+      "domain": "https://insights.stackoverflow.com",
+      "path": "/survey/2021#most-popular-technologies-language",
+      "startTime": 1647211703561,
+      "endTime": 1647211705308
+    },
+    {
+      "domain": "https://insights.stackoverflow.com",
+      "path": "/survey/2021#most-popular-technologies-language-prof",
+      "startTime": 1647211705309,
+      "endTime": 1647211705596
+    },
+    {
+      "domain": "https://insights.stackoverflow.com",
+      "path": "/survey/2021#most-popular-technologies-language",
+      "startTime": 1647212032127,
+      "endTime": 1647212039929
+    },
+    {
+      "domain": "https://insights.stackoverflow.com",
+      "path": "/survey/2021#most-popular-technologies-language",
+      "startTime": 1647212128147,
+      "endTime": 1647212129810
+    },
+    {
+      "domain": "https://insights.stackoverflow.com",
+      "path": "/survey/2021#most-popular-technologies-language",
+      "startTime": 1647212347178,
+      "endTime": 1647212348520
+    },
+    {
+      "domain": "https://insights.stackoverflow.com",
+      "path": "/survey/2021#most-popular-technologies-language",
+      "startTime": 1647212668890,
+      "endTime": 1647212682698
+    },
+    {
+      "domain": "https://insights.stackoverflow.com",
+      "path": "/survey/2021#most-popular-technologies-language",
+      "startTime": 1647212791444,
+      "endTime": 1647212791659
+    },
+    {
+      "domain": "https://insights.stackoverflow.com",
+      "path": "/survey/2021#most-popular-technologies-language",
+      "startTime": 1647212792823,
+      "endTime": 1647212797350
+    },
+    {
+      "domain": "https://insights.stackoverflow.com",
+      "path": "/survey/2021#most-popular-technologies-language",
+      "startTime": 1647212823624,
+      "endTime": 1647212836623
+    },
+    {
+      "domain": "https://insights.stackoverflow.com",
+      "path": "/survey/2021#most-popular-technologies-language",
+      "startTime": 1647212854509,
+      "endTime": 1647212858250
+    },
+    {
+      "domain": "https://insights.stackoverflow.com",
+      "path": "/survey/2021#most-popular-technologies-language",
+      "startTime": 1647212939690,
+      "endTime": 1647212945746
+    },
+    {
+      "domain": "chrome://",
+      "path": "newtab/",
+      "startTime": 1647212946630,
+      "endTime": 1647212949486
+    },
+    {
+      "domain": "https://www.google.com",
+      "path": "/search?q=%EC%82%AC%EB%9E%8C%EC%9D%B8&oq=%EC%82%AC%EB%9E%8C%EC%9D%B8&aqs=chrome..69i57j69i61l3.568j0j15&sourceid=chrome&ie=UTF-8",
+      "startTime": 1647212949487,
+      "endTime": 1647212952319
+    },
+    {
+      "domain": "https://www.saramin.co.kr",
+      "path": "/zf_user/",
+      "startTime": 1647213042580,
+      "endTime": 1647213048501
+    },
+    {
+      "domain": "https://www.saramin.co.kr",
+      "path": "/zf_user/search?search_area=main&search_done=y&search_optional_item=n&searchType=search&searchword=react%20native",
+      "startTime": 1647213048502,
+      "endTime": 1647213067686
+    },
+    {
+      "domain": "https://www.saramin.co.kr",
+      "path": "/zf_user/search?searchType=search&company_cd=0%2C1%2C2%2C3%2C4%2C5%2C6%2C7%2C9%2C10&keydownAccess=&searchword=flutter&panel_type=&search_optional_item=y&search_done=y&panel_count=y",
+      "startTime": 1647213073597,
+      "endTime": 1647213075925
+    },
+    {
+      "domain": "chrome://",
+      "path": "newtab/",
+      "startTime": 1647213075926,
+      "endTime": 1647213084350
+    },
+    {
+      "domain": "https://reactnative.dev",
+      "path": "/",
+      "startTime": 1647213084351,
+      "endTime": 1647213085188
+    },
+    {
+      "domain": "chrome://",
+      "path": "newtab/",
+      "startTime": 1647213090313,
+      "endTime": 1647213090776
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html",
+      "startTime": 1647213090777,
+      "endTime": 1647213091091
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/",
+      "startTime": 1647213091092,
+      "endTime": 1647213091093
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/analytics",
+      "startTime": 1647213091094,
+      "endTime": 1647213094870
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/analytics",
+      "startTime": 1647213091141,
+      "endTime": 1647213094866
+    },
+    {
+      "domain": "chrome://",
+      "path": "newtab/",
+      "startTime": 1647213107509,
+      "endTime": 1647213108622
+    },
+    {
+      "domain": "https://reactnative.dev",
+      "path": "/docs/getting-started",
+      "startTime": 1647213114973,
+      "endTime": 1647213118816
+    },
+    {
+      "domain": "https://reactnative.dev",
+      "path": "/docs/components-and-apis",
+      "startTime": 1647213118817,
+      "endTime": 1647213129713
+    },
+    {
+      "domain": "https://www.google.com",
+      "path": "/search?q=react+native+expo+vs+react+native&oq=react+native+expo+vs&aqs=chrome.5.0i512j69i57j0i512l6j0i30l2.62924j0j15&sourceid=chrome&ie=UTF-8",
+      "startTime": 1647214008768,
+      "endTime": 1647214012767
+    },
+    {
+      "domain": "https://www.google.com",
+      "path": "/search?q=react+native+expo+vs+react+native+performance&ei=XHouYu_1M7CxmAXo6KPgAw&oq=react+native+expo+vs+react+native+per&gs_lcp=Cgdnd3Mtd2l6EAMYADIFCCEQoAEyBQghEKABMgQIIRAVOgcIABBHELADOgUIABCABEoECEEYAEoECEYYAFCaAViWC2CdEGgCcAF4AIABjwGIAcsFkgEDMC42mAEAoAEByAEKwAEB&sclient=gws-wiz",
+      "startTime": 1647214012768,
+      "endTime": 1647214018089
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=7-t6deIO1JE&ab_channel=WilliamCandillon",
+      "startTime": 1647214018090,
+      "endTime": 1647214018206
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=7-t6deIO1JE",
+      "startTime": 1647214018207,
+      "endTime": 1647214018537
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=7-t6deIO1JE&ab_channel=WilliamCandillon",
+      "startTime": 1647214018538,
+      "endTime": 1647214020170
+    },
+    {
+      "domain": "https://www.google.com",
+      "path": "/search?q=react+native+expo+vs+react+native+performance&ei=XHouYu_1M7CxmAXo6KPgAw&oq=react+native+expo+vs+react+native+per&gs_lcp=Cgdnd3Mtd2l6EAMYADIFCCEQoAEyBQghEKABMgQIIRAVOgcIABBHELADOgUIABCABEoECEEYAEoECEYYAFCaAViWC2CdEGgCcAF4AIABjwGIAcsFkgEDMC42mAEAoAEByAEKwAEB&sclient=gws-wiz",
+      "startTime": 1647214020171,
+      "endTime": 1647214028715
+    },
+    {
+      "domain": "https://stackshare.io",
+      "path": "/stackups/expo-vs-react-native",
+      "startTime": 1647214162322,
+      "endTime": 1647214171418
+    },
+    {
+      "domain": "https://www.google.com",
+      "path": "/search?q=react+native+expo+vs+react+native+performance&ei=XHouYu_1M7CxmAXo6KPgAw&oq=react+native+expo+vs+react+native+per&gs_lcp=Cgdnd3Mtd2l6EAMYADIFCCEQoAEyBQghEKABMgQIIRAVOgcIABBHELADOgUIABCABEoECEEYAEoECEYYAFCaAViWC2CdEGgCcAF4AIABjwGIAcsFkgEDMC42mAEAoAEByAEKwAEB&sclient=gws-wiz",
+      "startTime": 1647214171419,
+      "endTime": 1647214177078
+    },
+    {
+      "domain": "https://www.fullstory.com",
+      "path": "/why-fullstory-for-engineering/?utm_campaign=2021-05-01-react-native&utm_medium=directory&utm_source=stackshare&utm_offer=trial",
+      "startTime": 1647214179209,
+      "endTime": 1647214191941
+    },
+    {
+      "domain": "https://reactnative.dev",
+      "path": "/docs/performance",
+      "startTime": 1647214194533,
+      "endTime": 1647214199616
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/search?l=TypeScript&o=desc&q=react+native&s=updated&type=Repositories",
+      "startTime": 1647214243782,
+      "endTime": 1647214246449
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/search?l=TypeScript&o=desc&p=2&q=react+native&s=updated&type=Repositories",
+      "startTime": 1647214246777,
+      "endTime": 1647214247834
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/search?l=TypeScript&o=desc&q=react+native&s=updated&type=Repositories",
+      "startTime": 1647214247835,
+      "endTime": 1647214251869
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/search?l=TypeScript&o=desc&p=2&q=react+native&s=updated&type=Repositories",
+      "startTime": 1647214948680,
+      "endTime": 1647214949432
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/search?l=TypeScript&o=desc&p=3&q=react+native&s=updated&type=Repositories",
+      "startTime": 1647214956310,
+      "endTime": 1647214959947
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/search?l=TypeScript&o=desc&p=4&q=react+native&s=updated&type=Repositories",
+      "startTime": 1647215035800,
+      "endTime": 1647215036593
+    },
+    {
+      "domain": "chrome://",
+      "path": "newtab/",
+      "startTime": 1647215036594,
+      "endTime": 1647215036836
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/search?l=TypeScript&o=desc&p=4&q=react+native&s=updated&type=Repositories",
+      "startTime": 1647215043378,
+      "endTime": 1647215044106
+    },
+    {
+      "domain": "chrome://",
+      "path": "newtab/",
+      "startTime": 1647215044107,
+      "endTime": 1647215044661
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html",
+      "startTime": 1647215044662,
+      "endTime": 1647215045008
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/",
+      "startTime": 1647215045009,
+      "endTime": 1647215045009
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/analytics",
+      "startTime": 1647215045064,
+      "endTime": 1647215045552
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/analytics",
+      "startTime": 1647215045010,
+      "endTime": 1647215045562
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/history",
+      "startTime": 1647215045845,
+      "endTime": 1647215053983
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=dB9gNJfdVUY&ab_channel=tvN",
+      "startTime": 1647215104564,
+      "endTime": 1647215105278
+    },
+    {
+      "domain": "https://www.google.com",
+      "path": "/search?q=react+native+expo+vs+react+native+performance&ei=XHouYu_1M7CxmAXo6KPgAw&oq=react+native+expo+vs+react+native+per&gs_lcp=Cgdnd3Mtd2l6EAMYADIFCCEQoAEyBQghEKABMgQIIRAVOgcIABBHELADOgUIABCABEoECEEYAEoECEYYAFCaAViWC2CdEGgCcAF4AIABjwGIAcsFkgEDMC42mAEAoAEByAEKwAEB&sclient=gws-wiz",
+      "startTime": 1647215107750,
+      "endTime": 1647215108705
+    },
+    {
+      "domain": "chrome://",
+      "path": "newtab/",
+      "startTime": 1647215108706,
+      "endTime": 1647215112717
+    },
+    {
+      "domain": "chrome://",
+      "path": "newtab/",
+      "startTime": 1647216044802,
+      "endTime": 1647216046874
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html",
+      "startTime": 1647216046875,
+      "endTime": 1647216047195
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/",
+      "startTime": 1647216047196,
+      "endTime": 1647216047195
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/analytics",
+      "startTime": 1647216047196,
+      "endTime": 1647216048221
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/analytics",
+      "startTime": 1647216047270,
+      "endTime": 1647216048215
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/history",
+      "startTime": 1647216048488,
+      "endTime": 1647216056444
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=dB9gNJfdVUY&ab_channel=tvN",
+      "startTime": 1647216079907,
+      "endTime": 1647216080727
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/search?l=TypeScript&o=desc&p=4&q=react+native&s=updated&type=Repositories",
+      "startTime": 1647216189979,
+      "endTime": 1647216192219
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/search?l=TypeScript&o=desc&p=5&q=react+native&s=updated&type=Repositories",
+      "startTime": 1647216192282,
+      "endTime": 1647216196550
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/search?l=TypeScript&o=desc&p=7&q=react+native&s=updated&type=Repositories",
+      "startTime": 1647216196551,
+      "endTime": 1647216202649
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/alantoa/react-native-awesome-slider",
+      "startTime": 1647216202650,
+      "endTime": 1647216204712
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/search?l=TypeScript&o=desc&p=8&q=react+native&s=updated&type=Repositories",
+      "startTime": 1647216204713,
+      "endTime": 1647216208189
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/",
+      "startTime": 1647216208190,
+      "endTime": 1647216211524
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/kiehlB",
+      "startTime": 1647216211525,
+      "endTime": 1647216215567
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=dB9gNJfdVUY&ab_channel=tvN",
+      "startTime": 1647216224712,
+      "endTime": 1647216225112
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/search?l=TypeScript&o=desc&p=9&q=react+native&s=updated&type=Repositories",
+      "startTime": 1647216232178,
+      "endTime": 1647216236286
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/PeopleOfDevelopment/react-native",
+      "startTime": 1647216236287,
+      "endTime": 1647216251853
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/search?l=TypeScript&o=desc&p=10&q=react+native&s=updated&type=Repositories",
+      "startTime": 1647216252560,
+      "endTime": 1647216254947
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/search?l=TypeScript&o=desc&p=12&q=react+native&s=updated&type=Repositories",
+      "startTime": 1647216254948,
+      "endTime": 1647216267578
+    },
+    {
+      "domain": "https://docs.taro.zone",
+      "path": "/docs",
+      "startTime": 1647216267579,
+      "endTime": 1647216271693
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/search?l=TypeScript&o=desc&p=13&q=react+native&s=updated&type=Repositories",
+      "startTime": 1647216273449,
+      "endTime": 1647216277354
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/search?l=TypeScript&o=desc&p=15&q=react+native&s=updated&type=Repositories",
+      "startTime": 1647216277355,
+      "endTime": 1647216278463
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/search?l=TypeScript&o=desc&p=13&q=react+native&s=updated&type=Repositories",
+      "startTime": 1647216278464,
+      "endTime": 1647216281780
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/search?l=TypeScript&o=desc&p=13&q=react+native&s=updated&type=Repositories",
+      "startTime": 1647216283809,
+      "endTime": 1647216285157
+    },
+    {
+      "domain": "https://www.google.com",
+      "path": "/search?q=react+native+expo+vs+react+native+performance&ei=XHouYu_1M7CxmAXo6KPgAw&oq=react+native+expo+vs+react+native+per&gs_lcp=Cgdnd3Mtd2l6EAMYADIFCCEQoAEyBQghEKABMgQIIRAVOgcIABBHELADOgUIABCABEoECEEYAEoECEYYAFCaAViWC2CdEGgCcAF4AIABjwGIAcsFkgEDMC42mAEAoAEByAEKwAEB&sclient=gws-wiz",
+      "startTime": 1647216316108,
+      "endTime": 1647216317212
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/search?l=TypeScript&o=desc&p=16&q=react+native&s=updated&type=Repositories",
+      "startTime": 1647216423229,
+      "endTime": 1647216425110
+    },
+    {
+      "domain": "https://api.video",
+      "path": "/",
+      "startTime": 1647216432380,
+      "endTime": 1647216434292
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/search?l=TypeScript&o=desc&p=16&q=react+native&s=updated&type=Repositories",
+      "startTime": 1647216453642,
+      "endTime": 1647216456814
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/search?q=react+native+chart&type=Repositories",
+      "startTime": 1647216456815,
+      "endTime": 1647216459967
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/indiespirit/react-native-chart-kit",
+      "startTime": 1647216459968,
+      "endTime": 1647216465405
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/search?q=react+native+chart&type=Repositories",
+      "startTime": 1647216465406,
+      "endTime": 1647216468235
+    },
+    {
+      "domain": "https://www.google.com",
+      "path": "/search?q=react+native+d3e&ei=u30uYpT5FonChwPXq7LIDA&ved=0ahUKEwjUwpGwnsT2AhUJ4WEKHdeVDMkQ4dUDCA4&uact=5&oq=react+native+d3e&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEOgcIABBHELADOggILhCABBDUAjoLCC4QgAQQxwEQ0QM6DQguEIAEEMcBEKMCEAo6BwgAEIAEEAo6BQguEIAEOgQIABBDOgcILhDUAhBDSgQIQRgASgQIRhgAUK8CWJUUYPMUaAFwAXgAgAGYAYgBzw2SAQQwLjE0mAEAoAEByAEKwAEB&sclient=gws-wiz",
+      "startTime": 1647216472944,
+      "endTime": 1647216474153
+    },
+    {
+      "domain": "https://reactnative.dev",
+      "path": "/docs/getting-started",
+      "startTime": 1647216580564,
+      "endTime": 1647216580969
+    },
+    {
+      "domain": "https://reactnative.dev",
+      "path": "/docs/getting-started",
+      "startTime": 1647217506618,
+      "endTime": 1647217508289
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/search?q=react+native+chart&type=Repositories",
+      "startTime": 1647217512270,
+      "endTime": 1647217514471
+    },
+    {
+      "domain": "chrome://",
+      "path": "newtab/",
+      "startTime": 1647217514472,
+      "endTime": 1647217515272
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/",
+      "startTime": 1647217515273,
+      "endTime": 1647217515275
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/analytics",
+      "startTime": 1647217515338,
+      "endTime": 1647217517900
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/analytics",
+      "startTime": 1647217515276,
+      "endTime": 1647217517908
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/history",
+      "startTime": 1647217518236,
+      "endTime": 1647217524441
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/search?q=react+native+chart&type=Repositories",
+      "startTime": 1647217524442,
+      "endTime": 1647217525160
+    },
+    {
+      "domain": "chrome://",
+      "path": "newtab/",
+      "startTime": 1647217525710,
+      "endTime": 1647217526155
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/",
+      "startTime": 1647217526156,
+      "endTime": 1647217526157
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=dB9gNJfdVUY&ab_channel=tvN",
+      "startTime": 1647217639228,
+      "endTime": 1647217640187
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=dB9gNJfdVUY&ab_channel=tvN",
+      "startTime": 1647218025535,
+      "endTime": 1647218026634
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=dB9gNJfdVUY&ab_channel=tvN",
+      "startTime": 1647218506700,
+      "endTime": 1647218508998
+    },
+    {
+      "domain": "chrome://",
+      "path": "newtab/",
+      "startTime": 1647218508999,
+      "endTime": 1647218510684
+    },
+    {
+      "domain": "chrome://",
+      "path": "newtab/",
+      "startTime": 1647218519405,
+      "endTime": 1647218520009
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/search?q=react+native+chart&type=Repositories",
+      "startTime": 1647219781688,
+      "endTime": 1647219782292
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/",
+      "startTime": 1647219784687,
+      "endTime": 1647219788314
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/results?search_query=%EA%B5%AD%EC%B9%B4%EC%8A%A4%ED%85%90",
+      "startTime": 1647219788315,
+      "endTime": 1647219791674
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=rYqcF6O5mPs",
+      "startTime": 1647219791675,
+      "endTime": 1647219792141
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=rYqcF6O5mPs&ab_channel=EBSCulture%28EBS%EA%B5%90%EC%96%91%29",
+      "startTime": 1647219792142,
+      "endTime": 1647219792151
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=rYqcF6O5mPs",
+      "startTime": 1647219792152,
+      "endTime": 1647219792243
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=rYqcF6O5mPs&ab_channel=EBSCulture%28EBS%EA%B5%90%EC%96%91%29",
+      "startTime": 1647219792244,
+      "endTime": 1647219806758
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html",
+      "startTime": 1647219806759,
+      "endTime": 1647219807079
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/",
+      "startTime": 1647219807080,
+      "endTime": 1647219807082
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/analytics",
+      "startTime": 1647219807134,
+      "endTime": 1647219813088
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/history",
+      "startTime": 1647219813126,
+      "endTime": 1647219829950
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=rYqcF6O5mPs&ab_channel=EBSCulture%28EBS%EA%B5%90%EC%96%91%29",
+      "startTime": 1647219829951,
+      "endTime": 1647219830867
+    },
+    {
+      "domain": "chrome://",
+      "path": "newtab/",
+      "startTime": 1647219830868,
+      "endTime": 1647219831072
+    },
+    {
+      "domain": "https://newsforkids.net",
+      "path": "/articles/2022/03/11/news-roundup-korean-president-australian-emergency-street-signs/",
+      "startTime": 1647219843433,
+      "endTime": 1647219844015
+    },
+    {
+      "domain": "https://www.google.com",
+      "path": "/search?q=kent+c+dodds&oq=kent+c+dodds&aqs=chrome..69i57j0i512l9.1799j0j15&sourceid=chrome&ie=UTF-8",
+      "startTime": 1647219909104,
+      "endTime": 1647219911526
+    },
+    {
+      "domain": "https://kentcdodds.com",
+      "path": "/blog",
+      "startTime": 1647219911527,
+      "endTime": 1647219917945
+    },
+    {
+      "domain": "https://newsforkids.net",
+      "path": "/articles/2022/03/11/news-roundup-korean-president-australian-emergency-street-signs/",
+      "startTime": 1647219933972,
+      "endTime": 1647219935249
+    },
+    {
+      "domain": "chrome://",
+      "path": "newtab/",
+      "startTime": 1647219935250,
+      "endTime": 1647219935845
+    },
+    {
+      "domain": "https://www.google.com",
+      "path": "/search?q=%EC%82%AC%EB%9E%8C%EC%9D%B8&oq=%EC%82%AC%EB%9E%8C%EC%9D%B8&aqs=chrome..69i57l2j69i61l3.760j0j15&sourceid=chrome&ie=UTF-8",
+      "startTime": 1647219939323,
+      "endTime": 1647219940368
+    },
+    {
+      "domain": "https://www.saramin.co.kr",
+      "path": "/zf_user/",
+      "startTime": 1647219940369,
+      "endTime": 1647219949746
+    },
+    {
+      "domain": "chrome://",
+      "path": "newtab/",
+      "startTime": 1647219949747,
+      "endTime": 1647219951084
+    },
+    {
+      "domain": "chrome://",
+      "path": "newtab/",
+      "startTime": 1647220116541,
+      "endTime": 1647220117144
+    },
+    {
+      "domain": "https://www.google.com",
+      "path": "/search?q=kiehlb&oq=kiehlb&aqs=chrome..69i57j46i199i465i512j0i512l7.1695j0j15&sourceid=chrome&ie=UTF-8",
+      "startTime": 1647220121052,
+      "endTime": 1647220122223
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/kiehlB/blog-client",
+      "startTime": 1647220122224,
+      "endTime": 1647220124050
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/kiehlB",
+      "startTime": 1647220124051,
+      "endTime": 1647220126087
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/kiehlB/blog-server",
+      "startTime": 1647220126088,
+      "endTime": 1647220126326
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/kiehlB",
+      "startTime": 1647220126327,
+      "endTime": 1647220128547
+    },
+    {
+      "domain": "chrome://",
+      "path": "newtab/",
+      "startTime": 1647220128548,
+      "endTime": 1647220132053
+    },
+    {
+      "domain": "chrome://",
+      "path": "newtab/",
+      "startTime": 1647220132699,
+      "endTime": 1647220133494
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/kiehlB/blog-client",
+      "startTime": 1647220134819,
+      "endTime": 1647220136710
+    },
+    {
+      "domain": "https://www.woongblog.xyz",
+      "path": "/",
+      "startTime": 1647220136711,
+      "endTime": 1647220140395
+    },
+    {
+      "domain": "https://www.woongblog.xyz",
+      "path": "/post/fee21612-4fbf-4afe-ad0e-b337216f3672",
+      "startTime": 1647220140396,
+      "endTime": 1647220142143
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/",
+      "startTime": 1647220240436,
+      "endTime": 1647220242564
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/",
+      "startTime": 1647220242565,
+      "endTime": 1647220242576
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/analytics",
+      "startTime": 1647220242577,
+      "endTime": 1647220243313
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/analytics",
+      "startTime": 1647220242622,
+      "endTime": 1647220243169
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/history",
+      "startTime": 1647220243314,
+      "endTime": 1647220254280
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/?&ab_channel=KBSKpop",
+      "startTime": 1647220254281,
+      "endTime": 1647220257563
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/?&ab_channel=%EA%B7%BC%ED%99%A9%EC%98%AC%EB%A6%BC%ED%94%BD",
+      "startTime": 1647220257564,
+      "endTime": 1647220260360
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/results?search_query=%ED%81%AC%EB%A3%A8%EC%97%98%EB%9D%BC+ost",
+      "startTime": 1647220277070,
+      "endTime": 1647220279453
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=YQ0TrAN77Bk",
+      "startTime": 1647220279454,
+      "endTime": 1647220279677
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=YQ0TrAN77Bk&ab_channel=%EB%85%B8%EB%9E%98%EB%A7%9B%EC%A7%91SONGRESTAURANT",
+      "startTime": 1647220279678,
+      "endTime": 1647220279853
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=YQ0TrAN77Bk",
+      "startTime": 1647220279854,
+      "endTime": 1647220279889
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=YQ0TrAN77Bk&ab_channel=%EB%85%B8%EB%9E%98%EB%A7%9B%EC%A7%91SONGRESTAURANT",
+      "startTime": 1647220279890,
+      "endTime": 1647220282486
+    },
+    {
+      "domain": "chrome://",
+      "path": "newtab/",
+      "startTime": 1647220282487,
+      "endTime": 1647220282907
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html",
+      "startTime": 1647220282908,
+      "endTime": 1647220283229
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/",
+      "startTime": 1647220283230,
+      "endTime": 1647220283229
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/analytics",
+      "startTime": 1647220283230,
+      "endTime": 1647220283895
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/analytics",
+      "startTime": 1647220283280,
+      "endTime": 1647220283893
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/history",
+      "startTime": 1647220283896,
+      "endTime": 1647220292876
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/kiehlB/blog-client",
+      "startTime": 1647220292877,
+      "endTime": 1647220293591
+    },
+    {
+      "domain": "chrome://",
+      "path": "newtab/",
+      "startTime": 1647220302346,
+      "endTime": 1647220306604
+    },
+    {
+      "domain": "https://dictionary.cambridge.org",
+      "path": "/ko/%EC%82%AC%EC%A0%84/%EC%98%81%EC%96%B4/corruption",
+      "startTime": 1647220506314,
+      "endTime": 1647220508552
+    },
+    {
+      "domain": "https://dictionary.cambridge.org",
+      "path": "/ko/%EC%82%AC%EC%A0%84/%EC%98%81%EC%96%B4/pay-off",
+      "startTime": 1647220536779,
+      "endTime": 1647220544713
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/",
+      "startTime": 1647220544714,
+      "endTime": 1647220565148
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/results?search_query=side+by+side+ost",
+      "startTime": 1647220573061,
+      "endTime": 1647220581211
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=dOjFcx3GJHg&list=RD-OQnksdGbjQ&index=7",
+      "startTime": 1647220581212,
+      "endTime": 1647220581559
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=dOjFcx3GJHg&list=RD-OQnksdGbjQ&index=7&ab_channel=Sting-Topic",
+      "startTime": 1647220581560,
+      "endTime": 1647220582688
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=dOjFcx3GJHg&list=RD-OQnksdGbjQ&index=8",
+      "startTime": 1647220582689,
+      "endTime": 1647220583085
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=dOjFcx3GJHg&list=RD-OQnksdGbjQ&index=8&ab_channel=Sting-Topic",
+      "startTime": 1647220583086,
+      "endTime": 1647220583977
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=-OQnksdGbjQ&list=RD-OQnksdGbjQ&index=2",
+      "startTime": 1647220583978,
+      "endTime": 1647220584157
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=-OQnksdGbjQ&list=RD-OQnksdGbjQ&index=2&ab_channel=AtlasFox",
+      "startTime": 1647220584158,
+      "endTime": 1647220584411
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=-OQnksdGbjQ&list=RD-OQnksdGbjQ&index=2",
+      "startTime": 1647220584412,
+      "endTime": 1647220584485
+    },
+    {
+      "domain": "https://dictionary.cambridge.org",
+      "path": "/ko/%EC%82%AC%EC%A0%84/%EC%98%81%EC%96%B4/pay-off",
+      "startTime": 1647220632360,
+      "endTime": 1647220635343
+    },
+    {
+      "domain": "https://dictionary.cambridge.org",
+      "path": "/ko/%EC%82%AC%EC%A0%84/%EC%98%81%EC%96%B4/parliament?q=Parliament",
+      "startTime": 1647220635344,
+      "endTime": 1647220651429
+    },
+    {
+      "domain": "https://newsforkids.net",
+      "path": "/articles/2022/03/11/news-roundup-korean-president-australian-emergency-street-signs/",
+      "startTime": 1647220669891,
+      "endTime": 1647220671842
+    },
+    {
+      "domain": "chrome://",
+      "path": "newtab/",
+      "startTime": 1647220700383,
+      "endTime": 1647220700679
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html",
+      "startTime": 1647220700680,
+      "endTime": 1647220700989
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/",
+      "startTime": 1647220700990,
+      "endTime": 1647220700991
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/analytics",
+      "startTime": 1647220700992,
+      "endTime": 1647220701904
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/analytics",
+      "startTime": 1647220701046,
+      "endTime": 1647220701902
+    },
+    {
+      "domain": "https://www.netflix.com",
+      "path": "/browse",
+      "startTime": 1647220736987,
+      "endTime": 1647220757408
+    },
+    {
+      "domain": "https://www.netflix.com",
+      "path": "/browse",
+      "startTime": 1647220819873,
+      "endTime": 1647220821282
+    },
+    {
+      "domain": "https://www.netflix.com",
+      "path": "/search?q=%E3%85%8D",
+      "startTime": 1647220821283,
+      "endTime": 1647220821924
+    },
+    {
+      "domain": "https://www.netflix.com",
+      "path": "/browse",
+      "startTime": 1647220821925,
+      "endTime": 1647220822045
+    },
+    {
+      "domain": "https://www.netflix.com",
+      "path": "/search?q=%E3%84%B9",
+      "startTime": 1647220822046,
+      "endTime": 1647220822109
+    },
+    {
+      "domain": "https://www.netflix.com",
+      "path": "/search?q=%EB%9E%98",
+      "startTime": 1647220822110,
+      "endTime": 1647220822233
+    },
+    {
+      "domain": "https://www.netflix.com",
+      "path": "/search?q=%EB%9E%B1",
+      "startTime": 1647220822234,
+      "endTime": 1647220822344
+    },
+    {
+      "domain": "https://www.netflix.com",
+      "path": "/search?q=%EB%9E%98%ED%84%B0",
+      "startTime": 1647220822345,
+      "endTime": 1647220822537
+    },
+    {
+      "domain": "https://www.netflix.com",
+      "path": "/search?q=%EB%9E%98%ED%85%80",
+      "startTime": 1647220822538,
+      "endTime": 1647220822662
+    },
+    {
+      "domain": "https://www.netflix.com",
+      "path": "/search?q=%EB%9E%98%ED%84%B0%EB%A7%A4",
+      "startTime": 1647220822663,
+      "endTime": 1647220822705
+    },
+    {
+      "domain": "https://www.netflix.com",
+      "path": "/search?q=%EB%9E%98%ED%84%B0%EB%A7%A8",
+      "startTime": 1647220822706,
+      "endTime": 1647220824722
+    },
+    {
+      "domain": "https://www.netflix.com",
+      "path": "/search?q=%EB%9E%98%ED%84%B0",
+      "startTime": 1647220824723,
+      "endTime": 1647220824826
+    },
+    {
+      "domain": "https://www.netflix.com",
+      "path": "/search?q=%EB%9E%98",
+      "startTime": 1647220824827,
+      "endTime": 1647220824892
+    },
+    {
+      "domain": "https://www.netflix.com",
+      "path": "/browse",
+      "startTime": 1647220824893,
+      "endTime": 1647220825184
+    },
+    {
+      "domain": "https://www.netflix.com",
+      "path": "/search?q=l",
+      "startTime": 1647220825185,
+      "endTime": 1647220825547
+    },
+    {
+      "domain": "https://www.netflix.com",
+      "path": "/search?q=le",
+      "startTime": 1647220825548,
+      "endTime": 1647220825909
+    },
+    {
+      "domain": "https://www.netflix.com",
+      "path": "/search?q=let",
+      "startTime": 1647220825910,
+      "endTime": 1647220826024
+    },
+    {
+      "domain": "https://www.netflix.com",
+      "path": "/search?q=lett",
+      "startTime": 1647220826025,
+      "endTime": 1647220826208
+    },
+    {
+      "domain": "https://www.netflix.com",
+      "path": "/search?q=lette",
+      "startTime": 1647220826209,
+      "endTime": 1647220826352
+    },
+    {
+      "domain": "https://www.netflix.com",
+      "path": "/search?q=letter",
+      "startTime": 1647220826353,
+      "endTime": 1647220826552
+    },
+    {
+      "domain": "https://www.netflix.com",
+      "path": "/search?q=letterm",
+      "startTime": 1647220826553,
+      "endTime": 1647220826637
+    },
+    {
+      "domain": "https://www.netflix.com",
+      "path": "/search?q=letterma",
+      "startTime": 1647220826638,
+      "endTime": 1647220826692
+    },
+    {
+      "domain": "https://www.netflix.com",
+      "path": "/search?q=letterman",
+      "startTime": 1647220826693,
+      "endTime": 1647220839928
+    },
+    {
+      "domain": "https://www.netflix.com",
+      "path": "/watch/80209096?trackId=255824129&tctx=0%2C0%2CNAPA%40%40%7Caea722ff-988f-4aa1-8284-d5b895c12334-128240714_titles%2F1%2F%2Fletterman%2F0%2F0%2CNAPA%40%40%7Caea722ff-988f-4aa1-8284-d5b895c12334-128240714_titles%2F1%2F%2Fletterman%2F0%2F0%2Cunknown%2C%2Caea722ff-988f-4aa1-8284-d5b895c12334-128240714%7C2%2CtitlesResults",
+      "startTime": 1647220839929,
+      "endTime": 1647220841033
+    },
+    {
+      "domain": "https://www.netflix.com",
+      "path": "/watch/81228410?trackId=255824129",
+      "startTime": 1647220853581,
+      "endTime": 1647220865130
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/results?search_query=coman",
+      "startTime": 1647220865131,
+      "endTime": 1647220868110
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/results?search_query=conan",
+      "startTime": 1647220868111,
+      "endTime": 1647220874973
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/c/TeamCoco",
+      "startTime": 1647220874974,
+      "endTime": 1647220876186
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/c/TeamCoco/videos",
+      "startTime": 1647220876187,
+      "endTime": 1647220878175
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/results?search_query=simpson",
+      "startTime": 1647220896487,
+      "endTime": 1647220901872
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=dvKGbp7YOW4",
+      "startTime": 1647220901873,
+      "endTime": 1647220902317
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=dvKGbp7YOW4&ab_channel=simpsonsfamilyep",
+      "startTime": 1647220902318,
+      "endTime": 1647220902423
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=dvKGbp7YOW4",
+      "startTime": 1647220902424,
+      "endTime": 1647220902484
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/results?search_query=simpson",
+      "startTime": 1647220927648,
+      "endTime": 1647220928872
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=4Ufa-KooPqY",
+      "startTime": 1647220928873,
+      "endTime": 1647220929146
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=4Ufa-KooPqY&ab_channel=%EB%A6%AC%EC%82%AC%EC%9A%94%EC%A0%95",
+      "startTime": 1647220929147,
+      "endTime": 1647220929340
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=4Ufa-KooPqY",
+      "startTime": 1647220929341,
+      "endTime": 1647220929381
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/results?search_query=simpson",
+      "startTime": 1647221042622,
+      "endTime": 1647221049341
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=p7W1XWw3wB8",
+      "startTime": 1647221049342,
+      "endTime": 1647221049630
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=p7W1XWw3wB8&ab_channel=%EB%A6%AC%EC%82%AC%EC%9A%94%EC%A0%95",
+      "startTime": 1647221049631,
+      "endTime": 1647221049822
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=p7W1XWw3wB8",
+      "startTime": 1647221049823,
+      "endTime": 1647221049956
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/",
+      "startTime": 1647221587029,
+      "endTime": 1647221589523
+    },
+    {
+      "domain": "chrome://",
+      "path": "newtab/",
+      "startTime": 1647221589524,
+      "endTime": 1647221590974
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html",
+      "startTime": 1647221590975,
+      "endTime": 1647221591252
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/",
+      "startTime": 1647221591253,
+      "endTime": 1647221591253
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/analytics",
+      "startTime": 1647221591254,
+      "endTime": 1647221594603
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/analytics",
+      "startTime": 1647221591305,
+      "endTime": 1647221594600
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/history",
+      "startTime": 1647221594604,
+      "endTime": 1647221603035
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=UJxUoClui1k",
+      "startTime": 1647221603036,
+      "endTime": 1647221603454
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=UJxUoClui1k&ab_channel=EBSCulture%28EBS%EA%B5%90%EC%96%91%29",
+      "startTime": 1647221603455,
+      "endTime": 1647221603524
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=UJxUoClui1k",
+      "startTime": 1647221603525,
+      "endTime": 1647221603640
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=UJxUoClui1k&ab_channel=EBSCulture%28EBS%EA%B5%90%EC%96%91%29",
+      "startTime": 1647221866175,
+      "endTime": 1647221868089
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=mrB1-3K7KwM",
+      "startTime": 1647221868090,
+      "endTime": 1647221868214
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=mrB1-3K7KwM&ab_channel=EBSCulture%28EBS%EA%B5%90%EC%96%91%29",
+      "startTime": 1647221868215,
+      "endTime": 1647221868477
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=mrB1-3K7KwM",
+      "startTime": 1647221868478,
+      "endTime": 1647221868580
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=mrB1-3K7KwM&ab_channel=EBSCulture%28EBS%EA%B5%90%EC%96%91%29",
+      "startTime": 1647222224746,
+      "endTime": 1647222226983
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=Iu6GPireDWE",
+      "startTime": 1647222226984,
+      "endTime": 1647222227098
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=Iu6GPireDWE&ab_channel=EBSCulture%28EBS%EA%B5%90%EC%96%91%29",
+      "startTime": 1647222227099,
+      "endTime": 1647222227367
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=Iu6GPireDWE",
+      "startTime": 1647222227368,
+      "endTime": 1647222227466
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=Iu6GPireDWE&ab_channel=%EC%97%89%ED%84%B0%EB%A6%AC",
+      "startTime": 1647222507229,
+      "endTime": 1647222509279
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=_aiLnwEc8NM",
+      "startTime": 1647222509280,
+      "endTime": 1647222509489
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=_aiLnwEc8NM&ab_channel=%EC%97%89%ED%84%B0%EB%A6%AC",
+      "startTime": 1647222509490,
+      "endTime": 1647222509679
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=_aiLnwEc8NM",
+      "startTime": 1647222509680,
+      "endTime": 1647222509754
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=_aiLnwEc8NM&ab_channel=%EC%97%89%ED%84%B0%EB%A6%AC",
+      "startTime": 1647223049000,
+      "endTime": 1647223051054
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=pcXKI-bFsfE",
+      "startTime": 1647223051055,
+      "endTime": 1647223051177
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=pcXKI-bFsfE&ab_channel=%EC%97%89%ED%84%B0%EB%A6%AC",
+      "startTime": 1647223051178,
+      "endTime": 1647223051479
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=pcXKI-bFsfE",
+      "startTime": 1647223051480,
+      "endTime": 1647223051575
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=pcXKI-bFsfE&ab_channel=%EC%97%89%ED%84%B0%EB%A6%AC",
+      "startTime": 1647223407212,
+      "endTime": 1647223409401
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=xZp1zyeaBe4",
+      "startTime": 1647223409402,
+      "endTime": 1647223409507
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=xZp1zyeaBe4&ab_channel=%EC%97%89%ED%84%B0%EB%A6%AC",
+      "startTime": 1647223409508,
+      "endTime": 1647223409803
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=xZp1zyeaBe4",
+      "startTime": 1647223409804,
+      "endTime": 1647223409881
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=xZp1zyeaBe4&ab_channel=%EC%97%89%ED%84%B0%EB%A6%AC",
+      "startTime": 1647241923781,
+      "endTime": 1647241927622
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=pcXKI-bFsfE&ab_channel=%EC%97%89%ED%84%B0%EB%A6%AC",
+      "startTime": 1647241927623,
+      "endTime": 1647241929901
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=pcXKI-bFsfE",
+      "startTime": 1647241929902,
+      "endTime": 1647241930263
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=pcXKI-bFsfE&ab_channel=%EC%97%89%ED%84%B0%EB%A6%AC",
+      "startTime": 1647241930264,
+      "endTime": 1647241931755
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=_aiLnwEc8NM&ab_channel=%EC%97%89%ED%84%B0%EB%A6%AC",
+      "startTime": 1647241931756,
+      "endTime": 1647241933260
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=_aiLnwEc8NM",
+      "startTime": 1647241933261,
+      "endTime": 1647241933680
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=_aiLnwEc8NM&ab_channel=%EC%97%89%ED%84%B0%EB%A6%AC",
+      "startTime": 1647241933681,
+      "endTime": 1647241934652
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=Iu6GPireDWE&ab_channel=%EC%97%89%ED%84%B0%EB%A6%AC",
+      "startTime": 1647241934653,
+      "endTime": 1647241935165
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=Iu6GPireDWE&ab_channel=EBSCulture%28EBS%EA%B5%90%EC%96%91%29",
+      "startTime": 1647241935166,
+      "endTime": 1647241936212
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=Iu6GPireDWE",
+      "startTime": 1647241936213,
+      "endTime": 1647241936471
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=Iu6GPireDWE&ab_channel=EBSCulture%28EBS%EA%B5%90%EC%96%91%29",
+      "startTime": 1647241936472,
+      "endTime": 1647241937867
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=mrB1-3K7KwM&ab_channel=EBSCulture%28EBS%EA%B5%90%EC%96%91%29",
+      "startTime": 1647241937868,
+      "endTime": 1647241939432
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=mrB1-3K7KwM",
+      "startTime": 1647241939433,
+      "endTime": 1647241939719
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=mrB1-3K7KwM&ab_channel=EBSCulture%28EBS%EA%B5%90%EC%96%91%29",
+      "startTime": 1647241939720,
+      "endTime": 1647241940520
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=UJxUoClui1k&ab_channel=EBSCulture%28EBS%EA%B5%90%EC%96%91%29",
+      "startTime": 1647241940521,
+      "endTime": 1647241941941
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=UJxUoClui1k",
+      "startTime": 1647241941942,
+      "endTime": 1647241942188
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=UJxUoClui1k&ab_channel=EBSCulture%28EBS%EA%B5%90%EC%96%91%29",
+      "startTime": 1647241942189,
+      "endTime": 1647241943069
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/",
+      "startTime": 1647241943070,
+      "endTime": 1647241944819
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=UJxUoClui1k&ab_channel=EBSCulture%28EBS%EA%B5%90%EC%96%91%29",
+      "startTime": 1647241944820,
+      "endTime": 1647241946464
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=UJxUoClui1k",
+      "startTime": 1647241946465,
+      "endTime": 1647241946816
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=UJxUoClui1k&ab_channel=EBSCulture%28EBS%EA%B5%90%EC%96%91%29",
+      "startTime": 1647241946817,
+      "endTime": 1647241947079
+    },
+    {
+      "domain": "chrome://",
+      "path": "newtab/",
+      "startTime": 1647241947827,
+      "endTime": 1647241948260
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html",
+      "startTime": 1647241948261,
+      "endTime": 1647241948553
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/",
+      "startTime": 1647241948554,
+      "endTime": 1647241948553
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/analytics",
+      "startTime": 1647241948604,
+      "endTime": 1647241953614
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/history",
+      "startTime": 1647241953657,
+      "endTime": 1647241958368
+    },
+    {
+      "domain": "chrome://",
+      "path": "newtab/",
+      "startTime": 1647241958369,
+      "endTime": 1647241964338
+    },
+    {
+      "domain": "chrome://",
+      "path": "newtab/",
+      "startTime": 1647241966466,
+      "endTime": 1647241970603
+    },
+    {
+      "domain": "chrome://",
+      "path": "newtab/",
+      "startTime": 1647242024733,
+      "endTime": 1647242025482
+    },
+    {
+      "domain": "chrome://",
+      "path": "newtab/",
+      "startTime": 1647242041237,
+      "endTime": 1647242041972
+    },
+    {
+      "domain": "chrome://",
+      "path": "newtab/",
+      "startTime": 1647242082866,
+      "endTime": 1647242088383
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/kiehlB/blog-client",
+      "startTime": 1647242089625,
+      "endTime": 1647242090704
+    },
+    {
+      "domain": "https://github.com",
+      "path": "/kiehlB",
+      "startTime": 1647242090705,
+      "endTime": 1647242096103
+    },
+    {
+      "domain": "chrome://",
+      "path": "newtab/",
+      "startTime": 1647242099905,
+      "endTime": 1647242105434
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/",
+      "startTime": 1647242105435,
+      "endTime": 1647242105434
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/analytics",
+      "startTime": 1647242105435,
+      "endTime": 1647242108980
+    },
+    {
+      "domain": "https://newsforkids.net",
+      "path": "/articles/2022/03/11/news-roundup-korean-president-australian-emergency-street-signs/",
+      "startTime": 1647242141317,
+      "endTime": 1647242145942
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html",
+      "startTime": 1647242241835,
+      "endTime": 1647242242146
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/",
+      "startTime": 1647242242147,
+      "endTime": 1647242242156
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/analytics",
+      "startTime": 1647242242157,
+      "endTime": 1647242248201
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/analytics",
+      "startTime": 1647242242198,
+      "endTime": 1647242248196
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/history",
+      "startTime": 1647242248202,
+      "endTime": 1647242265832
+    },
+    {
+      "domain": "https://newsforkids.net",
+      "path": "/articles/2022/03/11/news-roundup-korean-president-australian-emergency-street-signs/",
+      "startTime": 1647242320125,
+      "endTime": 1647242348833
+    },
+    {
+      "domain": "https://newsforkids.net",
+      "path": "/",
+      "startTime": 1647242352496,
+      "endTime": 1647242353893
+    },
+    {
+      "domain": "https://newsforkids.net",
+      "path": "/",
+      "startTime": 1647242353900,
+      "endTime": 1647242355905
+    },
+    {
+      "domain": "https://newsforkids.net",
+      "path": "/articles/2022/03/14/countries-consider-digital-currencies/",
+      "startTime": 1647242355906,
+      "endTime": 1647242357364
+    },
+    {
+      "domain": "chrome://",
+      "path": "newtab/",
+      "startTime": 1647242357365,
+      "endTime": 1647242357548
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html",
+      "startTime": 1647242357549,
+      "endTime": 1647242357859
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/",
+      "startTime": 1647242357860,
+      "endTime": 1647242357860
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/analytics",
+      "startTime": 1647242357861,
+      "endTime": 1647242360414
+    },
+    {
+      "domain": "chrome://",
+      "path": "newtab/",
+      "startTime": 1647242366449,
+      "endTime": 1647242377511
+    },
+    {
+      "domain": "chrome://",
+      "path": "newtab/",
+      "startTime": 1647242386835,
+      "endTime": 1647242400153
+    },
+    {
+      "domain": "https://dictionary.cambridge.org",
+      "path": "/ko/%EC%82%AC%EC%A0%84/%EC%98%81%EC%96%B4/parliament?q=Parliament",
+      "startTime": 1647242400154,
+      "endTime": 1647242407082
+    },
+    {
+      "domain": "chrome://",
+      "path": "newtab/",
+      "startTime": 1647243476269,
+      "endTime": 1647243479543
+    },
+    {
+      "domain": "chrome://",
+      "path": "newtab/",
+      "startTime": 1647246633383,
+      "endTime": 1647246633852
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=ezU2PG7UCU4&ab_channel=YEJI%2a",
+      "startTime": 1647246634781,
+      "endTime": 1647246636691
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=MFVt6-hDay4",
+      "startTime": 1647246636692,
+      "endTime": 1647246637311
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=MFVt6-hDay4&ab_channel=tvNDENT",
+      "startTime": 1647246637312,
+      "endTime": 1647246637380
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=MFVt6-hDay4",
+      "startTime": 1647246637381,
+      "endTime": 1647246637534
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=MFVt6-hDay4&ab_channel=tvNDENT",
+      "startTime": 1647246637535,
+      "endTime": 1647246642918
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html",
+      "startTime": 1647246642919,
+      "endTime": 1647246643250
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/",
+      "startTime": 1647246643251,
+      "endTime": 1647246643253
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/analytics",
+      "startTime": 1647246643254,
+      "endTime": 1647246649055
+    },
+    {
+      "domain": "https://newsforkids.net",
+      "path": "/articles/2022/03/14/countries-consider-digital-currencies/",
+      "startTime": 1647246665784,
+      "endTime": 1647246667030
+    },
+    {
+      "domain": "chrome://",
+      "path": "newtab/",
+      "startTime": 1647246667955,
+      "endTime": 1647246670126
+    },
+    {
+      "domain": "chrome://",
+      "path": "newtab/",
+      "startTime": 1647246671062,
+      "endTime": 1647246671678
+    },
+    {
+      "domain": "https://www.google.com",
+      "path": "/search?q=%EA%B2%BD%EB%B6%81%EB%8C%80+%EB%8F%84%EC%84%9C%EA%B4%80&oq=%EA%B2%BD%EB%B6%81%EB%8C%80+%EB%8F%84%EC%84%9C%EA%B4%80&aqs=chrome..69i57j0i512l9.2573j0j15&sourceid=chrome&ie=UTF-8",
+      "startTime": 1647246687155,
+      "endTime": 1647246689995
+    },
+    {
+      "domain": "https://kudos.knu.ac.kr",
+      "path": "/pages/sub.htm?nav_code=kud1641346515&search=%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8",
+      "startTime": 1647246695214,
+      "endTime": 1647246717542
+    },
+    {
+      "domain": "chrome://",
+      "path": "newtab/",
+      "startTime": 1647246717543,
+      "endTime": 1647246721716
+    },
+    {
+      "domain": "https://kudos.knu.ac.kr",
+      "path": "/pages/sub.htm?nav_code=kud1641346515&search=%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8",
+      "startTime": 1647246758223,
+      "endTime": 1647246774009
+    },
+    {
+      "domain": "https://kudos.knu.ac.kr",
+      "path": "/pages/index.htm",
+      "startTime": 1647246774010,
+      "endTime": 1647246778730
+    },
+    {
+      "domain": "https://www.figma.com",
+      "path": "/",
+      "startTime": 1647246778731,
+      "endTime": 1647246780391
+    },
+    {
+      "domain": "chrome://",
+      "path": "newtab/",
+      "startTime": 1647246788830,
+      "endTime": 1647246790603
+    },
+    {
+      "domain": "https://localhost",
+      "path": "/#/analytics",
+      "startTime": 1647246790958,
+      "endTime": 1647246796424
+    },
+    {
+      "domain": "https://localhost",
+      "path": "/#/analytics",
+      "startTime": 1647246928651,
+      "endTime": 1647246929071
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/",
+      "startTime": 1647246929933,
+      "endTime": 1647246934067
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/?&ab_channel=%EC%97%89%ED%84%B0%EB%A6%AC",
+      "startTime": 1647246934068,
+      "endTime": 1647246936167
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=UJxUoClui1k&list=RDUJxUoClui1k&start_radio=1",
+      "startTime": 1647246936168,
+      "endTime": 1647246936862
+    },
+    {
+      "domain": "https://www.youtube.com",
+      "path": "/watch?v=UJxUoClui1k&list=RDUJxUoClui1k&start_radio=1&ab_channel=EBSCulture%28EBS%EA%B5%90%EC%96%91%29",
+      "startTime": 1647246983575,
+      "endTime": 1647246984266
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/",
+      "startTime": 1647246986867,
+      "endTime": 1647246986866
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/analytics",
+      "startTime": 1647246986867,
+      "endTime": 1647246989221
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/analytics",
+      "startTime": 1647246986952,
+      "endTime": 1647246989218
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/history",
+      "startTime": 1647246989219,
+      "endTime": 1647246991075
+    },
+    {
+      "domain": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "path": "/index.html#/history",
+      "startTime": 1647246989222,
+      "endTime": 1647246991077
+    }
+  ],
+  "domain": [
+    {
+      "id": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn",
+      "favIconUrl": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn/favicon.ico"
+    },
+    {
+      "id": "chrome://",
+      "favIconUrl": "data:image/png;base64,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"
+    },
+    {
+      "id": "https://api.video",
+      "favIconUrl": "https://api.video/favicon-32x32.png?v=88d85c569ad68b5d231da56ca6935a8e"
+    },
+    {
+      "id": "https://backendless.com",
+      "favIconUrl": "https://backendless.com/wp-content/themes/backendless/assets/images/favicons/favicon.ico"
+    },
+    {
+      "id": "https://dev.to",
+      "favIconUrl": "https://res.cloudinary.com/practicaldev/image/fetch/s--E8ak4Hr1--/c_limit,f_auto,fl_progressive,q_auto,w_32/https://dev-to.s3.us-east-2.amazonaws.com/favicon.ico"
+    },
+    {
+      "id": "https://dictionary.cambridge.org",
+      "favIconUrl": "https://dictionary.cambridge.org/ko/external/images/favicon.ico?version=5.0.225"
+    },
+    {
+      "id": "https://docs.taro.zone",
+      "favIconUrl": "https://docs.taro.zone/img/favicon.ico"
+    },
+    {
+      "id": "https://doit.software",
+      "favIconUrl": "https://doit.software/wp-content/uploads/2021/04/icon-1.svg"
+    },
+    {
+      "id": "https://github.com",
+      "favIconUrl": "https://github.githubassets.com/favicons/favicon.svg"
+    },
+    {
+      "id": "https://insights.stackoverflow.com",
+      "favIconUrl": "https://insights.stackoverflow.com/content/img/survey/2021/favicon.8e42b0a2.ico"
+    },
+    {
+      "id": "https://kentcdodds.com",
+      "favIconUrl": "https://kentcdodds.com/favicon.ico"
+    },
+    {
+      "id": "https://kudos.knu.ac.kr",
+      "favIconUrl": "https://kudos.knu.ac.kr/img/favicon.ico"
+    },
+    {
+      "id": "https://localhost",
+      "favIconUrl": "http://localhost:3000/favicon.ico"
+    },
+    {
+      "id": "https://newsforkids.net",
+      "favIconUrl": "https://newsforkids.net/wp-content/uploads/2018/03/nfk-icon-200x200.png"
+    },
+    {
+      "id": "https://reactnative.dev",
+      "favIconUrl": "https://reactnative.dev/img/favicon.ico"
+    },
+    {
+      "id": "https://stackshare.io",
+      "favIconUrl": "https://stackshare.io/favicon.ico"
+    },
+    {
+      "id": "https://trends.google.com",
+      "favIconUrl": "https://ssl.gstatic.com/trends_nrtr/2884_RC01/favicon.ico"
+    },
+    {
+      "id": "https://www.figma.com",
+      "favIconUrl": "https://static.figma.com/app/icon/1/favicon.ico"
+    },
+    {
+      "id": "https://www.fullstory.com",
+      "favIconUrl": "https://www.fullstory.com/favicon.svg?v=107b63846c44f07f058483a87965ce5c"
+    },
+    {
+      "id": "https://www.google.com",
+      "favIconUrl": "https://www.google.com/favicon.ico"
+    },
+    {
+      "id": "https://www.netflix.com",
+      "favIconUrl": "https://assets.nflxext.com/ffe/siteui/common/icons/nficon2016.ico"
+    },
+    {
+      "id": "https://www.saramin.co.kr",
+      "favIconUrl": "https://www.saramin.co.kr/favicon.ico?ver=2"
+    },
+    {
+      "id": "https://www.weboccult.com",
+      "favIconUrl": "https://www.weboccult.com/favicon.ico"
+    },
+    {
+      "id": "https://www.woongblog.xyz",
+      "favIconUrl": "https://www.woongblog.xyz/favicon.ico"
+    },
+    {
+      "id": "https://www.youtube.com",
+      "favIconUrl": "https://www.youtube.com/s/desktop/6007d895/img/favicon.ico"
+    }
+  ],
+  "title": [
+    {
+      "id": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn/index.html",
+      "title": "Local"
+    },
+    {
+      "id": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn/index.html#/",
+      "title": "Local"
+    },
+    {
+      "id": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn/index.html#/analytics",
+      "title": "Local"
+    },
+    {
+      "id": "chrome-extension://acjhemlkpmeneimppcklgbgiaejldecn/index.html#/history",
+      "title": "Local"
+    },
+    { "id": "chrome://newtab/", "title": "새 탭" },
+    {
+      "id": "https://api.video/",
+      "title": "Video API for hosting, encoding and streaming | api.video"
+    },
+    {
+      "id": "https://backendless.com/flutter-vs-react-native-which-is-better-in-2022/",
+      "title": "Flutter vs. React Native: Which is Better in 2022 | Backendless"
+    },
+    {
+      "id": "https://dev.to/duomly/flutter-vs-react-native-comparison-which-use-for-your-project-in-2022-1knp",
+      "title": "Flutter vs React Native Comparison - Which Use for Your Project in 2022 - DEV Community"
+    },
+    {
+      "id": "https://dictionary.cambridge.org/ko/%EC%82%AC%EC%A0%84/%EC%98%81%EC%96%B4/corruption",
+      "title": "CORRUPTION | Cambridge English Dictionary에서의 의미"
+    },
+    {
+      "id": "https://dictionary.cambridge.org/ko/%EC%82%AC%EC%A0%84/%EC%98%81%EC%96%B4/parliament?q=Parliament",
+      "title": "PARLIAMENT | Cambridge English Dictionary에서의 의미"
+    },
+    {
+      "id": "https://dictionary.cambridge.org/ko/%EC%82%AC%EC%A0%84/%EC%98%81%EC%96%B4/pay-off",
+      "title": "PAY OFF | Cambridge English Dictionary에서의 의미"
+    },
+    { "id": "https://docs.taro.zone/docs", "title": "Taro 介绍 | Taro 文档" },
+    {
+      "id": "https://doit.software/blog/flutter-vs-react-native#screen11",
+      "title": "Flutter vs React Native: Which is Best for Your App? [2022]"
+    },
+    {
+      "id": "https://doit.software/blog/flutter-vs-react-native#screen12",
+      "title": "Flutter vs React Native: Which is Best for Your App? [2022]"
+    },
+    {
+      "id": "https://doit.software/blog/flutter-vs-react-native#screen14",
+      "title": "Flutter vs React Native: Which is Best for Your App? [2022]"
+    },
+    {
+      "id": "https://doit.software/blog/flutter-vs-react-native#screen16",
+      "title": "Flutter vs React Native: Which is Best for Your App? [2022]"
+    },
+    {
+      "id": "https://doit.software/blog/flutter-vs-react-native#screen17",
+      "title": "Flutter vs React Native: Which is Best for Your App? [2022]"
+    },
+    {
+      "id": "https://doit.software/blog/flutter-vs-react-native#screen18",
+      "title": "Flutter vs React Native: Which is Best for Your App? [2022]"
+    },
+    {
+      "id": "https://doit.software/blog/flutter-vs-react-native#screen19",
+      "title": "Flutter vs React Native: Which is Best for Your App? [2022]"
+    },
+    {
+      "id": "https://doit.software/blog/flutter-vs-react-native#screen20",
+      "title": "Flutter vs React Native: Which is Best for Your App? [2022]"
+    },
+    {
+      "id": "https://doit.software/blog/flutter-vs-react-native#screen21",
+      "title": "Flutter vs React Native: Which is Best for Your App? [2022]"
+    },
+    {
+      "id": "https://doit.software/blog/flutter-vs-react-native#screen22",
+      "title": "Flutter vs React Native: Which is Best for Your App? [2022]"
+    },
+    {
+      "id": "https://doit.software/blog/flutter-vs-react-native#screen23",
+      "title": "Flutter vs React Native: Which is Best for Your App? [2022]"
+    },
+    {
+      "id": "https://doit.software/blog/flutter-vs-react-native#screen6",
+      "title": "Flutter vs React Native: Which is Best for Your App? [2022]"
+    },
+    {
+      "id": "https://doit.software/blog/flutter-vs-react-native#screen7",
+      "title": "Flutter vs React Native: Which is Best for Your App? [2022]"
+    },
+    {
+      "id": "https://doit.software/blog/flutter-vs-react-native#screen8",
+      "title": "Flutter vs React Native: Which is Best for Your App? [2022]"
+    },
+    { "id": "https://github.com/", "title": "https://github.com" },
+    {
+      "id": "https://github.com/PeopleOfDevelopment/react-native",
+      "title": "PeopleOfDevelopment/react-native: ZeroCho 배달앱 클론 코딩 스터디"
+    },
+    {
+      "id": "https://github.com/alantoa/react-native-awesome-slider",
+      "title": "alantoa/react-native-awesome-slider: 🚀 React native slider component written in react-native-reanimated v2, high performance, also be used for video/audio scrubber."
+    },
+    {
+      "id": "https://github.com/indiespirit/react-native-chart-kit",
+      "title": "indiespirit/react-native-chart-kit: 📊React Native Chart Kit: Line Chart, Bezier Line Chart, Progress Ring, Bar chart, Pie chart, Contribution graph (heatmap)"
+    },
+    { "id": "https://github.com/kiehlB", "title": "https://github.com/kiehlB" },
+    {
+      "id": "https://github.com/kiehlB/Kairos_chrome-extension",
+      "title": "kiehlB/Kairos_chrome-extension"
+    },
+    {
+      "id": "https://github.com/kiehlB/blog-client",
+      "title": "kiehlB/blog-client"
+    },
+    {
+      "id": "https://github.com/kiehlB/blog-server",
+      "title": "kiehlB/blog-server"
+    },
+    { "id": "https://github.com/login", "title": "Sign in to GitHub · GitHub" },
+    {
+      "id": "https://github.com/martinezguillaume/portfolio",
+      "title": "martinezguillaume/portfolio: My portfolio build with React Native for Web, iOS & Android ❤️"
+    },
+    {
+      "id": "https://github.com/martinezguillaume/portfolio/blob/main/components/Header.tsx",
+      "title": "portfolio/components at main · martinezguillaume/portfolio"
+    },
+    {
+      "id": "https://github.com/martinezguillaume/portfolio/tree/main/components",
+      "title": "portfolio/components at main · martinezguillaume/portfolio"
+    },
+    {
+      "id": "https://github.com/martinezguillaume/portfolio/tree/main/screens",
+      "title": "martinezguillaume/portfolio: My portfolio build with React Native for Web, iOS & Android ❤️"
+    },
+    {
+      "id": "https://github.com/search?l=TypeScript&o=desc&p=10&q=react+native&s=updated&type=Repositories",
+      "title": "Search · react native"
+    },
+    {
+      "id": "https://github.com/search?l=TypeScript&o=desc&p=12&q=react+native&s=updated&type=Repositories",
+      "title": "Search · react native"
+    },
+    {
+      "id": "https://github.com/search?l=TypeScript&o=desc&p=13&q=react+native&s=updated&type=Repositories",
+      "title": "Search · react native"
+    },
+    {
+      "id": "https://github.com/search?l=TypeScript&o=desc&p=15&q=react+native&s=updated&type=Repositories",
+      "title": "Search · react native"
+    },
+    {
+      "id": "https://github.com/search?l=TypeScript&o=desc&p=16&q=react+native&s=updated&type=Repositories",
+      "title": "Search · react native"
+    },
+    {
+      "id": "https://github.com/search?l=TypeScript&o=desc&p=2&q=react+native&s=updated&type=Repositories",
+      "title": "Search · react native"
+    },
+    {
+      "id": "https://github.com/search?l=TypeScript&o=desc&p=3&q=react+native&s=updated&type=Repositories",
+      "title": "Search · react native"
+    },
+    {
+      "id": "https://github.com/search?l=TypeScript&o=desc&p=4&q=react+native&s=updated&type=Repositories",
+      "title": "Search · react native"
+    },
+    {
+      "id": "https://github.com/search?l=TypeScript&o=desc&p=5&q=react+native&s=updated&type=Repositories",
+      "title": "Search · react native"
+    },
+    {
+      "id": "https://github.com/search?l=TypeScript&o=desc&p=7&q=react+native&s=updated&type=Repositories",
+      "title": "Search · react native"
+    },
+    {
+      "id": "https://github.com/search?l=TypeScript&o=desc&p=8&q=react+native&s=updated&type=Repositories",
+      "title": "Search · react native"
+    },
+    {
+      "id": "https://github.com/search?l=TypeScript&o=desc&p=9&q=react+native&s=updated&type=Repositories",
+      "title": "Search · react native"
+    },
+    {
+      "id": "https://github.com/search?l=TypeScript&o=desc&q=react+native&s=updated&type=Repositories",
+      "title": "Search · react native"
+    },
+    {
+      "id": "https://github.com/search?l=TypeScript&q=react+native&type=Repositories",
+      "title": "Search · react native"
+    },
+    {
+      "id": "https://github.com/search?q=react+native",
+      "title": "Search · react native"
+    },
+    {
+      "id": "https://github.com/search?q=react+native+chart&type=Repositories",
+      "title": "Search · react native chart"
+    },
+    {
+      "id": "https://github.com/search?q=user%3AkiehlB+react+native",
+      "title": "Search · user:kiehlB react native"
+    },
+    {
+      "id": "https://insights.stackoverflow.com/survey/2021",
+      "title": "Stack Overflow Developer Survey 2021"
+    },
+    {
+      "id": "https://insights.stackoverflow.com/survey/2021#developer-profile-experience",
+      "title": "Stack Overflow Developer Survey 2021"
+    },
+    {
+      "id": "https://insights.stackoverflow.com/survey/2021#developer-profile-key-territories",
+      "title": "Stack Overflow Developer Survey 2021"
+    },
+    {
+      "id": "https://insights.stackoverflow.com/survey/2021#most-popular-technologies-language",
+      "title": "Stack Overflow Developer Survey 2021"
+    },
+    {
+      "id": "https://insights.stackoverflow.com/survey/2021#most-popular-technologies-language-prof",
+      "title": "Stack Overflow Developer Survey 2021"
+    },
+    {
+      "id": "https://insights.stackoverflow.com/survey/2021#overview",
+      "title": "Stack Overflow Developer Survey 2021"
+    },
+    { "id": "https://kentcdodds.com/blog", "title": "Kent C. Dodds" },
+    {
+      "id": "https://kudos.knu.ac.kr/pages/index.htm",
+      "title": "https://kudos.knu.ac.kr/pages/index.htm"
+    },
+    {
+      "id": "https://kudos.knu.ac.kr/pages/sub.htm?nav_code=kud1641346515&search=%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8",
+      "title": "경북대학교 도서관 > 검색 > 소장검색(목록표)"
+    },
+    { "id": "https://localhost/#/analytics", "title": "React App" },
+    {
+      "id": "https://newsforkids.net/",
+      "title": "NewsForKids.net – Real News, Told Simply.™"
+    },
+    {
+      "id": "https://newsforkids.net/articles/2022/03/11/news-roundup-korean-president-australian-emergency-street-signs/",
+      "title": "뉴스 요약: 한국 대통령, 호주 비상 사태 및 거리 표지판"
+    },
+    {
+      "id": "https://newsforkids.net/articles/2022/03/14/countries-consider-digital-currencies/",
+      "title": "Countries Consider Digital Currencies"
+    },
+    {
+      "id": "https://reactnative.dev/",
+      "title": "React Native · Learn once, write anywhere"
+    },
+    {
+      "id": "https://reactnative.dev/blog",
+      "title": "React Native · Learn once, write anywhere"
+    },
+    {
+      "id": "https://reactnative.dev/docs/components-and-apis",
+      "title": "Introduction · React Native"
+    },
+    {
+      "id": "https://reactnative.dev/docs/getting-started",
+      "title": "Introduction · React Native"
+    },
+    {
+      "id": "https://reactnative.dev/docs/performance",
+      "title": "Performance Overview · React Native"
+    },
+    {
+      "id": "https://stackshare.io/stackups/expo-vs-react-native",
+      "title": "Expo vs React Native | What are the differences?"
+    },
+    {
+      "id": "https://trends.google.com/trends/explore?cat=302&q=react%20native,flutter",
+      "title": "react native, flutter - 탐색 - Google 트렌드"
+    },
+    {
+      "id": "https://trends.google.com/trends/explore?cat=302&q=react%20native,flutter,android",
+      "title": "react native, flutter, android, ios - 탐색 - Google 트렌드"
+    },
+    {
+      "id": "https://trends.google.com/trends/explore?cat=302&q=react%20native,flutter,android,ios",
+      "title": "react native, flutter, android, ios - 탐색 - Google 트렌드"
+    },
+    {
+      "id": "https://trends.google.com/trends/explore?cat=302&q=react%20native,flutter,ios",
+      "title": "react native, flutter, ios - 탐색 - Google 트렌드"
+    },
+    {
+      "id": "https://trends.google.com/trends/explore?geo=KR&q=react%20native,flutter",
+      "title": "react native, flutter - 탐색 - Google 트렌드"
+    },
+    {
+      "id": "https://trends.google.com/trends/explore?q=react%20native&geo=KR",
+      "title": "react native, flutter - 탐색 - Google 트렌드"
+    },
+    {
+      "id": "https://www.figma.com/",
+      "title": "Figma: the collaborative interface design tool."
+    },
+    {
+      "id": "https://www.fullstory.com/why-fullstory-for-engineering/?utm_campaign=2021-05-01-react-native&utm_medium=directory&utm_source=stackshare&utm_offer=trial",
+      "title": "Why FullStory For Engineering | FullStory"
+    },
+    { "id": "https://www.google.com/", "title": "Google" },
+    {
+      "id": "https://www.google.com/preferences?hl=ko&fg=1",
+      "title": "검색 설정"
+    },
+    {
+      "id": "https://www.google.com/search?gs_ssp=eJwBIQDe_woIL20vMGhiM3IwAUoT7YyM7Jq466GcIOy9lOyXmOujjNOuEAg&q=%ED%8C%8C%EC%9A%B8%EB%A1%9C+%EC%BD%94%EC%97%98%EB%A3%8C&oq=%ED%8C%8C%EC%9A%B8%EB%A1%9C+%EC%BD%94&aqs=chrome.1.69i57j46i433i512j46i512l2j0i512l2j46i512l2j0i512.2467j0j15&sourceid=chrome&ie=UTF-8",
+      "title": "파울로 코엘료 - Google 검색"
+    },
+    {
+      "id": "https://www.google.com/search?q=%EA%B2%BD%EB%B6%81%EB%8C%80+%EB%8F%84%EC%84%9C%EA%B4%80&oq=%EA%B2%BD%EB%B6%81%EB%8C%80+%EB%8F%84%EC%84%9C%EA%B4%80&aqs=chrome..69i57j0i512l9.2573j0j15&sourceid=chrome&ie=UTF-8",
+      "title": "경북대 도서관 - Google 검색"
+    },
+    {
+      "id": "https://www.google.com/search?q=%EC%82%AC%EB%9E%8C%EC%9D%B8&oq=%EC%82%AC%EB%9E%8C%EC%9D%B8&aqs=chrome..69i57j69i61l3.568j0j15&sourceid=chrome&ie=UTF-8",
+      "title": "사람인 - Google 검색"
+    },
+    {
+      "id": "https://www.google.com/search?q=%EC%82%AC%EB%9E%8C%EC%9D%B8&oq=%EC%82%AC%EB%9E%8C%EC%9D%B8&aqs=chrome..69i57l2j69i61l3.760j0j15&sourceid=chrome&ie=UTF-8",
+      "title": "사람인 - Google 검색"
+    },
+    {
+      "id": "https://www.google.com/search?q=%EC%88%9C%EB%A1%80%EC%9E%90+%ED%8C%8C%EC%9A%B8%EB%A1%9C+%EC%BD%94%EC%97%98%EB%A3%8C&stick=H4sIAAAAAAAAAONgFuLQz9U3yEgyLlLiBLHMC7NS0rSkspOt9JPy87P1E0tLMvKLrEDsYoX8vJzKR4x3GLkFXv64Jyx1iXHSmpPXGE8zcuFRL6TDxeaaV5JZUinEI8XFBbfOSISLVz9d39Awq6AwvszIJFlg8a9pjErVRhm7Lk07x5YkOKHs__9-5TAHKSPBv8oXF6z4-d5eS4iL3bPYJz85MUcwW0q6_cWuU_ZawlwcIYkV-Xn5uZWCYly3j12RumOvpMj59sCf_YZ67-0FQ5b_my-62s5Bgk2BQYPB8PI19gds8VwHtBgOMDI17VtxiI2Dg1GAwYiJg6GKiYOJZxGr7JuOOa8XNryZN0HhbU_Pm1k7Xi-co_Bm75Q302e8XtwzgY0RAFoV5YA2AQAA&sa=X",
+      "title": "오 자히르 - Google 검색"
+    },
+    {
+      "id": "https://www.google.com/search?q=%EC%98%A4+%EC%9E%90%ED%9E%88%EB%A5%B4&stick=H4sIAAAAAAAAAONgFuLQz9U3yEgyLlLiBLHMisoMs7WkspOt9JPy87P1E0tLMvKLrEDsYoX8vJzKR4x3GLkFXv64Jyx1iXHSmpPXGE8zcuFRL6TDxeaaV5JZUinEI8XFBbfOSISLVz9d39Awq6AwvszIJFlg8a9pjErVRhm7Lk07x5YkOKHs__9-5TAHKSPBv8oXF6z4-d5eS4iL3bPYJz85MUcwW0q6_cWuU_ZawlwcIYkV-Xn5uZWCYly3j12RumOvpMj59sCf_YZ67-0FQ5b_my-62s5Bgk2BQYPB8PI19gds8VwHtBgOMDI17VtxiI2Dg1GAwYiJg6GKiYOJZxEr75sZSxTezJvwdl7H66VbJrAxAgDwTqtTJgEAAA&sa=X&lei=IWwuYs38N4ec-Abo8Zj4Cg",
+      "title": "오 자히르 - Google 검색"
+    },
+    {
+      "id": "https://www.google.com/search?q=%ED%8C%8C%EC%9A%B8%EB%A1%9C+%EC%BD%94%EC%97%98%EB%A3%8C+%EC%B1%85+%EB%AA%A9%EB%A1%9D&ei=CWwuYpWoD4b0-Qa7351I&ved=0ahUKEwjV0IDAjcT2AhUGet4KHbtvBwkQ4dUDCA4&uact=5&oq=%ED%8C%8C%EC%9A%B8%EB%A1%9C+%EC%BD%94%EC%97%98%EB%A3%8C+%EC%B1%85+%EB%AA%A9%EB%A1%9D&gs_lcp=Cgdnd3Mtd2l6EAMyBQghEKABOgcIABBHELADOggILhCABBDUAjoFCAAQgAQ6BQguEIAEOgQIABAeOgUIABCiBEoECEEYAEoECEYYAFDcAliRGmC5GmgKcAF4AIABiQGIAYYPkgEEMS4xNpgBAKABAcgBCsABAQ&sclient=gws-wiz",
+      "title": "파울로 코엘료 책 목록 - Google 검색"
+    },
+    {
+      "id": "https://www.google.com/search?q=%ED%95%B4%EB%85%B8%EB%9E%98+%EC%95%8C%EB%B6%80%ED%8B%B0%EB%B8%8C&oq=%ED%95%B4%EB%85%B8%EB%9E%98+%EC%95%8C%EB%B6%80%ED%8B%B0%EB%B8%8C&aqs=chrome..69i57j33i160l4.2134j0j15&sourceid=chrome&ie=UTF-8",
+      "title": "해노래 알부티브 - Google 검색"
+    },
+    {
+      "id": "https://www.google.com/search?q=github&oq=github&aqs=chrome..69i57j46i199i433i465i512j0i433i512j0i512l6.1051j0j15&sourceid=chrome&ie=UTF-8",
+      "title": "github - Google 검색"
+    },
+    {
+      "id": "https://www.google.com/search?q=google+trends&oq=google+trends+&aqs=chrome..69i57j0i512l9.5335j0j15&sourceid=chrome&ie=UTF-8",
+      "title": "google trends - Google 검색"
+    },
+    {
+      "id": "https://www.google.com/search?q=kent+c+dodds&oq=kent+c+dodds&aqs=chrome..69i57j0i512l9.1799j0j15&sourceid=chrome&ie=UTF-8",
+      "title": "kent c dodds - Google 검색"
+    },
+    {
+      "id": "https://www.google.com/search?q=kiehlb&oq=kiehlb&aqs=chrome..69i57j46i199i465i512j0i512l7.1695j0j15&sourceid=chrome&ie=UTF-8",
+      "title": "kiehlb - Google 검색"
+    },
+    {
+      "id": "https://www.google.com/search?q=react+native&oq=react+native&aqs=chrome..69i57j0i512l9.1487j0j15&sourceid=chrome&ie=UTF-8",
+      "title": "react native - Google 검색"
+    },
+    {
+      "id": "https://www.google.com/search?q=react+native+d3e&ei=u30uYpT5FonChwPXq7LIDA&ved=0ahUKEwjUwpGwnsT2AhUJ4WEKHdeVDMkQ4dUDCA4&uact=5&oq=react+native+d3e&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEOgcIABBHELADOggILhCABBDUAjoLCC4QgAQQxwEQ0QM6DQguEIAEEMcBEKMCEAo6BwgAEIAEEAo6BQguEIAEOgQIABBDOgcILhDUAhBDSgQIQRgASgQIRhgAUK8CWJUUYPMUaAFwAXgAgAGYAYgBzw2SAQQwLjE0mAEAoAEByAEKwAEB&sclient=gws-wiz",
+      "title": "react native d3e - Google 검색"
+    },
+    {
+      "id": "https://www.google.com/search?q=react+native+expo+vs+react+native&oq=react+native+expo+vs&aqs=chrome.5.0i512j69i57j0i512l6j0i30l2.62924j0j15&sourceid=chrome&ie=UTF-8",
+      "title": "react native expo vs react native - Google 검색"
+    },
+    {
+      "id": "https://www.google.com/search?q=react+native+expo+vs+react+native+performance&ei=XHouYu_1M7CxmAXo6KPgAw&oq=react+native+expo+vs+react+native+per&gs_lcp=Cgdnd3Mtd2l6EAMYADIFCCEQoAEyBQghEKABMgQIIRAVOgcIABBHELADOgUIABCABEoECEEYAEoECEYYAFCaAViWC2CdEGgCcAF4AIABjwGIAcsFkgEDMC42mAEAoAEByAEKwAEB&sclient=gws-wiz",
+      "title": "react native expo vs react native performance - Google 검색"
+    },
+    {
+      "id": "https://www.google.com/search?q=react+native+vs+flutter&oq=react+native+vs+&aqs=chrome.1.69i57j0i512l9.3303j0j15&sourceid=chrome&ie=UTF-8",
+      "title": "react native vs flutter - Google 검색"
+    },
+    {
+      "id": "https://www.google.com/search?q=react+native+vs+flutter&source=hp&ei=F20uYumMHu2B1e8Pv-KoOA&iflsig=AHkkrS4AAAAAYi57J2yWfZ43qF-fBPsf0MDjbzfEPtzF&ved=0ahUKEwip9O7AjsT2AhXtQPUHHT8xCgcQ4dUDCAc&uact=5&oq=react+native+vs+flutter&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEUABYAGCiAWgAcAB4AIABdIgBdJIBAzAuMZgBAKABAqABAQ&sclient=gws-wiz",
+      "title": "react native vs flutter - Google 검색"
+    },
+    {
+      "id": "https://www.google.com/search?q=react+native+vs+flutter+20022&oq=react+native+vs+flutter+20022&aqs=chrome..69i57j69i64.268190j0j15&sourceid=chrome&ie=UTF-8",
+      "title": "react native vs flutter 20022 - Google 검색"
+    },
+    {
+      "id": "https://www.google.com/search?q=react+native+vs+flutter+performance+&ei=CHAuYoveMdGkoAT98rqoCw&ved=0ahUKEwiLgoqokcT2AhVREogKHX25DrUQ4dUDCA4&uact=5&oq=react+native+vs+flutter+performance+&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgQIABAeMgQIABAeMgQIABAeMgYIABAIEB4yBggAEAUQHjIGCAAQCBAeMgYIABAIEB4yBggAEAgQHjIGCAAQCBAeOgcIABBHELADOgQIABATOggIABANEB4QEzoKCAAQCBANEB4QEzoGCAAQHhATOggIABAIEB4QE0oECEEYAEoECEYYAFCaA1iUGmD5G2gEcAF4AIABgAGIAcULkgEEMC4xM5gBAKABAcgBCsABAQ&sclient=gws-wiz",
+      "title": "react native vs flutter performance - Google 검색"
+    },
+    {
+      "id": "https://www.google.com/search?q=react+native+vs+flutter+performance+2022&ei=vXIuYu3pB87J-QauirzwBw&ved=0ahUKEwitvJnyk8T2AhXOZN4KHS4FD34Q4dUDCA4&uact=5&oq=react+native+vs+flutter+performance+2022&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgQIABAeOgcIABBHELADOgYIABAIEB46BggAEAUQHkoECEEYAEoECEYYAFCKAVilBWDUBWgBcAF4AIABfogBrQOSAQMyLjKYAQCgAQHIAQrAAQE&sclient=gws-wiz",
+      "title": "react native vs flutter performance 2022 - Google 검색"
+    },
+    {
+      "id": "https://www.google.com/search?q=stackoverflow+survey+2021&ei=v3IuYo30AcqD1e8Pgf2e4Ak&ved=0ahUKEwjNz43zk8T2AhXKQfUHHYG-B5wQ4dUDCA4&uact=5&oq=stackoverflow+survey+2021&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDoHCAAQgAQQCjoLCC4QgAQQxwEQ0QM6BAgAEEM6BQguEIAESgQIQRgASgQIRhgAUABYnx5giR9oAHABeACAAY8BiAHQCZIBBDAuMTCYAQCgAQHAAQE&sclient=gws-wiz",
+      "title": "stackoverflow survey 2021 - Google 검색"
+    },
+    {
+      "id": "https://www.google.com/search?q=stackoverflow+survey+2022&ei=53MuYqqhJNaJhwPe0qiICA&ved=0ahUKEwjqsMKAlcT2AhXWxGEKHV4pCoEQ4dUDCA4&uact=5&oq=stackoverflow+survey+2022&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgQIABBDOgcIABBHELADSgQIQRgASgQIRhgAUN0CWLkDYJMEaAFwAXgAgAFliAFlkgEDMC4xmAEAoAEByAEGwAEB&sclient=gws-wiz",
+      "title": "stackoverflow survey 2022 - Google 검색"
+    },
+    {
+      "id": "https://www.google.com/webhp?hl=ko&sa=X&sqi=2&pjf=1&ved=0ahUKEwjjyuO8jsT2AhUJ4WEKHdeVDMkQPAgI",
+      "title": "Google"
+    },
+    { "id": "https://www.netflix.com/browse", "title": "넷플릭스" },
+    {
+      "id": "https://www.netflix.com/search?q=%E3%84%B9",
+      "title": "홈 - 넷플릭스"
+    },
+    {
+      "id": "https://www.netflix.com/search?q=%E3%85%8D",
+      "title": "홈 - 넷플릭스"
+    },
+    { "id": "https://www.netflix.com/search?q=%EB%9E%98", "title": "넷플릭스" },
+    {
+      "id": "https://www.netflix.com/search?q=%EB%9E%98%ED%84%B0",
+      "title": "넷플릭스"
+    },
+    {
+      "id": "https://www.netflix.com/search?q=%EB%9E%98%ED%84%B0%EB%A7%A4",
+      "title": "넷플릭스"
+    },
+    {
+      "id": "https://www.netflix.com/search?q=%EB%9E%98%ED%84%B0%EB%A7%A8",
+      "title": "넷플릭스"
+    },
+    {
+      "id": "https://www.netflix.com/search?q=%EB%9E%98%ED%85%80",
+      "title": "홈 - 넷플릭스"
+    },
+    {
+      "id": "https://www.netflix.com/search?q=%EB%9E%B1",
+      "title": "홈 - 넷플릭스"
+    },
+    { "id": "https://www.netflix.com/search?q=l", "title": "홈 - 넷플릭스" },
+    { "id": "https://www.netflix.com/search?q=le", "title": "홈 - 넷플릭스" },
+    { "id": "https://www.netflix.com/search?q=let", "title": "넷플릭스" },
+    { "id": "https://www.netflix.com/search?q=lett", "title": "넷플릭스" },
+    { "id": "https://www.netflix.com/search?q=lette", "title": "넷플릭스" },
+    { "id": "https://www.netflix.com/search?q=letter", "title": "넷플릭스" },
+    { "id": "https://www.netflix.com/search?q=letterm", "title": "넷플릭스" },
+    { "id": "https://www.netflix.com/search?q=letterma", "title": "넷플릭스" },
+    { "id": "https://www.netflix.com/search?q=letterman", "title": "넷플릭스" },
+    {
+      "id": "https://www.netflix.com/watch/80209096?trackId=255824129&tctx=0%2C0%2CNAPA%40%40%7Caea722ff-988f-4aa1-8284-d5b895c12334-128240714_titles%2F1%2F%2Fletterman%2F0%2F0%2CNAPA%40%40%7Caea722ff-988f-4aa1-8284-d5b895c12334-128240714_titles%2F1%2F%2Fletterman%2F0%2F0%2Cunknown%2C%2Caea722ff-988f-4aa1-8284-d5b895c12334-128240714%7C2%2CtitlesResults",
+      "title": "넷플릭스"
+    },
+    {
+      "id": "https://www.netflix.com/watch/81228410?trackId=255824129",
+      "title": "넷플릭스"
+    },
+    {
+      "id": "https://www.saramin.co.kr/zf_user/",
+      "title": "https://www.saramin.co.kr/zf_user/"
+    },
+    {
+      "id": "https://www.saramin.co.kr/zf_user/search?searchType=search&company_cd=0%2C1%2C2%2C3%2C4%2C5%2C6%2C7%2C9%2C10&keydownAccess=&searchword=flutter&panel_type=&search_optional_item=y&search_done=y&panel_count=y",
+      "title": "flutter | 총 289건의 검색결과 - 사람인"
+    },
+    {
+      "id": "https://www.saramin.co.kr/zf_user/search?search_area=main&search_done=y&search_optional_item=n&searchType=search&searchword=react%20native",
+      "title": "react native | 총 510건의 검색결과 - 사람인"
+    },
+    {
+      "id": "https://www.weboccult.com/blog/flutter-vs-react-native-which-one-to-choose-in-2022/",
+      "title": "Flutter vs. React Native – Which One to Choose in 2022"
+    },
+    {
+      "id": "https://www.woongblog.xyz/",
+      "title": "https://www.woongblog.xyz"
+    },
+    {
+      "id": "https://www.woongblog.xyz/post/fee21612-4fbf-4afe-ad0e-b337216f3672",
+      "title": "https://www.woongblog.xyz/post/fee21612-4fbf-4afe-ad0e-b337216f3672"
+    },
+    {
+      "id": "https://www.youtube.com/",
+      "title": "[신해철] 해에게서 소년에게 - 인기가요 베스트 50 - YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/?&ab_channel=%EA%B7%BC%ED%99%A9%EC%98%AC%EB%A6%BC%ED%94%BD",
+      "title": "YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/?&ab_channel=%EC%97%89%ED%84%B0%EB%A6%AC",
+      "title": "YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/?&ab_channel=KBSKpop",
+      "title": "YouTube"
+    },
+    { "id": "https://www.youtube.com/c/TeamCoco", "title": "conan - YouTube" },
+    {
+      "id": "https://www.youtube.com/c/TeamCoco/videos",
+      "title": "Team Coco - YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/results?search_query=%EA%B5%AD%EC%B9%B4%EC%8A%A4%ED%85%90",
+      "title": "YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/results?search_query=%EC%9D%B4%ED%83%80%EC%B9%B4+%EB%A7%88%EC%95%BC",
+      "title": "[#리플레이그노래] 윤도현X하현우 '꿈' 레전드 라이브 무대 | #이타카로가는길 | #Diggle - YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/results?search_query=%ED%81%AC%EB%A3%A8%EC%97%98%EB%9D%BC+ost",
+      "title": "YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/results?search_query=coman",
+      "title": "Gundam Origin V - \"Don't Say Goodbye\" - Crowley Hamon (English version by Amanda Schuckman) - YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/results?search_query=conan",
+      "title": "coman - YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/results?search_query=side+by+side+ost",
+      "title": "side by side - YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/results?search_query=simpson",
+      "title": "simpson - YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/watch?v=-OQnksdGbjQ&list=RD-OQnksdGbjQ&index=2",
+      "title": "Shape Of My Heart - YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/watch?v=-OQnksdGbjQ&list=RD-OQnksdGbjQ&index=2&ab_channel=AtlasFox",
+      "title": "Shape Of My Heart - YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/watch?v=3XX7ItWhYm4&ab_channel=Jelvix",
+      "title": "REACT NATIVE VS FLUTTER | IS FLUTTER THE FUTURE? - YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/watch?v=4Ufa-KooPqY",
+      "title": "simpson - YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/watch?v=4Ufa-KooPqY&ab_channel=%EB%A6%AC%EC%82%AC%EC%9A%94%EC%A0%95",
+      "title": "simpson - YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/watch?v=7-t6deIO1JE",
+      "title": "Expo vs React Native - YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/watch?v=7-t6deIO1JE&ab_channel=WilliamCandillon",
+      "title": "Expo vs React Native - YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/watch?v=Iu6GPireDWE",
+      "title": "[EBS스페이스공감] 국카스텐 - 스크래치 - YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/watch?v=Iu6GPireDWE&ab_channel=%EC%97%89%ED%84%B0%EB%A6%AC",
+      "title": "[EBS스페이스공감] 국카스텐 - 스크래치 - YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/watch?v=Iu6GPireDWE&ab_channel=EBSCulture%28EBS%EA%B5%90%EC%96%91%29",
+      "title": "[EBS스페이스공감] 국카스텐 - 스크래치 - YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/watch?v=MFVt6-hDay4",
+      "title": "[Playlist] 내가 들으려고 만든 잔잔한 국카스텐/하현우 노래모음 (Guckkasten)(21 songs) - YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/watch?v=MFVt6-hDay4&ab_channel=tvNDENT",
+      "title": "[Playlist] 내가 들으려고 만든 잔잔한 국카스텐/하현우 노래모음 (Guckkasten)(21 songs) - YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/watch?v=UJxUoClui1k",
+      "title": "[EBS스페이스공감] 국카스텐 - 작은 인질 - YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/watch?v=UJxUoClui1k&ab_channel=EBSCulture%28EBS%EA%B5%90%EC%96%91%29",
+      "title": "[EBS스페이스공감] 국카스텐 - 작은 인질 - YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/watch?v=UJxUoClui1k&list=RDUJxUoClui1k&start_radio=1",
+      "title": "YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/watch?v=UJxUoClui1k&list=RDUJxUoClui1k&start_radio=1&ab_channel=EBSCulture%28EBS%EA%B5%90%EC%96%91%29",
+      "title": "[EBS스페이스공감] 국카스텐 - 작은 인질 - YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/watch?v=YQ0TrAN77Bk",
+      "title": "크루엘라 ost - YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/watch?v=YQ0TrAN77Bk&ab_channel=%EB%85%B8%EB%9E%98%EB%A7%9B%EC%A7%91SONGRESTAURANT",
+      "title": "크루엘라 ost - YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/watch?v=_3WXa9ZjbIA",
+      "title": "[#리플레이그노래] 윤도현X하현우 '꿈' 레전드 라이브 무대 | #이타카로가는길 | #Diggle - YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/watch?v=_3WXa9ZjbIA&ab_channel=tvNDENT",
+      "title": "[#리플레이그노래] 윤도현X하현우 '꿈' 레전드 라이브 무대 | #이타카로가는길 | #Diggle - YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/watch?v=_aiLnwEc8NM",
+      "title": "EBS 스페이스 공감(150312)_ 국카스텐 미늘,작은인질 - YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/watch?v=_aiLnwEc8NM&ab_channel=%EC%97%89%ED%84%B0%EB%A6%AC",
+      "title": "EBS 스페이스 공감(150312)_ 국카스텐 미늘,작은인질 - YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/watch?v=dB9gNJfdVUY",
+      "title": "이타카 마야 - YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/watch?v=dB9gNJfdVUY&ab_channel=tvN",
+      "title": "[이타카로 13일차-메테오라 정상에서] 마야-나를 외치다 COVER by 하현우, 소유 - YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/watch?v=dOjFcx3GJHg&list=RD-OQnksdGbjQ&index=7",
+      "title": "https://www.youtube.com/watch?v=dOjFcx3GJHg&list=RD-OQnksdGbjQ&index=7"
+    },
+    {
+      "id": "https://www.youtube.com/watch?v=dOjFcx3GJHg&list=RD-OQnksdGbjQ&index=7&ab_channel=Sting-Topic",
+      "title": "Shape Of My Heart - YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/watch?v=dOjFcx3GJHg&list=RD-OQnksdGbjQ&index=8",
+      "title": "Shape Of My Heart - YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/watch?v=dOjFcx3GJHg&list=RD-OQnksdGbjQ&index=8&ab_channel=Sting-Topic",
+      "title": "Shape Of My Heart - YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/watch?v=dvKGbp7YOW4",
+      "title": "simpson - YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/watch?v=dvKGbp7YOW4&ab_channel=simpsonsfamilyep",
+      "title": "simpson - YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/watch?v=ezU2PG7UCU4&ab_channel=YEJI%2a",
+      "title": "[Playlist] 내가 들으려고 만든 잔잔한 국카스텐/하현우 노래모음 (Guckkasten)(21 songs) - YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/watch?v=mrB1-3K7KwM",
+      "title": "[EBS스페이스공감] 국카스텐 - Lost - YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/watch?v=mrB1-3K7KwM&ab_channel=EBSCulture%28EBS%EA%B5%90%EC%96%91%29",
+      "title": "[EBS스페이스공감] 국카스텐 - Lost - YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/watch?v=p7W1XWw3wB8",
+      "title": "simpson - YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/watch?v=p7W1XWw3wB8&ab_channel=%EB%A6%AC%EC%82%AC%EC%9A%94%EC%A0%95",
+      "title": "simpson - YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/watch?v=pcXKI-bFsfE",
+      "title": "EBS 스페이스 공감_ 국카스텐 LOST - YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/watch?v=pcXKI-bFsfE&ab_channel=%EC%97%89%ED%84%B0%EB%A6%AC",
+      "title": "EBS 스페이스 공감_ 국카스텐 LOST - YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/watch?v=rYqcF6O5mPs",
+      "title": "국카스텐 - YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/watch?v=rYqcF6O5mPs&ab_channel=EBSCulture%28EBS%EA%B5%90%EC%96%91%29",
+      "title": "[EBS스페이스공감] 국카스텐 - 오이디푸스 - YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/watch?v=xZp1zyeaBe4",
+      "title": "EBS 스페이스 공감_ 국카스텐 LOST - YouTube"
+    },
+    {
+      "id": "https://www.youtube.com/watch?v=xZp1zyeaBe4&ab_channel=%EC%97%89%ED%84%B0%EB%A6%AC",
+      "title": "TBC 고택음악회(160522)_ 국카스텐 거울+Vitriol+Sink Hole - YouTube"
+    }
+  ]
+}

@@ -1,16 +1,16 @@
-import classNames from 'classnames';
-import { Avatar, Table as EvergreenTable } from 'evergreen-ui';
-import React from 'react';
-import { connect, useSelector } from 'react-redux';
-import { Activity } from '../../lib/db/models/activity';
-import { BASE_SIZE, ICON_SIZE_MD } from '../../lib/styles/constants';
-import { getRecords } from '../../store/activity/selectors';
-import { RootState } from '../../store/store';
+import classNames from "classnames";
+import { Avatar, Table as EvergreenTable } from "evergreen-ui";
+import React from "react";
+import { connect, useSelector } from "react-redux";
+import { Activity } from "../../lib/db/models/activity";
+import { BASE_SIZE, ICON_SIZE_MD } from "../../lib/styles/constants";
+import { getRecords } from "../../store/activity/selectors";
+import { RootState } from "../../store/store";
 import {
   formatTableDurationLabel,
   formatTableDateTimeLabel,
-} from '../../utils/stringUtils';
-import Table from './Table';
+} from "../../utils/stringUtils";
+import Table from "./Table";
 
 interface HistoryTableProps {
   data?: Activity[];
@@ -22,20 +22,20 @@ interface HistoryTableProps {
 }
 
 enum HistoryTableSortOrder {
-  DurationAscending = 'DURATION_ASCENDING',
-  DurationDescending = 'DURATION_DESCENDING',
-  TimeAscending = 'TIME_ASCENDING',
-  TimeDescending = 'TIME_DESCENDING',
+  DurationAscending = "DURATION_ASCENDING",
+  DurationDescending = "DURATION_DESCENDING",
+  TimeAscending = "TIME_ASCENDING",
+  TimeDescending = "TIME_DESCENDING",
 }
 
 const ROW_HEIGHT = BASE_SIZE * 6;
-const DEFAULT_SORT_ORDER = 'TIME_DESCENDING' as HistoryTableSortOrder;
+const DEFAULT_SORT_ORDER = "TIME_DESCENDING" as HistoryTableSortOrder;
 const SORT_OPTIONS: any = [
   {
-    buttonLabel: 'Sorted by Duration (Ascending)',
-    optionLabel: 'Sorted by Duration',
-    optionSublabel: 'Ascending',
-    value: 'DURATION_ASCENDING' as HistoryTableSortOrder,
+    buttonLabel: "Sorted by Duration (Ascending)",
+    optionLabel: "Sorted by Duration",
+    optionSublabel: "Ascending",
+    value: "DURATION_ASCENDING" as HistoryTableSortOrder,
     sortFn: (data) =>
       data
         .slice()
@@ -44,10 +44,10 @@ const SORT_OPTIONS: any = [
         ),
   },
   {
-    buttonLabel: 'Sorted by Duration (Descending)',
-    optionLabel: 'Sorted by Duration',
-    optionSublabel: 'Descending',
-    value: 'DURATION_DESCENDING' as HistoryTableSortOrder,
+    buttonLabel: "Sorted by Duration (Descending)",
+    optionLabel: "Sorted by Duration",
+    optionSublabel: "Descending",
+    value: "DURATION_DESCENDING" as HistoryTableSortOrder,
     sortFn: (data) =>
       data
         .slice()
@@ -56,23 +56,23 @@ const SORT_OPTIONS: any = [
         ),
   },
   {
-    buttonLabel: 'Sorted by Time (Ascending)',
-    optionLabel: 'Sorted by Time',
-    optionSublabel: 'Ascending',
-    value: 'TIME_ASCENDING' as HistoryTableSortOrder,
+    buttonLabel: "Sorted by Time (Ascending)",
+    optionLabel: "Sorted by Time",
+    optionSublabel: "Ascending",
+    value: "TIME_ASCENDING" as HistoryTableSortOrder,
     sortFn: (data) =>
       data.slice().sort((a, b) => (a.startTime > b.startTime ? 1 : -1)),
   },
   {
-    buttonLabel: 'Sorted by Time (Descending)',
-    optionLabel: 'Sorted by Time',
-    optionSublabel: 'Descending',
-    value: 'TIME_DESCENDING' as HistoryTableSortOrder,
+    buttonLabel: "Sorted by Time (Descending)",
+    optionLabel: "Sorted by Time",
+    optionSublabel: "Descending",
+    value: "TIME_DESCENDING" as HistoryTableSortOrder,
     sortFn: (data) =>
       data.slice().sort((a, b) => (a.startTime > b.startTime ? -1 : 1)),
   },
 ];
-const TITLE_PLACEHOLDER = '-';
+const TITLE_PLACEHOLDER = "-";
 
 function filterActivityRecords(data: Activity[], filter: string) {
   return data.filter(
@@ -83,7 +83,7 @@ function filterActivityRecords(data: Activity[], filter: string) {
 }
 
 function formatRecordString(count: number) {
-  return `${count.toLocaleString('en-US')} ${count > 1 ? 'records' : 'record'}`;
+  return `${count.toLocaleString("en-US")} ${count > 1 ? "records" : "record"}`;
 }
 
 export const HistoryTableRow = ({
@@ -164,7 +164,7 @@ export const HistoryTable = ({
 const ExternalLink = (props) => {
   return (
     <span
-      className={classNames('external-link', props.className)}
+      className={classNames("external-link", props.className)}
       style={props.style}
     >
       {props.iconSrc && (

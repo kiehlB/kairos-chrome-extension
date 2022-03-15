@@ -1,17 +1,17 @@
-import { createSelector } from '@reduxjs/toolkit';
-import { Activity, Domain } from '../../lib/db/models/activity';
-import { DefiniteTimeRange, TimeRange } from '../../lib/db/models/time';
-import { getDayCount, getEndOfDay, setMidnight } from '../../utils/dateUtils';
-import { selectors as routerSelectors } from '../router';
-import _ from 'lodash';
-import { RootState } from '../store';
+import { createSelector } from "@reduxjs/toolkit";
+import { Activity, Domain } from "../../lib/db/models/activity";
+import { DefiniteTimeRange, TimeRange } from "../../lib/db/models/time";
+import { getDayCount, getEndOfDay, setMidnight } from "../../utils/dateUtils";
+import { selectors as routerSelectors } from "../router";
+import _ from "lodash";
+import { RootState } from "../store";
 import {
   computeAverageDurationByHourOfWeek,
   computeTotalDuration,
   computeTotalDurationByDate,
   computeTotalDurationByDayOfWeek,
-} from '../../utils/activityUtils';
-import { MS_PER_DAY } from '../../lib/constants/time';
+} from "../../utils/activityUtils";
+import { MS_PER_DAY } from "../../lib/constants/time";
 
 export const getAllDomains = (state: RootState): Record<string, Domain> => {
   return state.activity.domains;
@@ -65,8 +65,8 @@ export const getEffectiveSelectedTimeRange = createSelector(
       return { start: setMidnight(), end: getEndOfDay() };
     }
 
-    const selectedStartTime = _.get(selectedTimeRange, 'start');
-    const selectedEndTime = _.get(selectedTimeRange, 'end');
+    const selectedStartTime = _.get(selectedTimeRange, "start");
+    const selectedEndTime = _.get(selectedTimeRange, "end");
     const { start, end } = activityTimeRange;
     return {
       start: setMidnight(
@@ -171,6 +171,7 @@ export const getTotalDurationByDomain = createSelector(
     const totalDurationByDomain: { [domain: string]: number } = {};
     records.forEach((record) => {
       const { domain, startTime, endTime } = record;
+
       const duration = endTime - startTime;
       const prevTotalDuration = totalDurationByDomain[domain] || 0;
       totalDurationByDomain[domain] = prevTotalDuration + duration;

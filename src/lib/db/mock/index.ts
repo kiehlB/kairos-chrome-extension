@@ -1,7 +1,7 @@
-import Dexie from 'dexie';
-import { minusDays, setMidnight } from '../../../utils/dateUtils';
-import { Activity, Domain, RawActivity } from '../models/activity';
-import { DefiniteTimeRange, TimeRange } from '../models/time';
+import Dexie from "dexie";
+import { minusDays, setMidnight } from "../../../utils/dateUtils";
+import { Activity, Domain, RawActivity } from "../models/activity";
+import { DefiniteTimeRange, TimeRange } from "../models/time";
 
 import {
   ActivityTableRecord,
@@ -9,10 +9,10 @@ import {
   DatabaseService,
   DomainTableRecord,
   TitleTableRecord,
-} from '../types';
+} from "../types";
 
-import DATA from './data.json';
-import { createUrl, exportTableRecords, generateRecords } from './utils';
+import DATA from "./data.json";
+import { createUrl, exportTableRecords, generateRecords } from "./utils";
 
 type Range = [number, number];
 const ACTIVITY_DURATION_RANGE_SHORT: Range = [100, 120000]; // 100ms ~ 2min
@@ -41,7 +41,7 @@ function randomRangeValue([min, max]) {
 function randomArrayElement<T>(arr: T[]): T {
   const len = arr.length;
   if (len === 0) {
-    throw new Error('Array is empty');
+    throw new Error("Array is empty");
   }
   return arr[Math.floor(Math.random() * len) % len];
 }
@@ -50,21 +50,16 @@ function generateActivityRecord(startTime: number, endTime: number) {
   const website: any = randomArrayElement((DATA as any).activity as any);
 
   return {
-    id: generateId(),
-    url: `${website.domain}${website.path}`,
     domain: website.domain,
     path: website.path,
     endTime,
     startTime,
-    title: website.title,
-    favIconUrl: website.favIconUrl,
   };
 }
 
-const DATABASE_NAME = 'db';
-export const ACTIVITY_TABLE = 'activity';
-export const DOMAIN_TABLE = 'domain';
-export const TITLE_TABLE = 'title';
+export const ACTIVITY_TABLE = "activity";
+export const DOMAIN_TABLE = "domain";
+export const TITLE_TABLE = "title";
 
 export class MockDatabase {
   private activityRecords: Activity[];
@@ -77,30 +72,8 @@ export class MockDatabase {
     this.domainRecords = domain;
   }
 
-  private async getFavIconUrlMap(): Promise<Record<string, string>> {
-    const domains = await this[DOMAIN_TABLE].toCollection().toArray();
-    return domains.reduce(
-      (acc: Record<string, string>, domain: DomainTableRecord) => {
-        acc[domain.id] = domain.favIconUrl;
-        return acc;
-      },
-      {}
-    );
-  }
-
-  private async getTitleMap(): Promise<Record<string, string>> {
-    const titles = await this[TITLE_TABLE].toCollection().toArray();
-    return titles.reduce(
-      (acc: Record<string, string>, title: TitleTableRecord) => {
-        acc[title.id] = title.title;
-        return acc;
-      },
-      {}
-    );
-  }
-
   public async createActivityRecord(data): Promise<void> {
-    throw new Error('Mock database does not support creating records');
+    throw new Error("Mock database does not support creating records");
   }
 
   public deleteActivityRecords(recordIds: number[]): Promise<void> {
@@ -152,9 +125,10 @@ export class MockDatabase {
   }
 
   public generateRecord() {
-    const domain = (DATA as any).activity.reduce((acc, datum) => {
-      acc[datum.domain] = {
-        id: datum.domain,
+    const domain = (DATA as any).domain.reduce((acc, datum) => {
+      acc[datum.id] = {
+        id: datum.id,
+        favIconUrl: datum.favIconUrl,
       };
       return acc;
     }, {});

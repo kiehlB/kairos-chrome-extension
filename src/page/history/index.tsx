@@ -1,25 +1,25 @@
-import { Button, IconButton, toaster } from 'evergreen-ui';
-import React, { useCallback, useState } from 'react';
-import { connect, useDispatch, useSelector } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import Header from '../../components/Base/Header';
-import { ActivityDateRangePicker } from '../../components/DateRange';
+import { Button, IconButton, toaster } from "evergreen-ui";
+import React, { useCallback, useState } from "react";
+import { connect, useDispatch, useSelector } from "react-redux";
+import { bindActionCreators } from "redux";
+import Header from "../../components/Base/Header";
+import { ActivityDateRangePicker } from "../../components/DateRange";
 
-import ErrorView from '../../components/ErrorView';
-import { HistoryTable } from '../../components/HistoryTable';
-import View from '../../components/View';
-import { Activity } from '../../lib/db/models/activity';
+import ErrorView from "../../components/ErrorView";
+import { HistoryTable } from "../../components/HistoryTable";
+import View from "../../components/View";
+import { Activity } from "../../lib/db/models/activity";
 import {
   getIsDeletingRecords,
   getIsInitialized,
   getIsLoadingRecords,
-} from '../../store/activity/selectors';
-import { getSearchParamsSelectedTimeRangeValidationStatus } from '../../store/router/selectors';
-import { RootState } from '../../store/store';
+} from "../../store/activity/selectors";
+import { getSearchParamsSelectedTimeRangeValidationStatus } from "../../store/router/selectors";
+import { RootState } from "../../store/store";
 
 interface HistoryViewProps {}
 
-const DELETE_TOASTER_ID = 'history-view-delete-toaster';
+const DELETE_TOASTER_ID = "history-view-delete-toaster";
 
 export const HistoryView = ({}) => {
   const isDeletingRecords = useSelector((state: RootState) =>
@@ -29,6 +29,7 @@ export const HistoryView = ({}) => {
   const isInitialized = useSelector((state: RootState) =>
     getIsInitialized(state)
   );
+
   const isLoadingRecords = useSelector((state: RootState) =>
     getIsLoadingRecords(state)
   );
@@ -61,9 +62,9 @@ export const HistoryView = ({}) => {
   switch (true) {
     case selectedRecordIds.length > 0: {
       const headerText = isDeletingRecords
-        ? 'Deleting records...'
+        ? "Deleting records..."
         : `${selectedRecordIds.length} ${
-            selectedRecordIds.length > 1 ? 'records' : 'record'
+            selectedRecordIds.length > 1 ? "records" : "record"
           } selected`;
 
       break;

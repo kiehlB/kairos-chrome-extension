@@ -1,17 +1,21 @@
-import { InitBrowserActionService } from './Action';
-import { InitExtensionService } from './Extension';
-import { InitTabsService } from './Tabs';
-import { Tab } from './Tabs/tabs';
+import { InitBrowserActionService } from "./Action";
+import { InitExtensionService } from "./Extension";
+import { InitTabsService } from "./Tabs";
+import { Tab } from "./Tabs/tabs";
 
 export function Background(): void {
-  // const browserActionService = InitBrowserActionService()
+  const browserActionService = InitBrowserActionService();
   const extensionService = InitExtensionService();
-  // const tabsService = InitTabsService()
+  const tabsService = InitTabsService();
 
-  if (extensionService) {
-    chrome.action.onClicked.addListener(function (activeTab) {
-      var newURL = 'index.html';
-      chrome.tabs.create({ url: newURL });
+  if (browserActionService && extensionService && tabsService) {
+    browserActionService.onClicked.addListener((tab: Tab) => {
+      const extensionUrl = new URL(extensionService.getURL("index.html"));
+      const tabUrl = new URL(tab.url || "");
+
+      if (tab.id && tabUrl.origin !== extensionUrl.origin) {
+        tabsService.update(tab.id, { active: true, url: extensionUrl.href });
+      }
     });
   }
 }

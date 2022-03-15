@@ -1,4 +1,4 @@
-import Navbar from './components/Navbar';
+import Navbar from "./components/Navbar";
 import {
   BarChart2,
   Clock,
@@ -6,29 +6,30 @@ import {
   HelpCircle,
   Search,
   Bell,
-} from 'react-feather';
-import { Switch, Route, Redirect, Router } from 'react-router';
-import Home from './page/home';
-import { useEffect, useRef, useState } from 'react';
-import { loadRecords } from './store/activity/activity';
-import { useDispatch, useSelector } from 'react-redux';
-import { useParams, useLocation } from 'react-router-dom';
+} from "react-feather";
+import { Switch, Route, Redirect, Router } from "react-router";
+import Home from "./page/home";
+import { useEffect, useRef, useState } from "react";
+import { loadRecords } from "./store/activity/activity";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams, useLocation } from "react-router-dom";
 import {
   getAllDomains,
   getIsLoadingRecords,
   getTotalDurationByDate,
-} from './store/activity/selectors';
-import { RootState } from './store/store';
+} from "./store/activity/selectors";
+import { RootState } from "./store/store";
 import {
   getSearchParamsSelectedDomain,
   getSearchParamsSelectedTimeRange,
-} from './store/router/selectors';
-import { selectors } from './store/router';
-import { HistoryView } from './page/history';
-import { SettingsView } from './page/settings';
+} from "./store/router/selectors";
+import { selectors } from "./store/router";
+import { HistoryView } from "./page/history";
+import { SettingsView } from "./page/settings";
+import { importDatabaseRecords } from "./store/dataMigration/slice";
 
 function App() {
-  const search = '';
+  const search = "";
   const dispatch = useDispatch();
 
   let location = useLocation();
@@ -42,14 +43,19 @@ function App() {
   const selectedTimeRange = useSelector((state: RootState) =>
     selectors.getSearchParamsSelectedTimeRange(state)
   );
+  const selectedDomain = useSelector((state: RootState) =>
+    selectors.getSearchParamsSelectedDomain(state)
+  );
 
   useEffect(() => {
     dispatch(loadRecords());
-  }, [
-    loadRecords,
-    // selectedDomain,
-    selectedTimeRange,
-  ]);
+  }, [loadRecords, selectedDomain, selectedTimeRange]);
+
+  useEffect(() => {
+    if (!Boolean(window.localStorage.getItem("persist:root"))) {
+      dispatch(importDatabaseRecords());
+    }
+  }, []);
 
   return (
     <div className='flex transition-all bg-white w-full h-full'>
@@ -58,23 +64,23 @@ function App() {
           primaryItems={[
             {
               icon: <BarChart2 size='20' />,
-              text: 'Analytics',
-              to: { pathname: '/analytics', search },
+              text: "Analytics",
+              to: { pathname: "/analytics", search },
               isSelect: isSelect.one,
             },
             {
               icon: <Clock size='20' />,
-              text: 'History',
-              to: { pathname: '/history', search },
+              text: "History",
+              to: { pathname: "/history", search },
               isSelect: isSelect.two,
             },
           ]}
           secondaryItems={[
             {
               icon: <Settings size='20' />,
-              text: 'Settings',
+              text: "Settings",
               to: {
-                pathname: '/settings',
+                pathname: "/settings",
               },
               isSelect: isSelect.three,
             },
