@@ -1,16 +1,14 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import AppLayout from '../../components/AppLayout';
-import Header from '../../components/Base/Header';
-import { RootState } from '../../store/store';
-import SecondCard from './secondCard';
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import AppLayout from "../../components/AppLayout";
+import Header from "../../components/Base/Header";
+import { RootState } from "../../store/store";
+import SecondCard from "./secondCard";
 
-import SingleCard from './singleCard';
-import ThridCard from './thirdCard';
+import SingleCard from "./singleCard";
+import ThridCard from "./thirdCard";
 
 function Home() {
-  const isDarkToggle = useSelector((state: RootState) => state.activity.isDark);
-
   return (
     <div className='w-full  dark:bg-gray-900 bg-white-m ml-side   m2xl:ml-0'>
       <AppLayout.MainNav>

@@ -1,22 +1,22 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import AppLayout from '../../components/AppLayout';
-import Header from '../../components/Base/Header';
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import AppLayout from "../../components/AppLayout";
+import Header from "../../components/Base/Header";
 
-import Card from '../../components/Card';
-import { CountUp, DurationCountUp } from '../../components/Count';
+import Card from "../../components/Card";
+import { CountUp, DurationCountUp } from "../../components/Count";
 
-import DateRangePicker, { TRANSITION_DELAY } from '../../components/DatePicker';
+import DateRangePicker, { TRANSITION_DELAY } from "../../components/DatePicker";
 
 import {
   getRatioToTotalDuration,
   getSelectedDomainRatioToTotalDuration,
   getSelectedDomainTotalDuration,
-} from '../../store/activity/selectors';
-import { RootState } from '../../store/store';
-import { LineChart } from '../../components/LineChart';
-import { BubbleChart } from '../../components/BubbleChart';
-import { HorizontalChart } from '../../components/HorizontalChart';
+} from "../../store/activity/selectors";
+import { RootState } from "../../store/store";
+import { LineChart } from "../../components/LineChart";
+import { BubbleChart } from "../../components/BubbleChart";
+import { HorizontalChart } from "../../components/HorizontalChart";
 
 function ThridCard() {
   return (

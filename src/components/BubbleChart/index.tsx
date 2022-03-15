@@ -1,27 +1,27 @@
-import React from 'react';
+import React from "react";
 import {
   Chart as ChartJS,
   LinearScale,
   PointElement,
   Tooltip,
   Legend,
-} from 'chart.js';
-import { Bubble } from 'react-chartjs-2';
-import faker from '@faker-js/faker';
+} from "chart.js";
+import { Bubble } from "react-chartjs-2";
+import faker from "@faker-js/faker";
 
-import { useSelector } from 'react-redux';
-import { RootState } from '../../store/store';
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/store";
 import {
   getAverageDurationByHourOfWeek,
   getSelectedDomainAverageDurationByHourOfWeek,
   getTotalDurationByDomain,
-} from '../../store/activity/selectors';
+} from "../../store/activity/selectors";
 import {
   formatHourOfDay,
   formatTableDurationLabel,
-} from '../../utils/stringUtils';
+} from "../../utils/stringUtils";
 
-import { useParams, useLocation } from 'react-router-dom';
+import { useParams, useLocation } from "react-router-dom";
 
 ChartJS.register(LinearScale, PointElement, Tooltip, Legend);
 
@@ -37,12 +37,12 @@ export function formatTableDurationLabelToMin(duration: number): string {
   if (duration < 3600000) {
     const minutes = Math.floor(duration / 60000);
     const seconds = Math.round((duration / 1000) % 60);
-    return `${minutes} min ${seconds.toString().padStart(2, '0')} s`;
+    return `${minutes} min ${seconds.toString().padStart(2, "0")} s`;
   }
 
   const hours = Math.floor(duration / 3600000);
   const minutes = Math.round((duration / 60000) % 60);
-  return ` ${minutes.toString().padStart(2, '0')} min`;
+  return ` ${minutes.toString().padStart(2, "0")} min`;
 }
 export function BubbleChart() {
   const totalData = useSelector((state: RootState) =>
@@ -60,27 +60,27 @@ export function BubbleChart() {
     r: Math.floor(ele.duration / 60000),
   }));
 
-  let location = useLocation();
-
-  const byDomain = location.search.slice(0, 7);
-
-  const isDomain = byDomain == '?domain' ? true : false;
-
   const bubbleData = totalData.map((ele) => ({
     x: ele.day,
     y: ele.hour,
     r: Math.floor(ele.duration / 60000 / 3),
   }));
 
+  let location = useLocation();
+
+  const byDomain = location.search.slice(0, 7);
+
+  const isDomain = byDomain == "?domain" ? true : false;
+
   const data = {
     datasets: [
       {
-        label: 'Red dataset',
+        label: "Red dataset",
         data: isDomain ? totalDataByDomainData : bubbleData,
         borderWidth: 1,
         radius: 3,
-        backgroundColor: 'rgba(108, 210, 176, 1)',
-        borderColor: 'rgba(108, 210, 176, 1)',
+        backgroundColor: "rgba(108, 210, 176, 1)",
+        borderColor: "rgba(108, 210, 176, 1)",
       },
     ],
   };
@@ -94,24 +94,24 @@ export function BubbleChart() {
     scales: {
       x: {
         grid: {
-          color: isDarkToggle ? '#70768C' : 'rgba(0, 0, 0, 0.1)',
+          color: isDarkToggle ? "#70768C" : "rgba(0, 0, 0, 0.1)",
         },
         ticks: {
           callback: function (value, index, values) {
             if (value == 0) {
-              return 'S';
+              return "S";
             } else if (value == 1) {
-              return 'M';
+              return "M";
             } else if (value == 2) {
-              return 'T';
+              return "T";
             } else if (value == 3) {
-              return 'W';
+              return "W";
             } else if (value == 4) {
-              return 'T';
+              return "T";
             } else if (value == 5) {
-              return 'F';
+              return "F";
             } else if (value == 6) {
-              return 'S';
+              return "S";
             }
           },
           maxRotation: 0,
@@ -120,9 +120,9 @@ export function BubbleChart() {
       },
       y: {
         grid: {
-          color: isDarkToggle ? '#70768C' : 'rgba(0, 0, 0, 0.1)',
+          color: isDarkToggle ? "#70768C" : "rgba(0, 0, 0, 0.1)",
         },
-        position: 'left',
+        position: "left",
         ticks: {
           callback: (value) => formatHourOfDay(value),
         },
@@ -135,7 +135,7 @@ export function BubbleChart() {
         callbacks: {
           label: function (context) {
             let value = context.raw.x;
-            let data = context.raw.r || '';
+            let data = context.raw.r || "";
             if (value == 0) {
               return `Sun, ${data}min`;
             } else if (value == 1) {
@@ -157,14 +157,14 @@ export function BubbleChart() {
 
       legend: {
         display: false,
-        position: 'top' as const,
+        position: "top" as const,
       },
       background: {
-        color: 'cyan',
+        color: "cyan",
       },
       title: {
         display: true,
-        text: 'Usage by Time of Day',
+        text: "Usage by Time of Day",
         padding: {
           top: 10,
           bottom: 20,

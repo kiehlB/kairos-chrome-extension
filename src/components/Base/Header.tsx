@@ -1,7 +1,7 @@
-import { DarkModeToggle } from 'react-dark-mode-toggle-2';
+import { DarkModeToggle } from "react-dark-mode-toggle-2";
 
-import React, { useEffect, useState } from 'react';
-import { Avatar } from 'evergreen-ui';
+import React, { useEffect, useState } from "react";
+import { Avatar } from "evergreen-ui";
 import {
   BarChart2,
   Clock,
@@ -12,17 +12,17 @@ import {
   Menu,
   Sun,
   Moon,
-} from 'react-feather';
-import DayPicker from '../DayPicker';
-import { ActivityDateRangePicker } from '../DateRange';
-import { DomainPicker } from '../DomainPicker';
+} from "react-feather";
+import DayPicker from "../DayPicker";
+import { ActivityDateRangePicker } from "../DateRange";
+import { DomainPicker } from "../DomainPicker";
 
-import useDarkMode from '../../hooks/useDarkMode';
-import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../../store/store';
-import { isDarkTrigger } from '../../store/activity/activity';
-import { Position, SideSheet, Paragraph, Button } from 'evergreen-ui';
-import { Link, RouteComponentProps } from 'react-router-dom';
+import useDarkMode from "../../hooks/useDarkMode";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../store/store";
+import { isDarkTrigger } from "../../store/activity/activity";
+import { Position, SideSheet, Paragraph, Button } from "evergreen-ui";
+import { Link, RouteComponentProps } from "react-router-dom";
 
 export type HeaderProps = {
   children?: React.ReactNode;
@@ -35,13 +35,12 @@ function Header({ children, title, subTitle }: HeaderProps) {
   const dispatch = useDispatch();
   const [isShown, setIsShown] = useState(false);
   const isDarkToggle = useSelector((state: RootState) => state.activity.isDark);
-  const isThemeToggle = useSelector((state: RootState) => state.activity.theme);
 
   const widthSection = () => {
     return (
       <section className='flex  items-center justify-end  '>
         <div className='flex  '>
-          {subTitle == 'Analytics' ? (
+          {subTitle == "Analytics" ? (
             <>
               <div>
                 <DomainPicker />
@@ -51,26 +50,26 @@ function Header({ children, title, subTitle }: HeaderProps) {
               </div>
             </>
           ) : (
-            ''
+            ""
           )}
-          {subTitle == 'History' ? (
+          {subTitle == "History" ? (
             <>
               <div>
                 <ActivityDateRangePicker />
               </div>
             </>
           ) : (
-            ''
+            ""
           )}
-          {subTitle == 'Settings' ? <></> : ''}
+          {subTitle == "Settings" ? <></> : ""}
         </div>
 
-        {subTitle == 'Analytics' ? (
+        {subTitle == "Analytics" ? (
           <>
             <div className='border h-10 maxw:hidden'></div>
           </>
         ) : (
-          ''
+          ""
         )}
 
         <div className='maxw:hidden'>
