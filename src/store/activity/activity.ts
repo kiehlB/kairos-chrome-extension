@@ -162,12 +162,14 @@ export const loadRecords =
       }
 
       // Only fetch all domains & activity time range on initialization
-      if (options.forceReload || !getIsInitialized(state)) {
+      if (true) {
         const [allDomains, totalTimeRange, records] = await Promise.all([
           databaseService.fetchAllActivityDomains(),
           databaseService.fetchActivityTimeRange(),
           databaseService.fetchActivityRecords(requiredTimeRange),
         ]);
+
+        console.log(records);
 
         if (onSuccess) {
           onSuccess();

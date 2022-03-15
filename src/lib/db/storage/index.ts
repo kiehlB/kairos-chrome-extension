@@ -38,77 +38,20 @@ export class StorageDatabase extends Dexie implements DatabaseService {
     this[TITLE_TABLE] = this.table(TITLE_TABLE);
   }
 
-  private async getFavIconUrlMap(): Promise<Record<string, string>> {
-    const domains = await this[DOMAIN_TABLE].toCollection().toArray();
-    return domains.reduce(
-      (acc: Record<string, string>, domain: DomainTableRecord) => {
-        acc[domain.id] = domain.favIconUrl;
-        return acc;
-      },
-      {}
-    );
-  }
-
-  private async getTitleMap(): Promise<Record<string, string>> {
-    const titles = await this[TITLE_TABLE].toCollection().toArray();
-    return titles.reduce(
-      (acc: Record<string, string>, title: TitleTableRecord) => {
-        acc[title.id] = title.title;
-        return acc;
-      },
-      {}
-    );
-  }
-
   public async createActivityRecord(rawActivity: RawActivity): Promise<void> {
-    const a = new MockDatabase();
-
-    const records = (a as any).activityRecords;
-    const domainRecords = (a as any).domainRecords;
-
-    if (rawActivity.startTime >= rawActivity.endTime) {
-      new Error(`[db]: Invalid time range, ${JSON.stringify(rawActivity)}`);
-    }
-
-    const { activity, domain, title } = generateRecords(rawActivity);
-    try {
-      await this.transaction(
-        "rw",
-        [this[ACTIVITY_TABLE], this[DOMAIN_TABLE], this[TITLE_TABLE]],
-        async () => {
-          await this[ACTIVITY_TABLE].add(activity);
-
-          // Ensure that we don't overwrite existing domain favIconUrls with ""
-          if (
-            domain.favIconUrl !== "" ||
-            (await this[DOMAIN_TABLE].get({ id: domain.id })) === undefined
-          ) {
-            await this[DOMAIN_TABLE].put(domain);
-          }
-
-          // Ensure that we don't overwrite existing URL titles with ""
-          if (
-            title.title !== "" ||
-            (await this[TITLE_TABLE].get({ id: title.id })) === undefined
-          ) {
-            await this[TITLE_TABLE].put(title);
-          }
-        }
-      );
-    } catch (err) {
-      new Error(err);
-    }
+    throw new Error("Mock database does not support creating records");
   }
 
   public deleteActivityRecords(recordIds: number[]): Promise<void> {
     return this[ACTIVITY_TABLE].bulkDelete(recordIds);
   }
 
-  public async fetchAllActivityDomains(): Promise<Record<string, Domain>> {
-    const domains = await this[DOMAIN_TABLE].toCollection().toArray();
-    return domains.reduce(
-      (acc: Record<string, Domain>, domain: DomainTableRecord) => {
-        acc[domain.id] = domain;
+  private async getFavIconUrlMap(): Promise<Record<string, string>> {
+    const domain = await D.domain;
+
+    return (domain as any).reduce(
+      (acc: Record<string, string>, domain: DomainTableRecord) => {
+        acc[domain.id] = domain.favIconUrl;
         return acc;
       },
       {}
@@ -118,35 +61,33 @@ export class StorageDatabase extends Dexie implements DatabaseService {
   public fetchAllActivityRecords(): Promise<Activity[]> {
     return this.fetchActivityRecords({ start: null, end: null });
   }
+  private async getTitleMap(): Promise<Record<string, string>> {
+    const titles = await D.title;
+    return titles.reduce(
+      (acc: Record<string, string>, title: TitleTableRecord) => {
+        acc[title.id] = title.title;
+        return acc;
+      },
+      {}
+    );
+  }
 
   public async fetchActivityRecords({
     start: startTime,
     end: endTime,
   }: TimeRange): Promise<Activity[]> {
-    let query = this[ACTIVITY_TABLE].toCollection();
-    if (startTime && endTime) {
-      const activityTimeRange = await this.fetchActivityTimeRange();
-      if (activityTimeRange) {
-        query =
-          endTime - activityTimeRange.start > Date.now() - startTime
-            ? this[ACTIVITY_TABLE].where("startTime").aboveOrEqual(startTime)
-            : this[ACTIVITY_TABLE].where("endTime").belowOrEqual(endTime);
-      }
-    } else if (startTime) {
-      query = this[ACTIVITY_TABLE].where("startTime").aboveOrEqual(startTime);
-    } else if (endTime) {
-      query = this[ACTIVITY_TABLE].where("endTime").belowOrEqual(endTime);
-    }
+    const a = new MockDatabase();
 
-    const [activities, favIconUrlMapByDomain, titleMapByUrl] =
-      await Promise.all([
-        query.toArray(),
-        this.getFavIconUrlMap(),
-        this.getTitleMap(),
-      ]);
+    const records = (a as any).activityRecords;
 
-    return activities.map((activity: ActivityTableRecord): Activity => {
+    const [favIconUrlMapByDomain, titleMapByUrl] = await Promise.all([
+      this.getFavIconUrlMap(),
+      this.getTitleMap(),
+    ]);
+
+    return records.map((activity: ActivityTableRecord): Activity => {
       const url = createUrl(activity);
+
       return {
         ...activity,
         favIconUrl: favIconUrlMapByDomain[activity.domain] || "",
@@ -156,17 +97,34 @@ export class StorageDatabase extends Dexie implements DatabaseService {
     });
   }
 
+  public async fetchAllActivityDomains(): Promise<Record<string, Domain>> {
+    const a = new MockDatabase();
+
+    const domains = await (a as any).domainRecords;
+
+    const intoArray = Object.values(domains);
+
+    return (intoArray as any).reduce(
+      (acc: Record<string, Domain>, domain: DomainTableRecord) => {
+        acc[domain.id] = domain;
+        return acc;
+      },
+      {}
+    );
+  }
+
   public fetchActivityTimeRange(): Promise<DefiniteTimeRange | null> {
-    return this[ACTIVITY_TABLE].orderBy("startTime")
-      .first()
-      .then((oldestRecord) => {
-        return !oldestRecord
-          ? null
-          : {
-              start: oldestRecord.startTime,
-              end: Date.now(),
-            };
-      });
+    return new Promise(async (resolve) => {
+      const a = new MockDatabase();
+
+      const records = (a as any).activityRecords;
+
+      const lastIndex = (await records.length) - 1;
+
+      const start = records[lastIndex].startTime;
+
+      resolve(start ? { start, end: Date.now() } : null);
+    });
   }
 
   public async exportDatabaseRecords(): Promise<DatabaseRecords> {
