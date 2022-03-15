@@ -351,7 +351,59 @@ function SingleCard() {
 
   return (
     <>
-      <div className='mt-4 px-8 mmd:px-4 '>{resultTotal()}</div>
+      <div className='mt-4 px-8 mmd:px-4 '>
+        <div className='flex '>
+          <TotalUsage
+            className='shadow-md  rounded-md mr-4 w-mcard bg-white dark:bg-slate-900 dark:shadowmd dark:border-2  '
+            sort='single'
+            title={totalTimeRangeCardInfo.title}
+            info={totalTimeRangeCardInfo.info}
+            footer={totalTimeRangeCardInfo.footer}
+            data={totalTimeRangeCardInfo.data}
+            isDuration={totalTimeRangeCardInfo.isDuration}
+            getRandomArbitrary={getRandomArbitrary(-100, 100)}
+          />
+          <TotalUsage
+            className='shadow-md  rounded-md mr-4 
+           w-mcard  bg-white  dark:bg-slate-900 dark:shadowmd   dark:border-2'
+            sort='single'
+            title={toTotalDurationCard.title}
+            info={toTotalDurationCard.info}
+            footer={toTotalDurationCard.footer}
+            data={toTotalDurationCard.data}
+            formattingFn={toTotalDurationCard.formattingFn}
+            formattingUnitFn={toTotalDurationCard.formattingUnitFn}
+            decimals={toTotalDurationCard.decimals}
+            isDuration={toTotalDurationCard.isDuration}
+            getRandomArbitrary={getRandomArbitrary(-100, 100)}
+          />
+
+          <TotalUsage
+            className='shadow-md  rounded-md mr-4 w-mcard bg-white  dark:bg-slate-900 dark:shadowmd  dark:border-2 '
+            sort='single'
+            title={pageVisitCard.title}
+            info={pageVisitCard.info}
+            footer={pageVisitCard.footer}
+            data={pageVisitCard.data}
+            formattingFn={pageVisitCard.formattingFn}
+            formattingUnitFn={pageVisitCard.formattingUnitFn}
+            isDuration={pageVisitCard.isDuration}
+            getRandomArbitrary={getRandomArbitrary(-100, 100)}
+          />
+          <TotalUsage
+            className='shadow-md  rounded-md  w-mcard  bg-white dark:bg-slate-900 dark:shadowmd  dark:border-2 '
+            sort='single'
+            title={TotalDomainCard.title}
+            info={TotalDomainCard.info}
+            footer={TotalDomainCard.footer}
+            data={TotalDomainCard.data}
+            formattingFn={TotalDomainCard.formattingFn}
+            formattingUnitFn={TotalDomainCard.formattingUnitFn}
+            isDuration={TotalDomainCard.isDuration}
+            getRandomArbitrary={getRandomArbitrary(-100, 100)}
+          />
+        </div>
+      </div>
     </>
   );
 }

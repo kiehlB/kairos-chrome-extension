@@ -1,18 +1,18 @@
-import { NavbarItem, NavbarItemProps } from './NavbarItem';
-import logo from './logo.png';
-import logo2 from './logo2.png';
-import black from './BlackLogo.png';
-import { Bookmark, ExternalLink, ArrowRight } from 'react-feather';
-import ExtensionCard from '../Common/extensionCard';
-import Footer from '../Footer';
-import useDarkMode from '../../hooks/useDarkMode';
-import { useSelector } from 'react-redux';
-import { RootState } from '../../store/store';
-import { useEffect, useRef, useState } from 'react';
+import { NavbarItem, NavbarItemProps } from "./NavbarItem";
+import logo from "./logo.png";
+import logo2 from "./logo2.png";
+import black from "./BlackLogo.png";
+import { Bookmark, ExternalLink, ArrowRight } from "react-feather";
+import ExtensionCard from "../Common/extensionCard";
+import Footer from "../Footer";
+import useDarkMode from "../../hooks/useDarkMode";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/store";
+import { useEffect, useRef, useState } from "react";
 
-import { NavLink, NavLinkProps } from 'react-router-dom';
-import { Tabs, useTabState, Panel } from '@bumaga/tabs';
-import { useParams, useLocation } from 'react-router-dom';
+import { NavLink, NavLinkProps } from "react-router-dom";
+import { Tabs, useTabState, Panel } from "@bumaga/tabs";
+import { useParams, useLocation } from "react-router-dom";
 import {
   BarChart2,
   Clock,
@@ -20,7 +20,7 @@ import {
   HelpCircle,
   Search,
   Bell,
-} from 'react-feather';
+} from "react-feather";
 
 interface NavbarProps {
   primaryItems: any;
@@ -68,14 +68,14 @@ const Navbar = ({
             <NavLink
               to='/analytics'
               className={`w-full flex px-4 pt-6 items-center ${
-                is == '/analytics' ? ' text-slate-900' : '  text-greyTint-m'
+                is == "/analytics" ? " text-slate-900" : "  text-greyTint-m"
               }   font-medium m2xl:px-0 m2xl:pt-0 m2xl:flex m2xl:p-8`}
             >
               <div
                 className={`w-10/12 rounded-lg   px-2 py-2 ${
-                  is == '/analytics'
-                    ? 'bg-slate-50 dark:bg-gray-700 dark:text-white'
-                    : ''
+                  is == "/analytics"
+                    ? "bg-slate-50 dark:bg-gray-700 dark:text-white"
+                    : ""
                 }  hover:text-slate-900    dark:hover:text-white  flex items-center m2xl:w-full m2xl:flex-col m2xl:justify-center m2xl:items-center`}
               >
                 <div>
@@ -87,14 +87,14 @@ const Navbar = ({
             <NavLink
               to='/history'
               className={`w-full flex px-4 pt-6 items-center ${
-                is == '/history' ? ' text-slate-900' : '  text-greyTint-m'
+                is == "/history" ? " text-slate-900" : "  text-greyTint-m"
               }   font-medium m2xl:px-0 m2xl:pt-0 m2xl:flex m2xl:p-8`}
             >
               <div
                 className={`w-10/12 rounded-lg   px-2 py-2 ${
-                  is == '/history'
-                    ? 'bg-slate-50 dark:bg-gray-700 dark:text-white'
-                    : ''
+                  is == "/history"
+                    ? "bg-slate-50 dark:bg-gray-700 dark:text-white"
+                    : ""
                 }  hover:text-slate-900    dark:hover:text-white  flex items-center m2xl:w-full m2xl:flex-col m2xl:justify-center m2xl:items-center`}
               >
                 <div>
@@ -114,14 +114,14 @@ const Navbar = ({
             <NavLink
               to='/settings'
               className={`w-full flex px-4 pt-6 items-center ${
-                is == '/settings' ? ' text-slate-900' : '  text-greyTint-m'
+                is == "/settings" ? " text-slate-900" : "  text-greyTint-m"
               }   font-medium m2xl:px-0 m2xl:pt-0 m2xl:flex m2xl:p-8`}
             >
               <div
                 className={`w-10/12 rounded-lg   px-2 py-2 ${
-                  is == '/settings'
-                    ? 'bg-slate-50 dark:bg-gray-700 dark:text-white'
-                    : ''
+                  is == "/settings"
+                    ? "bg-slate-50 dark:bg-gray-700 dark:text-white"
+                    : ""
                 }  hover:text-slate-900    dark:hover:text-white  flex items-center m2xl:w-full m2xl:flex-col m2xl:justify-center m2xl:items-center`}
               >
                 <div>
@@ -137,7 +137,7 @@ const Navbar = ({
             <ExtensionCard
               icon={<ExternalLink size='20' />}
               text='Download the extension from Chrome Web Store.'
-              to={{ pathname: 'Try now', icon: <ArrowRight size='20' /> }}
+              to={{ pathname: "Try now", icon: <ArrowRight size='20' /> }}
             />
           </div>
           <div className='px-4 pt-4 mb-6 dark:text-neutral-300'>

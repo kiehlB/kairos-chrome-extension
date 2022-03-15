@@ -51,11 +51,11 @@ function App() {
     dispatch(loadRecords());
   }, [loadRecords, selectedDomain, selectedTimeRange]);
 
-  useEffect(() => {
-    if (!Boolean(window.localStorage.getItem("persist:root"))) {
-      dispatch(importDatabaseRecords());
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (!Boolean(window.localStorage.getItem("persist:root"))) {
+  //     dispatch(importDatabaseRecords());
+  //   }
+  // }, []);
 
   return (
     <div className='flex transition-all bg-white w-full h-full'>
