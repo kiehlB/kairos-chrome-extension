@@ -3,24 +3,24 @@ import {
   PayloadAction,
   createSelector,
   ThunkAction,
-} from "@reduxjs/toolkit";
-import { ANALYTICS_REQUIRED_TIME_WINDOW } from "../../lib/constants/analytics";
-import { MockDatabase } from "../../lib/db/mock";
-import { Activity, Domain } from "../../lib/db/models/activity";
-import { DefiniteTimeRange, TimeRange } from "../../lib/db/models/time";
+} from '@reduxjs/toolkit';
+import { ANALYTICS_REQUIRED_TIME_WINDOW } from '../../lib/constants/analytics';
+import { MockDatabase } from '../../lib/db/mock';
+import { Activity, Domain } from '../../lib/db/models/activity';
+import { DefiniteTimeRange, TimeRange } from '../../lib/db/models/time';
 import {
   extendTimeRange,
   isWithinTimeRange,
   minusDays,
   setMidnight,
-} from "../../utils/dateUtils";
+} from '../../utils/dateUtils';
 import {
   getEffectiveSearchParamsSelectedTimeRange,
   getIsInitialized,
   getRecordsTimeRange,
-} from "./selectors";
-import { batch } from "react-redux";
-import { AppDispatch, AppThunk } from "../store";
+} from './selectors';
+import { batch } from 'react-redux';
+import { AppDispatch, AppThunk } from '../store';
 
 export interface ActivityState {
   records: Activity[];
@@ -54,11 +54,11 @@ export const initialState = {
   deletingRecordsSuccess: null,
   isDeletingRecords: false,
   isDark: false,
-  theme: "light",
+  theme: 'light',
 };
 
 const ActivitySlice = createSlice({
-  name: "activity",
+  name: 'activity',
   initialState,
   reducers: {
     deleteRecordsSuccess(state, action: PayloadAction<number[]>) {
@@ -103,10 +103,10 @@ const ActivitySlice = createSlice({
       state.isDark = !state.isDark;
     },
     isThemeSuccess(state, payload: any) {
-      if (payload == "light") {
-        state.theme = "dark";
-      } else if (payload == "dark") {
-        state.theme = "light";
+      if (payload == 'light') {
+        state.theme = 'dark';
+      } else if (payload == 'dark') {
+        state.theme = 'light';
       }
     },
   },
@@ -145,24 +145,15 @@ export const loadRecords =
       months: ANALYTICS_REQUIRED_TIME_WINDOW,
     });
 
-    // if (
-    //   !options.forceReload &&
-    //   recordsTimeRange &&
-    //   isWithinTimeRange(recordsTimeRange, requiredTimeRange)
-    // ) {
-    //   dispatch(setSelectedTimeRange(selectedTimeRange));
-    //   return;
-    // }
-
     dispatch(getRecordsStart());
 
     try {
       if (databaseService === undefined) {
-        throw Error("Unable to connect to database");
+        throw Error('Unable to connect to database');
       }
 
       // Only fetch all domains & activity time range on initialization
-      if (true) {
+      if (options.forceReload || !getIsInitialized(state)) {
         const [allDomains, totalTimeRange, records] = await Promise.all([
           databaseService.fetchAllActivityDomains(),
           databaseService.fetchActivityTimeRange(),

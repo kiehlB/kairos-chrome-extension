@@ -97,7 +97,6 @@ export function generateRecords({
 
   const a = randomArrayElement(activity as any);
 
-  console.log(a);
   const url = createUrl(activity);
 
   return {

@@ -1,7 +1,7 @@
-import Dexie from "dexie";
-import { MockDatabase } from "../mock";
-import { Activity, Domain, RawActivity } from "../models/activity";
-import { DefiniteTimeRange, TimeRange } from "../models/time";
+import Dexie from 'dexie';
+import { MockDatabase } from '../mock';
+import { Activity, Domain, RawActivity } from '../models/activity';
+import { DefiniteTimeRange, TimeRange } from '../models/time';
 
 import {
   ActivityTableRecord,
@@ -9,16 +9,16 @@ import {
   DatabaseService,
   DomainTableRecord,
   TitleTableRecord,
-} from "../types";
+} from '../types';
 
-import D from "./data.json";
+import D from './data.json';
 
-import { createUrl, exportTableRecords, generateRecords } from "./utils";
+import { createUrl, exportTableRecords, generateRecords } from './utils';
 
-const DATABASE_NAME = "db";
-export const ACTIVITY_TABLE = "activity";
-export const DOMAIN_TABLE = "domain";
-export const TITLE_TABLE = "title";
+const DATABASE_NAME = 'db';
+export const ACTIVITY_TABLE = 'activity';
+export const DOMAIN_TABLE = 'domain';
+export const TITLE_TABLE = 'title';
 
 export class StorageDatabase extends Dexie implements DatabaseService {
   private [ACTIVITY_TABLE]: Dexie.Table<ActivityTableRecord, number>;
@@ -28,9 +28,9 @@ export class StorageDatabase extends Dexie implements DatabaseService {
   public constructor() {
     super(DATABASE_NAME);
     this.version(1).stores({
-      [ACTIVITY_TABLE]: "++id, domain, startTime, endTime",
-      [DOMAIN_TABLE]: "id",
-      [TITLE_TABLE]: "id",
+      [ACTIVITY_TABLE]: '++id, domain, startTime, endTime',
+      [DOMAIN_TABLE]: 'id',
+      [TITLE_TABLE]: 'id',
     });
 
     this[ACTIVITY_TABLE] = this.table(ACTIVITY_TABLE);
@@ -39,7 +39,7 @@ export class StorageDatabase extends Dexie implements DatabaseService {
   }
 
   public async createActivityRecord(rawActivity: RawActivity): Promise<void> {
-    throw new Error("Mock database does not support creating records");
+    throw new Error('Mock database does not support creating records');
   }
 
   public deleteActivityRecords(recordIds: number[]): Promise<void> {
@@ -90,8 +90,8 @@ export class StorageDatabase extends Dexie implements DatabaseService {
 
       return {
         ...activity,
-        favIconUrl: favIconUrlMapByDomain[activity.domain] || "",
-        title: titleMapByUrl[url] || "",
+        favIconUrl: favIconUrlMapByDomain[activity.domain] || '',
+        title: titleMapByUrl[url] || '',
         url,
       } as Activity;
     });
@@ -157,7 +157,7 @@ export class StorageDatabase extends Dexie implements DatabaseService {
 
     try {
       await this.transaction(
-        "rw",
+        'rw',
         [this[ACTIVITY_TABLE], this[DOMAIN_TABLE], this[TITLE_TABLE]],
         async () => {
           await this[ACTIVITY_TABLE].clear();
@@ -169,9 +169,9 @@ export class StorageDatabase extends Dexie implements DatabaseService {
           await this[TITLE_TABLE].bulkAdd(D[TITLE_TABLE]);
         }
       );
-      console.log("[db] All records were imported successfully");
+      console.log('[db] All records were imported successfully');
     } catch (err) {
-      console.error("[db]", err);
+      console.error('[db]', err);
     }
   }
 }
