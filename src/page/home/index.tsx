@@ -15,7 +15,7 @@ function Home() {
         <Header title='Analytics Browser History' subTitle='Analytics' />
       </AppLayout.MainNav>
       <AppLayout
-        // first={<AppLayout.First>{<SingleCard />}</AppLayout.First>}
+        first={<AppLayout.First>{<SingleCard />}</AppLayout.First>}
         second={<AppLayout.Second>{<SecondCard />}</AppLayout.Second>}
         third={<AppLayout.Third>{<ThridCard />}</AppLayout.Third>}
       />
