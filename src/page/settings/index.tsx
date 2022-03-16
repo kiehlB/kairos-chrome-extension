@@ -84,9 +84,9 @@ export const SettingsView = ({}) => {
       <AppLayout
         first={
           <AppLayout.First>
-            <div className='flex w-full border-2 m2xl:flex-wrap  '>
+            <div className='flex w-full   m2xl:flex-wrap  '>
               <div className='p-4 w-full'>
-                <div className=' border-2 w-full bg-white shadow-md  rounded-md dark:bg-gray-900 '>
+                <div className='  w-full bg-white shadow-md  rounded-md dark:bg-gray-900 '>
                   <List>
                     <ListItem
                       className='flex justify-between p-4 border-b text-dark-m dark:text-slate-300 font-medium text-sm items-center flex-wrap '
@@ -96,8 +96,7 @@ export const SettingsView = ({}) => {
                         <Tooltip
                           content={
                             '데이터의 총 사용량과 사용한 데이터를 다운받을 수 있습니다'
-                          }
-                        >
+                          }>
                           <Icon
                             icon='issue'
                             size={BASE_SIZE * 1.5}
@@ -133,8 +132,7 @@ export const SettingsView = ({}) => {
                           onClick={() => {
                             setHasShownExportToaster(false);
                             dispatch(exportDatabaseRecords());
-                          }}
-                        >
+                          }}>
                           Export Data
                         </Button>
                       </div>
@@ -144,7 +142,7 @@ export const SettingsView = ({}) => {
               </div>
 
               <div className='p-4 w-full'>
-                <div className=' border-2 w-full bg-white shadow-md  rounded-md  dark:bg-gray-900'>
+                <div className='   w-full bg-white shadow-md  rounded-md  dark:bg-gray-900'>
                   <List>
                     <ListItem
                       className='flex justify-between p-4 border-b text-dark-m font-medium text-sm items-center flex-wrap'

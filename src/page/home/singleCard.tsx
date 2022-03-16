@@ -1,16 +1,16 @@
-import { useCallback, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import AppLayout from "../../components/AppLayout";
-import Header from "../../components/Base/Header";
-import Card from "../../components/Card";
-import Scales from "../../components/Chart";
-import Transition from "../../components/Chart";
-import Axis from "../../components/Chart";
-import { CountUp, DurationCountUp } from "../../components/Count";
+import { useCallback, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import AppLayout from '../../components/AppLayout';
+import Header from '../../components/Base/Header';
+import Card from '../../components/Card';
+import Scales from '../../components/Chart';
+import Transition from '../../components/Chart';
+import Axis from '../../components/Chart';
+import { CountUp, DurationCountUp } from '../../components/Count';
 
-import DateRangePicker, { TRANSITION_DELAY } from "../../components/DatePicker";
+import DateRangePicker, { TRANSITION_DELAY } from '../../components/DatePicker';
 
-import { useParams, useLocation } from "react-router-dom";
+import { useParams, useLocation } from 'react-router-dom';
 
 import {
   getRatioToTotalDuration,
@@ -21,9 +21,9 @@ import {
   getTotalDomainVisitCount,
   getTotalDuration,
   getTotalPageVisitCount,
-} from "../../store/activity/selectors";
-import { RootState } from "../../store/store";
-import { ArrowUpRight, ArrowDownRight } from "react-feather";
+} from '../../store/activity/selectors';
+import { RootState } from '../../store/store';
+import { ArrowUpRight, ArrowDownRight } from 'react-feather';
 
 export type TotalUsageProps = {
   className?;
@@ -112,53 +112,53 @@ function SingleCard() {
     getSelectedDomainAveragePageVisitDuration(state)
   );
 
-  const isDomain = byDomain == "?domain" ? true : false;
+  const isDomain = byDomain == '?domain' ? true : false;
 
   const totalTimeRangeCardInfo = {
-    title: "Total Usage",
-    info: "웹사이트 전체 사용 시간",
-    footer: "vs. previous month",
-    sort: "single",
+    title: 'Total Usage',
+    info: '웹사이트 전체 사용 시간',
+    footer: 'vs. previous month',
+    sort: 'single',
     data: isDomain ? totalTimeByDamin : totalTime,
     isDuration: true,
   };
 
   const toTotalDurationCard = {
-    title: "Usage Percentage",
-    info: "전체 브라우저 사용량",
-    footer: "vs. previous month",
-    sort: "single",
+    title: 'Usage Percentage',
+    info: '전체 브라우저 사용량',
+    footer: 'vs. previous month',
+    sort: 'single',
 
     data: isDomain ? toTotalDurationByDomain : toTotalDuration,
     isDuration: false,
     decimals: 3,
     formattingFn: (d: number) => `${d.toFixed(2)}`,
-    formattingUnitFn: () => "%",
+    formattingUnitFn: () => '%',
   };
 
   const pageVisitCard = {
-    title: "Page Visits",
-    info: "전체 방문한 사이트 수",
-    footer: "vs. previous month",
-    sort: "single",
+    title: 'Page Visits',
+    info: '전체 방문한 사이트 수',
+    footer: 'vs. previous month',
+    sort: 'single',
 
     data: isDomain ? pageVisitByDomain : pageVisit,
     isDuration: false,
-    formattingFn: (d: number) => d.toLocaleString("en-US"),
-    formattingUnitFn: (d: number) => (d > 1 ? "pages" : "page"),
+    formattingFn: (d: number) => d.toLocaleString('en-US'),
+    formattingUnitFn: (d: number) => (d > 1 ? 'pages' : 'page'),
   };
 
   const TotalDomainCard = {
-    title: "Visit Duration",
-    info: "전체 방문한 도메인 수",
-    footer: "vs. previous month",
-    sort: "single",
+    title: 'Visit Duration',
+    info: '전체 방문한 도메인 수',
+    footer: 'vs. previous month',
+    sort: 'single',
     data: isDomain ? domainVisitByDomain : domainVisit,
     isDuration: isDomain ? true : false,
-    formattingFn: isDomain ? "" : (d: number) => d.toLocaleString("en-US"),
+    formattingFn: isDomain ? '' : (d: number) => d.toLocaleString('en-US'),
     formattingUnitFn: isDomain
-      ? ""
-      : (d: number) => (d > 1 ? "domains" : "domain"),
+      ? ''
+      : (d: number) => (d > 1 ? 'domains' : 'domain'),
   };
 
   const eachWithTotal = () => {
@@ -351,7 +351,7 @@ function SingleCard() {
 
   return (
     <>
-      <div className='mt-4 px-8 mmd:px-4'>{resultTotal()}</div>
+      <div className='mt-4 px-8 mmd:px-4 bg-white-m'>{resultTotal()}</div>
     </>
   );
 }
