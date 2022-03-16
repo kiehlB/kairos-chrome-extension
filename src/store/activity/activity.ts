@@ -169,8 +169,6 @@ export const loadRecords =
           databaseService.fetchActivityRecords(requiredTimeRange),
         ]);
 
-        console.log(records);
-
         if (onSuccess) {
           onSuccess();
         }
