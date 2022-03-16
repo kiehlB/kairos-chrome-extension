@@ -79,8 +79,6 @@ function SingleCard() {
     return Math.floor(Math.random() * (max - min) + min);
   }, []);
 
-  console.log("hello");
-
   let location = useLocation();
 
   const byDomain = location.search.slice(0, 7);
