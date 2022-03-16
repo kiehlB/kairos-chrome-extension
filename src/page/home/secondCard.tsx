@@ -146,9 +146,6 @@ function SecondCard() {
   const data = totalTime.map((d) => d.totalDuration);
 
   const dataByDomain = totalTimeByDomain.map((d) => d.totalDuration);
-  const randomData = totalTime.map(
-    (d) => d.totalDuration * Math.random() * (2 - 1) + 1
-  );
 
   const d2 = {
     labels: newDate,

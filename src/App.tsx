@@ -43,13 +43,10 @@ function App() {
   const selectedTimeRange = useSelector((state: RootState) =>
     selectors.getSearchParamsSelectedTimeRange(state)
   );
-  const selectedDomain = useSelector((state: RootState) =>
-    selectors.getSearchParamsSelectedDomain(state)
-  );
 
   useEffect(() => {
     dispatch(loadRecords());
-  }, [loadRecords, selectedDomain, selectedTimeRange]);
+  }, [loadRecords, selectedTimeRange]);
 
   // useEffect(() => {
   //   if (!Boolean(window.localStorage.getItem("persist:root"))) {

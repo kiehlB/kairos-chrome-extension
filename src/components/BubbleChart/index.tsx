@@ -48,6 +48,7 @@ export function BubbleChart() {
   const totalData = useSelector((state: RootState) =>
     getAverageDurationByHourOfWeek(state)
   );
+
   const totalDataByDomain = useSelector((state: RootState) =>
     getSelectedDomainAverageDurationByHourOfWeek(state)
   );
