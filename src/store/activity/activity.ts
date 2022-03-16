@@ -153,14 +153,14 @@ export const loadRecords =
       }
 
       // Only fetch all domains & activity time range on initialization
-      if (true) {
+      if (options.forceReload || !getIsInitialized(state)) {
         const [allDomains, totalTimeRange, records] = await Promise.all([
           databaseService.fetchAllActivityDomains(),
           databaseService.fetchActivityTimeRange(),
           databaseService.fetchActivityRecords(requiredTimeRange),
         ]);
 
-        console.log('hello');
+        console.log('inin');
         if (onSuccess) {
           onSuccess();
         }
@@ -177,7 +177,7 @@ export const loadRecords =
         const records = await databaseService.fetchActivityRecords(
           requiredTimeRange
         );
-        console.log('bye');
+
         if (onSuccess) {
           onSuccess();
         }

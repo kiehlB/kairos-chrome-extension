@@ -152,8 +152,8 @@ export class MockDatabase {
         const duration = randomRangeValue(durationRange as any);
         const startTime = endTime - duration;
         const activityRecord = generateActivityRecord(startTime, endTime);
-
         activity.push(activityRecord as any);
+
         endTime = startTime - 1;
         maxDuration = maxDuration - duration;
 

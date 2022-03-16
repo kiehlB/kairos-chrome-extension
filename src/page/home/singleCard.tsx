@@ -351,7 +351,9 @@ function SingleCard() {
 
   return (
     <>
-      <div className='mt-4 px-8 mmd:px-4 bg-white-m'>{resultTotal()}</div>
+      <div className='mt-4 px-8 mmd:px-4 bg-white-m dark:bg-slate-900'>
+        {resultTotal()}
+      </div>
     </>
   );
 }

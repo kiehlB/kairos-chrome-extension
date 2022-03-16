@@ -61,16 +61,12 @@ export function HorizontalChart() {
         grid: {
           color: isDarkToggle ? '#70768C' : 'rgba(0, 0, 0, 0.1)',
         },
-        ticks: {
-          callback: function (val, index) {
-            return `${val}h`;
-          },
-          maxRotation: 0,
-          minRotation: 0,
 
-          font: {
-            size: 12,
-          },
+        ticks: {
+          callback: (value) =>
+            isDomain
+              ? `${Math.floor(value / (1000 * 60))}min`
+              : `${Math.floor(value / (1000 * 60 * 60))}h`,
         },
       },
       y: {
