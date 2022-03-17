@@ -58,9 +58,6 @@ export class StorageDatabase extends Dexie implements DatabaseService {
     );
   }
 
-  public fetchAllActivityRecords(): Promise<Activity[]> {
-    return this.fetchActivityRecords({ start: null, end: null });
-  }
   private async getTitleMap(): Promise<Record<string, string>> {
     const titles = await D.title;
     return titles.reduce(
@@ -72,10 +69,7 @@ export class StorageDatabase extends Dexie implements DatabaseService {
     );
   }
 
-  public async fetchActivityRecords({
-    start: startTime,
-    end: endTime,
-  }: TimeRange): Promise<Activity[]> {
+  public async fetchActivityRecords(): Promise<Activity[]> {
     const a = new MockDatabase();
 
     const records = (a as any).activityRecords;

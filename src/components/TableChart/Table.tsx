@@ -49,8 +49,7 @@ const BarChartTable = ({
             className='flex items-center px-4 py-0.5 flex-1  file:'
             style={{
               visibility: datum.label === NO_DATA_LABEL ? 'hidden' : undefined,
-            }}
-          >
+            }}>
             {`${index + 1}.`}
             <div className='w-full   flex justify-between flex-1'>
               <LabelCell
@@ -65,8 +64,7 @@ const BarChartTable = ({
                 style={{
                   visibility:
                     datum.label === NO_DATA_LABEL ? 'hidden' : undefined,
-                }}
-              >
+                }}>
                 {formatValue ? formatValue(datum.value) : datum.value}
               </div>
             </div>

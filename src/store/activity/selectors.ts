@@ -1,17 +1,17 @@
-import { createSelector } from "@reduxjs/toolkit";
-import { Activity, Domain } from "../../lib/db/models/activity";
-import { DefiniteTimeRange, TimeRange } from "../../lib/db/models/time";
-import { getDayCount, getEndOfDay, setMidnight } from "../../utils/dateUtils";
-import { selectors as routerSelectors } from "../router";
-import _ from "lodash";
-import { RootState } from "../store";
+import { createSelector } from '@reduxjs/toolkit';
+import { Activity, Domain } from '../../lib/db/models/activity';
+import { DefiniteTimeRange, TimeRange } from '../../lib/db/models/time';
+import { getDayCount, getEndOfDay, setMidnight } from '../../utils/dateUtils';
+import { selectors as routerSelectors } from '../router';
+import _ from 'lodash';
+import { RootState } from '../store';
 import {
   computeAverageDurationByHourOfWeek,
   computeTotalDuration,
   computeTotalDurationByDate,
   computeTotalDurationByDayOfWeek,
-} from "../../utils/activityUtils";
-import { MS_PER_DAY } from "../../lib/constants/time";
+} from '../../utils/activityUtils';
+import { MS_PER_DAY } from '../../lib/constants/time';
 
 export const getAllDomains = (state: RootState): Record<string, Domain> => {
   return state.activity.domains;
@@ -65,8 +65,8 @@ export const getEffectiveSelectedTimeRange = createSelector(
       return { start: setMidnight(), end: getEndOfDay() };
     }
 
-    const selectedStartTime = _.get(selectedTimeRange, "start");
-    const selectedEndTime = _.get(selectedTimeRange, "end");
+    const selectedStartTime = _.get(selectedTimeRange, 'start');
+    const selectedEndTime = _.get(selectedTimeRange, 'end');
     const { start, end } = activityTimeRange;
     return {
       start: setMidnight(
@@ -76,6 +76,33 @@ export const getEffectiveSelectedTimeRange = createSelector(
         selectedEndTime ? _.clamp(selectedEndTime, start, end) : end
       ),
     };
+  }
+);
+
+export const getSelectedDomainTotalDurationByPath = createSelector(
+  getSelectedDomainRecords,
+  (selectedDomainRecords) => {
+    const totalDurationByPathname: {
+      [path: string]: { totalDuration: number; title?: string; path: string };
+    } = {};
+
+    selectedDomainRecords.forEach((record) => {
+      const { path, startTime, endTime } = record;
+      const duration = endTime - startTime;
+      const prevTotalDuration = totalDurationByPathname[path]
+        ? totalDurationByPathname[path].totalDuration
+        : 0;
+      totalDurationByPathname[path] = {
+        path,
+        title: record.title,
+        totalDuration: prevTotalDuration + duration,
+      };
+    });
+
+    // Sort results by paths with highest duration
+    return Object.values(totalDurationByPathname).sort((a, b) => {
+      return a.totalDuration > b.totalDuration ? -1 : 1;
+    });
   }
 );
 

@@ -2,6 +2,8 @@ import Dexie from 'dexie';
 import { minusDays, setMidnight } from '../../../utils/dateUtils';
 import { Activity, Domain, RawActivity } from '../models/activity';
 import { DefiniteTimeRange, TimeRange } from '../models/time';
+import { StorageDatabase } from '../storage';
+import { createUrl } from '../storage/utils';
 
 import {
   ActivityTableRecord,
@@ -12,7 +14,7 @@ import {
 } from '../types';
 
 import DATA from './data.json';
-import { createUrl, exportTableRecords, generateRecords } from './utils';
+import { exportTableRecords, generateRecords } from './utils';
 
 type Range = [number, number];
 const ACTIVITY_DURATION_RANGE_SHORT: Range = [100, 120000]; // 100ms ~ 2min
@@ -48,13 +50,69 @@ function randomArrayElement<T>(arr: T[]): T {
 
 function generateActivityRecord(startTime: number, endTime: number) {
   const website: any = randomArrayElement((DATA as any).activity as any);
+  const title: any = randomArrayElement((DATA as any).title as any);
+
+  const domain: any = (DATA as any).domain as any;
+
+  const url = createUrl(website);
 
   return {
+    id: generateId(),
+    url: `${website.domain}${website.path}`,
     domain: website.domain,
     path: website.path,
     endTime,
     startTime,
+    title: title.title[url],
+    favIconUrl: domain.favIconUrl,
   };
+}
+
+export function generateRecord(): {
+  activity: Activity[];
+  domain: Record<string, DomainTableRecord>;
+} {
+  const domain = (DATA as any).domain.reduce((acc, datum) => {
+    acc[datum.id] = {
+      id: datum.id,
+      favIconUrl: datum.favIconUrl,
+    };
+    return acc;
+  }, {});
+
+  const activity: Activity[] = [];
+  const startOfToday = setMidnight();
+  for (let day = 0; day < DAYS_TO_GENERATE; day++) {
+    const startOfDay = minusDays(startOfToday, day);
+    const browsingStartTime = startOfDay + ACTIVITY_TIME_RANGE[0];
+    const browsingEndTime = startOfDay + randomRangeValue(ACTIVITY_TIME_RANGE);
+
+    let maxDuration = randomRangeValue(ACTIVITY_DURATION_PER_DAY_RANGE);
+    let endTime = browsingEndTime;
+    while (maxDuration > 0 && endTime > browsingStartTime) {
+      const durationRange = randomArrayElement([
+        ACTIVITY_DURATION_RANGE_LONG,
+        ACTIVITY_DURATION_RANGE_MEDIUM,
+        ACTIVITY_DURATION_RANGE_SHORT,
+      ]);
+      const duration = randomRangeValue(durationRange);
+      const startTime = endTime - duration;
+      const activityRecord = generateActivityRecord(startTime, endTime);
+
+      activity.push(activityRecord);
+      endTime = startTime - 1;
+      maxDuration = maxDuration - duration;
+
+      // Add some idle time between each activity
+      if (Math.random() > 0.5) {
+        const idleDuration = randomRangeValue(IDLE_DURATION_RANGE);
+        endTime = endTime - idleDuration - 1;
+        maxDuration = maxDuration - idleDuration;
+      }
+    }
+  }
+
+  return { activity, domain };
 }
 
 export const ACTIVITY_TABLE = 'activity';
@@ -66,7 +124,7 @@ export class MockDatabase {
   private domainRecords: Record<string, Domain>;
 
   public constructor() {
-    const { activity, domain } = this.generateRecord();
+    const { activity, domain } = generateRecord();
 
     this.activityRecords = activity;
     this.domainRecords = domain;
@@ -122,50 +180,5 @@ export class MockDatabase {
 
       resolve(start ? { start, end: Date.now() } : null);
     });
-  }
-
-  public generateRecord() {
-    const domain = (DATA as any).domain.reduce((acc, datum) => {
-      acc[datum.id] = {
-        id: datum.id,
-        favIconUrl: datum.favIconUrl,
-      };
-      return acc;
-    }, {});
-
-    const activity: Activity[] = [];
-    const startOfToday = setMidnight();
-    for (let day = 0; day < DAYS_TO_GENERATE; day++) {
-      const startOfDay = minusDays(startOfToday, day);
-      const browsingStartTime = startOfDay + ACTIVITY_TIME_RANGE[0];
-      const browsingEndTime =
-        startOfDay + randomRangeValue([32400000, 75600000]);
-
-      let maxDuration = randomRangeValue([1800000, 36000000]);
-      let endTime = browsingEndTime;
-      while (maxDuration > 0 && endTime > browsingStartTime) {
-        const durationRange = randomArrayElement([
-          ACTIVITY_DURATION_RANGE_LONG,
-          ACTIVITY_DURATION_RANGE_MEDIUM,
-          ACTIVITY_DURATION_RANGE_SHORT,
-        ]);
-        const duration = randomRangeValue(durationRange as any);
-        const startTime = endTime - duration;
-        const activityRecord = generateActivityRecord(startTime, endTime);
-        activity.push(activityRecord as any);
-
-        endTime = startTime - 1;
-        maxDuration = maxDuration - duration;
-
-        // Add some idle time between each activity
-        if (Math.random() > 0.5) {
-          const idleDuration = randomRangeValue([60000, 1800000]);
-          endTime = endTime - idleDuration - 1;
-          maxDuration = maxDuration - idleDuration;
-        }
-      }
-    }
-
-    return { activity, domain };
   }
 }

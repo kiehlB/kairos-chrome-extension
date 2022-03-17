@@ -3,6 +3,7 @@ import { connect, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Card from '../../components/Card';
 import {
+  getSelectedDomainTotalDurationByPath,
   getTotalDuration,
   getTotalDurationByDomain,
 } from '../../store/activity/selectors';
@@ -27,6 +28,12 @@ export function TableChart(props) {
   const totalData = useSelector((state: RootState) =>
     getTotalDurationByDomain(state)
   );
+  const selectedDomain = useSelector((state: RootState) =>
+    getSearchParamsSelectedDomain(state)
+  );
+  const selectedDomainByTimeRange = useSelector((state: RootState) =>
+    getSelectedDomainTotalDurationByPath(state)
+  );
 
   const data = totalData.slice(0, 9).map((datum) => ({
     label: datum.domain,
@@ -43,6 +50,12 @@ export function TableChart(props) {
     labelSrc: datum.domain,
     value: datum.totalDuration,
     iconSrc: datum.favIconUrl,
+  }));
+
+  const domainData = selectedDomainByTimeRange.slice(0, 9).map((datum) => ({
+    label: datum.path,
+    labelSrc: selectedDomain ? `${selectedDomain}${datum.path}` : undefined,
+    value: datum.totalDuration,
   }));
 
   const maxValue = useSelector((state: RootState) => getTotalDuration(state));
