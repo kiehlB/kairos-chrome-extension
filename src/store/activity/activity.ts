@@ -160,7 +160,6 @@ export const loadRecords =
           databaseService.fetchActivityRecords(requiredTimeRange),
         ]);
 
-        console.log('inin');
         if (onSuccess) {
           onSuccess();
         }
@@ -182,6 +181,7 @@ export const loadRecords =
           onSuccess();
         }
 
+        console.log(records);
         // Batch actions to ensure smooth UI transition on store updates
         batch(() => [
           dispatch(getRecordsSuccess(records || [])),
