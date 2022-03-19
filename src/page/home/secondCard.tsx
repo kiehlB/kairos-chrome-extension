@@ -165,7 +165,7 @@ function SecondCard() {
   };
 
   return (
-    <div className='bg-white-m'>
+    <div className='bg-white-m dark:bg-slate-900'>
       <div className='flex h-card px-8 mt-4 m2xl:hidden dark:bg-slate-900  bg-white-m '>
         <div className='shadow-md  rounded-md w-scard mr-4 bg-white dark:bg-slate-900 dark:shadowmd  dark:border-2'>
           <Bar options={options} data={d2} width={780} height={300} />
