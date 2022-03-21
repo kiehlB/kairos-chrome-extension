@@ -20,9 +20,9 @@ import {
   reducer as dataMigrationReducer,
   selectors as dataMigrationSelectors,
 } from './dataMigration';
-import { InitDatabaseService } from '../lib';
 
 import composeWithDevTools from './reduxDevTools';
+import { InitDatabaseService } from '../lib/db';
 
 export const history = createHashHistory();
 const databaseService = InitDatabaseService();
