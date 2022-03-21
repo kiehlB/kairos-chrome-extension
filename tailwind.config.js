@@ -124,7 +124,7 @@ module.exports = {
         mcard: '25%',
         scard: '50%',
         scardX: '49.3125rem',
-        tcard: ' 32.4%',
+        tcard: ' 32.8%',
         tcardX: '32%',
         fcard: ' 100%',
       },
