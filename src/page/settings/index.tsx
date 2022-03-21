@@ -78,7 +78,7 @@ export const SettingsView = ({}) => {
   }, [hasShownExportToaster, exportDataError, exportDataSuccess]);
 
   return (
-    <div className='w-full dark:bg-gray-900 bg-white-m ml-side   m2xl:ml-0 '>
+    <div className='w-full dark:bg-gray-900 bg-white-m'>
       <AppLayout.MainNav>
         <Header title='Settings' subTitle='Settings' />
       </AppLayout.MainNav>
