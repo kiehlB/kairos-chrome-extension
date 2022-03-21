@@ -15,9 +15,7 @@ ReactDOM.render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
       <ConnectedRouter history={history}>
-        <HashRouter basename=''>
-          <App />
-        </HashRouter>
+        <App />
       </ConnectedRouter>
     </PersistGate>
   </Provider>,

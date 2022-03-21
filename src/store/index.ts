@@ -22,6 +22,8 @@ import {
 } from './dataMigration';
 import { InitDatabaseService } from '../lib';
 
+import composeWithDevTools from './reduxDevTools';
+
 export const history = createHashHistory();
 const databaseService = InitDatabaseService();
 
@@ -37,7 +39,9 @@ const middleware = [
 ];
 const storeEnhancers = [applyMiddleware(...middleware)];
 
-export const composedEnhancer = compose(...storeEnhancers) as StoreEnhancer;
+export const composedEnhancer = composeWithDevTools(
+  ...storeEnhancers
+) as StoreEnhancer;
 
 export const rootReducer = combineReducers({
   activity: reducer,

@@ -29,7 +29,6 @@ function App() {
     dispatch(loadRecords());
   }, [loadRecords, selectedTimeRange]);
 
-  console.log('render');
   return (
     <div className='flex h-full flex-1'>
       <Navbar

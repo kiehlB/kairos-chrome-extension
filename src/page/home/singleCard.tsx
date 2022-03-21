@@ -74,6 +74,7 @@ const TotalUsage = (props) => {
 };
 
 function SingleCard() {
+  console.log('Single render');
   const getRandomArbitrary = useCallback((min, max) => {
     return Math.floor(Math.random() * (max - min) + min);
   }, []);
