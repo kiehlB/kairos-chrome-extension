@@ -7,7 +7,7 @@ import {
   getDayOfWeekCount,
   getEndOfDay,
   getHourOfWeek,
-  setMidnight,
+  getStartOfDay,
 } from './dateUtils';
 
 export function computeTotalDuration(
@@ -15,8 +15,8 @@ export function computeTotalDuration(
   effectiveTimeRange: DefiniteTimeRange
 ) {
   let totalDuration = 0;
-  const minDate = setMidnight(effectiveTimeRange.start);
-  const maxDate = setMidnight(effectiveTimeRange.end);
+  const minDate = getStartOfDay(effectiveTimeRange.start);
+  const maxDate = getStartOfDay(effectiveTimeRange.end);
 
   records.forEach((record) => {
     const { startTime } = record;
@@ -26,7 +26,7 @@ export function computeTotalDuration(
 
     // Handle records spanning over different days
     while (startDayOfWeek !== endDayOfWeek) {
-      const endDate = setMidnight(endTime);
+      const endDate = getStartOfDay(endTime);
       const newEndTime = endDate - 1;
       const newEndDayOfWeek = getDayOfWeek(newEndTime);
 
@@ -38,7 +38,7 @@ export function computeTotalDuration(
     }
 
     // Compute total duration
-    const startDate = setMidnight(startTime);
+    const startDate = getStartOfDay(startTime);
     if (startDate >= minDate && startDate <= maxDate) {
       totalDuration += endTime - startTime;
     }
@@ -52,19 +52,19 @@ export function computeTotalDurationByDate(
   effectiveTimeRange: DefiniteTimeRange
 ) {
   const totalDurationByDate: { [timestamp: string]: number } = {};
-  const minDate = setMidnight(effectiveTimeRange.start);
-  const maxDate = setMidnight(effectiveTimeRange.end);
+  const minDate = getStartOfDay(effectiveTimeRange.start);
+  const maxDate = getStartOfDay(effectiveTimeRange.end);
 
   records.forEach((record) => {
     const { startTime } = record;
-    const startDate = setMidnight(startTime);
+    const startDate = getStartOfDay(startTime);
     let { endTime } = record;
-    let endDate = setMidnight(endTime);
+    let endDate = getStartOfDay(endTime);
 
     // Handle records spanning over different dates
     while (startDate !== endDate) {
-      const newEndTime = setMidnight(endTime) - 1;
-      const newEndDate = setMidnight(newEndTime);
+      const newEndTime = getStartOfDay(endTime) - 1;
+      const newEndDate = getStartOfDay(newEndTime);
 
       if (endDate >= minDate && endDate <= maxDate) {
         const duration = endTime - newEndTime;
@@ -116,8 +116,8 @@ export function computeTotalDurationByDayOfWeek(
   effectiveTimeRange: DefiniteTimeRange
 ) {
   const totalDurationByDayOfWeek: { [dayOfWeek: string]: number } = {};
-  const minDate = setMidnight(effectiveTimeRange.start);
-  const maxDate = setMidnight(effectiveTimeRange.end);
+  const minDate = getStartOfDay(effectiveTimeRange.start);
+  const maxDate = getStartOfDay(effectiveTimeRange.end);
 
   // zero out entries
   for (let day = 0; day < 7; day++) {
@@ -132,7 +132,7 @@ export function computeTotalDurationByDayOfWeek(
 
     // Handle records spanning over different day of the week
     while (startDayOfWeek !== endDayOfWeek) {
-      const endDate = setMidnight(endTime);
+      const endDate = getStartOfDay(endTime);
       const newEndTime = endDate - 1;
       const newEndDayOfWeek = getDayOfWeek(newEndTime);
 
@@ -144,7 +144,7 @@ export function computeTotalDurationByDayOfWeek(
     }
 
     // Compute total duration
-    const startDate = setMidnight(startTime);
+    const startDate = getStartOfDay(startTime);
     if (startDate >= minDate && startDate <= maxDate) {
       totalDurationByDayOfWeek[endDayOfWeek] += endTime - startTime;
     }
@@ -163,7 +163,7 @@ export function computeTotalDurationByDurationBuckets(
   maxBucketCount = 1
 ) {
   const totalDurationByBuckets: { [durationBucket: string]: number } = {};
-  const minDate = setMidnight(effectiveTimeRange.start);
+  const minDate = getStartOfDay(effectiveTimeRange.start);
   const maxDate = getEndOfDay(effectiveTimeRange.end);
 
   // zero out entries
@@ -202,8 +202,8 @@ export function computeAverageDurationByHourOfWeek(
   const totalDurationByHourOfWeek: {
     [hourOfWeek: string]: { [date: string]: number };
   } = {};
-  const minDate = setMidnight(effectiveTimeRange.start);
-  const maxDate = setMidnight(effectiveTimeRange.end);
+  const minDate = getStartOfDay(effectiveTimeRange.start);
+  const maxDate = getStartOfDay(effectiveTimeRange.end);
 
   records.forEach((record) => {
     const { startTime } = record;
@@ -219,15 +219,18 @@ export function computeAverageDurationByHourOfWeek(
       const newEndTime = new Date(endTime).setMinutes(0, 0, 0) - 1;
       const newEndHourOfWeek = getHourOfWeek(newEndTime);
 
-      if (setMidnight(endTime) >= minDate && setMidnight(endTime) <= maxDate) {
+      if (
+        getStartOfDay(endTime) >= minDate &&
+        getStartOfDay(endTime) <= maxDate
+      ) {
         const hourOfWeekKey = String([endHourOfWeek.day, endHourOfWeek.hour]);
         if (totalDurationByHourOfWeek[hourOfWeekKey] === undefined) {
           totalDurationByHourOfWeek[hourOfWeekKey] = {};
         }
         const duration = endTime - newEndTime;
         const prevTotalDuration =
-          totalDurationByHourOfWeek[hourOfWeekKey][setMidnight(endTime)] || 0;
-        totalDurationByHourOfWeek[hourOfWeekKey][setMidnight(endTime)] =
+          totalDurationByHourOfWeek[hourOfWeekKey][getStartOfDay(endTime)] || 0;
+        totalDurationByHourOfWeek[hourOfWeekKey][getStartOfDay(endTime)] =
           prevTotalDuration + duration;
       }
 
@@ -236,8 +239,8 @@ export function computeAverageDurationByHourOfWeek(
 
     // Compute total duration
     if (
-      setMidnight(startTime) >= minDate &&
-      setMidnight(startTime) <= maxDate
+      getStartOfDay(startTime) >= minDate &&
+      getStartOfDay(startTime) <= maxDate
     ) {
       const hourOfWeekKey = `${endHourOfWeek.day},${endHourOfWeek.hour}`;
       const duration = endTime - startTime;
@@ -245,8 +248,8 @@ export function computeAverageDurationByHourOfWeek(
         totalDurationByHourOfWeek[hourOfWeekKey] = {};
       }
       const prevTotalDuration =
-        totalDurationByHourOfWeek[hourOfWeekKey][setMidnight(endTime)] || 0;
-      totalDurationByHourOfWeek[hourOfWeekKey][setMidnight(endTime)] =
+        totalDurationByHourOfWeek[hourOfWeekKey][getStartOfDay(endTime)] || 0;
+      totalDurationByHourOfWeek[hourOfWeekKey][getStartOfDay(endTime)] =
         prevTotalDuration + duration;
     }
   });

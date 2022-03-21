@@ -10,10 +10,9 @@ import {
   Legend,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
-import faker from '@faker-js/faker';
 
 import { useSelector } from 'react-redux';
-import { RootState } from '../../store/store';
+
 import {
   getAverageDurationByHourOfWeek,
   getSelectedDomainTotalDurationByDayOfWeek,
@@ -21,6 +20,7 @@ import {
 } from '../../store/activity/selectors';
 import { formatTableDurationLabel } from '../../utils/stringUtils';
 import { useParams, useLocation } from 'react-router-dom';
+import { RootState } from '../../store';
 
 ChartJS.register(
   CategoryScale,
@@ -162,5 +162,5 @@ export function LineChart() {
     ],
   };
 
-  return <Line options={options} data={data} width={520} height={300} />;
+  return <Line options={options} data={data} />;
 }

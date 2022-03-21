@@ -4,13 +4,13 @@ import { connect, useDispatch, useSelector } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Domain } from '../../lib/db/models/activity';
 import { BUTTON_MARGIN, ICON_SIZE_MD } from '../../lib/styles/constants';
+import { RootState } from '../../store';
 import {
   getAllDomains,
   getIsLoadingRecords,
 } from '../../store/activity/selectors';
 import { setSelectedDomain } from '../../store/router/actions';
 import { getSearchParamsSelectedDomain } from '../../store/router/selectors';
-import { RootState } from '../../store/store';
 
 interface DomainPickerProps {}
 
@@ -56,14 +56,12 @@ export const DomainPicker = ({}: DomainPickerProps) => {
           <div className='domain-picker__placeholder'>
             <span>No domains found</span>
           </div>
-        }
-      >
+        }>
         <Button
           height={30}
           disabled={isLoadingRecords}
           iconAfter='caret-down'
-          marginRight={BUTTON_MARGIN}
-        >
+          marginRight={BUTTON_MARGIN}>
           {selectedDomain ? selectedDomain : 'Select Domain'}
         </Button>
       </SelectMenu>

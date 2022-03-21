@@ -9,16 +9,16 @@ import {
   Legend,
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
-import faker from '@faker-js/faker';
 
 import { useSelector } from 'react-redux';
-import { RootState } from '../../store/store';
+
 import {
   getSelectedDomainTotalDurationByDayOfWeek,
   getTotalDurationByDayOfWeek,
 } from '../../store/activity/selectors';
 import { formatTableDurationLabel } from '../../utils/stringUtils';
 import { useParams, useLocation } from 'react-router-dom';
+import { RootState } from '../../store';
 
 ChartJS.register(
   CategoryScale,
@@ -126,5 +126,5 @@ export function HorizontalChart() {
     ],
   };
 
-  return <Bar options={options} data={d2} width={520} height={300} />;
+  return <Bar options={options} data={d2} />;
 }

@@ -197,8 +197,7 @@ const DateRangePicker = ({
                     isActive={_.isEqual(range.value, value)}
                     onClick={() =>
                       handleRangeClick(range.value, handleClickOptions)
-                    }
-                  >
+                    }>
                     {range.label}
                   </Button>
                 ))}
@@ -264,14 +263,12 @@ const DateRangePicker = ({
             />
           </div>
         );
-      }}
-    >
+      }}>
       <Button
         className=''
         disabled={disabled}
         height={BUTTON_SIZE}
-        iconBefore='timeline-events'
-      >
+        iconBefore='timeline-events'>
         {value && initialFrom && initialTo ? (
           <>
             {formatDateString(initialFrom)}

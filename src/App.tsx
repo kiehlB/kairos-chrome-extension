@@ -1,38 +1,19 @@
-import Navbar from './components/Navbar';
-import {
-  BarChart2,
-  Clock,
-  Settings,
-  HelpCircle,
-  Search,
-  Bell,
-} from 'react-feather';
-import { Switch, Route, Redirect, Router } from 'react-router';
-import Home from './page/home';
-import { useEffect, useRef, useState } from 'react';
-import { loadRecords } from './store/activity/activity';
+import { useEffect, useState } from 'react';
+import { Route, Switch, Redirect } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams, useLocation } from 'react-router-dom';
-import {
-  getAllDomains,
-  getIsLoadingRecords,
-  getTotalDurationByDate,
-} from './store/activity/selectors';
-import { RootState } from './store/store';
-import {
-  getSearchParamsSelectedDomain,
-  getSearchParamsSelectedTimeRange,
-} from './store/router/selectors';
+import { loadRecords } from './store/activity/activity';
+import { RootState } from './store';
 import { selectors } from './store/router';
+import Navbar from './components/Navbar';
+import { BarChart2, Clock, Settings } from 'react-feather';
+import Home from './page/home';
 import { HistoryView } from './page/history';
 import { SettingsView } from './page/settings';
-import { importDatabaseRecords } from './store/dataMigration/slice';
 
 function App() {
-  const search = '';
   const dispatch = useDispatch();
+  const search = '';
 
-  let location = useLocation();
   const [isSelect, setIsSelect] = useState({
     one: false,
     two: false,
@@ -48,48 +29,48 @@ function App() {
     dispatch(loadRecords());
   }, [loadRecords, selectedTimeRange]);
 
+  console.log('render');
   return (
-    <div className='flex transition-all bg-white w-full h-full'>
-      <div className='h-full fixed'>
-        <Navbar
-          primaryItems={[
-            {
-              icon: <BarChart2 size='20' />,
-              text: 'Analytics',
-              to: { pathname: '/analytics', search },
-              isSelect: isSelect.one,
+    <div className='flex h-full flex-1'>
+      <Navbar
+        primaryItems={[
+          {
+            icon: <BarChart2 size='20' />,
+            text: 'Analytics',
+            to: { pathname: '/analytics', search },
+            isSelect: isSelect.one,
+          },
+          {
+            icon: <Clock size='20' />,
+            text: 'History',
+            to: { pathname: '/history', search },
+            isSelect: isSelect.two,
+          },
+        ]}
+        secondaryItems={[
+          {
+            icon: <Settings size='20' />,
+            text: 'Settings',
+            to: {
+              pathname: '/settings',
             },
-            {
-              icon: <Clock size='20' />,
-              text: 'History',
-              to: { pathname: '/history', search },
-              isSelect: isSelect.two,
-            },
-          ]}
-          secondaryItems={[
-            {
-              icon: <Settings size='20' />,
-              text: 'Settings',
-              to: {
-                pathname: '/settings',
-              },
-              isSelect: isSelect.three,
-            },
-          ]}
-        />
+            isSelect: isSelect.three,
+          },
+        ]}
+      />
+      <div className='flex h-full w-full flex-1 overflow-auto border-2'>
+        <Switch>
+          <Route exact path='/analytics' render={() => <Home />} />
+          <Route path='/history'>
+            <HistoryView />
+          </Route>
+          <Route path='/settings'>
+            <SettingsView />
+          </Route>
+
+          <Redirect to='/analytics' />
+        </Switch>
       </div>
-
-      <Switch>
-        <Route exact path='/analytics' render={() => <Home />} />
-        <Route path='/history'>
-          <HistoryView />
-        </Route>
-        <Route path='/settings'>
-          <SettingsView />
-        </Route>
-
-        <Redirect to='/analytics' />
-      </Switch>
     </div>
   );
 }

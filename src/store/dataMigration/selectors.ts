@@ -1,4 +1,4 @@
-import { RootState } from '../store';
+import { RootState } from '..';
 
 export const getIsExportingDatabaseRecords = (state: RootState) => {
   return state.dataMigration.isExportingDatabaseRecords;

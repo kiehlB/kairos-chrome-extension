@@ -19,7 +19,7 @@ import {
   getTotalDurationByDate,
   getTotalDurationByDayOfWeek,
 } from '../../store/activity/selectors';
-import { RootState } from '../../store/store';
+
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -31,7 +31,6 @@ import {
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 
-import faker from '@faker-js/faker';
 import { TableChart } from '../../components/TableChart';
 import {
   formatTableDurationLabel,
@@ -39,6 +38,7 @@ import {
 } from '../../utils/stringUtils';
 import moment from 'moment';
 import { useParams, useLocation } from 'react-router-dom';
+import { RootState } from '../../store';
 
 const MAX_TICK_COUNT = 5;
 const MIN_STEP = MS_PER_HOUR;

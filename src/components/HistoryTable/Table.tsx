@@ -1,25 +1,24 @@
-import classNames from "classnames";
-import { Button, Spinner, Table as EvergreenTable } from "evergreen-ui";
-import _ from "lodash";
-import React, { useCallback, useMemo, useState } from "react";
-import { useDebounce } from "use-debounce";
-import useClientDimensions from "../../hooks/useClientDimensions";
-import { BASE_SIZE, SPINNER_SIZE } from "../../lib/styles/constants";
-import { Heading, Menu, Pane, Popover } from "evergreen-ui";
+import { Button, Spinner, Table as EvergreenTable } from 'evergreen-ui';
+import _ from 'lodash';
+import React, { useCallback, useMemo, useState } from 'react';
+import { useDebounce } from 'use-debounce';
+import useClientDimensions from '../../hooks/useClientDimensions';
+import { BASE_SIZE, SPINNER_SIZE } from '../../lib/styles/constants';
+import { Heading, Menu, Pane, Popover } from 'evergreen-ui';
 
 import defaultRowRenderer, {
   DEFAULT_TABLE_ROW_HEIGHT,
-} from "./DefaultTableRow";
+} from './DefaultTableRow';
 
-const DEFAULT_FILTER_PLACEHOLDER = "No entries";
-const DEFAULT_LOADING_FOOTER_PLACEHOLDER = "Loading entries...";
+const DEFAULT_FILTER_PLACEHOLDER = 'No entries';
+const DEFAULT_LOADING_FOOTER_PLACEHOLDER = 'Loading entries...';
 const FOOTER_HEIGHT = BASE_SIZE * 4;
 const HEADER_HEIGHT = BASE_SIZE * 4;
 const INITIAL_ROW_COUNT = 150;
 const ROWS_TO_LOAD_PER_BATCH = 300;
 
 function defaultFormatEntries(count: number) {
-  return `${count.toLocaleString("en-US")} ${count > 1 ? "entries" : "entry"}`;
+  return `${count.toLocaleString('en-US')} ${count > 1 ? 'entries' : 'entry'}`;
 }
 
 export function Table({
@@ -40,7 +39,7 @@ export function Table({
 }: any) {
   const [containerRef, { height: containerHeight }] = useClientDimensions();
   const [rowCount, setRowCount] = useState(INITIAL_ROW_COUNT);
-  const [filter, setFilter] = useState("");
+  const [filter, setFilter] = useState('');
   const [sortOrder, setSortOrder] = useState(defaultSortOrder);
   const [debouncedFilter] = useDebounce(filter, 500);
   const handleFilterChange = useCallback(setFilter, []);
@@ -87,7 +86,7 @@ export function Table({
     case visibleActivities.length === 0:
       tableContent = (
         <div className='' style={{ height: tableBodyHeight }}>
-          {filter === "" ? filterPlaceholder : "No matches found"}
+          {filter === '' ? filterPlaceholder : 'No matches found'}
         </div>
       );
       break;
@@ -102,8 +101,7 @@ export function Table({
           height={tableBodyHeight}
           onScroll={handleScroll}
           overscanCount={Math.round(containerHeight / rowHeight) * 2}
-          useAverageAutoHeightEstimation={false}
-        >
+          useAverageAutoHeightEstimation={false}>
           {visibleActivities.map((datum) =>
             tableRowRenderer({
               datum,
@@ -127,7 +125,7 @@ export function Table({
     case isLoading:
       footerText = DEFAULT_LOADING_FOOTER_PLACEHOLDER;
       break;
-    case filter !== "": {
+    case filter !== '': {
       const matchedRecords = formatEntries(activities.length);
       footerText = `Found ${matchedRecords} out of ${entriesWithUnit}`;
       break;
@@ -139,8 +137,7 @@ export function Table({
   return (
     <div
       ref={containerRef}
-      className='h-full border shadow-md  rounded-md bg-white dark:bg-slate-900'
-    >
+      className='h-full border shadow-md  rounded-md bg-white dark:bg-slate-900'>
       <EvergreenTable>
         <EvergreenTable.Head height={HEADER_HEIGHT}>
           {filterFn && (
@@ -163,8 +160,7 @@ export function Table({
         <div>{tableContent}</div>
         <EvergreenTable.Cell
           height={FOOTER_HEIGHT}
-          className='flex justify-end font-semibold text-xs dark:text-neutral-400'
-        >
+          className='flex justify-end font-semibold text-xs dark:text-neutral-400'>
           <div>{footerText}</div>
         </EvergreenTable.Cell>
       </EvergreenTable>
@@ -174,8 +170,8 @@ export function Table({
 
 export default Table;
 
-const DEFAULT_BUTTON_TEXT = "Sort";
-const DEFAULT_POPOVER_HEADER = "Sort Order";
+const DEFAULT_BUTTON_TEXT = 'Sort';
+const DEFAULT_POPOVER_HEADER = 'Sort Order';
 
 function TableSortButton<U, V>({ disabled, onSelect, sortOptions, sortOrder }) {
   let buttonText = DEFAULT_BUTTON_TEXT;
@@ -207,8 +203,7 @@ function TableSortButton<U, V>({ disabled, onSelect, sortOptions, sortOrder }) {
                       close();
                       onSelect(option.value);
                     }}
-                    secondaryText={option.optionSublabel}
-                  >
+                    secondaryText={option.optionSublabel}>
                     {option.optionLabel}
                   </Menu.Option>
                 ))}
@@ -217,15 +212,13 @@ function TableSortButton<U, V>({ disabled, onSelect, sortOptions, sortOrder }) {
           </Menu>
         );
       }}
-      statelessProps={{ className: "table__sort-button--popover" }}
-    >
+      statelessProps={{ className: 'table__sort-button--popover' }}>
       <Button
         appearance='minimal'
         disabled={disabled}
         iconBefore='sort'
         isActive={true}
-        className='table__sort-button'
-      >
+        className='table__sort-button'>
         <div className='mmd:hidden'>{buttonText}</div>
       </Button>
     </Popover>

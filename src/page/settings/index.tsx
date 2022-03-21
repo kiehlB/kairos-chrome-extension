@@ -8,6 +8,7 @@ import Card from '../../components/Card';
 import { List, ListItem } from '../../components/List';
 import useStorageEstimate from '../../hooks/useStorageEstimate';
 import { BASE_SIZE } from '../../lib/styles/constants';
+import { RootState } from '../../store';
 import {
   getActivityTimeRange,
   getIsLoadingRecords,
@@ -17,7 +18,7 @@ import {
   getExportingDatabaseRecordsSuccess,
 } from '../../store/dataMigration/selectors';
 import { exportDatabaseRecords } from '../../store/dataMigration/slice';
-import { RootState } from '../../store/store';
+
 import { formatBytes, formatDateDistance } from '../../utils/dateUtils';
 
 interface ExtensionDataCardProps {

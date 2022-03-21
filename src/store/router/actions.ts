@@ -2,10 +2,10 @@ import { Action } from '@reduxjs/toolkit';
 import { push } from 'connected-react-router';
 import _ from 'lodash';
 import { ThunkAction } from 'redux-thunk';
+import { RootState } from '..';
 import { TimeRange } from '../../lib/db/models/time';
 import { formatDateString } from '../../utils/dateUtils';
 import { computeSearchParams } from '../../utils/urlUtils';
-import { RootState } from '../store';
 
 import {
   DEFAULT_TIME_RANGE,

@@ -1,14 +1,14 @@
 import { createSelector } from 'reselect';
+import { RootState } from '..';
 import { ValidationStatus } from '../../lib/db/models/validate';
 import {
   getEndOfDay,
   getTimestampFromDateString,
   isValidDateString,
-  setMidnight,
+  getStartOfDay,
 } from '../../utils/dateUtils';
 
 import { getAllDomains } from '../activity/selectors';
-import { RootState } from '../store';
 
 import {
   DEFAULT_TIME_RANGE,
@@ -72,7 +72,7 @@ export const getSearchParamsSelectedTimeRange = createSelector(
       start:
         startDateParam === null
           ? null
-          : setMidnight(getTimestampFromDateString(startDateParam)),
+          : getStartOfDay(getTimestampFromDateString(startDateParam)),
       end:
         endDateParam === null
           ? null
@@ -100,7 +100,7 @@ export const getSearchParamsSelectedTimeRangeValidationStatus = (
   }
 
   if (startDateParam !== null || endDateParam !== null) {
-    const today = setMidnight();
+    const today = getStartOfDay();
     const startTime =
       startDateParam !== null ? getTimestampFromDateString(startDateParam) : 0;
     const endTime =

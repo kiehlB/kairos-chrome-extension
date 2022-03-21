@@ -1,4 +1,3 @@
-import classNames from 'classnames';
 import React from 'react';
 import ReactCountUp from 'react-countup';
 import {
@@ -69,8 +68,7 @@ export const CountUp = ({ formattingUnitFn, ...props }: CountUpProps) => {
               props.end > 0 ? 'text-grrenTint-m ' : ' text-red-700'
             }`
           : ' text-dark-m font-bold text-3xl dark:text-white'
-      } `}
-    >
+      } `}>
       <ReactCountUp className='dark:text-white' {...props} />
 
       {formattingUnitFn && (

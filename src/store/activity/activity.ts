@@ -5,14 +5,14 @@ import {
   ThunkAction,
 } from '@reduxjs/toolkit';
 import { ANALYTICS_REQUIRED_TIME_WINDOW } from '../../lib/constants/analytics';
-import { MockDatabase } from '../../lib/db/mock';
+
 import { Activity, Domain } from '../../lib/db/models/activity';
 import { DefiniteTimeRange, TimeRange } from '../../lib/db/models/time';
 import {
   extendTimeRange,
   isWithinTimeRange,
   minusDays,
-  setMidnight,
+  getStartOfDay,
 } from '../../utils/dateUtils';
 import {
   getEffectiveSearchParamsSelectedTimeRange,
@@ -20,7 +20,7 @@ import {
   getRecordsTimeRange,
 } from './selectors';
 import { batch } from 'react-redux';
-import { AppDispatch, AppThunk } from '../store';
+import { AppDispatch, AppThunk } from '..';
 
 export interface ActivityState {
   records: Activity[];
@@ -37,7 +37,7 @@ export interface ActivityState {
   theme: string;
 }
 export const SET_FOURWEEK: TimeRange = {
-  start: minusDays(setMidnight(), 27), // 4 weeks
+  start: minusDays(getStartOfDay(), 27), // 4 weeks
   end: null,
 };
 export const initialState = {
@@ -181,7 +181,6 @@ export const loadRecords =
           onSuccess();
         }
 
-        console.log(records);
         // Batch actions to ensure smooth UI transition on store updates
         batch(() => [
           dispatch(getRecordsSuccess(records || [])),

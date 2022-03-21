@@ -2,6 +2,7 @@ import React from 'react';
 import { connect, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Card from '../../components/Card';
+import { RootState } from '../../store';
 import {
   getSelectedDomainTotalDurationByPath,
   getTotalDuration,
@@ -12,7 +13,7 @@ import {
   getSearchParams,
   getSearchParamsSelectedDomain,
 } from '../../store/router/selectors';
-import { RootState } from '../../store/store';
+
 import { formatTableDurationLabel } from '../../utils/stringUtils';
 import { computeSearchParams } from '../../utils/urlUtils';
 import BarChartTable from './Table';

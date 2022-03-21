@@ -1,10 +1,10 @@
 import { createSelector } from '@reduxjs/toolkit';
 import { Activity, Domain } from '../../lib/db/models/activity';
 import { DefiniteTimeRange, TimeRange } from '../../lib/db/models/time';
-import { getDayCount, getEndOfDay, setMidnight } from '../../utils/dateUtils';
+import { getDayCount, getEndOfDay, getStartOfDay } from '../../utils/dateUtils';
 import { selectors as routerSelectors } from '../router';
 import _ from 'lodash';
-import { RootState } from '../store';
+
 import {
   computeAverageDurationByHourOfWeek,
   computeTotalDuration,
@@ -12,6 +12,7 @@ import {
   computeTotalDurationByDayOfWeek,
 } from '../../utils/activityUtils';
 import { MS_PER_DAY } from '../../lib/constants/time';
+import { RootState } from '..';
 
 export const getAllDomains = (state: RootState): Record<string, Domain> => {
   return state.activity.domains;
@@ -62,14 +63,14 @@ export const getEffectiveSelectedTimeRange = createSelector(
   [getActivityTimeRange, getSelectedTimeRange],
   (activityTimeRange, selectedTimeRange): DefiniteTimeRange => {
     if (activityTimeRange === null) {
-      return { start: setMidnight(), end: getEndOfDay() };
+      return { start: getStartOfDay(), end: getEndOfDay() };
     }
 
     const selectedStartTime = _.get(selectedTimeRange, 'start');
     const selectedEndTime = _.get(selectedTimeRange, 'end');
     const { start, end } = activityTimeRange;
     return {
-      start: setMidnight(
+      start: getStartOfDay(
         selectedStartTime ? _.clamp(selectedStartTime, start, end) : start
       ),
       end: getEndOfDay(
@@ -110,7 +111,7 @@ export const getEffectiveSearchParamsSelectedTimeRange = createSelector(
   [getActivityTimeRange, routerSelectors.getSearchParamsSelectedTimeRange],
   (activityTimeRange, searchParamsSelectedTimeRange): TimeRange => {
     const { start, end } = searchParamsSelectedTimeRange;
-    const startOfToday = setMidnight();
+    const startOfToday = getStartOfDay();
 
     return {
       start:

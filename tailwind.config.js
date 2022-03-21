@@ -75,6 +75,10 @@ module.exports = {
       tilt: 'tilt 10s infinite linear',
     },
     extend: {
+      flex: {
+        0: '0 0 ',
+        1: '1 0',
+      },
       colors: {
         'main-text': '#1f2d3d',
         'banner-color': '#7e5bef',

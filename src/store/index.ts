@@ -13,13 +13,14 @@ import { createHashHistory } from 'history';
 import thunk from 'redux-thunk';
 import { persistReducer } from 'redux-persist';
 import { connectRouter, routerMiddleware } from 'connected-react-router';
-import { InitDatabaseService } from '../lib/db';
+
 import storage from 'redux-persist/lib/storage';
 import {
   actions as dataMigrationActions,
   reducer as dataMigrationReducer,
   selectors as dataMigrationSelectors,
 } from './dataMigration';
+import { InitDatabaseService } from '../lib';
 
 export const history = createHashHistory();
 const databaseService = InitDatabaseService();

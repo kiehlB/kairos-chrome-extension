@@ -3,6 +3,7 @@ import { connect, useDispatch, useSelector } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { DefiniteTimeRange, TimeRange } from '../../lib/db/models/time';
 import { ValidationStatus } from '../../lib/db/models/validate';
+import { RootState } from '../../store';
 
 import {
   getActivityTimeRange,
@@ -12,9 +13,8 @@ import {
 } from '../../store/activity/selectors';
 
 import { getSearchParamsSelectedTimeRangeValidationStatus } from '../../store/router/selectors';
-import { RootState } from '../../store/store';
 
-import { getEndOfDay, setMidnight, minusDays } from '../../utils/dateUtils';
+import { getEndOfDay, getStartOfDay, minusDays } from '../../utils/dateUtils';
 import DateRangePicker from '../DatePicker';
 
 interface ActivityDateRangePickerProps {}
@@ -37,9 +37,12 @@ export const ActivityDateRangePicker = ({}: ActivityDateRangePickerProps) => {
   );
 
   // Computed values
-  const [startOfToday, endOfToday] = [setMidnight(), getEndOfDay()];
+  const [startOfToday, endOfToday] = [getStartOfDay(), getEndOfDay()];
   const [defaultStart, defaultEnd] = activityTimeRange
-    ? [setMidnight(activityTimeRange.start), getEndOfDay(activityTimeRange.end)]
+    ? [
+        getStartOfDay(activityTimeRange.start),
+        getEndOfDay(activityTimeRange.end),
+      ]
     : [startOfToday, endOfToday];
   const disabledDays = {
     before: new Date(defaultStart),

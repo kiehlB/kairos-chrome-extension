@@ -1,9 +1,8 @@
-import classNames from "classnames";
-import { ArrowUpRight, ArrowDownRight } from "react-feather";
-import React from "react";
-import { DurationCountUp, CountUp } from "../Count";
-import { Icon, Tooltip } from "evergreen-ui";
-import { BASE_SIZE } from "../../lib/styles/constants";
+import { ArrowUpRight, ArrowDownRight } from 'react-feather';
+import React from 'react';
+import { DurationCountUp, CountUp } from '../Count';
+import { Icon, Tooltip } from 'evergreen-ui';
+import { BASE_SIZE } from '../../lib/styles/constants';
 
 interface CardProps {
   title: string;
@@ -18,17 +17,15 @@ interface CardProps {
 
 const Card = (props: CardProps) => {
   return (
-    <div className={`${props.sort == "single" ? "flex   h-full p-4 " : ""}`}>
+    <div className={`${props.sort == 'single' ? 'flex   h-full p-4 ' : ''}`}>
       <div
-        className={`${props.sort == "single" ? "  w-full flex flex-col" : ""}`}
-      >
+        className={`${props.sort == 'single' ? '  w-full flex flex-col' : ''}`}>
         <div
           className={`${
-            props.sort == "single"
-              ? "flex items-center text-greyTint-m   justify-between"
-              : "flex items-center text-greyTint-m   justify-between px-4 mt-4"
-          }`}
-        >
+            props.sort == 'single'
+              ? 'flex items-center text-greyTint-m   justify-between'
+              : 'flex items-center text-greyTint-m   justify-between px-4 mt-4'
+          }`}>
           <h2 className='text-greyTint-m font-medium'>{props.title}</h2>
           <div className='ml-4'>
             {props.info && (
@@ -36,7 +33,7 @@ const Card = (props: CardProps) => {
                 <Icon
                   icon='issue'
                   size={BASE_SIZE * 1.5}
-                  style={{ transform: "rotate(180deg)" }}
+                  style={{ transform: 'rotate(180deg)' }}
                 />
               </Tooltip>
             )}
@@ -49,14 +46,13 @@ const Card = (props: CardProps) => {
         )}
 
         {props.body && (
-          <div className={`${props.sort == "single" ? "mt-6" : ""}`}>
+          <div className={`${props.sort == 'single' ? 'mt-6' : ''}`}>
             <div
               className={`${
-                props.sort == "single"
-                  ? "flex items-center  m2xl:justify-center"
-                  : " "
-              }`}
-            >
+                props.sort == 'single'
+                  ? 'flex items-center  m2xl:justify-center'
+                  : ' '
+              }`}>
               <div className='truncate whitespace-nowrap overflow-hidden'>
                 {props.body}
               </div>
@@ -72,12 +68,11 @@ const Card = (props: CardProps) => {
                   redraw={true}
                 />
 
-                {props.sort == "single" && props.extra ? (
+                {props.sort == 'single' && props.extra ? (
                   <div
                     className={`flex  ${
-                      props.extra > 0 ? "text-grrenTint-m" : "text-red-700"
-                    }`}
-                  >
+                      props.extra > 0 ? 'text-grrenTint-m' : 'text-red-700'
+                    }`}>
                     %
                     {props.extra > 0 ? (
                       <ArrowUpRight size={18} className='ml-0.5' />
@@ -86,7 +81,7 @@ const Card = (props: CardProps) => {
                     )}
                   </div>
                 ) : (
-                  ""
+                  ''
                 )}
               </div>
             </div>

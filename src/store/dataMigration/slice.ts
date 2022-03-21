@@ -1,11 +1,10 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import FileSaver from "file-saver";
-import { batch } from "react-redux";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import FileSaver from 'file-saver';
+import { batch } from 'react-redux';
 
-import packageInfo from "../../../package.json";
-import { actions as activityActions } from "../activity";
-import { loadRecords } from "../activity/activity";
-import DATA from "../../lib/db/storage/data.json";
+import packageInfo from '../../../package.json';
+import { actions as activityActions } from '../activity';
+import { loadRecords } from '../activity/activity';
 
 export interface DataMigrationState {
   exportingDatabaseRecordsError: Error | null;
@@ -26,7 +25,7 @@ const INITIAL_STATE: DataMigrationState = {
 };
 
 const dataMigration = createSlice({
-  name: "dataMigration",
+  name: 'dataMigration',
   initialState: INITIAL_STATE,
   reducers: {
     exportDatabaseRecordsStart(state: DataMigrationState) {
@@ -81,7 +80,7 @@ export const exportDatabaseRecords =
     dispatch(exportDatabaseRecordsStart());
     try {
       if (databaseService === undefined) {
-        throw Error("Unable to connect to DB");
+        throw Error('Unable to connect to DB');
       }
 
       const data = await databaseService.exportDatabaseRecords();
@@ -89,7 +88,7 @@ export const exportDatabaseRecords =
         [JSON.stringify(data)],
         `${packageInfo.name}_backup_${Date.now()}.json`,
         {
-          type: "text/plain;charset=utf-8",
+          type: 'text/plain;charset=utf-8',
         }
       );
       FileSaver.saveAs(file);
@@ -112,7 +111,7 @@ export const importDatabaseRecords =
     dispatch(importDatabaseRecordsStart());
     try {
       if (databaseService === undefined) {
-        throw Error("Unable to connect to DB");
+        throw Error('Unable to connect to DB');
       }
 
       await databaseService.importDatabaseRecords();

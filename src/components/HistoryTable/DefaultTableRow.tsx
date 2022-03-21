@@ -1,4 +1,3 @@
-import classNames from 'classnames';
 import { Table } from 'evergreen-ui';
 import React from 'react';
 import { BASE_SIZE } from '../../lib/styles/constants';
@@ -15,8 +14,9 @@ function DefaultTableRow({
     <Table.Row
       className=''
       height={DEFAULT_TABLE_ROW_HEIGHT}
-      onClick={isSelectable && onRowClick ? () => onRowClick(datum) : undefined}
-    >
+      onClick={
+        isSelectable && onRowClick ? () => onRowClick(datum) : undefined
+      }>
       <span>{JSON.stringify(datum)}</span>
     </Table.Row>
   );
