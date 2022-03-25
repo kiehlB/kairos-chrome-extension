@@ -47,6 +47,7 @@ export function HorizontalChart() {
   const byDomain = location.search.slice(0, 7);
 
   const isDomain = byDomain == '?domain' ? true : false;
+  const data = totalTime.map((d) => d.duration / 3600000);
 
   const options = {
     responsive: true,
@@ -65,8 +66,8 @@ export function HorizontalChart() {
         ticks: {
           callback: (value) =>
             isDomain
-              ? `${Math.floor(value / (1000 * 60))}min`
-              : `${Math.floor(value / (1000 * 60 * 60))}h`,
+              ? `${Math.floor(value / (1000 * 60))} min`
+              : `${Math.floor(value)} h`,
         },
       },
       y: {
@@ -80,7 +81,7 @@ export function HorizontalChart() {
     plugins: {
       tooltip: {
         callbacks: {
-          label: function (context) {
+          label: function(context) {
             let label = Math.floor(context.parsed.x) || '';
 
             return ` ${label}h`;
@@ -105,7 +106,7 @@ export function HorizontalChart() {
     },
   } as any;
 
-  const data = totalTime.map((d) => d.duration / 3600000);
+  console.log(data);
 
   const randomData = totalTime.map((d) => d.duration);
 

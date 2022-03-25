@@ -57,7 +57,7 @@ function App() {
           },
         ]}
       />
-      <div className='flex h-full w-full flex-1 overflow-auto border-2'>
+      <div className='flex h-full w-full flex-1 overflow-auto'>
         <Switch>
           <Route exact path='/analytics' render={() => <Home />} />
           <Route path='/history'>

@@ -67,20 +67,20 @@ function Header({ children, title, subTitle }: HeaderProps) {
 
         {subTitle == 'Analytics' ? (
           <>
-            <div className='border h-10 maxw:hidden'></div>
+            <div className='border h-10 maxw:hidden ml-8'></div>
           </>
         ) : (
           ''
         )}
 
-        <div className='maxw:hidden'>
+        <div className='maxw:hidden ml-8'>
           <img
-            className='inline object-cover w-12 h-12 rounded-full'
+            className='inline object-cover w-12 h-12 rounded-full '
             src='./bart.png'
             alt='Profile image'
           />
         </div>
-        <section className='flex flex-col maxw:hidden'>
+        <section className='flex flex-col maxw:hidden ml-4'>
           <div className='text-greyTint-m font-medium text-sm'>Provider</div>
           <div className='font-bold text-dark-m m2xl:hidden'>Woong</div>
         </section>
