@@ -20,34 +20,25 @@ import { formatTableDurationLabel } from '../../utils/stringUtils';
 import { useParams, useLocation } from 'react-router-dom';
 import { RootState } from '../../store';
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend
-);
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 export function HorizontalChart() {
-  const totalTime = useSelector((state: RootState) =>
-    getTotalDurationByDayOfWeek(state)
-  );
+  const totalTime = useSelector((state: RootState) => getTotalDurationByDayOfWeek(state));
 
   const totalTimeByDomain = useSelector((state: RootState) =>
-    getSelectedDomainTotalDurationByDayOfWeek(state)
+    getSelectedDomainTotalDurationByDayOfWeek(state),
   );
 
   const isDarkToggle = useSelector((state: RootState) => state.activity.isDark);
 
-  const allTimeByDomain = totalTimeByDomain.map((d) => d.duration);
+  const allTimeByDomain = totalTimeByDomain.map(d => d.duration);
 
   let location = useLocation();
 
   const byDomain = location.search.slice(0, 7);
 
   const isDomain = byDomain == '?domain' ? true : false;
-  const data = totalTime.map((d) => d.duration / 3600000);
+  const data = totalTime.map(d => d.duration / 3600000);
 
   const options = {
     responsive: true,
@@ -64,7 +55,7 @@ export function HorizontalChart() {
         },
 
         ticks: {
-          callback: (value) =>
+          callback: value =>
             isDomain
               ? `${Math.floor(value / (1000 * 60))} min`
               : `${Math.floor(value)} h`,
@@ -81,7 +72,7 @@ export function HorizontalChart() {
     plugins: {
       tooltip: {
         callbacks: {
-          label: function(context) {
+          label: function (context) {
             let label = Math.floor(context.parsed.x) || '';
 
             return ` ${label}h`;
@@ -106,9 +97,7 @@ export function HorizontalChart() {
     },
   } as any;
 
-  console.log(data);
-
-  const randomData = totalTime.map((d) => d.duration);
+  const randomData = totalTime.map(d => d.duration);
 
   const labels = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 

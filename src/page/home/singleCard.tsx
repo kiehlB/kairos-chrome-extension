@@ -37,7 +37,7 @@ export type TotalUsageProps = {
   getRandomArbitrary?;
 };
 
-const TotalUsage = (props) => {
+const TotalUsage = props => {
   const extraCard = {
     isDuration: false,
     decimals: 3,
@@ -74,7 +74,6 @@ const TotalUsage = (props) => {
 };
 
 function SingleCard() {
-  console.log('Single render');
   const getRandomArbitrary = useCallback((min, max) => {
     return Math.floor(Math.random() * (max - min) + min);
   }, []);
@@ -86,30 +85,26 @@ function SingleCard() {
   const totalTime = useSelector((state: RootState) => getTotalDuration(state));
 
   const totalTimeByDamin = useSelector((state: RootState) =>
-    getSelectedDomainTotalDuration(state)
+    getSelectedDomainTotalDuration(state),
   );
   const toTotalDuration = useSelector(
-    (state: RootState) => getRatioToTotalDuration(state) * 100
+    (state: RootState) => getRatioToTotalDuration(state) * 100,
   );
 
   const toTotalDurationByDomain = useSelector(
-    (state: RootState) => getSelectedDomainRatioToTotalDuration(state) * 100
+    (state: RootState) => getSelectedDomainRatioToTotalDuration(state) * 100,
   );
 
-  const pageVisit = useSelector((state: RootState) =>
-    getTotalPageVisitCount(state)
-  );
+  const pageVisit = useSelector((state: RootState) => getTotalPageVisitCount(state));
 
   const pageVisitByDomain = useSelector((state: RootState) =>
-    getSelectedDomainTotalPageVisitCount(state)
+    getSelectedDomainTotalPageVisitCount(state),
   );
 
-  const domainVisit = useSelector((state: RootState) =>
-    getTotalDomainVisitCount(state)
-  );
+  const domainVisit = useSelector((state: RootState) => getTotalDomainVisitCount(state));
 
   const domainVisitByDomain = useSelector((state: RootState) =>
-    getSelectedDomainAveragePageVisitDuration(state)
+    getSelectedDomainAveragePageVisitDuration(state),
   );
 
   const isDomain = byDomain == '?domain' ? true : false;
@@ -156,17 +151,15 @@ function SingleCard() {
     data: isDomain ? domainVisitByDomain : domainVisit,
     isDuration: isDomain ? true : false,
     formattingFn: isDomain ? '' : (d: number) => d.toLocaleString('en-US'),
-    formattingUnitFn: isDomain
-      ? ''
-      : (d: number) => (d > 1 ? 'domains' : 'domain'),
+    formattingUnitFn: isDomain ? '' : (d: number) => (d > 1 ? 'domains' : 'domain'),
   };
 
   const eachWithTotal = () => {
     return (
-      <div className='flex '>
+      <div className="flex ">
         <TotalUsage
-          className='shadow-md  rounded-md mr-4 w-mcard bg-white dark:bg-slate-900 dark:shadowmd dark:border-2  '
-          sort='single'
+          className="shadow-md  rounded-md mr-4 w-mcard bg-white dark:bg-slate-900 dark:shadowmd dark:border-2  "
+          sort="single"
           title={totalTimeRangeCardInfo.title}
           info={totalTimeRangeCardInfo.info}
           footer={totalTimeRangeCardInfo.footer}
@@ -175,9 +168,9 @@ function SingleCard() {
           getRandomArbitrary={getRandomArbitrary(-100, 100)}
         />
         <TotalUsage
-          className='shadow-md  rounded-md mr-4 
-           w-mcard  bg-white  dark:bg-slate-900 dark:shadowmd   dark:border-2'
-          sort='single'
+          className="shadow-md  rounded-md mr-4 
+           w-mcard  bg-white  dark:bg-slate-900 dark:shadowmd   dark:border-2"
+          sort="single"
           title={toTotalDurationCard.title}
           info={toTotalDurationCard.info}
           footer={toTotalDurationCard.footer}
@@ -190,8 +183,8 @@ function SingleCard() {
         />
 
         <TotalUsage
-          className='shadow-md  rounded-md mr-4 w-mcard bg-white  dark:bg-slate-900 dark:shadowmd  dark:border-2 '
-          sort='single'
+          className="shadow-md  rounded-md mr-4 w-mcard bg-white  dark:bg-slate-900 dark:shadowmd  dark:border-2 "
+          sort="single"
           title={pageVisitCard.title}
           info={pageVisitCard.info}
           footer={pageVisitCard.footer}
@@ -202,8 +195,8 @@ function SingleCard() {
           getRandomArbitrary={getRandomArbitrary(-100, 100)}
         />
         <TotalUsage
-          className='shadow-md  rounded-md  w-mcard  bg-white dark:bg-slate-900 dark:shadowmd  dark:border-2 '
-          sort='single'
+          className="shadow-md  rounded-md  w-mcard  bg-white dark:bg-slate-900 dark:shadowmd  dark:border-2 "
+          sort="single"
           title={TotalDomainCard.title}
           info={TotalDomainCard.info}
           footer={TotalDomainCard.footer}
@@ -219,11 +212,11 @@ function SingleCard() {
 
   const halfWithTotal = () => {
     return (
-      <div className='w-full'>
-        <div className='flex'>
+      <div className="w-full">
+        <div className="flex">
           <TotalUsage
-            className='shadow-md  rounded-md mr-4 w-scard  bg-white  dark:bg-slate-900 dark:shadowmd  dark:border-2'
-            sort='single'
+            className="shadow-md  rounded-md mr-4 w-scard  bg-white  dark:bg-slate-900 dark:shadowmd  dark:border-2"
+            sort="single"
             title={totalTimeRangeCardInfo.title}
             info={totalTimeRangeCardInfo.info}
             footer={totalTimeRangeCardInfo.footer}
@@ -232,9 +225,9 @@ function SingleCard() {
             getRandomArbitrary={getRandomArbitrary(-100, 100)}
           />
           <TotalUsage
-            className='shadow-md  rounded-md bg-white dark:bg-slate-900 dark:shadowmd  dark:border-2
-           w-scard '
-            sort='single'
+            className="shadow-md  rounded-md bg-white dark:bg-slate-900 dark:shadowmd  dark:border-2
+           w-scard "
+            sort="single"
             title={toTotalDurationCard.title}
             info={toTotalDurationCard.info}
             footer={toTotalDurationCard.footer}
@@ -246,10 +239,10 @@ function SingleCard() {
             getRandomArbitrary={getRandomArbitrary(-100, 100)}
           />
         </div>
-        <div className='flex mt-4'>
+        <div className="flex mt-4">
           <TotalUsage
-            className='shadow-md  rounded-md mr-4 w-scard bg-white dark:bg-slate-900 dark:shadowmd  dark:border-2 '
-            sort='single'
+            className="shadow-md  rounded-md mr-4 w-scard bg-white dark:bg-slate-900 dark:shadowmd  dark:border-2 "
+            sort="single"
             title={pageVisitCard.title}
             info={pageVisitCard.info}
             footer={pageVisitCard.footer}
@@ -260,8 +253,8 @@ function SingleCard() {
             getRandomArbitrary={getRandomArbitrary(-100, 100)}
           />
           <TotalUsage
-            className='shadow-md  rounded-md  w-scard bg-white dark:bg-slate-900 dark:shadowmd  dark:border-2'
-            sort='single'
+            className="shadow-md  rounded-md  w-scard bg-white dark:bg-slate-900 dark:shadowmd  dark:border-2"
+            sort="single"
             title={TotalDomainCard.title}
             info={TotalDomainCard.info}
             footer={TotalDomainCard.footer}
@@ -278,11 +271,11 @@ function SingleCard() {
 
   const fullWithTotal = () => {
     return (
-      <div className='w-full'>
-        <div className='flex'>
+      <div className="w-full">
+        <div className="flex">
           <TotalUsage
-            className='shadow-md  rounded-md   w-fcard bg-white    dark:bg-slate-900 dark:shadowmd  dark:border-2'
-            sort='single'
+            className="shadow-md  rounded-md   w-fcard bg-white    dark:bg-slate-900 dark:shadowmd  dark:border-2"
+            sort="single"
             title={totalTimeRangeCardInfo.title}
             info={totalTimeRangeCardInfo.info}
             footer={totalTimeRangeCardInfo.footer}
@@ -291,11 +284,11 @@ function SingleCard() {
             getRandomArbitrary={getRandomArbitrary(-100, 100)}
           />
         </div>
-        <div className='mt-2'>
+        <div className="mt-2">
           <TotalUsage
-            className='shadow-md  rounded-md  bg-white   dark:bg-slate-900 dark:shadowmd  dark:border-2
-           w-fcard '
-            sort='single'
+            className="shadow-md  rounded-md  bg-white   dark:bg-slate-900 dark:shadowmd  dark:border-2
+           w-fcard "
+            sort="single"
             title={toTotalDurationCard.title}
             info={toTotalDurationCard.info}
             footer={toTotalDurationCard.footer}
@@ -307,10 +300,10 @@ function SingleCard() {
             getRandomArbitrary={getRandomArbitrary(-100, 100)}
           />
         </div>
-        <div className='flex mt-2'>
+        <div className="flex mt-2">
           <TotalUsage
-            className='shadow-md  rounded-md   w-fcard bg-white  dark:bg-slate-900 dark:shadowmd  dark:border-2'
-            sort='single'
+            className="shadow-md  rounded-md   w-fcard bg-white  dark:bg-slate-900 dark:shadowmd  dark:border-2"
+            sort="single"
             title={pageVisitCard.title}
             info={pageVisitCard.info}
             footer={pageVisitCard.footer}
@@ -321,10 +314,10 @@ function SingleCard() {
             getRandomArbitrary={getRandomArbitrary(-100, 100)}
           />
         </div>
-        <div className='flex mt-2'>
+        <div className="flex mt-2">
           <TotalUsage
-            className='shadow-md  rounded-md  w-fcard bg-white dark:bg-slate-900 dark:shadowmd  dark:border-2'
-            sort='single'
+            className="shadow-md  rounded-md  w-fcard bg-white dark:bg-slate-900 dark:shadowmd  dark:border-2"
+            sort="single"
             title={TotalDomainCard.title}
             info={TotalDomainCard.info}
             footer={TotalDomainCard.footer}
@@ -342,16 +335,16 @@ function SingleCard() {
   const resultTotal = () => {
     return (
       <>
-        <div className='m2xl:hidden'>{eachWithTotal()}</div>
-        <div className='mmd:hidden xxl:hidden'>{halfWithTotal()}</div>
-        <div className='si:hidden'> {fullWithTotal()}</div>
+        <div className="m2xl:hidden">{eachWithTotal()}</div>
+        <div className="mmd:hidden xxl:hidden">{halfWithTotal()}</div>
+        <div className="si:hidden"> {fullWithTotal()}</div>
       </>
     );
   };
 
   return (
     <>
-      <div className='mt-4 px-8 mmd:px-4 bg-white-m dark:bg-slate-900'>
+      <div className="mt-4 px-8 mmd:px-4 bg-white-m dark:bg-slate-900">
         {resultTotal()}
       </div>
     </>

@@ -14,15 +14,8 @@ function App() {
   const dispatch = useDispatch();
   const search = '';
 
-  const [isSelect, setIsSelect] = useState({
-    one: false,
-    two: false,
-    three: false,
-    four: false,
-  });
-
   const selectedTimeRange = useSelector((state: RootState) =>
-    selectors.getSearchParamsSelectedTimeRange(state)
+    selectors.getSearchParamsSelectedTimeRange(state),
   );
 
   useEffect(() => {
@@ -30,44 +23,41 @@ function App() {
   }, [loadRecords, selectedTimeRange]);
 
   return (
-    <div className='flex h-full flex-1'>
+    <div className="flex h-full flex-1 overflow-auto">
       <Navbar
         primaryItems={[
           {
-            icon: <BarChart2 size='20' />,
+            icon: <BarChart2 size="20" />,
             text: 'Analytics',
             to: { pathname: '/analytics', search },
-            isSelect: isSelect.one,
           },
           {
-            icon: <Clock size='20' />,
+            icon: <Clock size="20" />,
             text: 'History',
             to: { pathname: '/history', search },
-            isSelect: isSelect.two,
           },
         ]}
         secondaryItems={[
           {
-            icon: <Settings size='20' />,
+            icon: <Settings size="20" />,
             text: 'Settings',
             to: {
               pathname: '/settings',
             },
-            isSelect: isSelect.three,
           },
         ]}
       />
-      <div className='flex h-full w-full flex-1 overflow-auto'>
+      <div className="flex h-full w-full flex-1 overflow-auto">
         <Switch>
-          <Route exact path='/analytics' render={() => <Home />} />
-          <Route path='/history'>
+          <Route exact path="/analytics" render={() => <Home />} />
+          <Route path="/history">
             <HistoryView />
           </Route>
-          <Route path='/settings'>
+          <Route path="/settings">
             <SettingsView />
           </Route>
 
-          <Redirect to='/analytics' />
+          <Redirect to="/analytics" />
         </Switch>
       </div>
     </div>
