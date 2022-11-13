@@ -9,8 +9,6 @@ export interface NavbarItemProps extends Pick<NavLinkProps, 'to'> {
 }
 
 export const NavbarItem = (props: NavbarItemProps) => {
-  console.log(props.path);
-  console.log(props.to.pathname);
   return (
     <NavLink
       className={`w-full flex px-4 pt-6 items-center  ${

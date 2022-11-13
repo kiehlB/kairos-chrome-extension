@@ -39,8 +39,8 @@ function Header({ children, title, subTitle }: HeaderProps) {
 
   const widthSection = () => {
     return (
-      <section className='flex  items-center justify-end  '>
-        <div className='flex  '>
+      <section className="flex  items-center justify-end  ">
+        <div className="flex  ">
           {subTitle == 'Analytics' ? (
             <>
               <div>
@@ -67,31 +67,31 @@ function Header({ children, title, subTitle }: HeaderProps) {
 
         {subTitle == 'Analytics' ? (
           <>
-            <div className='border h-10 maxw:hidden ml-8'></div>
+            <div className="border h-10 maxw:hidden ml-8"></div>
           </>
         ) : (
           ''
         )}
 
-        <div className='maxw:hidden ml-8'>
+        <div className="maxw:hidden ml-8">
           <img
-            className='inline object-cover w-12 h-12 rounded-full '
-            src='./bart.png'
-            alt='Profile image'
+            className="inline object-cover w-12 h-12 rounded-full "
+            src="./bart.png"
+            alt="Profile image"
           />
         </div>
-        <section className='flex flex-col maxw:hidden ml-4'>
-          <div className='text-greyTint-m font-medium text-sm'>Provider</div>
-          <div className='font-bold text-dark-m m2xl:hidden'>Woong</div>
+        <section className="flex flex-col maxw:hidden ml-4">
+          <div className="text-greyTint-m font-medium text-sm">Provider</div>
+          <div className="font-bold text-dark-m m2xl:hidden">Woong</div>
         </section>
       </section>
     );
   };
   const divSection = () => {
     return (
-      <div className='flex items-center justify-end  '>
-        <div className='flex mmd:flex-col  items-end'>
-          <div className='mmd:mb-1'>
+      <div className="flex items-center justify-end  ">
+        <div className="flex mmd:flex-col  items-end">
+          <div className="mmd:mb-1">
             <DomainPicker />
           </div>
           <div>
@@ -99,17 +99,17 @@ function Header({ children, title, subTitle }: HeaderProps) {
           </div>
         </div>
 
-        <div className='bordr h-10 maxw:hidden'></div>
-        <div className='maxw:hidden'>
+        <div className="bordr h-10 maxw:hidden"></div>
+        <div className="maxw:hidden">
           <img
-            className='inline object-cover w-12 h-12 rounded-full'
-            src='./bart.png'
-            alt='Profile image'
+            className="inline object-cover w-12 h-12 rounded-full"
+            src="./bart.png"
+            alt="Profile image"
           />
         </div>
-        <section className='flex flex-col  maxw:hidden'>
-          <div className='text-greyTint-m font-medium text-sm'>Provider</div>
-          <div className='font-bold text-dark-m m2xl:hidden'>Woong</div>
+        <section className="flex flex-col  maxw:hidden">
+          <div className="text-greyTint-m font-medium text-sm">Provider</div>
+          <div className="font-bold text-dark-m m2xl:hidden">Woong</div>
         </section>
       </div>
     );
@@ -117,32 +117,32 @@ function Header({ children, title, subTitle }: HeaderProps) {
 
   return (
     <>
-      <div className='border-b bg-white dark:bg-gray-900'>
-        <div className='flex h-20 items-center  px-8 justify-between flex-wrap  mmd:px-4'>
-          <div className='flex items-center'>
-            <div className='text-xl font-bold text-dark-m mr-4 dark:text-white '>
-              <div className='m2xl:hidden'>{title}</div>
-              <div className='mmd:hidden xxl:hidden'>{subTitle}</div>
+      <div className="border-b bg-white dark:bg-gray-900">
+        <div className="flex h-20 items-center  px-8 justify-between flex-wrap  mmd:px-4">
+          <div className="flex items-center">
+            <div className="text-xl font-bold text-dark-m mr-4 dark:text-white ">
+              <div className="m2xl:hidden">{title}</div>
+              <div className="mmd:hidden xxl:hidden">{subTitle}</div>
 
-              <div className='si:hidden'>
+              <div className="si:hidden">
                 <SideSheet
                   // @ts-ignore
                   position={Position.LEFT}
                   isShown={isShown}
-                  width='15rem'
+                  width="15rem"
                   onCloseComplete={() => setIsShown(false)}>
-                  <Link to='/Analytics'>
+                  <Link to="/Analytics">
                     <Paragraph margin={20}>Analytics</Paragraph>
                   </Link>
-                  <Link to='/History'>
+                  <Link to="/History">
                     <Paragraph margin={20}>History</Paragraph>
                   </Link>
-                  <Link to='/Settings'>
+                  <Link to="/Settings">
                     <Paragraph margin={20}>Settings</Paragraph>
                   </Link>
 
                   <div
-                    className='w-12 ml-5 h-6'
+                    className="w-12 ml-5 h-6"
                     onClick={() => {
                       setTheme(colorTheme);
                       dispatch(isDarkTrigger());
@@ -160,7 +160,7 @@ function Header({ children, title, subTitle }: HeaderProps) {
               </div>
             </div>
             <div
-              className='flex items-center'
+              className="flex items-center"
               onClick={() => {
                 dispatch(isDarkTrigger());
                 setTheme(colorTheme);
@@ -169,12 +169,12 @@ function Header({ children, title, subTitle }: HeaderProps) {
                 onChange={() => {}}
                 isDarkMode={isDarkToggle}
                 size={80}
-                className='mmd:hidden'
+                className="mmd:hidden"
               />
             </div>
           </div>
-          <div className='m2xl:hidden '>{widthSection()}</div>
-          <div className='xxl:hidden'>{divSection()}</div>
+          <div className="m2xl:hidden ">{widthSection()}</div>
+          <div className="xxl:hidden">{divSection()}</div>
         </div>
       </div>
     </>

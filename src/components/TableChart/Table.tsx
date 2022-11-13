@@ -38,20 +38,20 @@ const BarChartTable = ({
   const rowData = [...new Array(rowCount)].map((_, index) => {
     return data?.[index] ?? { label: NO_DATA_LABEL, value: 0 };
   });
-  const max = maxValue ?? d3.max(rowData.map((d) => d.value)) ?? 1;
+  const max = maxValue ?? d3.max(rowData.map(d => d.value)) ?? 1;
 
   return (
-    <div className=''>
-      <div className='text-sm mt-4 dark:text-neutral-400'>
+    <div className="">
+      <div className="text-sm mt-4 dark:text-neutral-400">
         {rowData.map((datum, index) => (
           <div
             key={index}
-            className='flex items-center px-4 py-0.5 flex-1  file:'
+            className="flex items-center px-4 py-0.5 flex-1  file:"
             style={{
               visibility: datum.label === NO_DATA_LABEL ? 'hidden' : undefined,
             }}>
             {`${index + 1}.`}
-            <div className='w-full   flex justify-between flex-1'>
+            <div className="w-full   flex justify-between flex-1">
               <LabelCell
                 {...datum}
                 hide={datum.label === NO_DATA_LABEL}
@@ -60,10 +60,9 @@ const BarChartTable = ({
               />
 
               <div
-                className='truncate whitespace-nowrap overflow-hidden dark:text-neutral-400 font-semibold text-slate-400 text-sm'
+                className="truncate whitespace-nowrap overflow-hidden dark:text-neutral-400 font-semibold text-slate-400 text-sm"
                 style={{
-                  visibility:
-                    datum.label === NO_DATA_LABEL ? 'hidden' : undefined,
+                  visibility: datum.label === NO_DATA_LABEL ? 'hidden' : undefined,
                 }}>
                 {formatValue ? formatValue(datum.value) : datum.value}
               </div>

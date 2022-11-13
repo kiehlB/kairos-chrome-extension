@@ -43,22 +43,13 @@ import { RootState } from '../../store';
 const MAX_TICK_COUNT = 5;
 const MIN_STEP = MS_PER_HOUR;
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend
-);
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 function SecondCard() {
-  const totalTime = useSelector((state: RootState) =>
-    getTotalDurationByDate(state)
-  );
+  const totalTime = useSelector((state: RootState) => getTotalDurationByDate(state));
 
   const totalTimeByDomain = useSelector((state: RootState) =>
-    getSelectedDomainTotalDurationByDate(state)
+    getSelectedDomainTotalDurationByDate(state),
   );
 
   const isDarkToggle = useSelector((state: RootState) => state.activity.isDark);
@@ -69,16 +60,16 @@ function SecondCard() {
 
   const isDomain = byDomain == '?domain' ? true : false;
 
-  const axisData = totalTime.map((d) => ({
+  const axisData = totalTime.map(d => ({
     x: d.timestamp,
     y: d.totalDuration,
   }));
 
-  const newDate = axisData.map((ele) =>
+  const newDate = axisData.map(ele =>
     new Date(ele.x).toLocaleDateString('en-US', {
       weekday: 'short',
       day: 'numeric',
-    })
+    }),
   );
 
   const options = {
@@ -109,7 +100,7 @@ function SecondCard() {
         position: 'left',
         ticks: {
           color: '#70768C',
-          callback: (value) => formatTableDurationLabel(value),
+          callback: value => formatTableDurationLabel(value),
         },
         stepSize: 1,
       },
@@ -143,9 +134,9 @@ function SecondCard() {
     },
   } as any;
 
-  const data = totalTime.map((d) => d.totalDuration);
+  const data = totalTime.map(d => d.totalDuration);
 
-  const dataByDomain = totalTimeByDomain.map((d) => d.totalDuration);
+  const dataByDomain = totalTimeByDomain.map(d => d.totalDuration);
 
   const d2 = {
     labels: newDate,
@@ -165,23 +156,12 @@ function SecondCard() {
   };
 
   return (
-    <div className='bg-white-m dark:bg-slate-900'>
-      <div className='flex h-card px-8 mt-4 m2xl:hidden dark:bg-slate-900  bg-white-m '>
-        <div className='shadow-md  rounded-md w-scard mr-4 bg-white dark:bg-slate-900 dark:shadowmd  dark:border-2'>
+    <div className="bg-white-m dark:bg-slate-900">
+      <div className="grid  grid-cols-2 gap-4 px-4 mt-4 dark:bg-slate-900  bg-white-m  m2xl:grid-cols-1">
+        <div className="shadow-md  rounded-md  bg-white dark:bg-slate-900 dark:shadowmd  dark:border-2">
           <Bar options={options} data={d2} width={780} height={300} />
         </div>
-        <div className='shadow-md  rounded-md w-scard bg-white  dark:bg-slate-900 dark:shadowmd  dark:border-2'>
-          <TableChart />
-        </div>
-      </div>
-
-      <div className='flex h-card px-8    mmd:px-4 xxl:hidden dark:bg-slate-900 bg-white-m  '>
-        <div className='shadow-md mt-4  rounded-md w-fcard bg-white dark:bg-slate-900 dark:shadowmd  dark:border-2'>
-          <Bar options={options} data={d2} width={780} height={300} />
-        </div>
-      </div>
-      <div className='flex h-card px-8 mt-4 mmd:px-4  xxl:hidden  dark:bg-slate-900 bg-white-m  '>
-        <div className='shadow-md  rounded-md w-fcard bg-white  dark:bg-slate-900 dark:shadowmd  dark:border-2'>
+        <div className="shadow-md rounded-md bg-white  dark:bg-slate-900 dark:shadowmd  dark:border-2">
           <TableChart />
         </div>
       </div>

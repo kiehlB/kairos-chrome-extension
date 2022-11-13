@@ -18,20 +18,19 @@ interface CardProps {
 const Card = (props: CardProps) => {
   return (
     <div className={`${props.sort == 'single' ? 'flex   h-full p-4 ' : ''}`}>
-      <div
-        className={`${props.sort == 'single' ? '  w-full flex flex-col' : ''}`}>
+      <div className={`${props.sort == 'single' ? '  w-full flex flex-col' : ''}`}>
         <div
           className={`${
             props.sort == 'single'
               ? 'flex items-center text-greyTint-m   justify-between'
               : 'flex items-center text-greyTint-m   justify-between px-4 mt-4'
           }`}>
-          <h2 className='text-greyTint-m font-medium'>{props.title}</h2>
-          <div className='ml-4'>
+          <h2 className="text-greyTint-m font-medium">{props.title}</h2>
+          <div className="ml-4">
             {props.info && (
               <Tooltip content={props.info}>
                 <Icon
-                  icon='issue'
+                  icon="issue"
                   size={BASE_SIZE * 1.5}
                   style={{ transform: 'rotate(180deg)' }}
                 />
@@ -49,16 +48,14 @@ const Card = (props: CardProps) => {
           <div className={`${props.sort == 'single' ? 'mt-6' : ''}`}>
             <div
               className={`${
-                props.sort == 'single'
-                  ? 'flex items-center  m2xl:justify-center'
-                  : ' '
+                props.sort == 'single' ? 'flex items-center  m2xl:justify-center' : ' '
               }`}>
-              <div className='truncate whitespace-nowrap overflow-hidden'>
+              <div className="truncate whitespace-nowrap overflow-hidden">
                 {props.body}
               </div>
 
-              <div className='flex mt-3 ml-1'>
-                <CountUp
+              <div className="flex mt-3 ml-1">
+                {/* <CountUp
                   sort='single'
                   start={0}
                   end={props.extra}
@@ -66,7 +63,7 @@ const Card = (props: CardProps) => {
                   duration={1000 / 1500}
                   preserveValue={true}
                   redraw={true}
-                />
+                /> */}
 
                 {props.sort == 'single' && props.extra ? (
                   <div
@@ -75,9 +72,9 @@ const Card = (props: CardProps) => {
                     }`}>
                     %
                     {props.extra > 0 ? (
-                      <ArrowUpRight size={18} className='ml-0.5' />
+                      <ArrowUpRight size={18} className="ml-0.5" />
                     ) : (
-                      <ArrowDownRight size={18} className='ml-0.5   mt-2' />
+                      <ArrowDownRight size={18} className="ml-0.5   mt-2" />
                     )}
                   </div>
                 ) : (
@@ -89,7 +86,7 @@ const Card = (props: CardProps) => {
         )}
 
         {props.footer && (
-          <div className='text-white-s font-medium m2xl:flex justify-end'>
+          <div className="text-white-s font-medium m2xl:flex justify-end">
             {props.footer}
           </div>
         )}

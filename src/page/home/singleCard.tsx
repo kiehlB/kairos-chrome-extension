@@ -3,13 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import AppLayout from '../../components/AppLayout';
 import Header from '../../components/Base/Header';
 import Card from '../../components/Card';
-
 import { CountUp, DurationCountUp } from '../../components/Count';
-
 import DateRangePicker, { TRANSITION_DELAY } from '../../components/DatePicker';
-
 import { useParams, useLocation } from 'react-router-dom';
-
 import {
   getRatioToTotalDuration,
   getSelectedDomainAveragePageVisitDuration,
@@ -20,8 +16,6 @@ import {
   getTotalDuration,
   getTotalPageVisitCount,
 } from '../../store/activity/selectors';
-
-import { ArrowUpRight, ArrowDownRight } from 'react-feather';
 import { RootState } from '../../store';
 
 export type TotalUsageProps = {
@@ -154,198 +148,60 @@ function SingleCard() {
     formattingUnitFn: isDomain ? '' : (d: number) => (d > 1 ? 'domains' : 'domain'),
   };
 
-  const eachWithTotal = () => {
-    return (
-      <div className="flex ">
-        <TotalUsage
-          className="shadow-md  rounded-md mr-4 w-mcard bg-white dark:bg-slate-900 dark:shadowmd dark:border-2  "
-          sort="single"
-          title={totalTimeRangeCardInfo.title}
-          info={totalTimeRangeCardInfo.info}
-          footer={totalTimeRangeCardInfo.footer}
-          data={totalTimeRangeCardInfo.data}
-          isDuration={totalTimeRangeCardInfo.isDuration}
-          getRandomArbitrary={getRandomArbitrary(-100, 100)}
-        />
-        <TotalUsage
-          className="shadow-md  rounded-md mr-4 
-           w-mcard  bg-white  dark:bg-slate-900 dark:shadowmd   dark:border-2"
-          sort="single"
-          title={toTotalDurationCard.title}
-          info={toTotalDurationCard.info}
-          footer={toTotalDurationCard.footer}
-          data={toTotalDurationCard.data}
-          formattingFn={toTotalDurationCard.formattingFn}
-          formattingUnitFn={toTotalDurationCard.formattingUnitFn}
-          decimals={toTotalDurationCard.decimals}
-          isDuration={toTotalDurationCard.isDuration}
-          getRandomArbitrary={getRandomArbitrary(-100, 100)}
-        />
-
-        <TotalUsage
-          className="shadow-md  rounded-md mr-4 w-mcard bg-white  dark:bg-slate-900 dark:shadowmd  dark:border-2 "
-          sort="single"
-          title={pageVisitCard.title}
-          info={pageVisitCard.info}
-          footer={pageVisitCard.footer}
-          data={pageVisitCard.data}
-          formattingFn={pageVisitCard.formattingFn}
-          formattingUnitFn={pageVisitCard.formattingUnitFn}
-          isDuration={pageVisitCard.isDuration}
-          getRandomArbitrary={getRandomArbitrary(-100, 100)}
-        />
-        <TotalUsage
-          className="shadow-md  rounded-md  w-mcard  bg-white dark:bg-slate-900 dark:shadowmd  dark:border-2 "
-          sort="single"
-          title={TotalDomainCard.title}
-          info={TotalDomainCard.info}
-          footer={TotalDomainCard.footer}
-          data={TotalDomainCard.data}
-          formattingFn={TotalDomainCard.formattingFn}
-          formattingUnitFn={TotalDomainCard.formattingUnitFn}
-          isDuration={TotalDomainCard.isDuration}
-          getRandomArbitrary={getRandomArbitrary(-100, 100)}
-        />
-      </div>
-    );
-  };
-
-  const halfWithTotal = () => {
-    return (
-      <div className="w-full">
-        <div className="flex">
-          <TotalUsage
-            className="shadow-md  rounded-md mr-4 w-scard  bg-white  dark:bg-slate-900 dark:shadowmd  dark:border-2"
-            sort="single"
-            title={totalTimeRangeCardInfo.title}
-            info={totalTimeRangeCardInfo.info}
-            footer={totalTimeRangeCardInfo.footer}
-            data={totalTimeRangeCardInfo.data}
-            isDuration={totalTimeRangeCardInfo.isDuration}
-            getRandomArbitrary={getRandomArbitrary(-100, 100)}
-          />
-          <TotalUsage
-            className="shadow-md  rounded-md bg-white dark:bg-slate-900 dark:shadowmd  dark:border-2
-           w-scard "
-            sort="single"
-            title={toTotalDurationCard.title}
-            info={toTotalDurationCard.info}
-            footer={toTotalDurationCard.footer}
-            data={toTotalDurationCard.data}
-            formattingFn={toTotalDurationCard.formattingFn}
-            formattingUnitFn={toTotalDurationCard.formattingUnitFn}
-            decimals={toTotalDurationCard.decimals}
-            isDuration={toTotalDurationCard.isDuration}
-            getRandomArbitrary={getRandomArbitrary(-100, 100)}
-          />
-        </div>
-        <div className="flex mt-4">
-          <TotalUsage
-            className="shadow-md  rounded-md mr-4 w-scard bg-white dark:bg-slate-900 dark:shadowmd  dark:border-2 "
-            sort="single"
-            title={pageVisitCard.title}
-            info={pageVisitCard.info}
-            footer={pageVisitCard.footer}
-            data={pageVisitCard.data}
-            formattingFn={pageVisitCard.formattingFn}
-            formattingUnitFn={pageVisitCard.formattingUnitFn}
-            isDuration={pageVisitCard.isDuration}
-            getRandomArbitrary={getRandomArbitrary(-100, 100)}
-          />
-          <TotalUsage
-            className="shadow-md  rounded-md  w-scard bg-white dark:bg-slate-900 dark:shadowmd  dark:border-2"
-            sort="single"
-            title={TotalDomainCard.title}
-            info={TotalDomainCard.info}
-            footer={TotalDomainCard.footer}
-            data={TotalDomainCard.data}
-            formattingFn={TotalDomainCard.formattingFn}
-            formattingUnitFn={TotalDomainCard.formattingUnitFn}
-            isDuration={TotalDomainCard.isDuration}
-            getRandomArbitrary={getRandomArbitrary(-100, 100)}
-          />
-        </div>
-      </div>
-    );
-  };
-
-  const fullWithTotal = () => {
-    return (
-      <div className="w-full">
-        <div className="flex">
-          <TotalUsage
-            className="shadow-md  rounded-md   w-fcard bg-white    dark:bg-slate-900 dark:shadowmd  dark:border-2"
-            sort="single"
-            title={totalTimeRangeCardInfo.title}
-            info={totalTimeRangeCardInfo.info}
-            footer={totalTimeRangeCardInfo.footer}
-            data={totalTimeRangeCardInfo.data}
-            isDuration={totalTimeRangeCardInfo.isDuration}
-            getRandomArbitrary={getRandomArbitrary(-100, 100)}
-          />
-        </div>
-        <div className="mt-2">
-          <TotalUsage
-            className="shadow-md  rounded-md  bg-white   dark:bg-slate-900 dark:shadowmd  dark:border-2
-           w-fcard "
-            sort="single"
-            title={toTotalDurationCard.title}
-            info={toTotalDurationCard.info}
-            footer={toTotalDurationCard.footer}
-            data={toTotalDurationCard.data}
-            formattingFn={toTotalDurationCard.formattingFn}
-            formattingUnitFn={toTotalDurationCard.formattingUnitFn}
-            decimals={toTotalDurationCard.decimals}
-            isDuration={toTotalDurationCard.isDuration}
-            getRandomArbitrary={getRandomArbitrary(-100, 100)}
-          />
-        </div>
-        <div className="flex mt-2">
-          <TotalUsage
-            className="shadow-md  rounded-md   w-fcard bg-white  dark:bg-slate-900 dark:shadowmd  dark:border-2"
-            sort="single"
-            title={pageVisitCard.title}
-            info={pageVisitCard.info}
-            footer={pageVisitCard.footer}
-            data={pageVisitCard.data}
-            formattingFn={pageVisitCard.formattingFn}
-            formattingUnitFn={pageVisitCard.formattingUnitFn}
-            isDuration={pageVisitCard.isDuration}
-            getRandomArbitrary={getRandomArbitrary(-100, 100)}
-          />
-        </div>
-        <div className="flex mt-2">
-          <TotalUsage
-            className="shadow-md  rounded-md  w-fcard bg-white dark:bg-slate-900 dark:shadowmd  dark:border-2"
-            sort="single"
-            title={TotalDomainCard.title}
-            info={TotalDomainCard.info}
-            footer={TotalDomainCard.footer}
-            data={TotalDomainCard.data}
-            formattingFn={TotalDomainCard.formattingFn}
-            formattingUnitFn={TotalDomainCard.formattingUnitFn}
-            isDuration={TotalDomainCard.isDuration}
-            getRandomArbitrary={getRandomArbitrary(-100, 100)}
-          />
-        </div>
-      </div>
-    );
-  };
-
-  const resultTotal = () => {
-    return (
-      <>
-        <div className="m2xl:hidden">{eachWithTotal()}</div>
-        <div className="mmd:hidden xxl:hidden">{halfWithTotal()}</div>
-        <div className="si:hidden"> {fullWithTotal()}</div>
-      </>
-    );
-  };
-
   return (
     <>
       <div className="mt-4 px-8 mmd:px-4 bg-white-m dark:bg-slate-900">
-        {resultTotal()}
+        <div className="grid grid-cols-4 m2xl:grid-cols-2 mmd:grid-cols-1 gap-4">
+          <TotalUsage
+            className="shadow-md  rounded-md  bg-white dark:bg-slate-900 dark:shadowmd dark:border-2  "
+            sort="single"
+            title={totalTimeRangeCardInfo.title}
+            info={totalTimeRangeCardInfo.info}
+            footer={totalTimeRangeCardInfo.footer}
+            data={totalTimeRangeCardInfo.data}
+            isDuration={totalTimeRangeCardInfo.isDuration}
+            getRandomArbitrary={getRandomArbitrary(-100, 100)}
+          />
+          <TotalUsage
+            className="shadow-md  rounded-md   
+           bg-white  dark:bg-slate-900 dark:shadowmd   dark:border-2"
+            sort="single"
+            title={toTotalDurationCard.title}
+            info={toTotalDurationCard.info}
+            footer={toTotalDurationCard.footer}
+            data={toTotalDurationCard.data}
+            formattingFn={toTotalDurationCard.formattingFn}
+            formattingUnitFn={toTotalDurationCard.formattingUnitFn}
+            decimals={toTotalDurationCard.decimals}
+            isDuration={toTotalDurationCard.isDuration}
+            getRandomArbitrary={getRandomArbitrary(-100, 100)}
+          />
+
+          <TotalUsage
+            className="shadow-md rounded-md   bg-white dark:bg-slate-900 dark:shadowmd  dark:border-2 "
+            sort="single"
+            title={pageVisitCard.title}
+            info={pageVisitCard.info}
+            footer={pageVisitCard.footer}
+            data={pageVisitCard.data}
+            formattingFn={pageVisitCard.formattingFn}
+            formattingUnitFn={pageVisitCard.formattingUnitFn}
+            isDuration={pageVisitCard.isDuration}
+            getRandomArbitrary={getRandomArbitrary(-100, 100)}
+          />
+          <TotalUsage
+            className="shadow-md rounded-md bg-white dark:bg-slate-900 dark:shadowmd dark:border-2 "
+            sort="single"
+            title={TotalDomainCard.title}
+            info={TotalDomainCard.info}
+            footer={TotalDomainCard.footer}
+            data={TotalDomainCard.data}
+            formattingFn={TotalDomainCard.formattingFn}
+            formattingUnitFn={TotalDomainCard.formattingUnitFn}
+            isDuration={TotalDomainCard.isDuration}
+            getRandomArbitrary={getRandomArbitrary(-100, 100)}
+          />
+        </div>
       </div>
     </>
   );

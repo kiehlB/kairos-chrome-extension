@@ -10,9 +10,9 @@ import ThridCard from './thirdCard';
 
 function Home() {
   return (
-    <div className='w-full  dark:bg-gray-900 bg-white-m '>
+    <div className="w-full  dark:bg-gray-900 bg-white-m ">
       <AppLayout.MainNav>
-        <Header title='Analytics Browser History' subTitle='Analytics' />
+        <Header title="Analytics Browser History" subTitle="Analytics" />
       </AppLayout.MainNav>
       <AppLayout
         first={<AppLayout.First>{<SingleCard />}</AppLayout.First>}
