@@ -156,12 +156,12 @@ function SecondCard() {
   };
 
   return (
-    <div className="bg-white-m dark:bg-slate-900">
-      <div className="grid  grid-cols-2 gap-4 px-4 pt-4 dark:bg-slate-900  bg-white-m  m2xl:grid-cols-1">
-        <div className="shadow-md  rounded-md  bg-white dark:bg-slate-900 dark:shadowmd  dark:border-2">
+    <div className="bg-white-m dark:bg-[#121212]">
+      <div className="grid  grid-cols-2 gap-4 px-4 pt-4 dark:bg-[#121212]  bg-white-m  m2xl:grid-cols-1">
+        <div className="shadow-md  rounded-md  bg-white dark:bg-[#121212] dark:shadowmd  dark:border-2">
           <Bar options={options} data={d2} width={780} height={300} />
         </div>
-        <div className="shadow-md rounded-md bg-white  dark:bg-slate-900 dark:shadowmd  dark:border-2">
+        <div className="shadow-md rounded-md bg-white  dark:bg-[#121212] dark:shadowmd  dark:border-2">
           <TableChart />
         </div>
       </div>

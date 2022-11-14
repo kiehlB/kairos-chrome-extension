@@ -23,19 +23,15 @@ const DELETE_TOASTER_ID = 'history-view-delete-toaster';
 
 export const HistoryView = ({}) => {
   const isDeletingRecords = useSelector((state: RootState) =>
-    getIsDeletingRecords(state)
+    getIsDeletingRecords(state),
   );
 
-  const isInitialized = useSelector((state: RootState) =>
-    getIsInitialized(state)
-  );
+  const isInitialized = useSelector((state: RootState) => getIsInitialized(state));
 
-  const isLoadingRecords = useSelector((state: RootState) =>
-    getIsLoadingRecords(state)
-  );
+  const isLoadingRecords = useSelector((state: RootState) => getIsLoadingRecords(state));
 
   const selectedTimeRangeValidationStatus = useSelector((state: RootState) =>
-    getSearchParamsSelectedTimeRangeValidationStatus(state)
+    getSearchParamsSelectedTimeRangeValidationStatus(state),
   );
 
   const [selectedRecordIds, setSelectedRecordIds] = useState<number[]>([]);
@@ -49,12 +45,12 @@ export const HistoryView = ({}) => {
       if (recordId) {
         setSelectedRecordIds(
           selectedRecordIds.includes(recordId)
-            ? selectedRecordIds.filter((id) => id !== recordId)
-            : [...selectedRecordIds, recordId]
+            ? selectedRecordIds.filter(id => id !== recordId)
+            : [...selectedRecordIds, recordId],
         );
       }
     },
-    [selectedRecordIds, setSelectedRecordIds]
+    [selectedRecordIds, setSelectedRecordIds],
   );
 
   let viewContent;
@@ -93,11 +89,11 @@ export const HistoryView = ({}) => {
   }
 
   return (
-    <View.Container className='w-full  h-full   bg-white-m dark:bg-gray-900'>
+    <View.Container className="w-full  h-full   bg-white-m dark:bg-[#121212]">
       <View.Header>
-        <Header title='Browser History' subTitle='History' />
+        <Header title="Browser History" subTitle="History" />
       </View.Header>
-      <View.Body className='h-5/6 p-4' isLoading={!isInitialized}>
+      <View.Body className="h-5/6 p-4" isLoading={!isInitialized}>
         {viewContent}
       </View.Body>
     </View.Container>

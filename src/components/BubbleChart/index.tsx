@@ -164,5 +164,5 @@ export function BubbleChart() {
       },
     },
   } as any;
-  return <Bubble options={options} data={data} height={300} />;
+  return <Bubble options={options} data={data} height={328} />;
 }

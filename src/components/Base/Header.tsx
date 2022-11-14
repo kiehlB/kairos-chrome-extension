@@ -37,87 +37,86 @@ function Header({ children, title, subTitle }: HeaderProps) {
   const [isShown, setIsShown] = useState(false);
   const isDarkToggle = useSelector((state: RootState) => state.activity.isDark);
 
-  const widthSection = () => {
-    return (
-      <section className="flex  items-center justify-end  ">
-        <div className="flex  ">
-          {subTitle == 'Analytics' ? (
-            <>
-              <div>
-                <DomainPicker />
-              </div>
-              <div>
-                <ActivityDateRangePicker />
-              </div>
-            </>
-          ) : (
-            ''
-          )}
-          {subTitle == 'History' ? (
-            <>
-              <div>
-                <ActivityDateRangePicker />
-              </div>
-            </>
-          ) : (
-            ''
-          )}
-          {subTitle == 'Settings' ? <></> : ''}
-        </div>
-
+  let widthSection = null;
+  widthSection = (
+    <section className="flex first-letter:items-center justify-end  ">
+      <div className="flex">
         {subTitle == 'Analytics' ? (
           <>
-            <div className="border h-10 maxw:hidden ml-8"></div>
+            <div>
+              <DomainPicker />
+            </div>
+            <div>
+              <ActivityDateRangePicker />
+            </div>
           </>
         ) : (
           ''
         )}
-
-        <div className="maxw:hidden ml-8">
-          <img
-            className="inline object-cover w-12 h-12 rounded-full "
-            src="./bart.png"
-            alt="Profile image"
-          />
-        </div>
-        <section className="flex flex-col maxw:hidden ml-4">
-          <div className="text-greyTint-m font-medium text-sm">Provider</div>
-          <div className="font-bold text-dark-m m2xl:hidden">Woong</div>
-        </section>
-      </section>
-    );
-  };
-  const divSection = () => {
-    return (
-      <div className="flex items-center justify-end  ">
-        <div className="flex mmd:flex-col  items-end">
-          <div className="mmd:mb-1">
-            <DomainPicker />
-          </div>
-          <div>
-            <ActivityDateRangePicker />
-          </div>
-        </div>
-
-        <div className="bordr h-10 maxw:hidden"></div>
-        <div className="maxw:hidden">
-          <img
-            className="inline object-cover w-12 h-12 rounded-full"
-            src="./bart.png"
-            alt="Profile image"
-          />
-        </div>
-        <section className="flex flex-col  maxw:hidden">
-          <div className="text-greyTint-m font-medium text-sm">Provider</div>
-          <div className="font-bold text-dark-m m2xl:hidden">Woong</div>
-        </section>
+        {subTitle == 'History' ? (
+          <>
+            <div>
+              <ActivityDateRangePicker />
+            </div>
+          </>
+        ) : (
+          ''
+        )}
+        {subTitle == 'Settings' ? <></> : ''}
       </div>
-    );
-  };
+
+      {subTitle == 'Analytics' ? (
+        <>
+          <div className="border h-10 maxw:hidden ml-8"></div>
+        </>
+      ) : (
+        ''
+      )}
+
+      <div className="maxw:hidden ml-8">
+        <img
+          className="inline object-cover w-12 h-12 rounded-full "
+          src="./bart.png"
+          alt="Profile image"
+        />
+      </div>
+      <section className="flex flex-col maxw:hidden ml-4">
+        <div className="text-greyTint-m font-medium text-sm">Provider</div>
+        <div className="font-bold text-dark-m m2xl:hidden">Woong</div>
+      </section>
+    </section>
+  );
+
+  let divSection = null;
+  divSection = (
+    <div className="flex items-center justify-end  ">
+      <div className="flex mmd:flex-col  items-end">
+        <div className="mmd:mb-1">
+          <DomainPicker />
+        </div>
+        <div>
+          <ActivityDateRangePicker />
+        </div>
+      </div>
+
+      <div className="bordr h-10 maxw:hidden"></div>
+      <div className="maxw:hidden">
+        <img
+          className="inline object-cover w-12 h-12 rounded-full"
+          src="./bart.png"
+          alt="Profile image"
+        />
+      </div>
+      <section className="flex flex-col  maxw:hidden">
+        <div className="text-greyTint-m font-medium text-sm">Provider</div>
+        <div className="font-bold text-dark-m m2xl:hidden">Woong</div>
+      </section>
+    </div>
+  );
 
   return (
     <>
-      <div className="border-b bg-white dark:bg-gray-900">
+      <div className="border-b bg-white dark:bg-[#121212]">
         <div className="flex h-20 items-center  px-8 justify-between flex-wrap  mmd:px-4">
           <div className="flex items-center">
             <div className="text-xl font-bold text-dark-m mr-4 dark:text-white ">
@@ -173,8 +172,8 @@ function Header({ children, title, subTitle }: HeaderProps) {
               />
             </div>
           </div>
-          <div className="m2xl:hidden ">{widthSection()}</div>
-          <div className="xxl:hidden">{divSection()}</div>
+          <div className="m2xl:hidden ">{widthSection}</div>
+          <div className="xxl:hidden">{divSection}</div>
         </div>
       </div>
     </>

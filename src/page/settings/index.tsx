@@ -37,20 +37,18 @@ const IMPORT_TOASTER_ID = 'extension-data-card-export-toaster';
 
 export const SettingsView = ({}) => {
   const activityTimeRange = useSelector((state: RootState) =>
-    getActivityTimeRange(state)
+    getActivityTimeRange(state),
   );
 
   const exportDataError = useSelector((state: RootState) =>
-    getExportingDatabaseRecordsError(state)
+    getExportingDatabaseRecordsError(state),
   );
 
   const exportDataSuccess = useSelector((state: RootState) =>
-    getExportingDatabaseRecordsSuccess(state)
+    getExportingDatabaseRecordsSuccess(state),
   );
 
-  const isLoadingRecords = useSelector((state: RootState) =>
-    getIsLoadingRecords(state)
-  );
+  const isLoadingRecords = useSelector((state: RootState) => getIsLoadingRecords(state));
 
   const dispatch = useDispatch();
 
@@ -78,20 +76,20 @@ export const SettingsView = ({}) => {
   }, [hasShownExportToaster, exportDataError, exportDataSuccess]);
 
   return (
-    <div className='w-full dark:bg-gray-900 bg-white-m'>
+    <div className="w-full dark:bg-[#121212] bg-white-m">
       <AppLayout.MainNav>
-        <Header title='Settings' subTitle='Settings' />
+        <Header title="Settings" subTitle="Settings" />
       </AppLayout.MainNav>
       <AppLayout
         first={
           <AppLayout.First>
-            <div className='flex w-full   m2xl:flex-wrap  '>
-              <div className='p-4 w-full'>
-                <div className='  w-full bg-white shadow-md  rounded-md dark:bg-gray-900 dark:border-2'>
+            <div className="flex w-full   m2xl:flex-wrap  ">
+              <div className="p-4 w-full">
+                <div className="  w-full bg-white shadow-md  rounded-md dark:bg-[#121212] dark:border-2">
                   <List>
                     <ListItem
-                      className='flex justify-between p-4 border-b text-dark-m dark:text-slate-300 font-medium text-sm items-center flex-wrap '
-                      label='Extension Data'
+                      className="flex justify-between p-4 border-b text-dark-m dark:text-slate-300 font-medium text-sm items-center flex-wrap "
+                      label="Extension Data"
                       isLoading={isLoadingRecords}
                       value={
                         <Tooltip
@@ -99,7 +97,7 @@ export const SettingsView = ({}) => {
                             '데이터의 총 사용량과 사용한 데이터를 다운받을 수 있습니다'
                           }>
                           <Icon
-                            icon='issue'
+                            icon="issue"
                             size={BASE_SIZE * 1.5}
                             style={{ transform: 'rotate(180deg)' }}
                           />
@@ -107,29 +105,29 @@ export const SettingsView = ({}) => {
                       }
                     />
                     <ListItem
-                      className='flex justify-between p-4 border-b text-dark-m font-medium text-sm items-center   overflow-hidden flex-wrap '
-                      label='Estimated storage data used'
+                      className="flex justify-between p-4 border-b text-dark-m font-medium text-sm items-center   overflow-hidden flex-wrap "
+                      label="Estimated storage data used"
                       isLoading={isLoadingRecords}
                       value={`${formatBytes(storageUsage)}`}
                     />
                     <ListItem
-                      className='flex justify-between p-4 border-b text-dark-m font-medium text-sm items-center   overflow-hidden flex-wrap'
-                      label='Total data collected'
+                      className="flex justify-between p-4 border-b text-dark-m font-medium text-sm items-center   overflow-hidden flex-wrap"
+                      label="Total data collected"
                       isLoading={isLoadingRecords}
                       value={
                         activityTimeRange
                           ? formatDateDistance(
                               activityTimeRange.start,
-                              activityTimeRange.end
+                              activityTimeRange.end,
                             )
                           : '-'
                       }
                     />
                     {
-                      <div className='flex justify-end p-4 flex-wrap'>
+                      <div className="flex justify-end p-4 flex-wrap">
                         <Button
-                          appearance='primary'
-                          iconBefore='export'
+                          appearance="primary"
+                          iconBefore="export"
                           onClick={() => {
                             setHasShownExportToaster(false);
                             dispatch(exportDatabaseRecords());
@@ -142,17 +140,17 @@ export const SettingsView = ({}) => {
                 </div>
               </div>
 
-              <div className='p-4 w-full'>
-                <div className='   w-full bg-white shadow-md  rounded-md  dark:bg-gray-900  dark:border-2'>
+              <div className="p-4 w-full">
+                <div className="w-full bg-white shadow-md  rounded-md  dark:bg-[#121212]  dark:border-2">
                   <List>
                     <ListItem
-                      className='flex justify-between p-4 border-b text-dark-m font-medium text-sm items-center flex-wrap'
-                      label='About'
+                      className="flex justify-between p-4 border-b text-dark-m font-medium text-sm items-center flex-wrap"
+                      label="About"
                       isLoading={isLoadingRecords}
                       value={
                         <Tooltip content={'For info'}>
                           <Icon
-                            icon='issue'
+                            icon="issue"
                             size={BASE_SIZE * 1.5}
                             style={{ transform: 'rotate(180deg)' }}
                           />
@@ -160,20 +158,20 @@ export const SettingsView = ({}) => {
                       }
                     />
                     <ListItem
-                      className='flex justify-between p-4 border-b text-dark-m font-medium text-sm items-center   overflow-hidden flex-wrap'
-                      label='github Link'
+                      className="flex justify-between p-4 border-b text-dark-m font-medium text-sm items-center   overflow-hidden flex-wrap"
+                      label="github Link"
                       isLoading={isLoadingRecords}
                       value={`https://github.com/kiehlB/Kairos_chrome-extension`}
                     />
                     <ListItem
-                      className='flex justify-between p-4 border-b text-dark-m font-medium text-sm items-center   overflow-hidden flex-wrap'
-                      label='MyBlog'
+                      className="flex justify-between p-4 border-b text-dark-m font-medium text-sm items-center   overflow-hidden flex-wrap"
+                      label="MyBlog"
                       isLoading={isLoadingRecords}
                       value={'https://www.woongblog.xyz/'}
                     />
                     <ListItem
-                      className='flex justify-between p-4 border-b text-dark-m font-medium text-sm items-center   overflow-hidden flex-wrap'
-                      label='Download the extension from Chrome Web Store.'
+                      className="flex justify-between p-4 border-b text-dark-m font-medium text-sm items-center   overflow-hidden flex-wrap"
+                      label="Download the extension from Chrome Web Store."
                       isLoading={isLoadingRecords}
                       value={'not yet'}
                     />

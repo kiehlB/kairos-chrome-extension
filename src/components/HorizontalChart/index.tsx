@@ -116,5 +116,5 @@ export function HorizontalChart() {
     ],
   };
 
-  return <Bar options={options} data={d2} height={300} />;
+  return <Bar options={options} data={d2} height={328} />;
 }

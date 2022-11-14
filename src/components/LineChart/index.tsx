@@ -162,5 +162,5 @@ export function LineChart() {
     ],
   };
 
-  return <Line options={options} data={data} height={300} />;
+  return <Line options={options} data={data} height={328} />;
 }

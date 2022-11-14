@@ -6,9 +6,7 @@ import useClientDimensions from '../../hooks/useClientDimensions';
 import { BASE_SIZE, SPINNER_SIZE } from '../../lib/styles/constants';
 import { Heading, Menu, Pane, Popover } from 'evergreen-ui';
 
-import defaultRowRenderer, {
-  DEFAULT_TABLE_ROW_HEIGHT,
-} from './DefaultTableRow';
+import defaultRowRenderer, { DEFAULT_TABLE_ROW_HEIGHT } from './DefaultTableRow';
 
 const DEFAULT_FILTER_PLACEHOLDER = 'No entries';
 const DEFAULT_LOADING_FOOTER_PLACEHOLDER = 'Loading entries...';
@@ -51,7 +49,7 @@ export function Table({
         setRowCount(rowCount + ROWS_TO_LOAD_PER_BATCH);
       }
     },
-    [containerHeight, rowCount, rowHeight, setRowCount]
+    [containerHeight, rowCount, rowHeight, setRowCount],
   );
   const activities = useMemo(() => {
     let result = data;
@@ -60,7 +58,7 @@ export function Table({
       result = filterFn(data, debouncedFilter.trim().toLowerCase());
     }
 
-    const sortOption = _.find(sortOptions, (o) => sortOrder === o.value);
+    const sortOption = _.find(sortOptions, o => sortOrder === o.value);
     if (sortOption) {
       result = sortOption.sortFn(result);
     }
@@ -78,14 +76,14 @@ export function Table({
     case isDebounceActive:
     case isLoading:
       tableContent = (
-        <div className='' style={{ height: tableBodyHeight }}>
+        <div className="" style={{ height: tableBodyHeight }}>
           <Spinner size={SPINNER_SIZE} />
         </div>
       );
       break;
     case visibleActivities.length === 0:
       tableContent = (
-        <div className='' style={{ height: tableBodyHeight }}>
+        <div className="" style={{ height: tableBodyHeight }}>
           {filter === '' ? filterPlaceholder : 'No matches found'}
         </div>
       );
@@ -96,20 +94,20 @@ export function Table({
       tableContent = (
         <EvergreenTable.VirtualBody
           allowAutoHeight={false}
-          className=''
+          className=""
           estimatedItemSize={rowHeight}
           height={tableBodyHeight}
           onScroll={handleScroll}
           overscanCount={Math.round(containerHeight / rowHeight) * 2}
           useAverageAutoHeightEstimation={false}>
-          {visibleActivities.map((datum) =>
+          {visibleActivities.map(datum =>
             tableRowRenderer({
               datum,
               isSelectable,
               onRowClick,
               selectedIds,
               ...(rowRendererProps as any),
-            })
+            }),
           )}
         </EvergreenTable.VirtualBody>
       );
@@ -137,7 +135,7 @@ export function Table({
   return (
     <div
       ref={containerRef}
-      className='h-full border shadow-md  rounded-md bg-white dark:bg-slate-900'>
+      className="h-full border shadow-md  rounded-md bg-white dark:bg-[#121212]">
       <EvergreenTable>
         <EvergreenTable.Head height={HEADER_HEIGHT}>
           {filterFn && (
@@ -160,7 +158,7 @@ export function Table({
         <div>{tableContent}</div>
         <EvergreenTable.Cell
           height={FOOTER_HEIGHT}
-          className='flex justify-end font-semibold text-xs dark:text-neutral-400'>
+          className="flex justify-end font-semibold text-xs dark:text-neutral-400">
           <div>{footerText}</div>
         </EvergreenTable.Cell>
       </EvergreenTable>
@@ -175,10 +173,7 @@ const DEFAULT_POPOVER_HEADER = 'Sort Order';
 
 function TableSortButton<U, V>({ disabled, onSelect, sortOptions, sortOrder }) {
   let buttonText = DEFAULT_BUTTON_TEXT;
-  const sortOption = _.find(
-    sortOptions,
-    (option) => sortOrder === option.value
-  );
+  const sortOption = _.find(sortOptions, option => sortOrder === option.value);
   if (sortOption) {
     buttonText = sortOption.buttonLabel;
   }
@@ -186,16 +181,16 @@ function TableSortButton<U, V>({ disabled, onSelect, sortOptions, sortOrder }) {
   return (
     <Popover
       isShown={disabled ? false : undefined}
-      position='bottom-right'
+      position="bottom-right"
       content={({ close }) => {
         return (
           <Menu>
             <Pane>
-              <Heading size={100} className='px-10 py-4'>
+              <Heading size={100} className="px-10 py-4">
                 {DEFAULT_POPOVER_HEADER}
               </Heading>
               <Pane>
-                {_.map(sortOptions, (option) => (
+                {_.map(sortOptions, option => (
                   <Menu.Option
                     key={option.value}
                     isSelected={option.value === sortOrder}
@@ -214,12 +209,12 @@ function TableSortButton<U, V>({ disabled, onSelect, sortOptions, sortOrder }) {
       }}
       statelessProps={{ className: 'table__sort-button--popover' }}>
       <Button
-        appearance='minimal'
+        appearance="minimal"
         disabled={disabled}
-        iconBefore='sort'
+        iconBefore="sort"
         isActive={true}
-        className='table__sort-button'>
-        <div className='mmd:hidden'>{buttonText}</div>
+        className="table__sort-button">
+        <div className="mmd:hidden">{buttonText}</div>
       </Button>
     </Popover>
   );

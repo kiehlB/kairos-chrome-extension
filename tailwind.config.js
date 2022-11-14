@@ -12,10 +12,7 @@ function withOpacity(variableName) {
 module.exports = {
   mode: process.env.NODE_ENV ? 'jit' : undefined,
   darkMode: 'class',
-  content: [
-    './src/**/*.{js,ts,jsx,tsx}',
-    './src/components/**/*.{js,ts,jsx,tsx}',
-  ],
+  content: ['./src/**/*.{js,ts,jsx,tsx}', './src/components/**/*.{js,ts,jsx,tsx}'],
   variants: {
     opacity: ['responsive', 'hover', 'focus', 'dark', 'group-hover'],
     boxShadow: ['responsive', 'hover', 'focus', 'dark'],
@@ -94,7 +91,7 @@ module.exports = {
         'dark-m': '#323747',
         'orange-m': '#D7593D',
 
-        'dark-bg': '#3a3d4a',
+        'dark-bg': '#2d2f31',
       },
       maxWidth: {
         '9xl': '82.5rem',
@@ -141,9 +138,9 @@ module.exports = {
         '-135': '-135deg',
         135: '135deg',
       },
-      typography: (theme) => {
+      typography: theme => {
         // some fontSizes return [size, props], others just size :/
-        const fontSize = (size) => {
+        const fontSize = size => {
           const result = theme(`fontSize.${size}`);
           return Array.isArray(result) ? result[0] : result;
         };

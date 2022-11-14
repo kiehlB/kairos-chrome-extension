@@ -28,14 +28,11 @@ const Navbar = ({ primaryItems, secondaryItems, className, isDisabled }: NavbarP
   const is = location.pathname;
 
   return (
-    <nav className="border-r border-grey-m w-side m2xl:hidden mmd:hidden flex flex-col justify-between dark:bg-gray-900 h-full">
+    <nav className="border-r border-grey-m w-side m2xl:hidden mmd:hidden flex flex-col justify-between dark:bg-[#121212] h-full">
       <div>
         <div>
-          <div className="flex w-20  p-6 mb-2 justify-center xxl:hidden">
-            <img alt="logo2" src={logo2} width={32} height={32} />
-          </div>
-          <div className=" flex p-6 items-center  justify-between m2xl:hidden">
-            <img alt="logo" src={isDarkToggle ? black : logo} />
+          <div className="flex py-6 px-4 items-center  justify-between m2xl:hidden dark:text-white">
+            <h1 className="text-[1.5rem] font-semibold font-sans w-full">Kairos</h1>
             <Bookmark color="#70768C" />
           </div>
         </div>
@@ -63,8 +60,8 @@ const Navbar = ({ primaryItems, secondaryItems, className, isDisabled }: NavbarP
         ))}
       </div>
 
-      <section className="bottom-10   w-side m2xl:hidden ">
-        <div className="flex items-center px-4 w-full  ">
+      <section className="bottom-10 w-side m2xl:hidden">
+        <div className="flex items-center px-4 w-full">
           <ExtensionCard
             icon={<ExternalLink size="20" />}
             text="Download the extension from Chrome Web Store."

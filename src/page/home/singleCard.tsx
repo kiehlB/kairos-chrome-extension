@@ -150,10 +150,10 @@ function SingleCard() {
 
   return (
     <>
-      <div className="mt-4 px-4 mmd:px-4 bg-white-m dark:bg-slate-900">
+      <div className="mt-4 px-4 mmd:px-4 bg-white-m dark:bg-[#121212]">
         <div className="grid grid-cols-4 m2xl:grid-cols-2 mmd:grid-cols-1 gap-4">
           <TotalUsage
-            className="shadow-md  rounded-md  bg-white dark:bg-slate-900 dark:shadowmd dark:border-2  "
+            className="shadow-md  rounded-md  bg-white dark:bg-[#121212] dark:shadowmd dark:border-2  "
             sort="single"
             title={totalTimeRangeCardInfo.title}
             info={totalTimeRangeCardInfo.info}
@@ -164,7 +164,7 @@ function SingleCard() {
           />
           <TotalUsage
             className="shadow-md  rounded-md   
-           bg-white  dark:bg-slate-900 dark:shadowmd   dark:border-2"
+           bg-white  dark:bg-[#121212] dark:shadowmd   dark:border-2"
             sort="single"
             title={toTotalDurationCard.title}
             info={toTotalDurationCard.info}
@@ -178,7 +178,7 @@ function SingleCard() {
           />
 
           <TotalUsage
-            className="shadow-md rounded-md   bg-white dark:bg-slate-900 dark:shadowmd  dark:border-2 "
+            className="shadow-md rounded-md   bg-white dark:bg-[#121212] dark:shadowmd  dark:border-2 "
             sort="single"
             title={pageVisitCard.title}
             info={pageVisitCard.info}
@@ -190,7 +190,7 @@ function SingleCard() {
             getRandomArbitrary={getRandomArbitrary(-100, 100)}
           />
           <TotalUsage
-            className="shadow-md rounded-md bg-white dark:bg-slate-900 dark:shadowmd dark:border-2 "
+            className="shadow-md rounded-md bg-white dark:bg-[#121212] dark:shadowmd dark:border-2 "
             sort="single"
             title={TotalDomainCard.title}
             info={TotalDomainCard.info}
