@@ -87,6 +87,7 @@ function SecondCard() {
           maxRotation: 0,
           minRotation: 0,
           autoSkip: true,
+          color: '#D9D9D9',
           maxTicksLimit: 5,
           font: {
             size: 14,
@@ -99,7 +100,7 @@ function SecondCard() {
         },
         position: 'left',
         ticks: {
-          color: '#70768C',
+          color: '#D9D9D9',
           callback: value => formatTableDurationLabel(value),
         },
         stepSize: 1,
@@ -126,6 +127,7 @@ function SecondCard() {
       title: {
         display: true,
         text: 'Usage Trend',
+        color: '#D9D9D9',
         padding: {
           top: 10,
           bottom: 30,
@@ -146,7 +148,7 @@ function SecondCard() {
         label: 'Dataset 1',
         data: isDomain ? dataByDomain : data,
         backgroundColor: 'rgba(108, 210, 176, 1)',
-        borderColor: 'rgba(108, 210, 176, 1)',
+        borderColor: 'rgba(217, 217, 217, 1)',
 
         borderWidth: 1,
         stack: 'Stack 1',
@@ -158,10 +160,10 @@ function SecondCard() {
   return (
     <div className="bg-white-m dark:bg-[#121212]">
       <div className="grid  grid-cols-2 gap-4 px-4 pt-4 dark:bg-[#121212]  bg-white-m  m2xl:grid-cols-1">
-        <div className="shadow-md  rounded-md  bg-white dark:bg-[#121212] dark:shadowmd  dark:border-2">
+        <div className="shadow-md  rounded-md  bg-white dark:bg-[#1E1E1E] dark:shadowmd   ">
           <Bar options={options} data={d2} width={780} height={300} />
         </div>
-        <div className="shadow-md rounded-md bg-white  dark:bg-[#121212] dark:shadowmd  dark:border-2">
+        <div className="shadow-md rounded-md bg-white  dark:bg-[#1E1E1E] dark:shadowmd   ">
           <TableChart />
         </div>
       </div>

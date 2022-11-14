@@ -51,10 +51,11 @@ export function HorizontalChart() {
     scales: {
       x: {
         grid: {
-          color: isDarkToggle ? '#70768C' : 'rgba(0, 0, 0, 0.1)',
+          color: isDarkToggle ? '#D9D9D9' : 'rgba(0, 0, 0, 0.1)',
         },
 
         ticks: {
+          color: '#D9D9D9',
           callback: value =>
             isDomain
               ? `${Math.floor(value / (1000 * 60))} min`
@@ -62,7 +63,9 @@ export function HorizontalChart() {
         },
       },
       y: {
+        ticks: { color: '#D9D9D9' },
         grid: {
+          color: '#D9D9D9',
           display: false,
         },
         stepSize: 1,
@@ -89,6 +92,7 @@ export function HorizontalChart() {
       title: {
         display: true,
         text: 'Usage by Day of Week',
+        color: '#D9D9D9',
         padding: {
           top: 10,
           bottom: 20,
@@ -109,7 +113,7 @@ export function HorizontalChart() {
         label: 'Dataset 1',
         data: isDomain ? allTimeByDomain : data,
         backgroundColor: 'rgba(108, 210, 176, 1)',
-        borderColor: 'rgba(108, 210, 176, 1)',
+        borderColor: 'rgba(217, 217, 217, 1)',
         borderWidth: 1,
         stack: 'Stack 1',
       },

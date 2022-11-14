@@ -72,7 +72,7 @@ export function BubbleChart() {
         borderWidth: 1,
         radius: 3,
         backgroundColor: 'rgba(108, 210, 176, 1)',
-        borderColor: 'rgba(108, 210, 176, 1)',
+        borderColor: 'rgba(217, 217, 217, 1)',
       },
     ],
   };
@@ -86,9 +86,10 @@ export function BubbleChart() {
     scales: {
       x: {
         grid: {
-          color: isDarkToggle ? '#70768C' : 'rgba(0, 0, 0, 0.1)',
+          color: isDarkToggle ? '#D9D9D9' : 'rgba(0, 0, 0, 0.1)',
         },
         ticks: {
+          color: '#D9D9D9',
           callback: function (value, index, values) {
             if (value == 0) {
               return 'S';
@@ -112,10 +113,11 @@ export function BubbleChart() {
       },
       y: {
         grid: {
-          color: isDarkToggle ? '#70768C' : 'rgba(0, 0, 0, 0.1)',
+          color: isDarkToggle ? '#D9D9D9' : 'rgba(0, 0, 0, 0.1)',
         },
         position: 'left',
         ticks: {
+          color: '#D9D9D9',
           callback: value => formatHourOfDay(value),
         },
         stepSize: 1,
@@ -157,6 +159,7 @@ export function BubbleChart() {
       title: {
         display: true,
         text: 'Usage by Time of Day',
+        color: '#D9D9D9',
         padding: {
           top: 10,
           bottom: 20,

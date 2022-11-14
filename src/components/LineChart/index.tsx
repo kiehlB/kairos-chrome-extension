@@ -85,9 +85,10 @@ export function LineChart() {
     scales: {
       x: {
         grid: {
-          color: isDarkToggle ? '#70768C' : 'rgba(0, 0, 0, 0.1)',
+          color: isDarkToggle ? '#D9D9D9' : 'rgba(0, 0, 0, 0.1)',
         },
         ticks: {
+          color: '#D9D9D9',
           callback: function (value, index, values) {
             if (value == 0) {
               return 'S';
@@ -111,10 +112,11 @@ export function LineChart() {
       },
       y: {
         grid: {
-          color: isDarkToggle ? '#70768C' : 'rgba(0, 0, 0, 0.1)',
+          color: isDarkToggle ? '#D9D9D9' : 'rgba(0, 0, 0, 0.1)',
         },
         position: 'left',
         ticks: {
+          color: '#D9D9D9',
           callback: value =>
             isDomain
               ? `${Math.floor(value / (1000 * 60))}min`
@@ -141,6 +143,7 @@ export function LineChart() {
       title: {
         display: true,
         text: 'Usage by Day of Week',
+        color: '#D9D9D9',
         padding: {
           top: 10,
           bottom: 20,

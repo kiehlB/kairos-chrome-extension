@@ -69,7 +69,7 @@ export function Table({
     return activities.slice(0, rowCount);
   }, [activities, rowCount]);
 
-  let tableContent;
+  let tableContent = null;
   const isDebounceActive = debouncedFilter !== filter;
   const tableBodyHeight = containerHeight - HEADER_HEIGHT - FOOTER_HEIGHT;
   switch (true) {
@@ -135,7 +135,7 @@ export function Table({
   return (
     <div
       ref={containerRef}
-      className="h-full border shadow-md  rounded-md bg-white dark:bg-[#121212]">
+      className="h-full border shadow-md  rounded-md bg-white dark:bg-[#1E1E1E]">
       <EvergreenTable>
         <EvergreenTable.Head height={HEADER_HEIGHT}>
           {filterFn && (

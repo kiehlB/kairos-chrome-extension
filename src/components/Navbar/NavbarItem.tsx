@@ -18,9 +18,9 @@ export const NavbarItem = (props: NavbarItemProps) => {
       <div
         className={`w-10/12 rounded-lg  px-2 py-2 ${
           props.path == props.to.pathname
-            ? 'bg-slate-50 dark:bg-gray-700 dark:text-white'
+            ? 'bg-slate-100 dark:bg-gray-800 dark:text-white'
             : ''
-        }  hover:text-slate-900    dark:hover:text-white  flex items-center m2xl:w-full m2xl:flex-col m2xl:justify-center m2xl:items-center`}>
+        }  hover:text-slate-900 dark:hover:text-white  flex items-center m2xl:w-full m2xl:flex-col m2xl:justify-center m2xl:items-center`}>
         <div>{props.icon}</div>
         <span className="ml-2 m2xl:ml-0">{props.text}</span>
       </div>

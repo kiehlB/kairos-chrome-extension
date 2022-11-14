@@ -20,17 +20,13 @@ interface LabelCellProps extends Datum {
   labelComponent?: React.ReactNode;
 }
 
-const ExternalLink = (props) => {
+const ExternalLink = props => {
   return (
     <div style={props.style}>
       {props.iconSrc && (
-        <img
-          className='external-link__icon'
-          alt={props.iconAlt}
-          src={props.iconSrc}
-        />
+        <img className="external-link__icon" alt={props.iconAlt} src={props.iconSrc} />
       )}
-      <a href={props.url} title={props.title || props.url} target='none'>
+      <a href={props.url} title={props.title || props.url} target="none">
         {props.children || props.url}
       </a>
     </div>
@@ -61,12 +57,11 @@ const LabelCell = ({
     <div>
       <Transition in={inProp} timeout={0}>
         <div
-          className='flex items-center ml-4'
-          style={{ visibility: hide ? 'hidden' : undefined }}
-        >
+          className="flex items-center ml-4  "
+          style={{ visibility: hide ? 'hidden' : undefined }}>
           {showIcons && (
             <Avatar
-              className='mr-2'
+              className="mr-2"
               src={iconSrc}
               hashValue={label}
               name={label}
@@ -74,15 +69,14 @@ const LabelCell = ({
             />
           )}
           <div
-            className='flex items-center truncate whitespace-nowrap overflow-hidden'
+            className="flex items-center truncate whitespace-nowrap overflow-hidden"
             onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          >
-            <div className=' dark:text-neutral-400  text-sm text-neutral-800 '>
+            onMouseLeave={handleMouseLeave}>
+            <div className=" dark:text-[#D9D9D9]  text-sm text-neutral-800 ">
               {labelComponent ? (
                 labelComponent
               ) : (
-                <div title={label} className=''>
+                <div title={label} className=" ">
                   {label}
                 </div>
               )}
@@ -90,18 +84,15 @@ const LabelCell = ({
             {labelSrc && labelSrc.startsWith('http') && (
               <ExternalLink
                 style={{ visibility: isHovered ? 'unset' : 'hidden' }}
-                url={labelSrc}
-              >
+                url={labelSrc}>
                 <ExternalLinkIcon size={BASE_SIZE * 1.5} />
               </ExternalLink>
             )}
           </div>
         </div>
       </Transition>
-      <div className='ml-10'>
-        <div
-          style={{ border: '1px solid #6CD2B0', width: `${barWidth}%` }}
-        ></div>
+      <div className="ml-10">
+        <div style={{ border: '1px solid #6CD2B0', width: `${barWidth}%` }}></div>
       </div>
     </div>
   );

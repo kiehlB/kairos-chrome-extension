@@ -51,7 +51,7 @@ const BarChartTable = ({
               visibility: datum.label === NO_DATA_LABEL ? 'hidden' : undefined,
             }}>
             {`${index + 1}.`}
-            <div className="w-full   flex justify-between flex-1">
+            <div className="w-full flex justify-between flex-1">
               <LabelCell
                 {...datum}
                 hide={datum.label === NO_DATA_LABEL}

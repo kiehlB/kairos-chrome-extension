@@ -31,7 +31,7 @@ const Navbar = ({ primaryItems, secondaryItems, className, isDisabled }: NavbarP
     <nav className="border-r border-grey-m w-side m2xl:hidden mmd:hidden flex flex-col justify-between dark:bg-[#121212] h-full">
       <div>
         <div>
-          <div className="flex py-6 px-4 items-center  justify-between m2xl:hidden dark:text-white">
+          <div className="flex py-6 px-4 items-center  justify-between m2xl:hidden dark:text-white h-20">
             <h1 className="text-[1.5rem] font-semibold font-sans w-full">Kairos</h1>
             <Bookmark color="#70768C" />
           </div>

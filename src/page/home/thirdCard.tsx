@@ -23,13 +23,13 @@ function ThridCard() {
   return (
     <>
       <div className="grid  grid-cols-3 gap-4 px-4 pt-4  m2xl:grid-cols-1 bg-white-m dark:bg-[#121212] pb-4">
-        <div className="shadow-md  rounded-md bg-white dark:bg-[#121212] dark:shadowmd  dark:border-2">
+        <div className="shadow-md  rounded-md bg-white dark:bg-[#1E1E1E] dark:shadowmd">
           <BubbleChart />
         </div>
-        <div className="shadow-md  rounded-md bg-white  dark:bg-[#121212] dark:shadowmd  dark:border-2">
+        <div className="shadow-md  rounded-md bg-white  dark:bg-[#1E1E1E] dark:shadowmd">
           <LineChart />
         </div>
-        <div className="shadow-md  rounded-md  bg-white  dark:bg-[#121212] dark:shadowmd  dark:border-2">
+        <div className="shadow-md  rounded-md  bg-white  dark:bg-[#1E1E1E] dark:shadowmd">
           <HorizontalChart />
         </div>
       </div>

@@ -37,49 +37,43 @@ const SORT_OPTIONS: any = [
     optionLabel: 'Sorted by Duration',
     optionSublabel: 'Ascending',
     value: 'DURATION_ASCENDING' as HistoryTableSortOrder,
-    sortFn: (data) =>
+    sortFn: data =>
       data
         .slice()
-        .sort((a, b) =>
-          a.endTime - a.startTime > b.endTime - b.startTime ? 1 : -1
-        ),
+        .sort((a, b) => (a.endTime - a.startTime > b.endTime - b.startTime ? 1 : -1)),
   },
   {
     buttonLabel: 'Sorted by Duration (Descending)',
     optionLabel: 'Sorted by Duration',
     optionSublabel: 'Descending',
     value: 'DURATION_DESCENDING' as HistoryTableSortOrder,
-    sortFn: (data) =>
+    sortFn: data =>
       data
         .slice()
-        .sort((a, b) =>
-          a.endTime - a.startTime > b.endTime - b.startTime ? -1 : 1
-        ),
+        .sort((a, b) => (a.endTime - a.startTime > b.endTime - b.startTime ? -1 : 1)),
   },
   {
     buttonLabel: 'Sorted by Time (Ascending)',
     optionLabel: 'Sorted by Time',
     optionSublabel: 'Ascending',
     value: 'TIME_ASCENDING' as HistoryTableSortOrder,
-    sortFn: (data) =>
-      data.slice().sort((a, b) => (a.startTime > b.startTime ? 1 : -1)),
+    sortFn: data => data.slice().sort((a, b) => (a.startTime > b.startTime ? 1 : -1)),
   },
   {
     buttonLabel: 'Sorted by Time (Descending)',
     optionLabel: 'Sorted by Time',
     optionSublabel: 'Descending',
     value: 'TIME_DESCENDING' as HistoryTableSortOrder,
-    sortFn: (data) =>
-      data.slice().sort((a, b) => (a.startTime > b.startTime ? -1 : 1)),
+    sortFn: data => data.slice().sort((a, b) => (a.startTime > b.startTime ? -1 : 1)),
   },
 ];
 const TITLE_PLACEHOLDER = '-';
 
 function filterActivityRecords(data: Activity[], filter: string) {
   return data.filter(
-    (record) =>
+    record =>
       record.url.toLowerCase().includes(filter) ||
-      record.title.toLowerCase().includes(filter)
+      record.title.toLowerCase().includes(filter),
   );
 }
 
@@ -87,47 +81,38 @@ function formatRecordString(count: number) {
   return `${count.toLocaleString('en-US')} ${count > 1 ? 'records' : 'record'}`;
 }
 
-export const HistoryTableRow = ({
-  datum,
-  isSelectable,
-  onRowClick,
-  selectedIds,
-}) => {
+export const HistoryTableRow = ({ datum, isSelectable, onRowClick, selectedIds }) => {
   const activityDateTime = formatTableDateTimeLabel(new Date(datum.startTime));
-  const activityDuration = formatTableDurationLabel(
-    datum.endTime - datum.startTime
-  );
+  const activityDuration = formatTableDurationLabel(datum.endTime - datum.startTime);
 
   return (
     <EvergreenTable.Row
-      className=''
+      className=""
       data-activity-id={datum.id}
       height={ROW_HEIGHT}
       key={datum.id}
-      onClick={
-        isSelectable && onRowClick ? () => onRowClick(datum) : undefined
-      }>
-      <EvergreenTable.Cell display='flex' alignItems='center' flexGrow={80}>
+      onClick={isSelectable && onRowClick ? () => onRowClick(datum) : undefined}>
+      <EvergreenTable.Cell display="flex" alignItems="center" flexGrow={80}>
         <Avatar
-          className=''
+          className=""
           hashValue={datum.domain}
           name={datum.domain}
           src={datum.favIconUrl}
           size={ICON_SIZE_MD}
         />
-        <div className='ml-3 flex flex-col text-xs truncate whitespace-nowrap overflow-hidden dark:text-neutral-400'>
-          <strong className=' '>{datum.title || TITLE_PLACEHOLDER}</strong>
+        <div className="ml-3 flex flex-col text-xs truncate whitespace-nowrap overflow-hidden dark:text-[#D9D9D9]">
+          <strong className=" ">{datum.title || TITLE_PLACEHOLDER}</strong>
           <ExternalLink url={datum.url} />
         </div>
       </EvergreenTable.Cell>
       <EvergreenTable.Cell
-        display='flex'
-        alignItems='center'
+        display="flex"
+        alignItems="center"
         flexGrow={20}
-        className='flex justify-end text-xs'>
-        <div className='flex flex-col truncate whitespace-nowrap overflow-hidden dark:text-neutral-400'>
+        className="flex justify-end text-xs">
+        <div className="flex flex-col truncate whitespace-nowrap overflow-hidden dark:text-[#D9D9D9]">
           <strong>{activityDateTime}</strong>
-          <span className='flex justify-end mt-1'>{activityDuration}</span>
+          <span className="flex justify-end mt-1">{activityDuration}</span>
         </div>
       </EvergreenTable.Cell>
     </EvergreenTable.Row>
@@ -150,7 +135,7 @@ export const HistoryTable = ({
       defaultSortOrder={DEFAULT_SORT_ORDER}
       disabled={disabled}
       filterFn={filterActivityRecords}
-      filterPlaceholder='No activity'
+      filterPlaceholder="No activity"
       formatEntries={formatRecordString}
       isLoading={isLoading}
       rowHeight={ROW_HEIGHT}
@@ -162,19 +147,13 @@ export const HistoryTable = ({
   );
 };
 
-const ExternalLink = (props) => {
+const ExternalLink = props => {
   return (
-    <span
-      className={classNames('external-link', props.className)}
-      style={props.style}>
+    <span className={classNames('external-link', props.className)} style={props.style}>
       {props.iconSrc && (
-        <img
-          className='external-link__icon'
-          alt={props.iconAlt}
-          src={props.iconSrc}
-        />
+        <img className="external-link__icon" alt={props.iconAlt} src={props.iconSrc} />
       )}
-      <a href={props.url} title={props.title || props.url} target='none'>
+      <a href={props.url} title={props.title || props.url} target="none">
         {props.children || props.url}
       </a>
     </span>

@@ -25,7 +25,7 @@ const Card = (props: CardProps) => {
               ? 'flex items-center text-greyTint-m   justify-between'
               : 'flex items-center text-greyTint-m   justify-between px-4 mt-4'
           }`}>
-          <h2 className="text-greyTint-m font-medium">{props.title}</h2>
+          <h2 className="text-greyTint-m font-medium dark:text-white">{props.title}</h2>
           <div className="ml-4">
             {props.info && (
               <Tooltip content={props.info}>

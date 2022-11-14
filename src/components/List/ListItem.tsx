@@ -12,23 +12,21 @@ const ListItem = (props: ListItemProps) => {
   if (props.isLoading) {
     content = <LoadingPlaceholder text={props.label} />;
   } else if (props.value !== undefined && props.value !== null) {
-    content = <span className='dark:text-slate-400'>{props.value}</span>;
+    content = <span className="">{props.value}</span>;
   } else {
     content = <span> </span>;
   }
 
   return (
     <div className={props.className}>
-      <div className='text-base text-dark-m dark:text-slate-300'>
-        {props.label}
-      </div>
-      <div className='list-item__value'>{content}</div>
+      <div className="text-base text-dark-m dark:text-[#D9D9D9]">{props.label}</div>
+      <div className="list-item__value dark:text-[#D9D9D9]">{content}</div>
     </div>
   );
 };
 
 export default ListItem;
 
-const LoadingPlaceholder = (props) => {
+const LoadingPlaceholder = props => {
   return <div style={{ width: `${props.text.length}ch` }}></div>;
 };

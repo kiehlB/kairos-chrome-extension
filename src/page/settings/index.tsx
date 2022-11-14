@@ -85,10 +85,10 @@ export const SettingsView = ({}) => {
           <AppLayout.First>
             <div className="flex w-full   m2xl:flex-wrap  ">
               <div className="p-4 w-full">
-                <div className="  w-full bg-white shadow-md  rounded-md dark:bg-[#121212] dark:border-2">
+                <div className="w-full bg-white shadow-md  rounded-md dark:bg-[#121212] dark:border-2">
                   <List>
                     <ListItem
-                      className="flex justify-between p-4 border-b text-dark-m dark:text-slate-300 font-medium text-sm items-center flex-wrap "
+                      className="flex justify-between p-4 border-b text-dark-m  font-medium text-sm items-center flex-wrap "
                       label="Extension Data"
                       isLoading={isLoadingRecords}
                       value={
