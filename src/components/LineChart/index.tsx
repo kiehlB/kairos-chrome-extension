@@ -29,22 +29,22 @@ ChartJS.register(
   LineElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
 );
 
 export function LineChart() {
   const totalTime = useSelector((state: RootState) =>
-    getTotalDurationByDayOfWeek(state)
+    getTotalDurationByDayOfWeek(state),
   ) as any;
 
   const totalTimeByDomain = useSelector((state: RootState) =>
-    getSelectedDomainTotalDurationByDayOfWeek(state)
+    getSelectedDomainTotalDurationByDayOfWeek(state),
   ) as any;
 
   const isDarkToggle = useSelector((state: RootState) => state.activity.isDark);
 
-  const allTimeByDomain = totalTimeByDomain.map((d) => d.duration);
-  const allTime = totalTime.map((d) => d.duration);
+  const allTimeByDomain = totalTimeByDomain.map(d => d.duration);
+  const allTime = totalTime.map(d => d.duration);
 
   let location = useLocation();
 
@@ -52,28 +52,28 @@ export function LineChart() {
 
   const isDomain = byDomain == '?domain' ? true : false;
 
-  const axisData = totalTime.map((d) => ({
+  const axisData = totalTime.map(d => ({
     x: d.day,
     y: d.duration,
   }));
 
-  const axisDataByDomain = totalTime.map((d) => ({
+  const axisDataByDomain = totalTime.map(d => ({
     x: d.day,
     y: d.duration,
   }));
 
-  const newDate = axisData.map((ele) =>
+  const newDate = axisData.map(ele =>
     new Date(ele.x).toLocaleDateString('en-US', {
       weekday: 'short',
       day: 'numeric',
-    })
+    }),
   );
 
-  const newDateByDomain = axisDataByDomain.map((ele) =>
+  const newDateByDomain = axisDataByDomain.map(ele =>
     new Date(ele.x).toLocaleDateString('en-US', {
       weekday: 'short',
       day: 'numeric',
-    })
+    }),
   );
 
   const options = {
@@ -115,7 +115,7 @@ export function LineChart() {
         },
         position: 'left',
         ticks: {
-          callback: (value) =>
+          callback: value =>
             isDomain
               ? `${Math.floor(value / (1000 * 60))}min`
               : `${Math.floor(value / (1000 * 60 * 60))}h`,
@@ -162,5 +162,5 @@ export function LineChart() {
     ],
   };
 
-  return <Line options={options} data={data} />;
+  return <Line options={options} data={data} height={300} />;
 }

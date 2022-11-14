@@ -28,56 +28,54 @@ const Navbar = ({ primaryItems, secondaryItems, className, isDisabled }: NavbarP
   const is = location.pathname;
 
   return (
-    <>
-      <nav className="border-r border-grey-m w-side m2xl:hidden mmd:hidden flex flex-col justify-between dark:bg-gray-900 h-full">
+    <nav className="border-r border-grey-m w-side m2xl:hidden mmd:hidden flex flex-col justify-between dark:bg-gray-900 h-full">
+      <div>
         <div>
-          <div>
-            <div className="flex w-20  p-6 mb-2 justify-center xxl:hidden">
-              <img alt="logo2" src={logo2} width={32} height={32} />
-            </div>
-            <div className=" flex p-6 items-center  justify-between m2xl:hidden">
-              <img alt="logo" src={isDarkToggle ? black : logo} />
-              <Bookmark color="#70768C" />
-            </div>
+          <div className="flex w-20  p-6 mb-2 justify-center xxl:hidden">
+            <img alt="logo2" src={logo2} width={32} height={32} />
           </div>
-          <div className="border mx-4 flex m2xl:hidden"></div>
-          <div>
-            <div className="px-4 pt-6 text-gray-400 font-medium text-sm m2xl:hidden">
-              REPORTS
-            </div>
-            {primaryItems?.map(itemProps => (
-              <div key={itemProps.text}>
-                <NavbarItem {...itemProps} path={is} />
-              </div>
-            ))}
+          <div className=" flex p-6 items-center  justify-between m2xl:hidden">
+            <img alt="logo" src={isDarkToggle ? black : logo} />
+            <Bookmark color="#70768C" />
           </div>
-          <div className="pt-6 m2xl:hidden">
-            <div className="border mx-4 flex "></div>
-          </div>
+        </div>
+        <div className="border mx-4 flex m2xl:hidden"></div>
+        <div>
           <div className="px-4 pt-6 text-gray-400 font-medium text-sm m2xl:hidden">
-            OPTION
+            REPORTS
           </div>
-          {secondaryItems?.map(itemProps => (
+          {primaryItems?.map(itemProps => (
             <div key={itemProps.text}>
               <NavbarItem {...itemProps} path={is} />
             </div>
           ))}
         </div>
+        <div className="pt-6 m2xl:hidden">
+          <div className="border mx-4 flex "></div>
+        </div>
+        <div className="px-4 pt-6 text-gray-400 font-medium text-sm m2xl:hidden">
+          OPTION
+        </div>
+        {secondaryItems?.map(itemProps => (
+          <div key={itemProps.text}>
+            <NavbarItem {...itemProps} path={is} />
+          </div>
+        ))}
+      </div>
 
-        <section className="bottom-10   w-side m2xl:hidden ">
-          <div className="flex items-center px-4 w-full  ">
-            <ExtensionCard
-              icon={<ExternalLink size="20" />}
-              text="Download the extension from Chrome Web Store."
-              to={{ pathname: 'Try now', icon: <ArrowRight size="20" /> }}
-            />
-          </div>
-          <div className="px-4 pt-4 mb-6 dark:text-neutral-300">
-            <Footer />
-          </div>
-        </section>
-      </nav>
-    </>
+      <section className="bottom-10   w-side m2xl:hidden ">
+        <div className="flex items-center px-4 w-full  ">
+          <ExtensionCard
+            icon={<ExternalLink size="20" />}
+            text="Download the extension from Chrome Web Store."
+            to={{ pathname: 'Try now', icon: <ArrowRight size="20" /> }}
+          />
+        </div>
+        <div className="px-4 pt-4 mb-6 dark:text-neutral-300">
+          <Footer />
+        </div>
+      </section>
+    </nav>
   );
 };
 

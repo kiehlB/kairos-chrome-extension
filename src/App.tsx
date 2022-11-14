@@ -23,7 +23,7 @@ function App() {
   }, [loadRecords, selectedTimeRange]);
 
   return (
-    <div className="flex h-full flex-1 overflow-auto">
+    <div className="flex h-full">
       <Navbar
         primaryItems={[
           {
@@ -47,7 +47,7 @@ function App() {
           },
         ]}
       />
-      {/* <div className="flex h-full w-full flex-1 overflow-auto">
+      <div className="flex h-full w-full flex-1 overflow-auto min-w-[320px]">
         <Switch>
           <Route exact path="/analytics" render={() => <Home />} />
           <Route path="/history">
@@ -59,7 +59,7 @@ function App() {
 
           <Redirect to="/analytics" />
         </Switch>
-      </div> */}
+      </div>
     </div>
   );
 }

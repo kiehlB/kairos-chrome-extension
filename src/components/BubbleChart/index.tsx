@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  Chart as ChartJS,
-  LinearScale,
-  PointElement,
-  Tooltip,
-  Legend,
-} from 'chart.js';
+import { Chart as ChartJS, LinearScale, PointElement, Tooltip, Legend } from 'chart.js';
 import { Bubble } from 'react-chartjs-2';
 
 import { useSelector } from 'react-redux';
@@ -15,10 +9,7 @@ import {
   getSelectedDomainAverageDurationByHourOfWeek,
   getTotalDurationByDomain,
 } from '../../store/activity/selectors';
-import {
-  formatHourOfDay,
-  formatTableDurationLabel,
-} from '../../utils/stringUtils';
+import { formatHourOfDay, formatTableDurationLabel } from '../../utils/stringUtils';
 
 import { useParams, useLocation } from 'react-router-dom';
 import { RootState } from '../../store';
@@ -46,22 +37,22 @@ export function formatTableDurationLabelToMin(duration: number): string {
 }
 export function BubbleChart() {
   const totalData = useSelector((state: RootState) =>
-    getAverageDurationByHourOfWeek(state)
+    getAverageDurationByHourOfWeek(state),
   );
 
   const totalDataByDomain = useSelector((state: RootState) =>
-    getSelectedDomainAverageDurationByHourOfWeek(state)
+    getSelectedDomainAverageDurationByHourOfWeek(state),
   );
 
   const isDarkToggle = useSelector((state: RootState) => state.activity.isDark);
 
-  const totalDataByDomainData = totalDataByDomain.map((ele) => ({
+  const totalDataByDomainData = totalDataByDomain.map(ele => ({
     x: ele.day,
     y: ele.hour,
     r: Math.floor(ele.duration / 60000),
   }));
 
-  const bubbleData = totalData.map((ele) => ({
+  const bubbleData = totalData.map(ele => ({
     x: ele.day,
     y: ele.hour,
     r: Math.floor(ele.duration / 60000 / 3),
@@ -125,7 +116,7 @@ export function BubbleChart() {
         },
         position: 'left',
         ticks: {
-          callback: (value) => formatHourOfDay(value),
+          callback: value => formatHourOfDay(value),
         },
         stepSize: 1,
       },
@@ -173,5 +164,5 @@ export function BubbleChart() {
       },
     },
   } as any;
-  return <Bubble options={options} data={data} />;
+  return <Bubble options={options} data={data} height={300} />;
 }
