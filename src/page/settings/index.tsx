@@ -84,11 +84,11 @@ export const SettingsView = ({}) => {
         first={
           <AppLayout.First>
             <div className="flex w-full   m2xl:flex-wrap  ">
-              <div className="p-4 w-full">
-                <div className="w-full bg-white shadow-md  rounded-md dark:bg-[#121212] dark:border-2">
+              <div className="p-5 w-full">
+                <div className="w-full bg-white shadow-md  rounded-md  dark:bg-[#1E1E1E]">
                   <List>
                     <ListItem
-                      className="flex justify-between p-4 border-b text-dark-m  font-medium text-sm items-center flex-wrap "
+                      className="flex justify-between p-5 border-b text-dark-m  font-medium text-sm items-center flex-wrap "
                       label="Extension Data"
                       isLoading={isLoadingRecords}
                       value={
@@ -105,13 +105,13 @@ export const SettingsView = ({}) => {
                       }
                     />
                     <ListItem
-                      className="flex justify-between p-4 border-b text-dark-m font-medium text-sm items-center   overflow-hidden flex-wrap "
+                      className="flex justify-between p-5 border-b text-dark-m font-medium text-sm items-center overflow-hidden flex-wrap "
                       label="Estimated storage data used"
                       isLoading={isLoadingRecords}
                       value={`${formatBytes(storageUsage)}`}
                     />
                     <ListItem
-                      className="flex justify-between p-4 border-b text-dark-m font-medium text-sm items-center   overflow-hidden flex-wrap"
+                      className="flex justify-between p-5 border-b text-dark-m font-medium text-sm items-center overflow-hidden flex-wrap"
                       label="Total data collected"
                       isLoading={isLoadingRecords}
                       value={
@@ -124,7 +124,7 @@ export const SettingsView = ({}) => {
                       }
                     />
                     {
-                      <div className="flex justify-end p-4 flex-wrap">
+                      <div className="flex justify-end p-5 flex-wrap">
                         <Button
                           appearance="primary"
                           iconBefore="export"
@@ -140,11 +140,11 @@ export const SettingsView = ({}) => {
                 </div>
               </div>
 
-              <div className="p-4 w-full">
-                <div className="w-full bg-white shadow-md  rounded-md  dark:bg-[#121212]  dark:border-2">
+              <div className="p-5 w-full">
+                <div className="w-full bg-white shadow-md  rounded-md dark:bg-[#1E1E1E]">
                   <List>
                     <ListItem
-                      className="flex justify-between p-4 border-b text-dark-m font-medium text-sm items-center flex-wrap"
+                      className="flex justify-between p-5 border-b text-dark-m font-medium text-sm items-center flex-wrap"
                       label="About"
                       isLoading={isLoadingRecords}
                       value={
@@ -158,19 +158,19 @@ export const SettingsView = ({}) => {
                       }
                     />
                     <ListItem
-                      className="flex justify-between p-4 border-b text-dark-m font-medium text-sm items-center   overflow-hidden flex-wrap"
+                      className="flex justify-between p-5 border-b text-dark-m font-medium text-sm items-center   overflow-hidden flex-wrap"
                       label="github Link"
                       isLoading={isLoadingRecords}
                       value={`https://github.com/kiehlB/Kairos_chrome-extension`}
                     />
                     <ListItem
-                      className="flex justify-between p-4 border-b text-dark-m font-medium text-sm items-center   overflow-hidden flex-wrap"
+                      className="flex justify-between p-5 border-b text-dark-m font-medium text-sm items-center   overflow-hidden flex-wrap"
                       label="MyBlog"
                       isLoading={isLoadingRecords}
                       value={'https://www.woongblog.xyz/'}
                     />
                     <ListItem
-                      className="flex justify-between p-4 border-b text-dark-m font-medium text-sm items-center   overflow-hidden flex-wrap"
+                      className="flex justify-between p-5 text-dark-m font-medium text-sm items-center   overflow-hidden flex-wrap"
                       label="Download the extension from Chrome Web Store."
                       isLoading={isLoadingRecords}
                       value={'not yet'}

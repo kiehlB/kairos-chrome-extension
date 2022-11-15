@@ -32,7 +32,9 @@ const Navbar = ({ primaryItems, secondaryItems, className, isDisabled }: NavbarP
       <div>
         <div>
           <div className="flex py-6 px-4 items-center  justify-between m2xl:hidden dark:text-white h-20">
-            <h1 className="text-[1.5rem] font-semibold font-sans w-full">Kairos</h1>
+            <NavLink to="/">
+              <h1 className="text-[1.5rem] font-semibold font-sans w-full">Kairos</h1>
+            </NavLink>
             <Bookmark color="#70768C" />
           </div>
         </div>

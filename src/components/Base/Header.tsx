@@ -39,7 +39,7 @@ function Header({ children, title, subTitle }: HeaderProps) {
 
   let widthSection = null;
   widthSection = (
-    <section className="flex first-letter:items-center justify-end">
+    <section className="flex first-letter:items-center justify-end items-center">
       <div className="flex">
         {subTitle == 'Analytics' ? (
           <>
@@ -121,9 +121,9 @@ function Header({ children, title, subTitle }: HeaderProps) {
           <div className="flex items-center">
             <div className="text-xl font-bold text-dark-m mr-4 dark:text-white ">
               <div className="m2xl:hidden">{title}</div>
-              <div className="mmd:hidden xxl:hidden">{subTitle}</div>
+              {/* <div className="mmd:hidden xxl:hidden">{subTitle}</div> */}
 
-              <div className="si:hidden">
+              <div className="xxl:hidden">
                 <SideSheet
                   // @ts-ignore
                   position={Position.LEFT}
