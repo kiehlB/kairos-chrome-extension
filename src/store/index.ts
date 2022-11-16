@@ -1,12 +1,13 @@
 import { Action, MiddlewareArray } from '@reduxjs/toolkit';
-import { ThunkAction } from 'redux-thunk';
+import { ThunkAction, ThunkDispatch } from 'redux-thunk';
 
 import { reducer } from './activity/activity';
 import {
   applyMiddleware,
   combineReducers,
   compose,
-  createStore,
+  legacy_createStore as createStore,
+  AnyAction,
   StoreEnhancer,
 } from 'redux';
 import { createHashHistory } from 'history';
@@ -23,6 +24,7 @@ import {
 
 import composeWithDevTools from './reduxDevTools';
 import { InitDatabaseService } from '../lib/db';
+import { useDispatch } from 'react-redux';
 
 export const history = createHashHistory();
 const databaseService = InitDatabaseService();
@@ -39,9 +41,7 @@ const middleware = [
 ];
 const storeEnhancers = [applyMiddleware(...middleware)];
 
-export const composedEnhancer = composeWithDevTools(
-  ...storeEnhancers
-) as StoreEnhancer;
+export const composedEnhancer = composeWithDevTools(...storeEnhancers) as StoreEnhancer;
 
 export const rootReducer = combineReducers({
   activity: reducer,
@@ -56,6 +56,10 @@ export const store = createStore(persistedReducer, {}, composedEnhancer);
 export type AppDispatch = typeof store.dispatch;
 
 export type RootState = ReturnType<typeof store.getState>;
+
+type TypedDispatch<T> = ThunkDispatch<T, any, AnyAction>;
+
+export const useAppDispatch = () => useDispatch<TypedDispatch<RootState>>();
 
 export type AppThunk = ThunkAction<void, RootState, null, Action<string>>;
 

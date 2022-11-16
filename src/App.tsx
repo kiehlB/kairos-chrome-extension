@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Route, Switch, Redirect } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadRecords } from './store/activity/activity';
-import { RootState } from './store';
+import { RootState, useAppDispatch } from './store';
 import { selectors } from './store/router';
 import Navbar from './components/Navbar';
 import { BarChart2, Clock, Settings } from 'react-feather';
@@ -11,7 +11,7 @@ import { HistoryView } from './page/history';
 import { SettingsView } from './page/settings';
 
 function App() {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const search = '';
 
   const selectedTimeRange = useSelector((state: RootState) =>
@@ -19,7 +19,7 @@ function App() {
   );
 
   useEffect(() => {
-    dispatch(loadRecords());
+    dispatch(loadRecords() as any);
   }, [loadRecords, selectedTimeRange]);
 
   return (

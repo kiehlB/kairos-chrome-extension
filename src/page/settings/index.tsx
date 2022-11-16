@@ -8,7 +8,7 @@ import Card from '../../components/Card';
 import { List, ListItem } from '../../components/List';
 import useStorageEstimate from '../../hooks/useStorageEstimate';
 import { BASE_SIZE } from '../../lib/styles/constants';
-import { RootState } from '../../store';
+import { RootState, useAppDispatch } from '../../store';
 import {
   getActivityTimeRange,
   getIsLoadingRecords,
@@ -50,7 +50,7 @@ export const SettingsView = ({}) => {
 
   const isLoadingRecords = useSelector((state: RootState) => getIsLoadingRecords(state));
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const [storageUsage] = useStorageEstimate();
   const [importDataFile, setImportDataFile] = useState<File | null>(null);

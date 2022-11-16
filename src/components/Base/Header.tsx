@@ -23,7 +23,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { isDarkTrigger } from '../../store/activity/activity';
 import { Position, SideSheet, Paragraph, Button } from 'evergreen-ui';
 import { Link } from 'react-router-dom';
-import { RootState } from '../../store';
+import { RootState, useAppDispatch } from '../../store';
 
 export type HeaderProps = {
   children?: React.ReactNode;
@@ -33,7 +33,7 @@ export type HeaderProps = {
 
 function Header({ children, title, subTitle }: HeaderProps) {
   const [colorTheme, setTheme] = useDarkMode();
-  const dispatch = useDispatch();
+  const dispatch =  useAppDispatch();
   const [isShown, setIsShown] = useState(false);
   const isDarkToggle = useSelector((state: RootState) => state.activity.isDark);
 

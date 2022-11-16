@@ -16,6 +16,7 @@ import 'react-day-picker/lib/style.css';
 import { useDispatch } from 'react-redux';
 import { setSelectedTimeRange } from '../../store/router/actions';
 import Helmet from 'react-helmet';
+import { useAppDispatch } from '../../store';
 
 export const BASE_SIZE = 8;
 
@@ -33,10 +34,7 @@ export const COLOR_DANGER = '#ec4c47';
 export const COLOR_SUCCESS = '#47b881';
 export const COLOR_WARNING = '#d9822b';
 
-export const CHART_COLOR_RANGE: [string, string] = [
-  COLOR_GREY_LIGHTER,
-  COLOR_PRIMARY,
-];
+export const CHART_COLOR_RANGE: [string, string] = [COLOR_GREY_LIGHTER, COLOR_PRIMARY];
 export const CHART_TRANSITION_DELAY = 500; // ms
 
 export const TRANSITION_DELAY = 1000; // ms
@@ -57,14 +55,14 @@ export const IconButton = (props: IconButtonProps) => {
   const appearance = props.appearance;
   const intent = props.intent;
 
-  return <EvergreenIconButton {...props} fontWeight='600' />;
+  return <EvergreenIconButton {...props} fontWeight="600" />;
 };
 
-export const Button = (props) => {
+export const Button = props => {
   const appearance = props.appearance;
   const intent = props.intent;
 
-  return <EvergreenButton {...props} fontWeight='600' />;
+  return <EvergreenButton {...props} fontWeight="600" />;
 };
 
 interface HandleClickOptions {
@@ -108,7 +106,7 @@ const DateRangePicker = ({
   value,
   ...otherProps
 }: DateRangePickerProps) => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   let initialFrom: Date | null = null;
   let initialTo: Date | null = null;
@@ -138,7 +136,7 @@ const DateRangePicker = ({
           setSelectedTimeRange({
             start: nextFrom.valueOf(),
             end: nextTo.valueOf(),
-          })
+          }),
         );
       }
     }
@@ -186,18 +184,16 @@ const DateRangePicker = ({
           closePopover: close,
         };
         return (
-          <div className=''>
+          <div className="">
             {ranges && (
-              <div className=' flex flex-col'>
-                {ranges.map((range) => (
+              <div className=" flex flex-col">
+                {ranges.map(range => (
                   <Button
                     key={range.label}
-                    color='rgb(71 85 105)'
-                    appearance='minimal'
+                    color="rgb(71 85 105)"
+                    appearance="minimal"
                     isActive={_.isEqual(range.value, value)}
-                    onClick={() =>
-                      handleRangeClick(range.value, handleClickOptions)
-                    }>
+                    onClick={() => handleRangeClick(range.value, handleClickOptions)}>
                     {range.label}
                   </Button>
                 ))}
@@ -224,13 +220,11 @@ const DateRangePicker = ({
 `}</style>
             </Helmet>
             <DayPicker
-              className='Selectable'
+              className="Selectable"
               {...otherProps}
               modifiers={modifiers}
               numberOfMonths={1}
-              onDayClick={(day: Date) =>
-                handleDayClick(day, handleClickOptions)
-              }
+              onDayClick={(day: Date) => handleDayClick(day, handleClickOptions)}
               onDayMouseEnter={handleDayMouseEnter}
               pagedNavigation
               selectedDays={selectedDays}
@@ -241,19 +235,19 @@ const DateRangePicker = ({
                 showNextButton,
               }) => {
                 return (
-                  <div className='flex justify-center'>
+                  <div className="flex justify-center">
                     <IconButton
-                      appearance='minimal'
+                      appearance="minimal"
                       disabled={!showPreviousButton}
-                      icon='chevron-left'
+                      icon="chevron-left"
                       height={ICON_BUTTON_SIZE}
                       marginRight={BASE_SIZE}
                       onClick={() => onPreviousClick()}
                     />
                     <IconButton
-                      appearance='minimal'
+                      appearance="minimal"
                       disabled={!showNextButton}
-                      icon='chevron-right'
+                      icon="chevron-right"
                       height={ICON_BUTTON_SIZE}
                       onClick={() => onNextClick()}
                     />
@@ -265,15 +259,15 @@ const DateRangePicker = ({
         );
       }}>
       <Button
-        className=''
+        className=""
         disabled={disabled}
         height={BUTTON_SIZE}
-        iconBefore='timeline-events'>
+        iconBefore="timeline-events">
         {value && initialFrom && initialTo ? (
           <>
             {formatDateString(initialFrom)}
             <Icon
-              icon='arrow-right'
+              icon="arrow-right"
               size={BASE_SIZE}
               style={{ marginLeft: BASE_SIZE, marginRight: BASE_SIZE }}
             />
