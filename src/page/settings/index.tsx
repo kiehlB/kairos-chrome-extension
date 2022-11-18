@@ -1,4 +1,4 @@
-import { Button, Dialog, Icon, toaster, Tooltip } from 'evergreen-ui';
+import { Button, CogIcon, Dialog, IssueIcon, toaster, Tooltip } from 'evergreen-ui';
 import React, { useEffect, useState } from 'react';
 import { connect, useDispatch, useSelector } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -96,8 +96,7 @@ export const SettingsView = ({}) => {
                           content={
                             '데이터의 총 사용량과 사용한 데이터를 다운받을 수 있습니다'
                           }>
-                          <Icon
-                            icon="issue"
+                          <IssueIcon
                             size={BASE_SIZE * 1.5}
                             style={{ transform: 'rotate(180deg)' }}
                           />
@@ -127,7 +126,7 @@ export const SettingsView = ({}) => {
                       <div className="flex justify-end p-5 flex-wrap">
                         <Button
                           appearance="primary"
-                          iconBefore="export"
+                          iconAfter={CogIcon}
                           onClick={() => {
                             setHasShownExportToaster(false);
                             dispatch(exportDatabaseRecords());
@@ -148,13 +147,16 @@ export const SettingsView = ({}) => {
                       label="About"
                       isLoading={isLoadingRecords}
                       value={
-                        <Tooltip content={'For info'}>
-                          <Icon
-                            icon="issue"
-                            size={BASE_SIZE * 1.5}
-                            style={{ transform: 'rotate(180deg)' }}
-                          />
-                        </Tooltip>
+                        <>
+                          <Tooltip content={'For info'}>
+                            <>
+                              <IssueIcon
+                                size={BASE_SIZE * 1.5}
+                                style={{ transform: 'rotate(180deg)' }}
+                              />
+                            </>
+                          </Tooltip>
+                        </>
                       }
                     />
                     <ListItem

@@ -9,6 +9,8 @@ import { BarChart2, Clock, Settings } from 'react-feather';
 import Home from './page/home';
 import { HistoryView } from './page/history';
 import { SettingsView } from './page/settings';
+import DomainPicker from './components/DomainPicker';
+import { ActivityDateRangePicker } from './components/DateRange';
 
 function App() {
   const dispatch = useAppDispatch();

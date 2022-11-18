@@ -15,7 +15,6 @@ import {
 } from 'react-feather';
 import DayPicker from '../DayPicker';
 import { ActivityDateRangePicker } from '../DateRange';
-import { DomainPicker } from '../DomainPicker';
 
 import useDarkMode from '../../hooks/useDarkMode';
 import { useDispatch, useSelector } from 'react-redux';
@@ -24,6 +23,7 @@ import { isDarkTrigger } from '../../store/activity/activity';
 import { Position, SideSheet, Paragraph, Button } from 'evergreen-ui';
 import { Link } from 'react-router-dom';
 import { RootState, useAppDispatch } from '../../store';
+import DomainPicker from '../DomainPicker';
 
 export type HeaderProps = {
   children?: React.ReactNode;
@@ -33,14 +33,16 @@ export type HeaderProps = {
 
 function Header({ children, title, subTitle }: HeaderProps) {
   const [colorTheme, setTheme] = useDarkMode();
-  const dispatch =  useAppDispatch();
+  const dispatch = useAppDispatch();
   const [isShown, setIsShown] = useState(false);
   const isDarkToggle = useSelector((state: RootState) => state.activity.isDark);
+
+  console.log('render');
 
   let widthSection = null;
   widthSection = (
     <section className="flex first-letter:items-center justify-end items-center">
-      <div className="flex">
+      <div className="flex items-center">
         {subTitle == 'Analytics' ? (
           <>
             <div>
@@ -173,7 +175,7 @@ function Header({ children, title, subTitle }: HeaderProps) {
             </div>
           </div>
           <div className="m2xl:hidden ">{widthSection}</div>
-          <div className="xxl:hidden">{divSection}</div>
+          {/* <div className="xxl:hidden">{divSection}</div> */}
         </div>
       </div>
     </>

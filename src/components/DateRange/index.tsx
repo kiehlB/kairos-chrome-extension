@@ -21,28 +21,23 @@ interface ActivityDateRangePickerProps {}
 
 export const ActivityDateRangePicker = ({}: ActivityDateRangePickerProps) => {
   const activityTimeRange = useSelector((state: RootState) =>
-    getActivityTimeRange(state)
+    getActivityTimeRange(state),
   );
   const effectiveTimeRange = useSelector((state: RootState) =>
-    getEffectiveSelectedTimeRange(state)
+    getEffectiveSelectedTimeRange(state),
   );
-  const isLoadingRecords = useSelector((state: RootState) =>
-    getIsLoadingRecords(state)
-  );
+  const isLoadingRecords = useSelector((state: RootState) => getIsLoadingRecords(state));
   const selectedTimeRange = useSelector((state: RootState) =>
-    getSelectedTimeRange(state)
+    getSelectedTimeRange(state),
   );
   const selectedTimeRangeValidationStatus = useSelector((state: RootState) =>
-    getSearchParamsSelectedTimeRangeValidationStatus(state)
+    getSearchParamsSelectedTimeRangeValidationStatus(state),
   );
 
   // Computed values
   const [startOfToday, endOfToday] = [getStartOfDay(), getEndOfDay()];
   const [defaultStart, defaultEnd] = activityTimeRange
-    ? [
-        getStartOfDay(activityTimeRange.start),
-        getEndOfDay(activityTimeRange.end),
-      ]
+    ? [getStartOfDay(activityTimeRange.start), getEndOfDay(activityTimeRange.end)]
     : [startOfToday, endOfToday];
   const disabledDays = {
     before: new Date(defaultStart),
@@ -68,12 +63,9 @@ export const ActivityDateRangePicker = ({}: ActivityDateRangePickerProps) => {
     },
     {
       label: 'All activity',
-      value:
-        startOfToday !== defaultStart
-          ? { start: defaultStart, end: null }
-          : null,
+      value: startOfToday !== defaultStart ? { start: defaultStart, end: null } : null,
     },
-  ].filter((range) => range.value && range.value.start >= defaultStart) as {
+  ].filter(range => range.value && range.value.start >= defaultStart) as {
     label: string;
     value: TimeRange;
   }[];
@@ -93,7 +85,7 @@ export const ActivityDateRangePicker = ({}: ActivityDateRangePickerProps) => {
       disabledDays={disabledDays}
       fromMonth={disabledDays.before}
       month={month}
-      position='bottom-right'
+      position="bottom-right"
       ranges={ranges}
       toMonth={disabledDays.after}
       value={selectedValue}

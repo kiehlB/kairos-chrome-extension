@@ -37,7 +37,7 @@ export interface ActivityState {
   theme: string;
 }
 export const SET_FOURWEEK: TimeRange = {
-  start: minusDays(getStartOfDay(), 27), // 4 weeks
+  start: minusDays(getStartOfDay(), 27),
   end: null,
 };
 export const initialState = {
@@ -63,7 +63,7 @@ const ActivitySlice = createSlice({
   reducers: {
     deleteRecordsSuccess(state, action: PayloadAction<number[]>) {
       state.records = state.records.filter(
-        (record) => !action.payload.includes(record.id as number)
+        record => !action.payload.includes(record.id as number),
       );
       state.isDeletingRecords = false;
       state.deletingRecordsError = null;
@@ -74,7 +74,7 @@ const ActivitySlice = createSlice({
       state.isLoadingRecords = true;
       state.loadingRecordsSuccess = null;
     },
-    getRecordsSuccess(state, action: PayloadAction<Activity[]>) {
+    getRecordsSuccess(state: ActivityState, action: PayloadAction<Activity[]>) {
       state.records = action.payload;
       state.isInitialized = true;
       state.isLoadingRecords = false;
@@ -87,28 +87,31 @@ const ActivitySlice = createSlice({
       state.loadingRecordsError = action.payload;
       state.loadingRecordsSuccess = false;
     },
-    setDomains(state, action: PayloadAction<Record<string, Domain>>) {
+    setDomains(state: ActivityState, action: PayloadAction<Record<string, Domain>>) {
       state.domains = action.payload;
     },
-    setRecordsTimeRange(state, action: PayloadAction<TimeRange | null>) {
+    setRecordsTimeRange(state: ActivityState, action: PayloadAction<TimeRange | null>) {
       state.recordsTimeRange = action.payload;
     },
-    setSelectedTimeRange(state, action: PayloadAction<TimeRange>) {
+    setSelectedTimeRange(state: ActivityState, action: PayloadAction<TimeRange>) {
       state.selectedTimeRange = action.payload;
     },
-    setTotalTimeRange(state, action: PayloadAction<DefiniteTimeRange | null>) {
+    setTotalTimeRange(
+      state: ActivityState,
+      action: PayloadAction<DefiniteTimeRange | null>,
+    ) {
       state.totalTimeRange = action.payload;
     },
-    isDarkSuccess(state, action: PayloadAction<DefiniteTimeRange | null>) {
+    isDarkSuccess(state: ActivityState, action: PayloadAction<DefiniteTimeRange | null>) {
       state.isDark = !state.isDark;
     },
-    isThemeSuccess(state, payload: any) {
-      if (payload == 'light') {
-        state.theme = 'dark';
-      } else if (payload == 'dark') {
-        state.theme = 'light';
-      }
-    },
+    // isThemeSuccess(state: ActivityState, payload: any) {
+    //   if (payload == 'light') {
+    //     state.theme = 'dark';
+    //   } else if (payload == 'dark') {
+    //     state.theme = 'light';
+    //   }
+    // },
   },
 });
 
@@ -120,7 +123,6 @@ export const {
   getRecordsStart,
   getRecordsSuccess,
   getRecordsFailure,
-  isThemeSuccess,
   isDarkSuccess,
 } = ActivitySlice.actions;
 
@@ -134,7 +136,7 @@ export const loadRecords =
   (
     onSuccess?: () => void,
     onError?: (error: Error) => void,
-    options: { forceReload: boolean } = { forceReload: false }
+    options: { forceReload: boolean } = { forceReload: false },
   ) =>
   async (dispatch, getState, { databaseService }) => {
     const state = getState();
@@ -164,7 +166,6 @@ export const loadRecords =
           onSuccess();
         }
 
-        // Batch actions to ensure smooth UI transition on store updates
         batch(() => [
           dispatch(getRecordsSuccess(records || [])),
           dispatch(setRecordsTimeRange(requiredTimeRange)),
@@ -173,15 +174,12 @@ export const loadRecords =
           dispatch(setTotalTimeRange(totalTimeRange)),
         ]);
       } else {
-        const records = await databaseService.fetchActivityRecords(
-          requiredTimeRange
-        );
+        const records = await databaseService.fetchActivityRecords(requiredTimeRange);
 
         if (onSuccess) {
           onSuccess();
         }
 
-        // Batch actions to ensure smooth UI transition on store updates
         batch(() => [
           dispatch(getRecordsSuccess(records || [])),
           dispatch(setRecordsTimeRange(requiredTimeRange)),
@@ -200,8 +198,9 @@ export const isDarkTrigger = (): AppThunk => async (dispatch: AppDispatch) => {
   dispatch(isDarkSuccess());
 };
 
-export const isThemeTrigger =
-  (payload): AppThunk =>
-  async (dispatch: AppDispatch) => {
-    dispatch(isThemeSuccess(payload));
-  };
+// export const isThemeTrigger =
+//   (payload): AppThunk =>
+//   async (dispatch: AppDispatch) => {
+//     console.log(payload);
+//     dispatch(isThemeSuccess(payload));
+//   };

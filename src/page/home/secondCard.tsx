@@ -87,7 +87,7 @@ function SecondCard() {
           maxRotation: 0,
           minRotation: 0,
           autoSkip: true,
-          color: '#D9D9D9',
+          color: isDarkToggle ? '#D9D9D9' : '#70768C',
           maxTicksLimit: 5,
           font: {
             size: 14,
@@ -100,7 +100,7 @@ function SecondCard() {
         },
         position: 'left',
         ticks: {
-          color: '#D9D9D9',
+          color: isDarkToggle ? '#D9D9D9' : '#70768C',
           callback: value => formatTableDurationLabel(value),
         },
         stepSize: 1,
@@ -127,7 +127,7 @@ function SecondCard() {
       title: {
         display: true,
         text: 'Usage Trend',
-        color: '#D9D9D9',
+        color: isDarkToggle ? '#D9D9D9' : '#70768C',
         padding: {
           top: 10,
           bottom: 30,

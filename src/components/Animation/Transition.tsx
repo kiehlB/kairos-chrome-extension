@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { ReactChildren } from 'react';
 import { useTransition, animated } from 'react-spring';
 
 type ConditionTransitionProps = {
   visible: boolean;
   options: Record<string, unknown>;
+  children: React.ReactNode;
 };
 
 export const ConditionTransition: React.FC<ConditionTransitionProps> = ({
@@ -24,7 +25,7 @@ export const ConditionTransition: React.FC<ConditionTransitionProps> = ({
             <animated.div style={{ ...style, overflow: 'hidden' }}>
               {children}
             </animated.div>
-          )
+          ),
       )}
     </>
   );

@@ -1,7 +1,7 @@
 import { ArrowUpRight, ArrowDownRight } from 'react-feather';
 import React from 'react';
 import { DurationCountUp, CountUp } from '../Count';
-import { Icon, Tooltip } from 'evergreen-ui';
+import { Icon, Tooltip, IssueIcon } from 'evergreen-ui';
 import { BASE_SIZE } from '../../lib/styles/constants';
 
 interface CardProps {
@@ -29,8 +29,7 @@ const Card = (props: CardProps) => {
           <div className="ml-4">
             {props.info && (
               <Tooltip content={props.info}>
-                <Icon
-                  icon="issue"
+                <IssueIcon
                   size={BASE_SIZE * 1.5}
                   style={{ transform: 'rotate(180deg)' }}
                 />

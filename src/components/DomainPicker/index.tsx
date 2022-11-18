@@ -1,4 +1,11 @@
-import { Avatar, Button, IconButton, Position, SelectMenu } from 'evergreen-ui';
+import {
+  Avatar,
+  Button,
+  IconButton,
+  Position,
+  SelectMenu,
+  CaretDownIcon,
+} from 'evergreen-ui';
 import React from 'react';
 import { connect, useDispatch, useSelector } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -14,7 +21,7 @@ interface DomainPickerProps {}
 const MENU_HEIGHT = 400;
 const MENU_WIDTH = 320;
 
-export const DomainPicker = ({}: DomainPickerProps) => {
+const DomainPicker = ({}: DomainPickerProps) => {
   const dispatch = useAppDispatch();
 
   const allDomains = useSelector((state: RootState) => getAllDomains(state));
@@ -53,9 +60,10 @@ export const DomainPicker = ({}: DomainPickerProps) => {
           </div>
         }>
         <Button
+          className=""
           height={30}
           disabled={isLoadingRecords}
-          iconAfter="caret-down"
+          iconAfter={CaretDownIcon}
           marginRight={BUTTON_MARGIN}>
           {selectedDomain ? selectedDomain : 'Select Domain'}
         </Button>
@@ -63,3 +71,5 @@ export const DomainPicker = ({}: DomainPickerProps) => {
     </span>
   );
 };
+
+export default React.memo(DomainPicker);

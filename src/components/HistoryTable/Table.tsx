@@ -1,4 +1,4 @@
-import { Button, Spinner, Table as EvergreenTable } from 'evergreen-ui';
+import { Button, Spinner, Table as EvergreenTable, SearchIcon } from 'evergreen-ui';
 import _ from 'lodash';
 import React, { useCallback, useMemo, useState } from 'react';
 import { useDebounce } from 'use-debounce';
@@ -50,7 +50,7 @@ export function Table({
       }
     },
     [containerHeight, rowCount, rowHeight, setRowCount],
-  );
+  ) as any;
   const activities = useMemo(() => {
     let result = data;
 
@@ -211,7 +211,7 @@ function TableSortButton<U, V>({ disabled, onSelect, sortOptions, sortOrder }) {
       <Button
         appearance="minimal"
         disabled={disabled}
-        iconBefore="sort"
+        iconBefore={SearchIcon}
         isActive={true}
         className="table__sort-button">
         <div className="mmd:hidden">{buttonText}</div>
