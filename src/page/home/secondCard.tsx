@@ -46,11 +46,9 @@ const MIN_STEP = MS_PER_HOUR;
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 function SecondCard() {
-  const totalTime = useSelector((state: RootState) => getTotalDurationByDate(state));
+  const totalTime = useSelector(getTotalDurationByDate);
 
-  const totalTimeByDomain = useSelector((state: RootState) =>
-    getSelectedDomainTotalDurationByDate(state),
-  );
+  const totalTimeByDomain = useSelector(getSelectedDomainTotalDurationByDate);
 
   const isDarkToggle = useSelector((state: RootState) => state.activity.isDark);
 

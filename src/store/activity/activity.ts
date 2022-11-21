@@ -143,12 +143,22 @@ export const loadRecords =
     const recordsTimeRange = getRecordsTimeRange(state);
     const selectedTimeRange = getEffectiveSearchParamsSelectedTimeRange(state);
 
+    // Ensure we fetched enough data that's required to compute analytics
     const requiredTimeRange = extendTimeRange(selectedTimeRange, {
       months: ANALYTICS_REQUIRED_TIME_WINDOW,
     });
 
-    dispatch(getRecordsStart());
+    // Don't fetch data from DB if we already have them in the store
+    if (
+      !options.forceReload &&
+      recordsTimeRange &&
+      isWithinTimeRange(recordsTimeRange, requiredTimeRange)
+    ) {
+      dispatch(setSelectedTimeRange(selectedTimeRange));
+      return;
+    }
 
+    dispatch(getRecordsStart());
     try {
       if (databaseService === undefined) {
         throw Error('Unable to connect to database');
@@ -166,6 +176,7 @@ export const loadRecords =
           onSuccess();
         }
 
+        // Batch actions to ensure smooth UI transition on store updates
         batch(() => [
           dispatch(getRecordsSuccess(records || [])),
           dispatch(setRecordsTimeRange(requiredTimeRange)),
@@ -180,6 +191,7 @@ export const loadRecords =
           onSuccess();
         }
 
+        // Batch actions to ensure smooth UI transition on store updates
         batch(() => [
           dispatch(getRecordsSuccess(records || [])),
           dispatch(setRecordsTimeRange(requiredTimeRange)),
@@ -193,7 +205,6 @@ export const loadRecords =
       dispatch(getRecordsFailure(error));
     }
   };
-
 export const isDarkTrigger = (): AppThunk => async (dispatch: AppDispatch) => {
   dispatch(isDarkSuccess());
 };

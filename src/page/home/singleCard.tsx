@@ -7,6 +7,7 @@ import { CountUp, DurationCountUp } from '../../components/Count';
 import DateRangePicker, { TRANSITION_DELAY } from '../../components/DatePicker';
 import { useParams, useLocation } from 'react-router-dom';
 import {
+  getIsInitialized,
   getRatioToTotalDuration,
   getSelectedDomainAveragePageVisitDuration,
   getSelectedDomainRatioToTotalDuration,
@@ -17,6 +18,8 @@ import {
   getTotalPageVisitCount,
 } from '../../store/activity/selectors';
 import { RootState } from '../../store';
+import React from 'react';
+import { getSearchParamsSelectedDomain } from '../../store/router/selectors';
 
 export type TotalUsageProps = {
   className?;
@@ -76,30 +79,22 @@ function SingleCard() {
 
   const byDomain = location.search.slice(0, 7);
 
-  const totalTime = useSelector((state: RootState) => getTotalDuration(state));
-
-  const totalTimeByDamin = useSelector((state: RootState) =>
-    getSelectedDomainTotalDuration(state),
-  );
-  const toTotalDuration = useSelector(
-    (state: RootState) => getRatioToTotalDuration(state) * 100,
-  );
-
+  const totalTime = useSelector(getTotalDuration);
+  const totalTimeByDamin = useSelector(getSelectedDomainTotalDuration);
+  const toTotalDuration = useSelector(getRatioToTotalDuration);
   const toTotalDurationByDomain = useSelector(
     (state: RootState) => getSelectedDomainRatioToTotalDuration(state) * 100,
   );
-
   const pageVisit = useSelector((state: RootState) => getTotalPageVisitCount(state));
-
   const pageVisitByDomain = useSelector((state: RootState) =>
     getSelectedDomainTotalPageVisitCount(state),
   );
-
   const domainVisit = useSelector((state: RootState) => getTotalDomainVisitCount(state));
-
   const domainVisitByDomain = useSelector((state: RootState) =>
     getSelectedDomainAveragePageVisitDuration(state),
   );
+  const isInitialized = useSelector(getIsInitialized);
+  const selectedDomain = useSelector(getSearchParamsSelectedDomain);
 
   const isDomain = byDomain == '?domain' ? true : false;
 
@@ -148,63 +143,134 @@ function SingleCard() {
     formattingUnitFn: isDomain ? '' : (d: number) => (d > 1 ? 'domains' : 'domain'),
   };
 
-  return (
-    <>
-      <div className="mt-4 px-4 mmd:px-4 bg-white-m dark:bg-[#121212]">
-        <div className="grid grid-cols-4 m2xl:grid-cols-2 mmd:grid-cols-1 gap-4">
-          <TotalUsage
-            className="shadow-md rounded-md bg-white dark:bg-[#1E1E1E] dark:shadowmd"
-            sort="single"
-            title={totalTimeRangeCardInfo.title}
-            info={totalTimeRangeCardInfo.info}
-            footer={totalTimeRangeCardInfo.footer}
-            data={totalTimeRangeCardInfo.data}
-            isDuration={totalTimeRangeCardInfo.isDuration}
-            getRandomArbitrary={getRandomArbitrary(-100, 100)}
-          />
-          <TotalUsage
-            className="shadow-md  rounded-md   
+  let viewBody;
+  switch (true) {
+    case !isInitialized:
+      viewBody = null;
+      break;
+    case selectedDomain !== null:
+      viewBody = (
+        <div className="analytics-view__cards-container">
+          <div className="mt-4 px-4 mmd:px-4 bg-white-m dark:bg-[#121212]">
+            <div className="grid grid-cols-4 m2xl:grid-cols-2 mmd:grid-cols-1 gap-4">
+              <TotalUsage
+                className="shadow-md rounded-md bg-white dark:bg-[#1E1E1E] dark:shadowmd"
+                sort="single"
+                title={totalTimeRangeCardInfo.title}
+                info={totalTimeRangeCardInfo.info}
+                footer={totalTimeRangeCardInfo.footer}
+                data={totalTimeRangeCardInfo.data}
+                isDuration={totalTimeRangeCardInfo.isDuration}
+                getRandomArbitrary={getRandomArbitrary(-100, 100)}
+              />
+              <TotalUsage
+                className="shadow-md  rounded-md   
            bg-white    dark:shadowmd  dark:bg-[#1E1E1E]"
-            sort="single"
-            title={toTotalDurationCard.title}
-            info={toTotalDurationCard.info}
-            footer={toTotalDurationCard.footer}
-            data={toTotalDurationCard.data}
-            formattingFn={toTotalDurationCard.formattingFn}
-            formattingUnitFn={toTotalDurationCard.formattingUnitFn}
-            decimals={toTotalDurationCard.decimals}
-            isDuration={toTotalDurationCard.isDuration}
-            getRandomArbitrary={getRandomArbitrary(-100, 100)}
-          />
+                sort="single"
+                title={toTotalDurationCard.title}
+                info={toTotalDurationCard.info}
+                footer={toTotalDurationCard.footer}
+                data={toTotalDurationCard.data}
+                formattingFn={toTotalDurationCard.formattingFn}
+                formattingUnitFn={toTotalDurationCard.formattingUnitFn}
+                decimals={toTotalDurationCard.decimals}
+                isDuration={toTotalDurationCard.isDuration}
+                getRandomArbitrary={getRandomArbitrary(-100, 100)}
+              />
 
-          <TotalUsage
-            className="shadow-md rounded-md   bg-white   dark:shadowmd  dark:bg-[#1E1E1E]"
-            sort="single"
-            title={pageVisitCard.title}
-            info={pageVisitCard.info}
-            footer={pageVisitCard.footer}
-            data={pageVisitCard.data}
-            formattingFn={pageVisitCard.formattingFn}
-            formattingUnitFn={pageVisitCard.formattingUnitFn}
-            isDuration={pageVisitCard.isDuration}
-            getRandomArbitrary={getRandomArbitrary(-100, 100)}
-          />
-          <TotalUsage
-            className="shadow-md rounded-md bg-white dark:shadowmd dark:bg-[#1E1E1E]"
-            sort="single"
-            title={TotalDomainCard.title}
-            info={TotalDomainCard.info}
-            footer={TotalDomainCard.footer}
-            data={TotalDomainCard.data}
-            formattingFn={TotalDomainCard.formattingFn}
-            formattingUnitFn={TotalDomainCard.formattingUnitFn}
-            isDuration={TotalDomainCard.isDuration}
-            getRandomArbitrary={getRandomArbitrary(-100, 100)}
-          />
+              <TotalUsage
+                className="shadow-md rounded-md   bg-white   dark:shadowmd  dark:bg-[#1E1E1E]"
+                sort="single"
+                title={pageVisitCard.title}
+                info={pageVisitCard.info}
+                footer={pageVisitCard.footer}
+                data={pageVisitCard.data}
+                formattingFn={pageVisitCard.formattingFn}
+                formattingUnitFn={pageVisitCard.formattingUnitFn}
+                isDuration={pageVisitCard.isDuration}
+                getRandomArbitrary={getRandomArbitrary(-100, 100)}
+              />
+              <TotalUsage
+                className="shadow-md rounded-md bg-white dark:shadowmd dark:bg-[#1E1E1E]"
+                sort="single"
+                title={TotalDomainCard.title}
+                info={TotalDomainCard.info}
+                footer={TotalDomainCard.footer}
+                data={TotalDomainCard.data}
+                formattingFn={TotalDomainCard.formattingFn}
+                formattingUnitFn={TotalDomainCard.formattingUnitFn}
+                isDuration={TotalDomainCard.isDuration}
+                getRandomArbitrary={getRandomArbitrary(-100, 100)}
+              />
+            </div>
+          </div>
         </div>
-      </div>
-    </>
-  );
+      );
+      break;
+    default:
+      viewBody = (
+        <div className="analytics-view__cards-container">
+          <div className="mt-4 px-4 mmd:px-4 bg-white-m dark:bg-[#121212]">
+            <div className="grid grid-cols-4 m2xl:grid-cols-2 mmd:grid-cols-1 gap-4">
+              <TotalUsage
+                className="shadow-md rounded-md bg-white dark:bg-[#1E1E1E] dark:shadowmd"
+                sort="single"
+                title={totalTimeRangeCardInfo.title}
+                info={totalTimeRangeCardInfo.info}
+                footer={totalTimeRangeCardInfo.footer}
+                data={totalTimeRangeCardInfo.data}
+                isDuration={totalTimeRangeCardInfo.isDuration}
+                getRandomArbitrary={getRandomArbitrary(-100, 100)}
+              />
+              <TotalUsage
+                className="shadow-md  rounded-md   
+         bg-white    dark:shadowmd  dark:bg-[#1E1E1E]"
+                sort="single"
+                title={toTotalDurationCard.title}
+                info={toTotalDurationCard.info}
+                footer={toTotalDurationCard.footer}
+                data={toTotalDurationCard.data}
+                formattingFn={toTotalDurationCard.formattingFn}
+                formattingUnitFn={toTotalDurationCard.formattingUnitFn}
+                decimals={toTotalDurationCard.decimals}
+                isDuration={toTotalDurationCard.isDuration}
+                getRandomArbitrary={getRandomArbitrary(-100, 100)}
+              />
+
+              <TotalUsage
+                className="shadow-md rounded-md   bg-white   dark:shadowmd  dark:bg-[#1E1E1E]"
+                sort="single"
+                title={pageVisitCard.title}
+                info={pageVisitCard.info}
+                footer={pageVisitCard.footer}
+                data={pageVisitCard.data}
+                formattingFn={pageVisitCard.formattingFn}
+                formattingUnitFn={pageVisitCard.formattingUnitFn}
+                isDuration={pageVisitCard.isDuration}
+                getRandomArbitrary={getRandomArbitrary(-100, 100)}
+              />
+              <TotalUsage
+                className="shadow-md rounded-md bg-white dark:shadowmd dark:bg-[#1E1E1E]"
+                sort="single"
+                title={TotalDomainCard.title}
+                info={TotalDomainCard.info}
+                footer={TotalDomainCard.footer}
+                data={TotalDomainCard.data}
+                formattingFn={TotalDomainCard.formattingFn}
+                formattingUnitFn={TotalDomainCard.formattingUnitFn}
+                isDuration={TotalDomainCard.isDuration}
+                getRandomArbitrary={getRandomArbitrary(-100, 100)}
+              />
+            </div>
+          </div>
+        </div>
+      );
+      break;
+  }
+
+  console.log('hehe');
+
+  return <>{viewBody}</>;
 }
 
-export default SingleCard;
+export default React.memo(SingleCard);

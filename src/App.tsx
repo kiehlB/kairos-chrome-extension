@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Route, Switch, Redirect } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadRecords } from './store/activity/activity';
@@ -7,18 +7,19 @@ import { selectors } from './store/router';
 import Navbar from './components/Navbar';
 import { BarChart2, Clock, Settings } from 'react-feather';
 import Home from './page/home';
-import { HistoryView } from './page/history';
+import HistoryView from './page/history';
 import { SettingsView } from './page/settings';
 import DomainPicker from './components/DomainPicker';
-import { ActivityDateRangePicker } from './components/DateRange';
+import { getSearchParamsSelectedTimeRange } from './store/router/selectors';
+import SingleCard from './page/home/singleCard';
+import Header from './components/Base/Header';
+import ActivityDateRangePicker from './components/DateRange';
 
 function App() {
   const dispatch = useAppDispatch();
   const search = '';
 
-  const selectedTimeRange = useSelector((state: RootState) =>
-    selectors.getSearchParamsSelectedTimeRange(state),
-  );
+  const selectedTimeRange = useSelector(getSearchParamsSelectedTimeRange);
 
   useEffect(() => {
     dispatch(loadRecords() as any);
@@ -51,7 +52,9 @@ function App() {
       />
       <div className="flex h-full w-full flex-1 overflow-auto min-w-[320px]">
         <Switch>
-          <Route exact path="/analytics" render={() => <Home />} />
+          <Route exact path="/analytics">
+            <Home />
+          </Route>
           <Route path="/history">
             <HistoryView />
           </Route>

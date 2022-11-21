@@ -22,21 +22,17 @@ const TABLE_ROW_COUNT = 10;
 
 export function TableChart(props) {
   const rowCount = TABLE_ROW_COUNT;
-  const searchParams = useSelector((state: RootState) =>
-    getSearchParams(state)
-  );
+  const searchParams = useSelector((state: RootState) => getSearchParams(state));
 
-  const totalData = useSelector((state: RootState) =>
-    getTotalDurationByDomain(state)
-  );
+  const totalData = useSelector((state: RootState) => getTotalDurationByDomain(state));
   const selectedDomain = useSelector((state: RootState) =>
-    getSearchParamsSelectedDomain(state)
+    getSearchParamsSelectedDomain(state),
   );
   const selectedDomainByTimeRange = useSelector((state: RootState) =>
-    getSelectedDomainTotalDurationByPath(state)
+    getSelectedDomainTotalDurationByPath(state),
   );
 
-  const data = totalData.slice(0, 9).map((datum) => ({
+  const data = totalData.slice(0, 9).map(datum => ({
     label: datum.domain,
     labelComponent: (
       <Link
@@ -53,7 +49,7 @@ export function TableChart(props) {
     iconSrc: datum.favIconUrl,
   }));
 
-  const domainData = selectedDomainByTimeRange.slice(0, 9).map((datum) => ({
+  const domainData = selectedDomainByTimeRange.slice(0, 9).map(datum => ({
     label: datum.path,
     labelSrc: selectedDomain ? `${selectedDomain}${datum.path}` : undefined,
     value: datum.totalDuration,

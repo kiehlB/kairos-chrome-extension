@@ -22,7 +22,6 @@ interface NavbarProps {
 }
 
 const Navbar = ({ primaryItems, secondaryItems, className, isDisabled }: NavbarProps) => {
-  const isDarkToggle = useSelector((state: RootState) => state.activity.isDark);
   let location = useLocation();
 
   const is = location.pathname;
@@ -62,8 +61,8 @@ const Navbar = ({ primaryItems, secondaryItems, className, isDisabled }: NavbarP
         ))}
       </div>
 
-      <section className="bottom-10 w-side m2xl:hidden">
-        <div className="flex items-center px-4 w-full">
+      <section className="bottom-10 w-side m2xl:hidden ">
+        <div className="flex items-center px-4 w-full ">
           <ExtensionCard
             icon={<ExternalLink size="20" />}
             text="Download the extension from Chrome Web Store."

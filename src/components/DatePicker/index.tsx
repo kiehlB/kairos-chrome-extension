@@ -14,7 +14,7 @@ import {
 import DayPicker from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 import { useDispatch } from 'react-redux';
-import { setSelectedTimeRange } from '../../store/router/actions';
+
 import Helmet from 'react-helmet';
 import { useAppDispatch } from '../../store';
 
@@ -115,6 +115,7 @@ interface DateRangePickerProps
   position?: PositionTypes;
   ranges?: { label: string; value: TimeRange }[];
   value?: TimeRange;
+  onChange: (range: TimeRange | null) => void;
 }
 
 function formatDateString(date: Date) {
@@ -127,6 +128,7 @@ const DateRangePicker = ({
   defaultStartTime,
   disabled,
   position,
+  onChange,
   ranges,
   value,
   ...otherProps
@@ -159,12 +161,13 @@ const DateRangePicker = ({
       const nextTo = from !== null && day > from ? day : from;
       if (nextFrom && nextTo) {
         (buttonRef as any)?.current?.click();
-        dispatch(
-          setSelectedTimeRange({
-            start: nextFrom.valueOf(),
-            end: nextTo.valueOf(),
-          }),
-        );
+        onChange({ start: nextFrom.valueOf(), end: nextTo.valueOf() });
+        // dispatch(
+        //   setSelectedTimeRange({
+        //     start: nextFrom.valueOf(),
+        //     end: nextTo.valueOf(),
+        //   }),
+        // );
       }
     }
   };
@@ -176,8 +179,8 @@ const DateRangePicker = ({
   const handleRangeClick = (range: TimeRange) => {
     if (range) {
       setIsSelectingFirstDay(true);
-
-      dispatch(setSelectedTimeRange(range));
+      onChange(range);
+      // dispatch(setSelectedTimeRange(range));
     }
   };
 
@@ -203,15 +206,15 @@ const DateRangePicker = ({
 
   return (
     <>
-      <div className="top-16 w-full max-w-sm z-[999]">
-        <Popover className="relative">
+      <div className="top-16 w-full max-w-sm z-[999]  ">
+        <Popover className="relative bg-white dark:rounded hover:bg-slate-100">
           {({ open }) => (
             <>
               <Popover.Button
                 ref={buttonRef}
                 className={`
                 ${open ? '' : 'text-opacity-90'}
-                group inline-flex items-center rounded-md bg-[#fffff] border px-3 py-1 text-xs  font-normal border-[#8f95b2] text-[#474d66] hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}>
+                group inline-flex items-center rounded-md bg-[#fffff] dark:border-none border px-3 py-1 text-xs  font-normal border-[#8f95b2] text-[#474d66] hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}>
                 {value && initialFrom && initialTo ? (
                   <>
                     {formatDateString(initialFrom)}
@@ -323,8 +326,6 @@ border-bottom-right-radius: 50% !important;
   );
 };
 
-export default DateRangePicker;
-
 function IconOne() {
   return (
     <svg
@@ -400,3 +401,5 @@ function IconThree() {
     </svg>
   );
 }
+
+export default React.memo(DateRangePicker);

@@ -155,7 +155,7 @@ export function Table({
             />
           )}
         </EvergreenTable.Head>
-        <div>{tableContent}</div>
+        <div className="">{tableContent}</div>
         <EvergreenTable.Cell
           height={FOOTER_HEIGHT}
           className="flex justify-end font-semibold text-xs dark:text-neutral-400">
@@ -166,7 +166,7 @@ export function Table({
   );
 }
 
-export default Table;
+export default React.memo(Table);
 
 const DEFAULT_BUTTON_TEXT = 'Sort';
 const DEFAULT_POPOVER_HEADER = 'Sort Order';

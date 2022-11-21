@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { DefiniteTimeRange, TimeRange } from '../../lib/db/models/time';
 import { ValidationStatus } from '../../lib/db/models/validate';
 import { RootState } from '../../store';
+import { actions } from '../../store/activity';
 
 import {
   getActivityTimeRange,
@@ -17,9 +18,15 @@ import { getSearchParamsSelectedTimeRangeValidationStatus } from '../../store/ro
 import { getEndOfDay, getStartOfDay, minusDays } from '../../utils/dateUtils';
 import DateRangePicker from '../DatePicker';
 
-interface ActivityDateRangePickerProps {}
+interface ActivityDateRangePickerProps {
+  setSelectedTimeRange: (range: TimeRange | null) => void;
+}
 
-export const ActivityDateRangePicker = ({}: ActivityDateRangePickerProps) => {
+const ActivityDateRangePicker = ({
+  setSelectedTimeRange,
+}: ActivityDateRangePickerProps) => {
+  const dispatch = useDispatch() as any;
+
   const activityTimeRange = useSelector((state: RootState) =>
     getActivityTimeRange(state),
   );
@@ -85,6 +92,7 @@ export const ActivityDateRangePicker = ({}: ActivityDateRangePickerProps) => {
       disabledDays={disabledDays}
       fromMonth={disabledDays.before}
       month={month}
+      onChange={setSelectedTimeRange}
       position="bottom-right"
       ranges={ranges}
       toMonth={disabledDays.after}
@@ -92,3 +100,13 @@ export const ActivityDateRangePicker = ({}: ActivityDateRangePickerProps) => {
     />
   );
 };
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      setSelectedTimeRange: actions.setSelectedTimeRange,
+    },
+    dispatch,
+  );
+
+export default connect(null, mapDispatchToProps)(ActivityDateRangePicker);

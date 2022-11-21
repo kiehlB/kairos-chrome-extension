@@ -10,7 +10,7 @@ export type ExtensionCardProps = {
 function ExtensionCard({ icon, text, to }: ExtensionCardProps) {
   return (
     <>
-      <div className="w-side-1 p-4 flex  flex-col rounded-md  bg-slate-50  dark:bg-[#1E1E1E] ">
+      <div className="w-side-1 p-4 flex  flex-col rounded-md  bg-slate-50  dark:bg-[#1E1E1E] shadow ">
         <div className="py-2 dark:text-slate-100 "> {icon}</div>
         <span className="text-greyTint-m font-medium text-sm dark:text-slate-100">
           {text}

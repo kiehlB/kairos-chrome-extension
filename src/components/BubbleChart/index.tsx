@@ -35,14 +35,10 @@ export function formatTableDurationLabelToMin(duration: number): string {
   const minutes = Math.round((duration / 60000) % 60);
   return ` ${minutes.toString().padStart(2, '0')} min`;
 }
-export function BubbleChart() {
-  const totalData = useSelector((state: RootState) =>
-    getAverageDurationByHourOfWeek(state),
-  );
+function BubbleChart() {
+  const totalData = useSelector(getAverageDurationByHourOfWeek);
 
-  const totalDataByDomain = useSelector((state: RootState) =>
-    getSelectedDomainAverageDurationByHourOfWeek(state),
-  );
+  const totalDataByDomain = useSelector(getSelectedDomainAverageDurationByHourOfWeek);
 
   const isDarkToggle = useSelector((state: RootState) => state.activity.isDark);
 
@@ -167,5 +163,8 @@ export function BubbleChart() {
       },
     },
   } as any;
+
   return <Bubble options={options} data={data} height={328} />;
 }
+
+export default React.memo(BubbleChart);

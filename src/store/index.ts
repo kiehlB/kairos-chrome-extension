@@ -1,4 +1,4 @@
-import { Action, MiddlewareArray } from '@reduxjs/toolkit';
+import { Action, MiddlewareArray, configureStore } from '@reduxjs/toolkit';
 import { ThunkAction, ThunkDispatch } from 'redux-thunk';
 
 import { reducer } from './activity/activity';
@@ -51,7 +51,10 @@ export const rootReducer = combineReducers({
 
 export const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-export const store = createStore(persistedReducer, {}, composedEnhancer);
+export const store = configureStore({
+  reducer: persistedReducer,
+  middleware: middleware,
+});
 
 export type AppDispatch = typeof store.dispatch;
 

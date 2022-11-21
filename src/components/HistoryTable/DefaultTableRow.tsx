@@ -15,4 +15,4 @@ function DefaultTableRow({ datum, isSelectable, onRowClick, selectedIds }): JSX.
   );
 }
 
-export default DefaultTableRow;
+export default React.memo(DefaultTableRow);

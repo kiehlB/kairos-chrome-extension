@@ -92,7 +92,11 @@ export const HistoryTableRow = ({ datum, isSelectable, onRowClick, selectedIds }
       height={ROW_HEIGHT}
       key={datum.id}
       onClick={isSelectable && onRowClick ? () => onRowClick(datum) : undefined}>
-      <EvergreenTable.Cell display="flex" alignItems="center" flexGrow={80}>
+      <EvergreenTable.Cell
+        display="flex"
+        alignItems="center"
+        flexGrow={80}
+        className="dark:bg-[#1E1E1E]">
         <Avatar
           className=""
           hashValue={datum.domain}
@@ -100,7 +104,7 @@ export const HistoryTableRow = ({ datum, isSelectable, onRowClick, selectedIds }
           src={datum.favIconUrl}
           size={ICON_SIZE_MD}
         />
-        <div className="ml-3 flex flex-col text-xs truncate whitespace-nowrap overflow-hidden dark:text-[#D9D9D9]">
+        <div className="ml-3 flex flex-col text-xs truncate whitespace-nowrap overflow-hidden dark:text-[#D9D9D9] ">
           <strong className=" ">{datum.title || TITLE_PLACEHOLDER}</strong>
           <ExternalLink url={datum.url} />
         </div>
@@ -109,17 +113,19 @@ export const HistoryTableRow = ({ datum, isSelectable, onRowClick, selectedIds }
         display="flex"
         alignItems="center"
         flexGrow={20}
-        className="flex justify-end text-xs">
-        <div className="flex flex-col truncate whitespace-nowrap overflow-hidden dark:text-[#D9D9D9]">
+        className="flex justify-end text-xs dark:bg-[#1E1E1E]">
+        <div className="flex flex-col truncate whitespace-nowrap overflow-hidden dark:text-[#D9D9D9] ">
           <strong>{activityDateTime}</strong>
-          <span className="flex justify-end mt-1">{activityDuration}</span>
+          <span className="flex justify-end mt-1 dark:bg-[#1E1E1E]">
+            {activityDuration}
+          </span>
         </div>
       </EvergreenTable.Cell>
     </EvergreenTable.Row>
   );
 };
 
-export const HistoryTable = ({
+const HistoryTable = ({
   autoFocus,
   disabled,
   isLoading,
@@ -159,3 +165,5 @@ const ExternalLink = props => {
     </span>
   );
 };
+
+export default React.memo(HistoryTable);

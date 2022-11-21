@@ -3,10 +3,8 @@ import React, { useCallback, useState } from 'react';
 import { connect, useDispatch, useSelector } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Header from '../../components/Base/Header';
-import { ActivityDateRangePicker } from '../../components/DateRange';
-
 import ErrorView from '../../components/ErrorView';
-import { HistoryTable } from '../../components/HistoryTable';
+import HistoryTable from '../../components/HistoryTable';
 import View from '../../components/View';
 import { Activity } from '../../lib/db/models/activity';
 import { RootState } from '../../store';
@@ -21,7 +19,7 @@ interface HistoryViewProps {}
 
 const DELETE_TOASTER_ID = 'history-view-delete-toaster';
 
-export const HistoryView = ({}) => {
+const HistoryView = ({}) => {
   const isDeletingRecords = useSelector((state: RootState) =>
     getIsDeletingRecords(state),
   );
@@ -99,3 +97,5 @@ export const HistoryView = ({}) => {
     </View.Container>
   );
 };
+
+export default HistoryView;

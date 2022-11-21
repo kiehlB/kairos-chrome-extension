@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import AppLayout from '../../components/AppLayout';
 import Header from '../../components/Base/Header';
@@ -15,7 +15,7 @@ import {
 } from '../../store/activity/selectors';
 
 import { LineChart } from '../../components/LineChart';
-import { BubbleChart } from '../../components/BubbleChart';
+import BubbleChart from '../../components/BubbleChart';
 import { HorizontalChart } from '../../components/HorizontalChart';
 import { useWindowSize } from '../../hooks/useWindowSize';
 
@@ -37,4 +37,4 @@ function ThridCard() {
   );
 }
 
-export default ThridCard;
+export default React.memo(ThridCard);

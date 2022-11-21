@@ -2,19 +2,8 @@ import { DarkModeToggle } from 'react-dark-mode-toggle-2';
 
 import React, { useEffect, useState } from 'react';
 import { Avatar } from 'evergreen-ui';
-import {
-  BarChart2,
-  Clock,
-  Settings,
-  HelpCircle,
-  Search,
-  Bell,
-  Menu,
-  Sun,
-  Moon,
-} from 'react-feather';
+import { Menu, Sun, Moon } from 'react-feather';
 import DayPicker from '../DayPicker';
-import { ActivityDateRangePicker } from '../DateRange';
 
 import useDarkMode from '../../hooks/useDarkMode';
 import { useDispatch, useSelector } from 'react-redux';
@@ -24,6 +13,8 @@ import { Position, SideSheet, Paragraph, Button } from 'evergreen-ui';
 import { Link } from 'react-router-dom';
 import { RootState, useAppDispatch } from '../../store';
 import DomainPicker from '../DomainPicker';
+import { getIsInitialized } from '../../store/activity/selectors';
+import ActivityDateRangePicker from '../DateRange';
 
 export type HeaderProps = {
   children?: React.ReactNode;
@@ -36,8 +27,7 @@ function Header({ children, title, subTitle }: HeaderProps) {
   const dispatch = useAppDispatch();
   const [isShown, setIsShown] = useState(false);
   const isDarkToggle = useSelector((state: RootState) => state.activity.isDark);
-
-  console.log('render');
+  const isInitialized = useSelector(getIsInitialized);
 
   let widthSection = null;
   widthSection = (
@@ -45,21 +35,29 @@ function Header({ children, title, subTitle }: HeaderProps) {
       <div className="flex items-center">
         {subTitle == 'Analytics' ? (
           <>
-            <div>
-              <DomainPicker />
-            </div>
-            <div>
-              <ActivityDateRangePicker />
-            </div>
+            {isInitialized && (
+              <>
+                <div>
+                  <DomainPicker />
+                </div>
+                <div>
+                  <ActivityDateRangePicker />
+                </div>
+              </>
+            )}
           </>
         ) : (
           ''
         )}
         {subTitle == 'History' ? (
           <>
-            <div>
-              <ActivityDateRangePicker />
-            </div>
+            {isInitialized && (
+              <>
+                <div>
+                  <ActivityDateRangePicker />
+                </div>
+              </>
+            )}
           </>
         ) : (
           ''
@@ -174,7 +172,7 @@ function Header({ children, title, subTitle }: HeaderProps) {
               />
             </div>
           </div>
-          <div className="m2xl:hidden ">{widthSection}</div>
+          <div>{widthSection}</div>
           {/* <div className="xxl:hidden">{divSection}</div> */}
         </div>
       </div>

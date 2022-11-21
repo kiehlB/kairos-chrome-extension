@@ -85,7 +85,7 @@ export const SettingsView = ({}) => {
           <AppLayout.First>
             <div className="flex w-full   m2xl:flex-wrap  ">
               <div className="p-5 w-full">
-                <div className="w-full bg-white shadow-md  rounded-md  dark:bg-[#1E1E1E]">
+                <div className="w-full bg-white shadow  rounded-md  dark:bg-[#1E1E1E]">
                   <List>
                     <ListItem
                       className="flex justify-between p-5 border-b text-dark-m  font-medium text-sm items-center flex-wrap "
