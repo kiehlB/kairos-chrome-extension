@@ -31,16 +31,16 @@ function Header({ children, title, subTitle }: HeaderProps) {
 
   let widthSection = null;
   widthSection = (
-    <section className="flex first-letter:items-center justify-end items-center">
-      <div className="flex items-center">
+    <section className="flex first-letter:items-center justify-end items-center mmd:w-[100%]">
+      <div className="flex items-center msm:justify-end flex-wrap msm:w-[95%]">
         {subTitle == 'Analytics' ? (
           <>
             {isInitialized && (
               <>
-                <div>
+                <div className="msm:mb-1">
                   <DomainPicker />
                 </div>
-                <div>
+                <div className="ml-4">
                   <ActivityDateRangePicker />
                 </div>
               </>
@@ -117,7 +117,7 @@ function Header({ children, title, subTitle }: HeaderProps) {
   return (
     <>
       <div className="border-b bg-white dark:bg-[#121212]">
-        <div className="flex h-20 items-center px-8 justify-between flex-wrap  mmd:px-4">
+        <div className="flex h-20 items-center px-8 justify-between mmd:px-4 ">
           <div className="flex items-center">
             <div className="text-xl font-bold text-dark-m mr-4 dark:text-white ">
               <div className="m2xl:hidden">{title}</div>

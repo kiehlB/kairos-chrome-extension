@@ -33,7 +33,7 @@ module.exports = {
       mxl: { max: '1200px' },
       mlg: { max: '1024px' },
       mmd: { max: '768px' },
-      msm: { max: '375px' },
+      msm: { max: '575px' },
       mmax: { max: '1919px' },
     },
     fontFamily: {

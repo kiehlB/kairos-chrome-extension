@@ -206,7 +206,7 @@ const DateRangePicker = ({
 
   return (
     <>
-      <div className="top-16 w-full max-w-sm z-[999]  ">
+      <div className="top-16 w-full max-w-sm z-[999] mmd:max-w-[280px]">
         <Popover className="relative bg-white dark:rounded hover:bg-slate-100">
           {({ open }) => (
             <>
@@ -214,7 +214,7 @@ const DateRangePicker = ({
                 ref={buttonRef}
                 className={`
                 ${open ? '' : 'text-opacity-90'}
-                group inline-flex items-center rounded-md bg-[#fffff] dark:border-none border px-3 py-1 text-xs  font-normal border-[#8f95b2] text-[#474d66] hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}>
+                group inline-flex items-center rounded-md bg-[#fffff] dark:border-none border px-3 py-1 text-xs  font-normal border-[#C1C4D6] text-[#474d66] hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}>
                 {value && initialFrom && initialTo ? (
                   <>
                     {formatDateString(initialFrom)}
