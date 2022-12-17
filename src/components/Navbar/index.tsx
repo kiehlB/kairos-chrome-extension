@@ -30,7 +30,7 @@ const Navbar = ({ primaryItems, secondaryItems, className, isDisabled }: NavbarP
     <nav className="border-r border-grey-m w-side m2xl:hidden mmd:hidden flex flex-col justify-between dark:bg-[#121212] h-full">
       <div>
         <div>
-          <div className="flex py-6 px-4 items-center  justify-between m2xl:hidden dark:text-white h-20">
+          <div className="flex py-6 px-6 items-center  justify-between m2xl:hidden dark:text-white h-20">
             <NavLink to="/">
               <h1 className="text-[1.5rem] font-semibold font-sans w-full">Kairos</h1>
             </NavLink>
@@ -39,7 +39,7 @@ const Navbar = ({ primaryItems, secondaryItems, className, isDisabled }: NavbarP
         </div>
         <div className="border mx-4 flex m2xl:hidden"></div>
         <div>
-          <div className="px-4 pt-6 text-gray-400 font-medium text-sm m2xl:hidden">
+          <div className="px-6 pt-6 text-gray-400 font-medium text-sm m2xl:hidden">
             REPORTS
           </div>
           {primaryItems?.map(itemProps => (
@@ -51,7 +51,7 @@ const Navbar = ({ primaryItems, secondaryItems, className, isDisabled }: NavbarP
         <div className="pt-6 m2xl:hidden">
           <div className="border mx-4 flex "></div>
         </div>
-        <div className="px-4 pt-6 text-gray-400 font-medium text-sm m2xl:hidden">
+        <div className="px-6 pt-6 text-gray-400 font-medium text-sm m2xl:hidden">
           OPTION
         </div>
         {secondaryItems?.map(itemProps => (

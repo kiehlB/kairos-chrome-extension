@@ -117,7 +117,7 @@ function Header({ children, title, subTitle }: HeaderProps) {
   return (
     <>
       <div className="border-b bg-white dark:bg-[#121212]">
-        <div className="flex h-20 items-center px-8 justify-between mmd:px-4 ">
+        <div className="flex h-20 items-center px-6 justify-between mmd:px-4 ">
           <div className="flex items-center">
             <div className="text-xl font-bold text-dark-m mr-4 dark:text-white ">
               <div className="m2xl:hidden">{title}</div>
