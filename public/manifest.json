@@ -1,12 +1,17 @@
 {
   "manifest_version": 3,
   "description": "A chrome extension",
-  "version": "0.0.8",
+  "version": "1.0.0",
   "name": "Create React App Sample",
   "permissions": ["activeTab", "idle", "tabs"],
 
-  "background": {
-    "service_worker": "./static/js/background.js"
-  },
-  "action": {}
+ 
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Open the popup",
+    "default_icon":{
+      "16":"logo192.png",
+      "128":"logo512.png"
+    }
+  }
 }

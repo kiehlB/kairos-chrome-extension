@@ -3,17 +3,13 @@ import { Route, Switch, Redirect } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadRecords } from './store/activity/activity';
 import { RootState, useAppDispatch } from './store';
-import { selectors } from './store/router';
 import Navbar from './components/Navbar';
 import { BarChart2, Clock, Settings } from 'react-feather';
 import Home from './page/home';
 import HistoryView from './page/history';
 import { SettingsView } from './page/settings';
-import DomainPicker from './components/DomainPicker';
 import { getSearchParamsSelectedTimeRange } from './store/router/selectors';
-import SingleCard from './page/home/singleCard';
-import Header from './components/Base/Header';
-import ActivityDateRangePicker from './components/DateRange';
+
 
 function App() {
   const dispatch = useAppDispatch();
