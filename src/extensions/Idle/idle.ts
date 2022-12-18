@@ -36,7 +36,6 @@ export interface ChromeIdleAPI {
 
 export class Idle implements IdleTypes {
   private idle: ChromeIdleAPI
-  // Fired when the system changes to an active, idle or locked state. The event fires with "locked" if the screen is locked or the screensaver activates, "idle" if the system is unlocked and the user has not generated any input for a specified number of seconds, and "active" when the user generates input on an idle system.
   public onStateChanged: IdleStateOnStateChanged
 
   constructor(idle: ChromeIdleAPI = chrome.idle) {
@@ -60,7 +59,7 @@ export class Idle implements IdleTypes {
     }
   }
 
-  // Returns "locked" if the system is locked, "idle" if the user has not generated any input for a specified number of seconds, or "active" otherwise.
+   
   queryState(detectionIntervalInSeconds: number): Promise<IdleState> {
     return new Promise(resolve => {
       this.idle.queryState(detectionIntervalInSeconds, newState => {
@@ -69,7 +68,6 @@ export class Idle implements IdleTypes {
     })
   }
 
-  // Sets the interval, in seconds, used to determine when the system is in an idle state for onStateChanged events. The default interval is 60 seconds.
   setDetectionInterval(intervalInSeconds: number): void {
     this.idle.setDetectionInterval(intervalInSeconds)
   }

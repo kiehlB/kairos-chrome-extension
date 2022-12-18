@@ -9,7 +9,7 @@ export interface ExtensionTypes {
   export class Extension implements ExtensionTypes {
     private runtime: ChromeExtensionAPI
   
-    constructor(runtime: ChromeExtensionAPI = chrome.extension) {
+    constructor(runtime: ChromeExtensionAPI = chrome.runtime) {
       this.runtime = runtime
     }
   

@@ -3,11 +3,11 @@
   "description": "A chrome extension",
   "version": "1.0.0",
   "name": "Create React App Sample",
-  "permissions": ["activeTab", "idle", "tabs"],
-
- 
+  "permissions": ["activeTab", "scripting"],
+  "background": {
+    "service_worker": "/static/js/background.js"
+  },
   "action": {
-    "default_popup": "index.html",
     "default_title": "Open the popup",
     "default_icon":{
       "16":"logo192.png",
